@@ -1,5 +1,6 @@
 import Topbar from './topbar'
 import { Fade } from 'react-bootstrap'
+import Footer from './footer'
 
 /**
  * @component
@@ -16,6 +17,7 @@ export default function Layout({ children }) {
                     {children}
                 </main>
             </Fade>
+            <Footer/>
         </>
     )
 }
