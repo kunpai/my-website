@@ -17,7 +17,7 @@ export default function Topbar() {
 
     return (
         <>
-            <Navbar bg="light" className="shadow-sm" expand="lg">
+            <Navbar bg="light" className="shadow-sm" expand="lg" sticky="top">
                 <Container fluid>
                     <Navbar.Brand href="/" as={Link}>
                     </Navbar.Brand>
@@ -36,7 +36,7 @@ export default function Topbar() {
                             <Nav className="justify-content-end flex-grow-1 pe-3">
                                 <Nav.Link href="/" as={Link} className="main-text-regular">Home</Nav.Link>
                                 <Nav.Link href="/about" as={Link} className="main-text-regular">About</Nav.Link>
-                                <Nav.Link href="/blog" as={Link} className="main-text-regular">Blog</Nav.Link>
+                                <Nav.Link href="/blogs" as={Link} className="main-text-regular">Blogs</Nav.Link>
                                 <Nav.Link href="/help" as={Link} className="main-text-regular">Help</Nav.Link>
                                 {/* <Nav.Link href="https://www.gem5.org/documentation/general_docs/gem5_resources/" as={Link} className="main-text-regular">Documentation</Nav.Link> */}
                             </Nav>

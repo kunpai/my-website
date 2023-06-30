@@ -8,18 +8,21 @@ export default function handler(req, res) {
     const blogNames = fs.readdirSync(blogDirectory);
     // remove .md from the end of the file name
     blogNames.forEach((name, index) => {
-        const content = fs.readFileSync(path.join(blogDirectory, name), 'utf8');
-        const { metadata } = parseMD(content);
+        const blogContent = fs.readFileSync(path.join(blogDirectory, name), 'utf8');
+        const { metadata, content } = parseMD(blogContent);
         names.push({
             name: name.slice(0, -3),
             title: metadata.title,
             date: metadata.date,
+            tags: metadata.tags,
+            image: metadata.image,
+            authors: metadata.authors,
+            content: content
         });
     });
     // sort by date
     names.sort((a, b) => {
         return new Date(b.date) - new Date(a.date);
     });
-    console.log(names);
     res.status(200).json(names);
 }

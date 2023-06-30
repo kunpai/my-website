@@ -9,9 +9,12 @@ import remarkSlug from "remark-slug";
 import remarkFrontmatter from 'remark-frontmatter';
 import { useRouter } from 'next/router'
 import 'github-markdown-css/github-markdown-light.css'
+import Metadata from '@/components/metadata'
+import { Container } from 'react-bootstrap'
 
 export default function Page() {
     const [content, setContent] = useState('')
+    const [metadata, setMetadata] = useState({})
     const router = useRouter()
 
     useEffect(() => {
@@ -27,19 +30,25 @@ export default function Page() {
             .then(res => res.json())
             .then(async data => {
                 setContent(data.content)
-                console.log(data.metadata)
+                setMetadata(data.metadata)
             })
     }, [router.query.name])
 
+
     return (
         <div className="container">
-            <ReactMarkdown
-                className="markdown-body"
-                remarkPlugins={[remarkGfm, remarkToc, remarkFrontmatter, remarkSlug]}
-                rehypePlugins={[rehypeHighlight, { ignoreMissing: true }, rehypeSlug, rehypeRaw]}
-            >
-                {content}
-            </ReactMarkdown>
+            <div className='mt-5 mb-5'>
+                <Metadata metadata={metadata} />
+            </div>
+            <Container style={{ width: '85%' }}>
+                <ReactMarkdown
+                    className="markdown-body"
+                    remarkPlugins={[remarkGfm, remarkToc, remarkFrontmatter, remarkSlug]}
+                    rehypePlugins={[rehypeHighlight, { ignoreMissing: true }, rehypeSlug, rehypeRaw]}
+                >
+                    {content}
+                </ReactMarkdown>
+            </Container>
         </div>
     )
 }

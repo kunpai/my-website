@@ -2,8 +2,6 @@ import React from 'react';
 
 export default function Home() {
   return (
-    <div>
-      <h1>Hello, World!</h1>
-    </div>
+    <iframe src="https://resume.kunpai.space/" frameborder="0" style={{ width: '100%', height: '100vh' }}></iframe>
   );
 }

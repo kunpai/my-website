@@ -1,8 +1,10 @@
 ---
 date: 06/24/2023
-title: Idek
-tags: harshil,patel
-Authors:
+title: What Is a Blog, & Why Should You Create One
+tags:
+  - harshil
+  - patel
+authors:
   - Harshil Patel
 ---
 
