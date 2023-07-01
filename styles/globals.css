@@ -55,7 +55,8 @@
 }
 
 .home h1,
-.blogs>h1 {
+.blogs>h1,
+.topbar h1 {
   font-family: 'Audiowide', cursive;
 }
 
@@ -123,6 +124,24 @@
 
 
 @media only screen and (max-width: 786px) {
+  .blog-tile-image {
+    display: none;
+  }
+
+  .blog-content {
+    width: 100% !important;
+  }
+
+  .hello {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hello>div:first-child {
+    width: 75%;
+  }
+
   .experience {
     flex-direction: column;
     height: unset;

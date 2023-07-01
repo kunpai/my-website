@@ -17,28 +17,43 @@ export default function Topbar() {
 
     return (
         <>
-            <Navbar bg="light" className="shadow-sm" expand="lg" sticky="top">
+            <Navbar bg="light" className="shadow-sm topbar" expand="lg" sticky="top">
                 <Container fluid>
                     <Navbar.Brand href="/" as={Link}>
+                        <h1>
+                            Kunal Pai
+                        </h1>
                     </Navbar.Brand>
-                    <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-sm`} />
+                    <Navbar.Toggle
+                        aria-controls={`offcanvasNavbar-expand-sm`}
+                        onClick={() => setShow(true)}
+                    />
                     <Navbar.Offcanvas
                         id={`offcanvasNavbar-expand-sm`}
                         aria-labelledby={`offcanvasNavbarLabel-expand-sm`}
+                        show={show}
+                        onHide={() => setShow(false)}
                         placement="end"
                     >
                         <Offcanvas.Header closeButton>
                             <Offcanvas.Title id={`offcanvasNavbarLabel-expand-sm`}>
-                                Kunal&apos;s website
+                                Parth Shah
                             </Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">
-                                <Nav.Link href="/" as={Link} className="main-text-regular">Home</Nav.Link>
-                                <Nav.Link href="/about" as={Link} className="main-text-regular">About</Nav.Link>
-                                <Nav.Link href="/blogs" as={Link} className="main-text-regular">Blogs</Nav.Link>
-                                <Nav.Link href="/help" as={Link} className="main-text-regular">Help</Nav.Link>
-                                {/* <Nav.Link href="https://www.gem5.org/documentation/general_docs/gem5_resources/" as={Link} className="main-text-regular">Documentation</Nav.Link> */}
+                                <Nav.Link href="/" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
+                                    Home
+                                </Nav.Link>
+                                <Nav.Link href="/about" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
+                                    About
+                                </Nav.Link>
+                                <Nav.Link href="/blogs" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
+                                    Blogs
+                                </Nav.Link>
+                                <Nav.Link href="/help" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
+                                    Help
+                                </Nav.Link>
                             </Nav>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>
