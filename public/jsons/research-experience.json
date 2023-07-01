@@ -9,6 +9,15 @@
         "image": "/images/darchr.png"
     },
     {
+        "title": "Student Researcher",
+        "organization": "Davis Excellent/Eclectic/Extreme Computational Analytics Lab",
+        "start": "September 2023",
+        "end": "Ongoing",
+        "description": "Co-authored paper on appending semantic information for better code summarization.\nCo-testing effects of uni-modal and multi-modal learning on random and selective sampling of buggy and fixed code snippets.\nCurrently also testing effects of LLM models on mutation testing.",
+        "location": "Davis, CA",
+        "image": "/images/decallab.png"
+    },
+    {
         "title": "Undergraduate Researcher",
         "organization": "UC Davis Computer Architecture Research Group",
         "start": "June 2022",
