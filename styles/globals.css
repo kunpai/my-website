@@ -9,23 +9,72 @@
 } */
 
 .content-text * {
-    font-size: 1rem;
-    font-weight: 300;
-    font-family: 'Inter', sans-serif;
-    pointer-events: none;
-    color: #000;
-    text-decoration: none;
-    line-height: 1.5rem;
-    /* padding: 0; */
-    margin: 0;
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: 'Inter', sans-serif;
+  pointer-events: none;
+  color: #000;
+  text-decoration: none;
+  line-height: 1.5rem;
+  /* padding: 0; */
+  margin: 0;
 }
 
 .blog-tile {
-    transition: background 0.2s ease-in-out;
-    border-radius: 0.5rem;
-    padding: 1rem;
+  transition: background 0.2s ease-in-out;
+  border-radius: 0.5rem;
+  padding: 1rem;
 }
 
 .blog-tile:hover {
-    background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* CSS for the custom-shaped textbox */
+.custom-textbox {
+  position: relative;
+  display: inline-block;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: #f0f0f0 transparent transparent transparent;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Styling for the content inside the textbox */
+.content {
+  color: #333;
+}
+
+/* Bootstrap classes for padding and border radius inside the textbox */
+.content p {
+  margin-bottom: 0;
+}
+
+.experience {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px
+}
+
+@media only screen and (max-width: 786px) {
+  .experience {
+    flex-direction: column;
+    height: unset;
+  }
+
+  .experience>div {
+    width: 100%;
+  }
 }

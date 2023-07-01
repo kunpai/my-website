@@ -28,10 +28,10 @@ export default function BlogTile({ blog }) {
                                 {
                                     blog.authors ? blog.authors.map((author, index) => {
                                         return (
-                                            <>
+                                            <span key={index}>
                                                 {author}
                                                 {index < blog.authors.length - 1 ? ", " : ""}
-                                            </>
+                                            </span>
                                         )
                                     }) : null
                                 }
@@ -68,7 +68,7 @@ export default function BlogTile({ blog }) {
                                 {
                                     blog.tags ? blog.tags.map((tag, index) => {
                                         return (
-                                            <Badge bg="secondary" className="me-2">
+                                            <Badge bg="secondary" className="me-2" key={index}>
                                                 {tag}
                                             </Badge>
                                         )

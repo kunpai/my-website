@@ -1,0 +1,51 @@
+[
+    {
+        "title": "Improving Few-Shot Prompts with Relevant Static Analysis Products",
+        "authors": [
+            "Toufique Ahmed",
+            "Kunal Suresh Pai",
+            "Premkumar Devanbu",
+            "Earl T. Barr"
+        ],
+        "type": "preprint",
+        "description": "Adding explicit semantic facts as prompts to Large Language Models improves their performance in code summarization tasks, with notable improvements exceeding 2 BLEU and, in some cases, even surpassing 30 BLEU, demonstrating the effectiveness of this approach in enhancing code analysis and extraction of essential information.",
+        "tags": [
+            "Software Engineering",
+            "Machine Learning"
+        ],
+        "link": "https://arxiv.org/pdf/2304.06815"
+    },
+    {
+        "title": "Improving Few-Shot Prompts with Relevant Static Analysis Products",
+        "authors": [
+            "Toufique Ahmed",
+            "Kunal Suresh Pai",
+            "Premkumar Devanbu",
+            "Earl T. Barr"
+        ],
+        "type": "poster",
+        "description": "Adding explicit semantic facts as prompts to Large Language Models improves their performance in code summarization tasks, with notable improvements exceeding 2 BLEU and, in some cases, even surpassing 30 BLEU, demonstrating the effectiveness of this approach in enhancing code analysis and extraction of essential information.",
+        "tags": [
+            "Software Engineering",
+            "Machine Learning"
+        ],
+        "link": "https://arxiv.org/pdf/2304.06815"
+    },
+    {
+        "title": "Improving Few-Shot Prompts with Relevant Static Analysis Products",
+        "authors": [
+            "Toufique Ahmed",
+            "Kunal Suresh Pai",
+            "Premkumar Devanbu",
+            "Earl T. Barr"
+        ],
+        "type": "preprint",
+        "description": "Adding explicit semantic facts as prompts to Large Language Models improves their performance in code summarization tasks, with notable improvements exceeding 2 BLEU and, in some cases, even surpassing 30 BLEU, demonstrating the effectiveness of this approach in enhancing code analysis and extraction of essential information.",
+        "conference": "Hashiru",
+        "tags": [
+            "Software Engineering",
+            "Machine Learning"
+        ],
+        "link": "https://arxiv.org/pdf/2304.06815"
+    }
+]

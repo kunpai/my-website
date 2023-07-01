@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Undergraduate Researcher",
+        "organization": "UC Davis Computer Architecture Research Group",
+        "start": "June 2022",
+        "end": "June 2023",
+        "description": "Integrated the gem5 Standard Library components to create a pre-built board modeled after the HiFive Unmatched.\nValidating the statistics returned by the board on gem5 to those returned by perf on real-life hardware.\nCo-authored tutorials on perf compilation and documentation for the Standard Library.",
+        "location": "Davis, CA",
+        "image": "/images/darchr.png"
+    },
+    {
+        "title": "The Rizzly Bear",
+        "organization": "Hashirizz inc.",
+        "start": "Bachpan se",
+        "end": "Abhi tak",
+        "description": "I am the Rizzly Bear",
+        "location": "Har ek jagah"
+    },
+    {
+        "title": "The Rizzly Bear",
+        "organization": "Hashirizz inc.",
+        "start": "Bachpan se",
+        "end": "Abhi tak",
+        "description": "I am the Rizzly Bear",
+        "location": "Har ek jagah"
+    }
+]

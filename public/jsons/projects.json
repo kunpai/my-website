@@ -1,0 +1,24 @@
+[
+    {
+        "title": "The Rizzly Bear",
+        "start": "Bachpan se",
+        "end": "Abhi tak",
+        "description": "I am the Rizzly Bear",
+        "skills": [
+            "Rizz",
+            "Jizz"
+        ],
+        "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+    {
+        "title": "Weed Bhai",
+        "start": "Bachpan se",
+        "end": "Abhi tak",
+        "description": "I am the Hashi Bear",
+        "skills": [
+            "C",
+            "C++++"
+        ],
+        "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    }
+]
