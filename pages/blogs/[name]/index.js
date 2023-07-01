@@ -18,7 +18,6 @@ export default function Page() {
     const router = useRouter()
 
     useEffect(() => {
-        console.log(router.query.name)
         if (!router.query.name) return
         fetch(`/api/getBlogContent`, {
             method: 'POST',

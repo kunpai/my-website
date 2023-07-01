@@ -2,8 +2,6 @@ import { Row, Col, Button, Badge } from "react-bootstrap";
 import Image from "next/image";
 
 export default function Experience({ jsonExperiences, title, isExperience }) {
-    console.log(jsonExperiences[0]);
-    console.log(!isExperience ? jsonExperiences[0].skills : 0);
     return (
         <div className="mt-5">
             <h1 className="mb-3" id={title.toLowerCase().replace(' ', '-')}>
