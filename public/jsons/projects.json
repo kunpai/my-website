@@ -1,24 +1,41 @@
 [
     {
-        "title": "The Rizzly Bear",
-        "start": "Bachpan se",
-        "end": "Abhi tak",
-        "description": "I am the Rizzly Bear",
+        "title": "gem5 Vision",
+        "start": "January 2023",
+        "end": "June 2023",
+        "description": "Implemented advanced search functionality to enhance resource discovery within the gem5 ecosystem.\nIntroduced semantic versioning and built upon a comprehensive resource categorization system for easy access to newer resource versions under specific categories.\nExpanded gem5's database support by integrating local and remote JSON files and MongoDB, improving efficiency and user accessibility.",
         "skills": [
-            "Rizz",
-            "Jizz"
+            "NextJS",
+            "MongoDB",
+            "Python",
+            "JSON Schema"
         ],
-        "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        "link": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf",
+        "image": "/images/gem5vision.png"
     },
     {
-        "title": "Weed Bhai",
-        "start": "Bachpan se",
-        "end": "Abhi tak",
-        "description": "I am the Hashi Bear",
+        "title": "OLED Paint",
+        "start": "May 2022",
+        "end": "May 2022",
+        "description": "Utilized SPI and I2C to create a tilt-based paint application between the CC3200 and Adafruit OLED.\nCreated a webserver and implemented a compression algorithm to transfer 128x128 bitmaps from a board to a computer.\nConferred Best Lab Project for Spring 2022.\nSolidified skills of utilizing datasheet information to interact with hardware better.",
         "skills": [
             "C",
-            "C++++"
+            "Python"
         ],
-        "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        "link": "https://github.com/kunpai/OLEDPaint",
+        "image": "/images/oledpaint.jpeg"
+    },
+    {
+        "title": "UNIfy - Course Assistant",
+        "start": "January 2022",
+        "end": "January 2022",
+        "description": "Utilized the UC Davis Schedule Builder API to extract class timings and professors.\nFormulated a class-based hierarchized dictionary to maintain schedules of over 100 server members in five Discord servers.\nExtracted data from APIs of Rate My Professor and Google Calendar to add additional features to the bot.\nSolidified skills of good software design to understand and solve problem domain.",
+        "skills": [
+            "Discord Bot",
+            "Python",
+            "JavaScript"
+        ],
+        "image": "/images/unify.png",
+        "link": "https://github.com/helloparthshah/UNIfyCourseAssistant"
     }
 ]

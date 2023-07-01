@@ -23,7 +23,7 @@
             "Jason Lowe-Power"
         ],
         "type": "poster",
-        "description": "The poster discusses the development of a RISC-V board model (RISCVMatched) in gem5, along with a methodology for fine-tuning gem5 configurations to closely match real-life systems, resulting in accurate hardware validation and simulation capabilities.",
+        "description": "The poster discusses the development of a RISC-V board model (RISCVMatched) in gem5, along with a methodology for fine-tuning gem5 configurations to closely match real-life systems, resulting in more accurate hardware validation and simulation capabilities.",
         "conference": "ISCA 2023: gem5 Workshop",
         "tags": [
             "Computer Architecture"
