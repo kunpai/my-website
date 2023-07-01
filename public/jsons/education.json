@@ -1,10 +1,19 @@
 [
     {
         "university": "University of California, Davis",
+        "start": "2023",
+        "end": "Ongoing",
+        "degree": "Master of Science",
+        "major": "Computer Science",
+        "gpa": "N.A."
+    },
+    {
+        "university": "University of California, Davis",
         "start": "2019",
         "end": "2023",
         "degree": "Bachelor of Science",
         "major": "Computer Science and Engineering",
-        "gpa": "3.83"
+        "gpa": "3.83",
+        "description": "Provost Scholar"
     }
 ]

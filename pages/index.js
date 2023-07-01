@@ -10,12 +10,21 @@ import awards from "/public/jsons/awards.json";
 import Image from "next/image";
 import trophy from '/public/images/trophy.png';
 import Publication from '@/components/publication';
+import Education from '@/components/education';
 
 export default function Home() {
   return (
     <Containter>
       <Row>
         <Hello />
+      </Row>
+      <Row>
+        <div className="mt-5">
+          <h1 className="mb-3" id="publications">
+            Education
+          </h1>
+          <Education />
+        </div>
       </Row>
       <Row>
         <Experience jsonExperiences={researchExperience} title={"Research Experience"} isExperience />
