@@ -12,7 +12,7 @@ export default function Metadata({ metadata }) {
                 <Col >
                     <h5 className="d-flex align-items-center justify-content-start gap-2 h-100">
                         {metadata.tags ? metadata.tags.map((tag) => (
-                            <Badge bg="secondary">
+                            <Badge bg="secondary" key={tag}>
                                 {tag}
                             </Badge>
                         )) : null}
@@ -27,10 +27,10 @@ export default function Metadata({ metadata }) {
                         {
                             metadata.authors ? metadata.authors.map((author, index) => {
                                 return (
-                                    <>
+                                    <span key={index}>
                                         {author}
                                         {index < metadata.authors.length - 1 ? ", " : ""}
-                                    </>
+                                    </span>
                                 )
                             }) : null
                         }

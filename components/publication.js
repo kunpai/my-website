@@ -25,10 +25,10 @@ export default function Publication() {
                                     {
                                         publication.authors.map((author, index) => {
                                             return (
-                                                <>
+                                                <span key={index}>
                                                     {author}
                                                     {index < publication.authors.length - 1 ? ", " : ""}
-                                                </>
+                                                </span>
                                             )
                                         }
                                         )
@@ -53,7 +53,7 @@ export default function Publication() {
                                 {
                                     publication.tags ? publication.tags.map((tag, index) => {
                                         return (
-                                            <Badge bg="secondary" className="me-2">
+                                            <Badge bg="secondary" className="me-2" key={index}>
                                                 {tag}
                                             </Badge>
                                         )
@@ -66,8 +66,8 @@ export default function Publication() {
                                 </Button>
                             </Col>
                         </Row>
-                    </Col>
-                </Row>
+                    </Col >
+                </Row >
             )
         }
         ))
