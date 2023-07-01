@@ -1,13 +1,8 @@
 import Topbar from './topbar'
 import { Fade } from 'react-bootstrap'
 import Footer from './footer'
+import ScrollToTop from './scrollToTop'
 
-/**
- * @component
- * @description This is the Layout component that wraps the entire application. It includes a Topbar and a Footer component and renders the children components passed in between them.
- * @param {ReactNode} children - The child components to be rendered between the Topbar and Footer components.
- * @returns {JSX.Element} - The JSX element representing the Layout component.
-*/
 export default function Layout({ children }) {
     return (
         <>
@@ -17,7 +12,8 @@ export default function Layout({ children }) {
                     {children}
                 </main>
             </Fade>
-            <Footer/>
+            <ScrollToTop />
+            <Footer />
         </>
     )
 }

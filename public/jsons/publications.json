@@ -16,36 +16,34 @@
         "link": "https://arxiv.org/pdf/2304.06815"
     },
     {
-        "title": "Improving Few-Shot Prompts with Relevant Static Analysis Products",
+        "title": "Validating Hardware and SimPoints with gem5: A RISC-V Board Case Study",
         "authors": [
-            "Toufique Ahmed",
-            "Kunal Suresh Pai",
-            "Premkumar Devanbu",
-            "Earl T. Barr"
+            "Kunal Pai",
+            "Zhantong Qiu",
+            "Jason Lowe-Power"
         ],
         "type": "poster",
-        "description": "Adding explicit semantic facts as prompts to Large Language Models improves their performance in code summarization tasks, with notable improvements exceeding 2 BLEU and, in some cases, even surpassing 30 BLEU, demonstrating the effectiveness of this approach in enhancing code analysis and extraction of essential information.",
+        "description": "The poster discusses the development of a RISC-V board model (RISCVMatched) in gem5, along with a methodology for fine-tuning gem5 configurations to closely match real-life systems, resulting in accurate hardware validation and simulation capabilities.",
+        "conference": "ISCA 2023: gem5 Workshop",
         "tags": [
-            "Software Engineering",
-            "Machine Learning"
+            "Computer Architecture"
         ],
-        "link": "https://arxiv.org/pdf/2304.06815"
+        "link": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/validating-hardware-and-simpoints-with-gem5-poster.pdf"
     },
     {
-        "title": "Improving Few-Shot Prompts with Relevant Static Analysis Products",
+        "title": "gem5 Vision",
         "authors": [
-            "Toufique Ahmed",
-            "Kunal Suresh Pai",
-            "Premkumar Devanbu",
-            "Earl T. Barr"
+            "Parth Shah",
+            "Kunal Pai",
+            "Harshil Patel",
+            "Arslan Ali"
         ],
-        "type": "preprint",
-        "description": "Adding explicit semantic facts as prompts to Large Language Models improves their performance in code summarization tasks, with notable improvements exceeding 2 BLEU and, in some cases, even surpassing 30 BLEU, demonstrating the effectiveness of this approach in enhancing code analysis and extraction of essential information.",
-        "conference": "Hashiru",
+        "type": "poster",
+        "description": "The gem5 Vision Project seeks to improve user-friendliness and accessibility by introducing advanced search functionality, comprehensive resource categorization, and expanded database support within the gem5 ecosystem for researchers and developers.",
+        "conference": "ISCA 2023: gem5 Workshop",
         "tags": [
-            "Software Engineering",
-            "Machine Learning"
+            "Computer Architecture"
         ],
-        "link": "https://arxiv.org/pdf/2304.06815"
+        "link": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf"
     }
 ]

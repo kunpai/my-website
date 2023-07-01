@@ -1,5 +1,5 @@
 {
-    "programming-languages": ["Ma", "Ka", "Phone"],
-    "languages": ["Kyu", "Be"],
-    "skills": ["nahi", "hai"]
+    "programming-languages": ["Python", "C", "C++", "Java", "JavaScript", "HTML+CSS", "Golang"],
+    "languages": ["English", "Hindi", "Gujarati", "Spanish", "Marathi"],
+    "technologies": ["gem5", "React Bootstrap", "Chisel3", "Adobe Photoshop"]
 }

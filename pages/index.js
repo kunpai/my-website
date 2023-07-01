@@ -14,7 +14,7 @@ import Education from '@/components/education';
 
 export default function Home() {
   return (
-    <Containter>
+    <Containter className='home'>
       <Row>
         <Hello />
       </Row>

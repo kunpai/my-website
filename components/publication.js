@@ -24,14 +24,16 @@ export default function Publication() {
                                 <span key={index} variant="secondary">
                                     {
                                         publication.authors.map((author, index) => {
+                                            const isKunalPai = author.includes("Kunal");
                                             return (
                                                 <span key={index}>
-                                                    {author}
+                                                    <span style={{ textDecoration: isKunalPai ? "underline" : "none" }}>
+                                                        {author}
+                                                    </span>
                                                     {index < publication.authors.length - 1 ? ", " : ""}
                                                 </span>
-                                            )
-                                        }
-                                        )
+                                            );
+                                        })
                                     }
                                 </span>
                             </i>

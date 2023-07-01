@@ -13,7 +13,7 @@ export default function Blogs() {
         );
     }, []);
     return (
-        <Container>
+        <Container className="blogs">
             <h1 className="text-center mt-5" style={{ fontSize: '3rem' }}>
                 Blogs
             </h1>

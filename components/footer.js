@@ -33,7 +33,7 @@ export default function Footer() {
             <div className="w-100 d-flex flex-column align-items-center justify-content-center pb-3">
                 <hr className="w-100" />
                 <p className="main-text-regular text-center">
-                    This website was created by Kunal Pai and Parth Shah.
+                    This website was created by Kunal Pai, Parth Shah and Harshil Patel.
                 </p>
             </div>
         </Row>
