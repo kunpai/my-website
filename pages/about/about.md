@@ -3,7 +3,7 @@
 Welcome to this personal portfolio website! We are delighted to present to you a platform that showcases one's collective works and achievements. This website has been thoughtfully engineered to provide a seamless updating experience without the need to delve into the complexities of the actual code.
 
 **Creators:**
-The brains behind this endeavor are [Kunal Pai](https://github.com/kunpai), [Parth Shah](https://github.com/helloparthshah), and [Hashiru Patel](https://github.com/Harshil2107). Each of us brings a unique set of skills and perspectives to this project, and together, we have created a space where we can share our passions and professional accomplishments with the world.
+The brains behind this endeavor are [Kunal Pai](https://github.com/kunpai), [Parth Shah](https://github.com/helloparthshah), and [Harshil Patel](https://github.com/Harshil2107). Each of us brings a unique set of skills and perspectives to this project, and together, we have created a space where we can share our passions and professional accomplishments with the world.
 
 **Open-Source Spirit:**
 We believe in the power of collaboration and open-source contributions. As such, we invite and encourage fellow developers and enthusiasts to fork this project. Feel free to build upon it and customize it to suit your needs. However, we kindly request that if you decide to use our work as a foundation, you give proper credit to the original creators— Kunal Pai, Parth Shah, and Hashiru Patel.
@@ -26,4 +26,4 @@ Keep exploring, keep learning, and keep growing!
 
 With gratitude,
 
-Kunal Pai, Parth Shah, and Hashiru Patel
+Kunal Pai, Parth Shah, and Harshil Patel
