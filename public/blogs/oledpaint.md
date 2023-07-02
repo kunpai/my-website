@@ -50,12 +50,12 @@ Corresponds to a button pressed on a TV Remote
 <h2 class="title">Demo Videos</h2>
 <div>
     <div class="lists">
-        <iframe width="500px" height="420px"
+        <iframe width="100%" height="420px"
         src="https://www.youtube.com/embed/Ygi-eUjCqoY">
         </iframe>
         </br>
         </br>
-        <iframe width="500px" height="420px"
+        <iframe width="100%" height="420px"
         src="https://www.youtube.com/embed/b3hn-VovGC8">
         </iframe>
         </br>

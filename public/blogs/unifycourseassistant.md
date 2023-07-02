@@ -31,7 +31,7 @@ One of the toughest challenges was to get the Google Maps API to work and create
 
 <div>
 <div class="lists">
-    <iframe width="500px" height="420px"
+    <iframe width="100%" height="420px"
     src="https://www.youtube.com/embed/Ax1v-L-QEtA">
     </iframe>
     </br>
