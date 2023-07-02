@@ -22,7 +22,7 @@
             "C",
             "Python"
         ],
-        "link": "https://github.com/kunpai/OLEDPaint",
+        "link": "/blogs/oledpaint",
         "image": "/images/oledpaint.jpeg"
     },
     {
@@ -36,6 +36,6 @@
             "JavaScript"
         ],
         "image": "/images/unify.png",
-        "link": "https://github.com/helloparthshah/UNIfyCourseAssistant"
+        "link": "/blogs/unifycourseassistant"
     }
 ]
