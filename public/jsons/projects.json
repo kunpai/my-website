@@ -26,6 +26,21 @@
         "image": "/images/oledpaint.jpeg"
     },
     {
+        "title": "QuixFolio",
+        "start": "March 2023",
+        "end": "April 2023",
+        "description": "Demonstrated strong coding and programming skills to create QuixFolio as an open-source project.\nStreamlined the portfolio creation process by providing a wide range of customizable templates and easy information input options.\nImplemented hosting capabilities on GitHub pages, enabling seamless portfolio sharing and accessibility.\nSuccessfully launched the alpha version of QuixFolio, which garnered significant traction with over 190 visitors and 1000+ page views within the first week.",
+        "skills": [
+            "ReactJS",
+            "NextJS",
+            "Material UI",
+            "GitHub Pages",
+            "GitHub Actions"
+        ],
+        "link": "https://quixfolio.vercel.app/",
+        "image": "/images/quixfolio.webp"
+    },
+    {
         "title": "UNIfy - Course Assistant",
         "start": "January 2022",
         "end": "January 2022",

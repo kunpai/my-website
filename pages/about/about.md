@@ -6,7 +6,7 @@ Welcome to this personal portfolio website! We are delighted to present to you a
 The brains behind this endeavor are [Kunal Pai](https://github.com/kunpai), [Parth Shah](https://github.com/helloparthshah), and [Harshil Patel](https://github.com/Harshil2107). Each of us brings a unique set of skills and perspectives to this project, and together, we have created a space where we can share our passions and professional accomplishments with the world.
 
 **Open-Source Spirit:**
-We believe in the power of collaboration and open-source contributions. As such, we invite and encourage fellow developers and enthusiasts to fork this project. Feel free to build upon it and customize it to suit your needs. However, we kindly request that if you decide to use our work as a foundation, you give proper credit to the original creators— Kunal Pai, Parth Shah, and Hashiru Patel.
+We believe in the power of collaboration and open-source contributions. As such, we invite and encourage fellow developers and enthusiasts to fork this project. Feel free to build upon it and customize it to suit your needs. However, we kindly request that if you decide to use our work as a foundation, you give proper credit to the original creators— Kunal Pai, Parth Shah, and Harshil Patel.
 
 **Customization Guide:**
 We want this website to not only represent us but also serve as a template for others to create their personal portfolios effortlessly. To customize the website according to your preferences, follow these simple steps:
