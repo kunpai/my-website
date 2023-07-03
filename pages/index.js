@@ -11,6 +11,7 @@ import Image from "next/image";
 import trophy from '/public/images/trophy.png';
 import Publication from '@/components/publication';
 import Education from '@/components/education';
+import Link from 'next/link';
 
 export default function Home() {
   return (
