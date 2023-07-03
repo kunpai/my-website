@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Hello() {
   return (
-    <Row className='mt-5 mb-5'>
+    <Row className='mt-5 mb-5 hello'>
       <Col xs={5}>
         <div className='animate'>
           <Image src="/images/kunal.jpeg"

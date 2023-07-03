@@ -52,12 +52,17 @@ export default function Home() {
             awards.map((award, index) => {
               return (
                 <Row key={index} className="mb-3">
-                  <Col xs={1} className="d-flex align-items-center">
+                  <Col xs={1} className="d-flex align-items-center" style={{ width: 'auto' }}>
                     <Image src={trophy} roundedCircle width={50} height={50} />
                   </Col>
                   <Col>
                     <div key={index}>
                       <h3>{award.title}</h3>
+                      <p>
+                        {award.link ? <Link href={award.link}>{award.position}</Link> :
+                          award.position
+                        }
+                      </p>
                       <span>{award.date}</span>
                     </div>
                   </Col>

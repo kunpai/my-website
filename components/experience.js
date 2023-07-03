@@ -39,7 +39,7 @@ export default function Experience({ jsonExperiences, title, isExperience }) {
                                     {experience.location}
                                 </Row>
                                 <Row>
-                                    <h6>
+                                    <h6 className="text-center">
                                         {
                                             experience.skills ? experience.skills.map((skill, index) => {
                                                 return (
@@ -52,19 +52,24 @@ export default function Experience({ jsonExperiences, title, isExperience }) {
                                         }
                                     </h6>
                                 </Row>
-                                <Row>
+                                <Row className="gap-2">
                                     {
-                                        experience.link ? <Button variant="outline-secondary" href={experience.link} target="_blank">Learn More</Button> : null
+                                        experience.links ? Object.keys(experience.links).map((key, index) => {
+                                            return (
+                                                <Button key={index} variant="outline-secondary" href={experience.links[key]} target="_blank">{key}</Button>
+                                            );
+                                        }
+                                        ) : null
                                     }
                                 </Row>
                             </Col>
                             <Col className="d-flex justify-content-center flex-column">
                                 <ul>
-                                    {experience.description.split('\n').map((line, index) => {
+                                    {experience.description != "" ? experience.description.split('\n').map((line, index) => {
                                         return (
                                             <li key={index}>{line}</li>
                                         );
-                                    })}
+                                    }) : "In progress"}
                                 </ul>
                             </Col>
                         </Row>

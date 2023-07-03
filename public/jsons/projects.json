@@ -10,20 +10,10 @@
             "Python",
             "JSON Schema"
         ],
-        "link": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf",
+        "links": {
+            "Poster": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf"
+        },
         "image": "/images/gem5vision.png"
-    },
-    {
-        "title": "OLED Paint",
-        "start": "May 2022",
-        "end": "May 2022",
-        "description": "Utilized SPI and I2C to create a tilt-based paint application between the CC3200 and Adafruit OLED.\nCreated a webserver and implemented a compression algorithm to transfer 128x128 bitmaps from a board to a computer.\nConferred Best Lab Project for Spring 2022.\nSolidified skills of utilizing datasheet information to interact with hardware better.",
-        "skills": [
-            "C",
-            "Python"
-        ],
-        "link": "/blogs/oledpaint",
-        "image": "/images/oledpaint.jpeg"
     },
     {
         "title": "QuixFolio",
@@ -37,8 +27,24 @@
             "GitHub Pages",
             "GitHub Actions"
         ],
-        "link": "https://quixfolio.vercel.app/",
+        "links": {
+            "Website": "https://quixfolio.vercel.app/"
+        },
         "image": "/images/quixfolio.webp"
+    },
+    {
+        "title": "OLED Paint",
+        "start": "May 2022",
+        "end": "May 2022",
+        "description": "Utilized SPI and I2C to create a tilt-based paint application between the CC3200 and Adafruit OLED.\nCreated a webserver and implemented a compression algorithm to transfer 128x128 bitmaps from a board to a computer.\nConferred Best Lab Project for Spring 2022.\nSolidified skills of utilizing datasheet information to interact with hardware better.",
+        "skills": [
+            "C",
+            "Python"
+        ],
+        "links": {
+            "Blog Post": "/blogs/oledpaint"
+        },
+        "image": "/images/oledpaint.jpeg"
     },
     {
         "title": "UNIfy - Course Assistant",
@@ -51,6 +57,8 @@
             "JavaScript"
         ],
         "image": "/images/unify.png",
-        "link": "/blogs/unifycourseassistant"
+        "links": {
+            "Blog Post": "/blogs/unifycourseassistant"
+        }
     }
 ]
