@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "LAST_UPDATED=$(date) next dev",
+    "build": "LAST_UPDATED=$(date) next build",
+    "start": "LAST_UPDATED=$(date) next start",
+    "lint": "LAST_UPDATED=$(date) next lint"
   },
   "dependencies": {
     "bootstrap": "^5.3.0",

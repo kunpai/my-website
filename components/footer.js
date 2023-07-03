@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button, Col, Row } from "react-bootstrap";
+import { useEffect, useState } from "react";
 
 /**
  * @component
@@ -8,6 +9,12 @@ import { Button, Col, Row } from "react-bootstrap";
  * @returns {JSX.Element} The JSX element representing the footer section.
  */
 export default function Footer() {
+
+  const [lastUpdated, setLastUpdated] = useState("");
+
+  useEffect(() => {
+    setLastUpdated(process.env.LAST_UPDATED);
+  }, []);
 
   return (
     <footer>
@@ -30,12 +37,15 @@ export default function Footer() {
           </Col>
         </Row>
         <Row className="w-100">
-            <div className="w-100 d-flex flex-column align-items-center justify-content-center pb-3">
-                <hr className="w-100" />
-                <p className="main-text-regular text-center">
-                    This website was created by Kunal Pai, Parth Shah and Harshil Patel.
-                </p>
-            </div>
+          <div className="w-100 d-flex flex-column align-items-center justify-content-center pb-3">
+            <hr className="w-100" />
+            <p className="main-text-regular text-center">
+              This website was created by Kunal Pai, Parth Shah and Harshil Patel.
+            </p>
+            <p>
+              Last updated on {lastUpdated}
+            </p>
+          </div>
         </Row>
       </div>
     </footer>
