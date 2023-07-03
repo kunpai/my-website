@@ -10,7 +10,7 @@ export default function generateMLACitation({data}) {
     return citation;
 }
 
-export defaufunction generateChicagoCitation ({data}) {
+export function generateChicagoCitation ({data}) {
     function formatAuthors (authors) {
         return authors.join(", ");
     };
