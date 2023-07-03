@@ -9,9 +9,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>Kunal Pai</title>
-        <meta name="description" content="Kunal Pai's personal website." />
-        <link rel="icon" href="/images/favicon.ico" />
       </Head>
       <body>
         <Main />
