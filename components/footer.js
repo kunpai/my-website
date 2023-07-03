@@ -13,7 +13,9 @@ export default function Footer() {
   const [lastUpdated, setLastUpdated] = useState("");
 
   useEffect(() => {
-    setLastUpdated(process.env.LAST_UPDATED);
+    const date = new Date(process.env.LAST_UPDATED);
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+    setLastUpdated(date.toLocaleDateString(undefined, options));
   }, []);
 
   return (
