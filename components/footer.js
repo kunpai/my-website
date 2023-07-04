@@ -36,6 +36,9 @@ export default function Footer() {
             <Link href="https://www.instagram.com/datboikunalpai/">
               Instagram
             </Link>
+            <Link href="https://github.com/kunpai/my-website">
+              Website Source
+            </Link>
           </Col>
         </Row>
         <Row className="w-100">

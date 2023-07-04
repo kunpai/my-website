@@ -58,7 +58,8 @@
 .home h1,
 .blogs>h1,
 .about h1,
-.topbar h1 {
+.topbar h1,
+.contact h1 {
   font-family: 'Audiowide', cursive;
 }
 

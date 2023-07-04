@@ -17,6 +17,7 @@
     "github-markdown-css": "^5.2.0",
     "html-react-parser": "^4.0.0",
     "next": "^13.4.6",
+    "nodemailer": "^6.9.3",
     "parse-md": "^3.0.3",
     "raw-loader": "^4.0.2",
     "react": "^18.2.0",
