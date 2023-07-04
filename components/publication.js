@@ -64,10 +64,10 @@ export default function Publication() {
                                     <span key={index} variant="secondary">
                                         {
                                             publication.authors.map((author, index) => {
-                                                const isParth = author.includes("Parth");
+                                                const isKunal = author.includes("Kunal");
                                                 return (
                                                     <span key={index}>
-                                                        <span style={{ textDecoration: isParth ? "underline" : "none" }}>
+                                                        <span style={{ textDecoration: isKunal ? "underline" : "none" }}>
                                                             {author}
                                                         </span>
                                                         {index < publication.authors.length - 1 ? ", " : ""}
