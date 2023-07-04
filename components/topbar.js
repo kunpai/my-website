@@ -48,7 +48,7 @@ export default function Topbar() {
                     >
                         <Offcanvas.Header closeButton>
                             <Offcanvas.Title id={`offcanvasNavbarLabel-expand-sm`}>
-                                Parth Shah
+                                Kunal Pai
                             </Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body>
