@@ -3,6 +3,8 @@ import publications from "/public/jsons/publications.json";
 import { generateMLACitation, generateChicagoCitation, generateIEEECitation } from "@/pages/api/citation";
 import CopyIcon from "./copyIcon";
 
+const name = process.env.CONFIG.name;
+
 export default function Publication() {
 
     function popover(publication) {
@@ -64,10 +66,10 @@ export default function Publication() {
                                     <span key={index} variant="secondary">
                                         {
                                             publication.authors.map((author, index) => {
-                                                const isKunal = author.includes("Kunal");
+                                                const isMe = author.includes(name.split(" ")[0]);
                                                 return (
                                                     <span key={index}>
-                                                        <span style={{ textDecoration: isKunal ? "underline" : "none" }}>
+                                                        <span style={{ textDecoration: isMe ? "underline" : "none" }}>
                                                             {author}
                                                         </span>
                                                         {index < publication.authors.length - 1 ? ", " : ""}
