@@ -30,7 +30,7 @@ export default function ContactForm() {
     <Container className='contact'>
       <h1>Get in Touch</h1>
       <h6 className='text-secondary mb-3'>
-        Hello there! I believe that every interaction holds the potential to spark creativity, forge new partnerships, and foster a genuine exchange of ideas. So, whether you're a fellow enthusiast in the same field, an aspiring artist, a tech wizard, or just someone looking to explore new horizons, don't hesitate to reach out!
+        Hello there! I believe that every interaction holds the potential to spark creativity, forge new partnerships, and foster a genuine exchange of ideas. So, whether you&apos;re a fellow enthusiast in the same field, an aspiring artist, a tech wizard, or just someone looking to explore new horizons, don&apos;t hesitate to reach out!
       </h6>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formName">
