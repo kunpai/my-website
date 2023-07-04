@@ -2,12 +2,6 @@ import Link from "next/link";
 import { Button, Col, Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-/**
- * @component
- * @description This component returns a footer section containing three columns with links to various resources related to gem5.
- * Along with that, it also creates a contributing to gem5 component below these columns.
- * @returns {JSX.Element} The JSX element representing the footer section.
- */
 export default function Footer() {
 
   const [lastUpdated, setLastUpdated] = useState("");
@@ -24,21 +18,14 @@ export default function Footer() {
         <Row className="h-100 w-75">
           <Col className="text-center primary d-flex flex-column h-100 pt-2 pb-2 gap-1 footer-col align-items-center">
             <span className="text-muted main-text-regular">Connect with Me</span>
-            <Link href="https://scholar.google.com/citations?hl=en&user=-0ZTuE4AAAAJ">
-              Google Scholar
-            </Link>
-            <Link href="https://github.com/kunpai">
-              GitHub
-            </Link>
-            <Link href="https://www.linkedin.com/in/kunpai/">
-              LinkedIn
-            </Link>
-            <Link href="https://www.instagram.com/datboikunalpai/">
-              Instagram
-            </Link>
-            <Link href="https://github.com/kunpai/my-website">
-              Website Source
-            </Link>
+            {
+                process.env.CONFIG.footerLinks ? Object.keys(process.env.CONFIG.footerLinks).map((key, index) => {
+                    return (
+                        <Link key={index} href={process.env.CONFIG.footerLinks[key]}>{key}</Link>
+                    );
+                }
+                ) : null
+            }
           </Col>
         </Row>
         <Row className="w-100">
