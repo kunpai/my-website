@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '@/styles/globals.css'
 import Layout from '@/components/layout';
 import Head from 'next/head';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App({ Component, pageProps }) {
   return (
@@ -18,6 +19,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Layout>
         <Component {...pageProps} />
+        <Analytics />
       </Layout>
     </>
   )
