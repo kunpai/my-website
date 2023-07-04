@@ -10,6 +10,37 @@
   margin: 0;
 }
 
+.search-form {
+  position: relative;
+}
+
+.search-form input {
+  padding: 15px;
+  padding-right: 40px;
+}
+
+#search-icon {
+  cursor: pointer;
+  position: absolute;
+  right: -19px;
+  width: 40px;
+  height: calc(100% - 2px);
+  border-radius: 0 0.375rem 0.375rem 0;
+  border-left: none;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 200ms ease-in-out;
+}
+
+.search-form input:focus+#search-icon {
+  background-color: #e9ecef;
+}
+
+#search-icon:hover {
+  background-color: #e9ecef;
+}
+
 .blog-tile {
   transition: background 0.2s ease-in-out;
   border-radius: 0.5rem;
