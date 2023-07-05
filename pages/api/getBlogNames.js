@@ -4,7 +4,7 @@ import fs from 'fs';
 
 export default function handler(req, res) {
     const query = req.body.query ?? '';
-    const keywords = query.split(' ');
+    const keywords = query.toLowerCase().split(' ');
     let names = []
     const blogDirectory = path.resolve('./public', 'blogs');
     const blogNames = fs.readdirSync(blogDirectory);
@@ -53,9 +53,9 @@ export default function handler(req, res) {
             return true;
         }
         let titleDistances = keywords.map((keyword, index) => {
-            return Math.min(...name.title.toLowerCase().split(' ').map((word) => damerauLevenshteinDistance(keyword, word)));
+            return Math.min(...name.title.toLowerCase().split(' ').map((word) => damerauLevenshteinDistance(keyword, word.toLowerCase())));
         });
-        return Math.min(...titleDistances) < 2;
+        return Math.min(...titleDistances) < 3;
     });
 
     // sort by date
