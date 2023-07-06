@@ -64,6 +64,9 @@ export default function Topbar() {
                                 <Nav.Link href="/blogs" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
                                     Blogs
                                 </Nav.Link>
+                                <Nav.Link href="/publications" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
+                                    Publications
+                                </Nav.Link>
                                 <Nav.Link href="/contact" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
                                     Contact Me
                                 </Nav.Link>
