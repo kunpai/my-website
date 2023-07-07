@@ -59,11 +59,11 @@ export default function Home() {
                   <Col>
                     <div key={index}>
                       <h3>{award.title}</h3>
-                      <p>
-                        {award.link ? <Link href={award.link}>{award.position}</Link> :
-                          award.position
+                      <h5>
+                        {award.link ? <Link href={award.link}>{award.awarder}</Link> :
+                          award.awarder
                         }
-                      </p>
+                      </h5>
                       <span>{award.date}</span>
                     </div>
                   </Col>

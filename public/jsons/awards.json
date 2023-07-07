@@ -1,18 +1,27 @@
 [
     {
         "title": "Dean's List",
+        "awarder": "UC Davis College of Engineering",
         "date": "Fall 2019"
     },
     {
         "title": "Dean's List",
+        "awarder": "UC Davis College of Engineering",
         "date": "Fall 2020"
     },
     {
         "title": "Dean's List",
+        "awarder": "UC Davis College of Engineering",
         "date": "Winter 2022"
     },
     {
         "title": "Dean's List",
+        "awarder": "UC Davis College of Engineering",
         "date": "Spring 2022"
+    },
+    {
+        "title": "Provost Award",
+        "awarder": "UC Davis",
+        "date": "2019-2023"
     }
 ]
