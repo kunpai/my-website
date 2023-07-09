@@ -21,7 +21,7 @@ export default function Hello() {
           </h1>
         </Row>
         <Row>
-          Welcome to Kunal Pai&apos;s portfolio website, where passion meets expertise in the realm of computer architecture and cutting-edge technologies. With a keen interest in open-source simulation, validation, known-good configurations, as well as machine learning and natural language processing, Kunal aims to push the boundaries of innovation and deliver impactful solutions.
+          {process.env.CONFIG.intro}
         </Row>
         <Row className='mt-3'>
           <Col className='d-flex justify-content-center'>
