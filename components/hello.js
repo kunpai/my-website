@@ -8,7 +8,7 @@ export default function Hello() {
     <Row className='mt-5 mb-5 hello'>
       <Col xs={5}>
         <div className='animate'>
-          <Image src="/images/kunal.jpeg"
+          <Image src={ process.env.CONFIG.image }
             fill
             style={{ objectFit: 'cover' }}
           />
