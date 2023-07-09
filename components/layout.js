@@ -16,7 +16,7 @@ export default function Layout({ children }) {
         <>
             <Topbar />
             <Fade in={true} appear={true} timeout={10}>
-                <main style={{ minHeight: 'calc(100vh - 100px)', background: darkMode ? "black" : "white"  }} aria-label='main'>
+                <main style={{ minHeight: 'calc(100vh - 100px)', background: darkMode ? "#22252a" : "white"  }} aria-label='main'>
                     {children}
                 </main>
             </Fade>
