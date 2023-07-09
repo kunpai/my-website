@@ -1,7 +1,18 @@
 import { Col, Row, Button } from 'react-bootstrap';
 import Image from 'next/image';
+import { useEffect, useState } from "react";
 
 const name = process.env.CONFIG.name;
+
+// // add dark mode
+// const [darkMode, setDarkMode] = useState(false);
+
+// useEffect(() => {
+//   function returnDarkMode() {
+//     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+//   }
+//   setDarkMode(returnDarkMode());
+// }, []);
 
 export default function Hello() {
   return (

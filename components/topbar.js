@@ -12,8 +12,17 @@ export default function Topbar() {
     const name = process.env.CONFIG.name;
 
     useEffect(() => {
+
+        function returnDarkMode() {
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        }
+
         function toggleVisibility() {
             window.pageYOffset > pageYOffsetTrigger ? setVisible(true) : setVisible(false)
+            // reverse in dark mode
+            if (returnDarkMode()) {
+                window.pageYOffset > pageYOffsetTrigger ? setVisible(false) : setVisible(true)
+            }
         }
 
         window.addEventListener("scroll", toggleVisibility);
@@ -23,8 +32,8 @@ export default function Topbar() {
     return (
         <>
             <Navbar
-                className={"topbar" + (visible ? " shadow-sm bg-dark" : " bg-white")}
-                variant={visible ? "dark" : "light"}
+                className={"topbar" + ((visible) ? " shadow-sm bg-dark" : " bg-white")}
+                variant={(visible) ? "dark" : "light"}
                 expand="lg"
                 sticky="top"
                 style={{ transition: "all 0.5s ease" }}
