@@ -239,11 +239,33 @@
     fill: #f2f2f2;
   }
 
+  .copy-button {
+    fill: #acb5bd;
+  }
+
   .search-form input:focus+#search-icon {
     background-color: hsl(210, 11%, 20%)
   }
 
   #search-icon:hover {
     background-color: hsl(210, 11%, 20%)
+  }
+
+  .scrollToTopBtn {
+    border: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    background-color: rgb(206, 205, 205);
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 5px -1px,
+      rgba(0, 0, 0, 0.14) 0px 6px 10px 0px,
+      rgba(0, 0, 0, 0.2) 0px 1px 18px 0px;
+    transition: background-color 250ms ease 0ms, box-shadow 250ms ease 0ms;
+  }
+  .scrollToTopBtn svg {
+    stroke: rgb(33, 33, 33);
   }
 }
