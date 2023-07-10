@@ -14,7 +14,7 @@ export default function Footer() {
 
   return (
     <footer>
-      <div className="d-flex flex-column justify-content-center align-items-center bg-light mt-5">
+      <div className="d-flex flex-column justify-content-center align-items-center mt-5">
         <Row className="h-100 w-75">
           <Col className="text-center primary d-flex flex-column h-100 pt-2 pb-2 gap-1 footer-col align-items-center">
             <span className="text-muted main-text-regular">Connect with Me</span>

@@ -1,16 +1,35 @@
 import { Col, Row, Button } from 'react-bootstrap';
 import Image from 'next/image';
+import { gsap } from 'gsap';
+import SplitType from 'split-type';
+import { useEffect } from 'react';
 
 const name = process.env.CONFIG.name;
 
 export default function Hello() {
+
+  useEffect(() => {
+    const heading = new SplitType('.name', { types: 'words' });
+    const description = new SplitType('.hello p', { types: 'lines' });
+    const heroElements = [...heading.words, ...description.lines, '.btn'];
+    gsap.from(heroElements, {
+      y: 24,
+      opacity: 0,
+      duration: 0.8,
+      delay: 0.5,
+      stagger: { amount: 1 },
+      ease: 'ease',
+    });
+  }, []);
+
   return (
     <Row className='mt-5 mb-5 hello'>
       <Col xs={5}>
         <div className='animate'>
-          <Image src={ process.env.CONFIG.image }
+          <Image src={process.env.CONFIG.image}
             fill
             style={{ objectFit: 'cover' }}
+            priority
           />
         </div>
       </Col>
@@ -21,7 +40,9 @@ export default function Hello() {
           </h1>
         </Row>
         <Row>
-          {process.env.CONFIG.intro}
+          <p className='description'>
+            {process.env.CONFIG.intro}
+          </p>
         </Row>
         <Row className='mt-3'>
           <Col className='d-flex justify-content-center'>

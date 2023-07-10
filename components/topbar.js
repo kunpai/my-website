@@ -10,6 +10,30 @@ export default function Topbar() {
     const [visible, setVisible] = useState(false);
     const pageYOffsetTrigger = 150;
     const name = process.env.CONFIG.name;
+    const [isLightMode, setIsLightMode] = useState(false);
+
+    useEffect(() => {
+        function toggleMode(isDarkMode) {
+            if (isDarkMode) {
+                setIsLightMode(false);
+                document.documentElement.setAttribute('data-bs-theme', 'dark');
+            }
+            else {
+                setIsLightMode(true);
+                document.documentElement.setAttribute('data-bs-theme', 'light');
+            }
+        }
+        toggleMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            toggleMode(e.matches);
+        });
+
+        return () => {
+            window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', (e) => {
+                toggleMode(e.matches);
+            });
+        }
+    }, []);
 
     useEffect(() => {
         function toggleVisibility() {
@@ -20,14 +44,50 @@ export default function Topbar() {
         return () => { window.removeEventListener("scroll", toggleVisibility) }
     }, []);
 
+    function getClassName(visible) {
+        if (isLightMode) {
+            if (visible) {
+                return "topbar shadow-sm bg-dark";
+            } else {
+                return "topbar bg-white";
+            }
+        } else {
+            if (visible) {
+                return "topbar shadow-sm bg-dark-grey";
+            } else {
+                return "topbar bg-dark";
+            }
+        }
+    }
+
+    function getVariant(visible) {
+        if (isLightMode) {
+            if (visible) {
+                return "dark";
+            } else {
+                return "light";
+            }
+        } else {
+            if (visible) {
+                return "dark";
+            } else {
+                return "dark";
+            }
+        }
+    }
+
+
+
     return (
         <>
             <Navbar
-                className={"topbar" + (visible ? " shadow-sm bg-dark" : " bg-white")}
-                variant={visible ? "dark" : "light"}
+                className={getClassName(visible)}
+                variant={getVariant(visible)}
                 expand="lg"
                 sticky="top"
-                style={{ transition: "all 0.5s ease" }}
+                style={{
+                    transition: "all 0.5s ease",
+                }}
             >
                 <Container fluid>
                     <Navbar.Brand href="/" as={Link}>

@@ -15,6 +15,7 @@
     "eslint-config-next": "13.4.6",
     "fs": "^0.0.1-security",
     "github-markdown-css": "^5.2.0",
+    "gsap": "^3.12.2",
     "html-react-parser": "^4.0.0",
     "next": "^13.4.6",
     "nodemailer": "^6.9.3",
@@ -34,6 +35,7 @@
     "remark-gfm": "^3.0.1",
     "remark-html": "^15.0.2",
     "remark-slug": "^7.0.1",
-    "remark-toc": "^8.0.1"
+    "remark-toc": "^8.0.1",
+    "split-type": "^0.3.3"
   }
 }

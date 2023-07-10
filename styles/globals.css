@@ -3,7 +3,7 @@
   font-weight: 300;
   font-family: 'Inter', sans-serif;
   pointer-events: none;
-  color: #000;
+  /* color: #000; */
   text-decoration: none;
   line-height: 1.5rem;
   /* padding: 0; */
@@ -208,4 +208,42 @@
     justify-content: center !important;
   }
 
+}
+
+.bi-trophy-fill {
+  fill: #000;
+}
+
+.bg-dark-grey {
+  background-color: hsl(210, 11%, 20%)
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bs-emphasis-color-rgb: 0, 0, 0;
+  }
+
+  .content {
+    color: #f2f2f2;
+  }
+
+  .content h1 {
+    color: #f2f2f2 !important;
+  }
+
+  .btn-outline-secondary {
+    --bs-btn-color: #f2f2f2;
+  }
+
+  .bi-trophy-fill {
+    fill: #f2f2f2;
+  }
+
+  .search-form input:focus+#search-icon {
+    background-color: hsl(210, 11%, 20%)
+  }
+
+  #search-icon:hover {
+    background-color: hsl(210, 11%, 20%)
+  }
 }
