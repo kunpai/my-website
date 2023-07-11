@@ -1,3 +1,4 @@
+/* globals.css */
 .content-text * {
   font-size: 1rem;
   font-weight: 300;
@@ -10,37 +11,6 @@
   margin: 0;
 }
 
-.search-form {
-  position: relative;
-}
-
-.search-form input {
-  padding: 15px;
-  padding-right: 40px;
-}
-
-#search-icon {
-  cursor: pointer;
-  position: absolute;
-  right: -19px;
-  width: 40px;
-  height: calc(100% - 2px);
-  border-radius: 0 0.375rem 0.375rem 0;
-  border-left: none;
-  top: 50%;
-  bottom: 50%;
-  transform: translate(-50%, -50%);
-  transition: background-color 200ms ease-in-out;
-}
-
-.search-form input:focus+#search-icon {
-  background-color: #e9ecef;
-}
-
-#search-icon:hover {
-  background-color: #e9ecef;
-}
-
 .blog-tile {
   transition: background 0.2s ease-in-out;
   border-radius: 0.5rem;
@@ -51,14 +21,14 @@
   background: rgba(0, 0, 0, 0.05);
 }
 
+.topbar path {
+  transition: all 0.2s ease;
+}
+
 
 /* Styling for the content inside the textbox */
 .content {
   color: #333;
-}
-
-.topbar path {
-  transition: all 0.2s ease;
 }
 
 /* Bootstrap classes for padding and border radius inside the textbox */
@@ -94,6 +64,38 @@
   font-family: 'Audiowide', cursive;
 }
 
+.search-form {
+  position: relative;
+}
+
+.search-form input {
+  padding: 15px;
+  padding-right: 40px;
+}
+
+#search-icon {
+  cursor: pointer;
+  position: absolute;
+  right: -19px;
+  width: 40px;
+  height: calc(100% - 2px);
+  border-radius: 0 0.375rem 0.375rem 0;
+  border-left: none;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 200ms ease-in-out;
+}
+
+.search-form input:focus+#search-icon {
+  background-color: #e9ecef;
+}
+
+#search-icon:hover {
+  background-color: #e9ecef;
+}
+
+
 .name {
   font-size: 6rem;
   font-weight: 700;
@@ -103,7 +105,6 @@
 }
 
 .popover {
-  /* max-width: 400px; */
   max-width: 60%;
 }
 
@@ -164,7 +165,7 @@
 
 @media only screen and (max-width: 786px) {
   .blog-tile-image {
-    display: none;
+    display: none !important;
   }
 
   .blog-content {
@@ -195,6 +196,10 @@
     width: 100%;
   }
 
+  .popover {
+    max-width: 80%;
+  }
+
   .links {
     display: flex;
     justify-content: center;
@@ -207,7 +212,6 @@
     width: 100%;
     justify-content: center !important;
   }
-
 }
 
 .bi-trophy-fill {
@@ -218,54 +222,51 @@
   background-color: hsl(210, 11%, 20%)
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bs-emphasis-color-rgb: 0, 0, 0;
-  }
+html[data-bs-theme="dark"] :root {
+  --bs-emphasis-color-rgb: 0, 0, 0;
+}
 
-  .content {
-    color: #f2f2f2;
-  }
+html[data-bs-theme="dark"] .content {
+  color: #f2f2f2;
+}
 
-  .content h1 {
-    color: #f2f2f2 !important;
-  }
+html[data-bs-theme="dark"] .content h1 {
+  color: #f2f2f2 !important;
+}
 
-  .btn-outline-secondary {
-    --bs-btn-color: #f2f2f2;
-  }
+html[data-bs-theme="dark"] .btn-outline-secondary {
+  --bs-btn-color: #f2f2f2;
+}
 
-  .bi-trophy-fill {
-    fill: #f2f2f2;
-  }
+html[data-bs-theme="dark"] .bi-trophy-fill {
+  fill: #f2f2f2;
+}
 
-  .copy-button {
-    fill: #acb5bd;
-  }
+html[data-bs-theme="dark"] .search-form input:focus+#search-icon {
+  background-color: hsl(210, 11%, 20%)
+}
 
-  .search-form input:focus+#search-icon {
-    background-color: hsl(210, 11%, 20%)
-  }
+html[data-bs-theme="dark"] #search-icon:hover {
+  background-color: hsl(210, 11%, 20%)
+}
 
-  #search-icon:hover {
-    background-color: hsl(210, 11%, 20%)
-  }
+html[data-bs-theme="dark"] .scrollToTopBtn {
+  background-color: #f2f2f2
+}
 
-  .scrollToTopBtn {
-    border: 0;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    background-color: rgb(206, 205, 205);
-    justify-content: center;
-    align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 5px -1px,
-      rgba(0, 0, 0, 0.14) 0px 6px 10px 0px,
-      rgba(0, 0, 0, 0.2) 0px 1px 18px 0px;
-    transition: background-color 250ms ease 0ms, box-shadow 250ms ease 0ms;
-  }
-  .scrollToTopBtn svg {
-    stroke: rgb(33, 33, 33);
-  }
+html[data-bs-theme="dark"] .scrollToTopBtn:hover {
+  background-color: #787878
+}
+
+html[data-bs-theme="dark"] .scrollToTopBtn svg {
+  stroke: rgb(33, 33, 33);
+}
+
+html[data-bs-theme="dark"] .copy-button {
+  fill: #acb5bd;
+  transition: fill 200ms ease-in-out;
+}
+
+html[data-bs-theme="dark"] .copy-button:hover {
+  fill: #f2f2f2;
 }

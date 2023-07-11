@@ -1,7 +1,6 @@
 'use client'
 
-import { Container, Navbar, Nav, Offcanvas } from "react-bootstrap";
-import Image from "next/image";
+import { Container, Navbar, Nav, Offcanvas, ButtonGroup, ToggleButton } from "react-bootstrap";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -11,27 +10,45 @@ export default function Topbar() {
     const pageYOffsetTrigger = 150;
     const name = process.env.CONFIG.name;
     const [isLightMode, setIsLightMode] = useState(false);
+    const [theme, setTheme] = useState('auto');
 
-    useEffect(() => {
-        function toggleMode(isDarkMode) {
-            if (isDarkMode) {
-                setIsLightMode(false);
-                document.documentElement.setAttribute('data-bs-theme', 'dark');
-            }
-            else {
-                setIsLightMode(true);
-                document.documentElement.setAttribute('data-bs-theme', 'light');
-            }
+    function toggleMode(isDarkMode) {
+        if (isDarkMode) {
+            setIsLightMode(false);
+            document.documentElement.setAttribute('data-bs-theme', 'dark');
         }
-        toggleMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            toggleMode(e.matches);
-        });
-
-        return () => {
-            window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', (e) => {
+        else {
+            setIsLightMode(true);
+            document.documentElement.setAttribute('data-bs-theme', 'light');
+        }
+    }
+    useEffect(() => {
+        // check local storage for preference
+        const theme = localStorage.getItem('theme');
+        console.log(theme);
+        if (theme) {
+            setTheme(theme);
+        } else {
+            setTheme('auto');
+            localStorage.setItem('theme', 'auto');
+        }
+        if (theme === 'dark') {
+            toggleMode(true);
+        }
+        else if (theme === 'light') {
+            toggleMode(false);
+        }
+        else {
+            toggleMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
                 toggleMode(e.matches);
             });
+
+            return () => {
+                window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', (e) => {
+                    toggleMode(e.matches);
+                });
+            }
         }
     }, []);
 
@@ -76,7 +93,11 @@ export default function Topbar() {
         }
     }
 
-
+    const modes = [
+        { name: 'Light', value: 'light' },
+        { name: 'Dark', value: 'dark' },
+        { name: 'Auto', value: 'auto' },
+    ];
 
     return (
         <>
@@ -124,17 +145,54 @@ export default function Topbar() {
                                 <Nav.Link href="/blogs" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
                                     Blogs
                                 </Nav.Link>
-                                <Nav.Link href="/publications" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
-                                    Publications
-                                </Nav.Link>
                                 <Nav.Link href="/contact" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
                                     Contact Me
                                 </Nav.Link>
                             </Nav>
+                            <ButtonGroup>
+                                {
+                                    modes.map((radio, idx) => (
+                                        <ToggleButton
+                                            key={idx}
+                                            id={`radio-${idx}`}
+                                            type="radio"
+                                            variant={isLightMode ?
+                                                (visible ? "outline-light" : "outline-dark") :
+                                                (visible ? "outline-light" : "outline-light")
+                                            }
+                                            name="radio"
+                                            value={radio.value}
+                                            checked={theme === radio.value}
+                                            onChange={(e) => {
+                                                localStorage.setItem('theme', e.currentTarget.value);
+                                                setTheme(e.currentTarget.value);
+                                                if (e.currentTarget.value === 'auto') {
+                                                    toggleMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+                                                    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                                                        toggleMode(e.matches);
+                                                    });
+                                                    return () => {
+                                                        window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', (e) => {
+                                                            toggleMode(e.matches);
+                                                        });
+                                                    }
+                                                } else {
+                                                    toggleMode(e.currentTarget.value === 'dark');
+                                                }
+                                            }}
+                                        >
+                                            {radio.name}
+                                        </ToggleButton>
+                                    ))
+                                }
+                            </ButtonGroup>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>
                 </Container>
-            </Navbar>
+            </Navbar >
         </>
     )
+}
+
+function DarkModeToggle() {
 }
