@@ -11,6 +11,7 @@ import Image from "next/image";
 import Publication from '@/components/publication';
 import Education from '@/components/education';
 import Link from 'next/link';
+import skills from "/public/jsons/skills.json"
 import { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -34,7 +35,6 @@ export default function Home() {
       });
     });
   }, []);
-
   return (
     <Containter className='home'>
       <Row>
@@ -59,6 +59,23 @@ export default function Home() {
               Publications
             </h1>
             <Publication />
+          </div>
+        </Row>
+        <Row>
+          <div className="mt-5">
+            <h1 className="mb-3" id="skills">
+              Skills
+            </h1>
+            {
+              Object.keys(skills).map((skill, index) => {
+                return (
+                  <>
+                    <h1>{skill.split("-").map(toTitleCase).join(" ")}</h1>
+                    <Skill key={index} skill={skills[skill]} />
+                  </>
+                )
+              })
+            }
           </div>
         </Row>
         <Row>
@@ -116,3 +133,31 @@ function Award({ award }) {
     </Row>
   )
 }
+
+// function to display skills.json
+function Skill({skill}) {
+  const ref = useRef(null);
+  useEffect(() => {
+    gsap.from(ref.current, {
+      y: 24,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'ease',
+      scrollTrigger: {
+        trigger: ref.current,
+        start: 'top 80%',
+      },
+    });
+  }, []);
+  return (
+    <Row className="mb-3" ref={ref}>
+      <Col xs={1} className="d-flex align-items-center" style={{ width: 'auto' }}>
+        {skill.join(', ')}
+      </Col>
+    </Row>
+  )
+}
+
+const toTitleCase = (word) => {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+};
