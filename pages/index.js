@@ -5,6 +5,7 @@ import Containter from "react-bootstrap/Container";
 import Hello from '@/components/hello';
 import researchExperience from "/public/jsons/research-experience.json";
 import workExperience from "/public/jsons/work-experience.json";
+import teachingExperience from "/public/jsons/teaching-experience.json";
 import projects from "/public/jsons/projects.json";
 import awards from "/public/jsons/awards.json";
 import Image from "next/image";
@@ -46,6 +47,9 @@ export default function Home() {
         </Row>
         <Row>
           <Experience jsonExperiences={researchExperience} title={"Research Experience"} isExperience />
+        </Row>
+        <Row>
+          <Experience jsonExperiences={teachingExperience} title={"Teaching Experience"} isExperience />
         </Row>
         <Row>
           <Experience jsonExperiences={workExperience} title={"Work Experience"} isExperience />
