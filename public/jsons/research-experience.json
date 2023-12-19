@@ -4,7 +4,7 @@
         "organization": "UC Davis Computer Architecture Research Group",
         "start": "June 2023",
         "end": "Ongoing",
-        "description": "",
+        "description": "Researching trends of gem5 accuracy.\nBuilding hardware models for gem5.\nValidating gem5 models against real hardware.",
         "location": "Davis, CA",
         "image": "/images/darchr.png"
     },
@@ -13,7 +13,7 @@
         "organization": "Davis Excellent/Eclectic/Extreme Computational Analytics Lab",
         "start": "September 2022",
         "end": "Ongoing",
-        "description": "Co-authored paper on appending semantic information for better code summarization.\nCo-testing effects of uni-modal and multi-modal learning on random and selective sampling of buggy and fixed code snippets.\nCurrently also testing effects of LLM models on mutation testing.",
+        "description": "Co-authored paper on appending semantic information for better code summarization.\nCo-authored paper on calibration of LLM models, particularly involved in the bug repair section and tested models on Defects4J.",
         "location": "Davis, CA",
         "image": "/images/decallab.png"
     },
@@ -22,7 +22,7 @@
         "organization": "UC Davis Computer Architecture Research Group",
         "start": "June 2022",
         "end": "June 2023",
-        "description": "Integrated the gem5 Standard Library components to create a pre-built board modeled after the HiFive Unmatched.\nValidating the statistics returned by the board on gem5 to those returned by perf on real-life hardware.\nCo-authored tutorials on perf compilation and documentation for the Standard Library.",
+        "description": "Integrated the gem5 Standard Library components to create a pre-built board modeled after the HiFive Unmatched.\nValidating the statistics returned by the board on gem5 to those returned by perf on real-life hardware.\nCo-authored tutorials on perf compilation and documentation for the Standard Library.\nCo-authored poster on the comparison of gem5 and perf for HiFive Unmatched.",
         "location": "Davis, CA",
         "image": "/images/darchr.png"
     }
