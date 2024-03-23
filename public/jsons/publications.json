@@ -48,22 +48,5 @@
             "gem5"
         ],
         "link": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf"
-    },
-    {
-        "title": "What is the behavior of Spectre, a speculative prediction exploit, on the various branch predictors available in the computer architecture simulator gem5?",
-        "authors": [
-            "Kunal Pai",
-            "Yuyi Li",
-            "Frank Gomez"
-        ],
-        "type": "project",
-        "conference": "ECS235A: Computer Security (UC Davis)",
-        "description": "This project investigates Spectre attacks on x86-based processors, focusing on in-order and out-of-order processors' susceptibility to speculative execution vulnerabilities using gem5 v23.0 and Spectre V1. Out-of-order processors exhibit vulnerability, with findings revealing correlations between Spectre effectiveness and branch predictor characteristics. The study proposes features for a Spectre-resistant branch predictor, emphasizing the importance of extended training periods and mitigating biased branches to enhance processor security against speculative execution attacks. It was done as part of the Computer Security course at UC Davis.",
-        "tags": [
-            "Computer Architecture",
-            "Computer Security",
-            "gem5"
-        ],
-        "link": "/assets/papers/spectre.pdf"
     }
 ]
