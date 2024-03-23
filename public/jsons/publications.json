@@ -1,20 +1,21 @@
 [
     {
-        "title": "Improving Few-Shot Prompts with Relevant Static Analysis Products",
+        "title": "Automatic semantic augmentation of language model prompts (for code summarization)",
         "authors": [
             "Toufique Ahmed",
             "Kunal Suresh Pai",
             "Premkumar Devanbu",
             "Earl T. Barr"
         ],
-        "type": "preprint",
+        "type": "conference",
+        "conference": "ICSE 2024",
         "description": "Adding explicit semantic facts as prompts to Large Language Models improves their performance in code summarization tasks, with notable improvements exceeding 2 BLEU and, in some cases, even surpassing 30 BLEU, demonstrating the effectiveness of this approach in enhancing code analysis and extraction of essential information.",
         "tags": [
             "Software Engineering",
             "Machine Learning",
             "Naturalness of Software"
         ],
-        "link": "https://arxiv.org/pdf/2304.06815"
+        "link": "https://www.computer.org/csdl/proceedings-article/icse/2024/021700b004/1V5BleCCB56"
     },
     {
         "title": "Validating Hardware and SimPoints with gem5: A RISC-V Board Case Study",
