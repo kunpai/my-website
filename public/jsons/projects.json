@@ -3,7 +3,7 @@
         "title": "Automated Frameworks of Semantic Augmentation to Improve Mathematical Word Problem Solving",
         "start": "April 2024",
         "end": "June 2024",
-        "description": "Mathematical word problems (MWP) pose significant challenges for language models due to their complex logical structures and the need for sustained context. This study introduces a framework that leverages digit-level semantics to improve language model accuracy in solving MWPs. A demonstration selection algorithm, based on BLEU scores and Levenshtein distance, and a prompt selection model are employed to find the most similar equation for one-shot examples. By incorporating digit-level semantics, multiple prompt generation frameworks are tested on the SVAMP and GSM8K datasets. Fine-tuning TinyLlama with prompt-enhanced GSM8K questions as training samples showed improved accuracy on the SVAMP dataset. The study reveals that different mathematical operations require varying levels of context and underscores the importance of parametric knowledge. The effectiveness of the demonstration selection algorithm is analyzed, highlighting areas for further enhancement.",
+        "description": "Developed a framework leveraging digit-level semantics to improve language model performance in solving mathematical word problems (MWPs) by incorporating context-aware prompt generation techniques.\nUtilized BLEU scores and Levenshtein distance in a demonstration selection algorithm and a prompt selection model to identify the most similar equations for one-shot examples, optimizing prompt accuracy.\nFine-tuned TinyLlama and prompted PaLM2 with prompt-enhanced GSM8K questions, resulting in improved accuracy on the SVAMP dataset and uncovering insights into the varying context requirements of different mathematical operations.\nCompleted as part of ECS 271 : Machine Learning & Discovery at UC Davis.",
         "skills": [
             "NLP",
             "Prompting",
@@ -15,10 +15,25 @@
         "image": "/images/prompting.png"
     },
     {
+        "title": "The Effects of Toxicity on Disengagement in Open Source Projects",
+        "start": "January 2024",
+        "end": "March 2024",
+        "description": "Analyzed factors contributing to developer disengagement in open-source projects, focusing on the impact of toxic communications on contributor retention and project sustainability.\nUtilized sentiment analysis to quantify toxicity within open-source communities and examined its correlation with developer engagement across various programming communities and corporate/non-profit projects.\nProposed community-driven policies and practical implications for project maintainers, aiming to mitigate negative interactions and enhance collaborative practices in open-source environments. \nCompleted as part of ECS 260 : Software Engineering at UC Davis.",
+        "skills": [
+            "Open Source",
+            "GitHub Mining",
+            "Data Analysis"
+        ],
+        "links": {
+            "Paper": "/assets/papers/toxicity.pdf"
+        },
+        "image": "/images/toxicity.png"
+    },
+    {
         "title": "What is the behavior of Spectre, a speculative prediction exploit, on the various branch predictors available in the computer architecture simulator gem5?",
         "start": "October 2023",
         "end": "December 2023",
-        "description": "This project investigates Spectre attacks on x86-based processors, focusing on in-order and out-of-order processors' susceptibility to speculative execution vulnerabilities using gem5 v23.0 and Spectre V1. Out-of-order processors exhibit vulnerability, with findings revealing correlations between Spectre effectiveness and branch predictor characteristics. The study proposes features for a Spectre-resistant branch predictor, emphasizing the importance of extended training periods and mitigating biased branches to enhance processor security against speculative execution attacks. It was done as part of the Computer Security course at UC Davis.",
+        "description": "Investigated susceptibility of x86-based in-order and out-of-order processors to Spectre V1 attacks using gem5 v23.0, revealing correlations between Spectre effectiveness and branch predictor characteristics.\nSuggested features for a Spectre-resistant branch predictor, emphasizing extended training periods and mitigation of biased branches to improve processor security against speculative execution attacks.\nHighlighted the importance of understanding speculative execution and branch prediction in enhancing processor security, contributing to the development of more secure computing systems.\nCompleted as part of ECS 235A : Computer & Info Security at UC Davis.",
         "skills": [
             "gem5",
             "Spectre",
