@@ -1,5 +1,19 @@
 [
     {
+        "title": "What is the behavior of Spectre, a speculative prediction exploit, on the various branch predictors available in the computer architecture simulator gem5?",
+        "start": "October 2023",
+        "end": "December 2023",
+        "description": "This project investigates Spectre attacks on x86-based processors, focusing on in-order and out-of-order processors' susceptibility to speculative execution vulnerabilities using gem5 v23.0 and Spectre V1. Out-of-order processors exhibit vulnerability, with findings revealing correlations between Spectre effectiveness and branch predictor characteristics. The study proposes features for a Spectre-resistant branch predictor, emphasizing the importance of extended training periods and mitigating biased branches to enhance processor security against speculative execution attacks. It was done as part of the Computer Security course at UC Davis.",
+        "skills": [
+            "gem5",
+            "Spectre",
+            "Computer Security"
+        ],
+        "links": {
+            "Paper": "/assets/papers/spectre.pdf"
+        }
+    },
+    {
         "title": "gem5 Vision",
         "start": "January 2023",
         "end": "June 2023",

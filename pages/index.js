@@ -60,7 +60,7 @@ export default function Home() {
         <Row>
           <div className="mt-5">
             <h1 className="mb-3" id="publications">
-              Publications
+              Publications / Talks
             </h1>
             <Publication />
           </div>
