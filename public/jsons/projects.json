@@ -1,5 +1,20 @@
 [
     {
+        "title": "Automated Frameworks of Semantic Augmentation to Improve Mathematical Word Problem Solving",
+        "start": "April 2024",
+        "end": "June 2024",
+        "description": "Mathematical word problems (MWP) pose significant challenges for language models due to their complex logical structures and the need for sustained context. This study introduces a framework that leverages digit-level semantics to improve language model accuracy in solving MWPs. A demonstration selection algorithm, based on BLEU scores and Levenshtein distance, and a prompt selection model are employed to find the most similar equation for one-shot examples. By incorporating digit-level semantics, multiple prompt generation frameworks are tested on the SVAMP and GSM8K datasets. Fine-tuning TinyLlama with prompt-enhanced GSM8K questions as training samples showed improved accuracy on the SVAMP dataset. The study reveals that different mathematical operations require varying levels of context and underscores the importance of parametric knowledge. The effectiveness of the demonstration selection algorithm is analyzed, highlighting areas for further enhancement.",
+        "skills": [
+            "NLP",
+            "Prompting",
+            "Machine Learning"
+        ],
+        "links": {
+            "Paper": "/assets/papers/prompting.pdf"
+        },
+        "image": "/images/prompting.png"
+    },
+    {
         "title": "What is the behavior of Spectre, a speculative prediction exploit, on the various branch predictors available in the computer architecture simulator gem5?",
         "start": "October 2023",
         "end": "December 2023",
