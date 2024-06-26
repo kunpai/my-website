@@ -11,7 +11,8 @@
         ],
         "links": {
             "Paper": "/assets/papers/spectre.pdf"
-        }
+        },
+        "image": "/images/spectre.png"
     },
     {
         "title": "gem5 Vision",
