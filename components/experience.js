@@ -90,6 +90,19 @@ function ExperienceTile({ isExperience, experience }) {
                         ) : null
                     }
                 </Row>
+                <Row>
+                <h6 className="mt-2">
+                    {experience.collaborators ? 'Collaborators: ' : null}
+                    {experience.collaborators && experience.collaborators.map((collaborator, index) => (
+                        <span key={index}>
+                            <a href={collaborator.link} target="_blank" rel="noopener noreferrer">
+                                {collaborator.name}
+                            </a>
+                            {index < experience.collaborators.length - 1 ? ', ' : ''}
+                        </span>
+                    ))}
+                </h6>
+                </Row>
             </Col>
             <Col className="d-flex justify-content-center flex-column">
                 <ul>
