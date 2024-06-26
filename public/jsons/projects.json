@@ -27,7 +27,25 @@
         "links": {
             "Paper": "/assets/papers/toxicity.pdf"
         },
-        "image": "/images/toxicity.png"
+        "image": "/images/toxicity.png",
+        "collaborators": [
+            {
+                "name": "Saisha Shetty",
+                "link": "https://www.linkedin.com/in/saisha-shetty/"
+            },
+            {
+                "name": "Vijeth KL",
+                "link": "https://www.linkedin.com/in/vijethkl/"
+            },
+            {
+                "name": "Thrisha Kopula",
+                "link": "https://www.linkedin.com/in/thrisha-kopula/"
+            },
+            {
+                "name": "Ariel Kamen",
+                "link": "https://www.linkedin.com/in/ariel-kamen/"
+            }
+        ]
     },
     {
         "title": "What is the behavior of Spectre, a speculative prediction exploit, on the various branch predictors available in the computer architecture simulator gem5?",
