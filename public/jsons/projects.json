@@ -42,7 +42,17 @@
         "links": {
             "Paper": "/assets/papers/spectre.pdf"
         },
-        "image": "/images/spectre.png"
+        "image": "/images/spectre.png",
+        "collaborators": [
+            {
+                "name": "Yuyi Li",
+                "link": "https://www.linkedin.com/in/vivian-yuyi-li-16b78a210/"
+            },
+            {
+                "name": "Frank Gomez",
+                "link": "https://www.linkedin.com/in/frank-gomez-12k/"
+            }
+        ]
     },
     {
         "title": "gem5 Vision",
@@ -58,7 +68,21 @@
         "links": {
             "Poster": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf"
         },
-        "image": "/images/gem5vision.png"
+        "image": "/images/gem5vision.png",
+        "collaborators": [
+            {
+                "name": "Parth Shah",
+                "link": "https://helloparthshah.vercel.app/"
+            },
+            {
+                "name": "Harshil Patel",
+                "link": "https://www.harshilpatel.me/"
+            },
+            {
+                "name": "Arslan Ali",
+                "link": "https://github.com/aarsli"
+            }
+        ]
     },
     {
         "title": "QuixFolio",
