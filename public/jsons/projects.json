@@ -75,7 +75,17 @@
         "links": {
             "Website": "https://quixfolio.vercel.app/"
         },
-        "image": "/images/quixfolio.webp"
+        "image": "/images/quixfolio.webp",
+        "collaborators": [
+            {
+                "name": "Parth Shah",
+                "link": "https://helloparthshah.vercel.app/"
+            },
+            {
+                "name": "Harshil Patel",
+                "link": "https://www.harshilpatel.me/"
+            }
+        ]
     },
     {
         "title": "OLED Paint",
@@ -89,7 +99,13 @@
         "links": {
             "Blog Post": "/blogs/oledpaint"
         },
-        "image": "/images/oledpaint.jpeg"
+        "image": "/images/oledpaint.jpeg",
+        "collaborators": [
+            {
+                "name": "Steven To",
+                "link": "https://www.linkedin.com/in/to-steven/"
+            }
+        ]
     },
     {
         "title": "UNIfy - Course Assistant",
@@ -104,6 +120,20 @@
         "image": "/images/unify.png",
         "links": {
             "Blog Post": "/blogs/unifycourseassistant"
-        }
+        },
+        "collaborators": [
+            {
+                "name": "Parth Shah",
+                "link": "https://helloparthshah.vercel.app/"
+            },
+            {
+                "name": "Harshil Patel",
+                "link": "https://www.harshilpatel.me/"
+            },
+            {
+                "name": "Keshav Agrawal",
+                "link": "https://kasince2k.github.io/"
+            }
+        ]
     }
 ]
