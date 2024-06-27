@@ -12,7 +12,17 @@
         "links": {
             "Paper": "/assets/papers/prompting.pdf"
         },
-        "image": "/images/prompting.png"
+        "image": "/images/prompting.png",
+        "collaborators": [
+            {
+                "name": "Nishant Acharya",
+                "link": "https://www.linkedin.com/in/nishant-acharya-61a28b154/"
+            },
+            {
+                "name": "Zeerak Babar",
+                "link": "https://www.linkedin.com/in/zeerak-babar/"
+            }
+        ]
     },
     {
         "title": "The Effects of Toxicity on Disengagement in Open Source Projects",
