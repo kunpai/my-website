@@ -5,7 +5,8 @@
         "end": "Ongoing",
         "degree": "Master of Science",
         "major": "Computer Science",
-        "gpa": "N.A."
+        "gpa": "4.0",
+        "description": "Relevant Coursework: Machine Learning, Computer Security, Information Visualization, Software Engineering, Theory of Computation"
     },
     {
         "university": "University of California, Davis",
