@@ -86,3 +86,20 @@ function formatAuthorName(author) {
   }
   return author;
 }
+
+export function generateBibtexCitation(data) {
+  // If bibtex is present as a field in the data, return it.
+  if (data.bibtex) {
+    return data.bibtex.replace(/\\n/g, '\n');
+  } else {
+    let authors = data.authors.map((author) => {
+      return formatAuthorName(author);
+    }).join(' and ');
+
+    const conference = data.conference || data.link.match(/https:\/\/([^/]+)/)[1];
+
+    const bibtex = `@inproceedings{${data.title.replace(/\s/g, '')},\n  author = {${authors}},\n  title = {${data.title}},\n  booktitle = {${conference}},\n  year = {${data.date}},\n  url = {${data.link}}\n}`;
+
+    return bibtex;
+  }
+}

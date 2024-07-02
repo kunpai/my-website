@@ -196,6 +196,21 @@
     margin: 0;
   }
 
+  .bibtex-container {
+    width: 100%;
+    max-height: 300px; /* Adjust height as needed */
+    overflow: auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .bibtex-content {
+    white-space: pre-wrap;
+    word-wrap: break-word; /* Ensure long lines break within words */
+  }
+
   .hello>div:first-child {
     width: 75%;
   }

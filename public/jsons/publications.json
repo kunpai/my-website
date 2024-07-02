@@ -15,7 +15,8 @@
             "Machine Learning",
             "Naturalness of Software"
         ],
-        "link": "https://dl.acm.org/doi/pdf/10.1145/3597503.3639183"
+        "link": "https://dl.acm.org/doi/pdf/10.1145/3597503.3639183",
+        "bibtex": "@inproceedings{ahmed2024automatic,\ntitle={Automatic semantic augmentation of language model prompts (for code summarization)},\nauthor={Ahmed, Toufique and Pai, Kunal Suresh and Devanbu, Premkumar and Barr, Earl},\nbooktitle={Proceedings of the IEEE/ACM 46th International Conference on Software Engineering},\npages={1--13},\nyear={2024}\n}"
     },
     {
         "title": "Validating Hardware and SimPoints with gem5: A RISC-V Board Case Study",

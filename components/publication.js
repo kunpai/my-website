@@ -1,6 +1,6 @@
 import { Row, Col, Button, Badge, Popover, OverlayTrigger } from "react-bootstrap";
 import publications from "/public/jsons/publications.json";
-import { generateMLACitation, generateChicagoCitation, generateIEEECitation } from "@/pages/api/citation";
+import { generateMLACitation, generateChicagoCitation, generateIEEECitation, generateBibtexCitation } from "@/pages/api/citation";
 import CopyIcon from "./copyIcon";
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
@@ -32,6 +32,16 @@ function PublicationTile({ publication, name }) {
                 <Popover.Body>
                     <Col>
                         <Row>
+                            <h6>BibTeX</h6>
+                            <CopyIcon>
+                                <div className="bibtex-container">
+                                    <pre className="bibtex-content">
+                                        {generateBibtexCitation(publication)}
+                                    </pre>
+                                </div>
+                            </CopyIcon>
+                        </Row>
+                        {/* <Row>
                             <h6>MLA</h6>
                             <CopyIcon>
                                 <p className="pe-2">
@@ -54,7 +64,7 @@ function PublicationTile({ publication, name }) {
                                     {generateIEEECitation(publication)}
                                 </p>
                             </CopyIcon>
-                        </Row>
+                        </Row> */}
                     </Col>
                 </Popover.Body>
             </Popover>
@@ -120,11 +130,11 @@ function PublicationTile({ publication, name }) {
                     </span>
                 </Row>
                 <Row className="mt-3 links">
-                    <Col className="d-flex align-items-center">
+                    <Col className="d-flex flex-wrap align-items-center">
                         {
                             publication.tags ? publication.tags.map((tag, index) => {
                                 return (
-                                    <Badge bg="secondary" className="me-1" key={index}>
+                                    <Badge bg="secondary" className="me-2 mb-2" key={index}>
                                         {tag}
                                     </Badge>
                                 )
