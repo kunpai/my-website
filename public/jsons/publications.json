@@ -32,7 +32,8 @@
             "Computer Architecture",
             "gem5"
         ],
-        "link": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/validating-hardware-and-simpoints-with-gem5-poster.pdf"
+        "link": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/validating-hardware-and-simpoints-with-gem5-poster.pdf",
+        "bibtex": "@inproceedings{kunal2023matchedposter,\nauthor = {Pai, Kunal and Qiu, Zhantong and Lowe-Power, Jason},\ntitle= {Validating Hardware and SimPoints with gem5: A RISC-V Board Case Study},\nyear= {2023},\nbooktitle = {Proceedings of the gem5 Workshop, International Symposium on Computer Architecture 2023},\nurl = {https://www.gem5.org/assets/files/workshop-isca-2023/posters/validating-hardware-and-simpoints-with-gem5-poster.pdf}\n}"
     },
     {
         "title": "gem5 Vision",
