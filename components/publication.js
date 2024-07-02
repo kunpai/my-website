@@ -124,7 +124,7 @@ function PublicationTile({ publication, name }) {
                         {
                             publication.tags ? publication.tags.map((tag, index) => {
                                 return (
-                                    <Badge bg="secondary" className="me-2" key={index}>
+                                    <Badge bg="secondary" className="me-1" key={index}>
                                         {tag}
                                     </Badge>
                                 )
