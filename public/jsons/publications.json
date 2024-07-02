@@ -50,6 +50,7 @@
             "Computer Architecture",
             "gem5"
         ],
-        "link": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf"
+        "link": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf",
+        "bibtex": "@inproceedings{parth2023visionposter,\nauthor = {Shah, Parth and Pai, Kunal and Patel, Harshil and Ali, Arslan},\ntitle= {gem5 Vision},\nyear= {2023},\nbooktitle = {Proceedings of the gem5 Workshop, International Symposium on Computer Architecture 2023},\nurl = {https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf}\n}"
     }
 ]
