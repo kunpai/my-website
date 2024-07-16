@@ -106,7 +106,7 @@ function PublicationTile({ publication, name }) {
                                     const isMe = author.includes(name.split(" ")[0]);
                                     return (
                                         <span key={index}>
-                                            <span style={{ textDecoration: isMe ? "underline" : "none" }}>
+                                            <span style={{ textDecoration: isMe ? "underline" : "none", fontWeight: isMe ? "bold" : "normal" }}>
                                                 {author}
                                             </span>
                                             {index < publication.authors.length - 1 ? ", " : ""}
