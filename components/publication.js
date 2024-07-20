@@ -162,9 +162,11 @@ function PublicationTile({ publication, name }) {
                     </Col>
 
                     <Col className="d-flex justify-content-end align-items-center">
-                        <Button variant="outline-secondary" href={publication.link} target="_blank">
-                            View Publication
-                        </Button>
+                        {publication.links && Object.keys(publication.links).map((key, index) => (
+                            <Button key={index} variant="outline-secondary" href={publication.links[key]} target="_blank">
+                                {key}
+                            </Button>
+                        ))}
                     </Col>
                 </Row>
             </Col >

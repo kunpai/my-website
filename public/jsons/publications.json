@@ -20,7 +20,9 @@
             "Machine Learning",
             "Naturalness of Software"
         ],
-        "link": "https://arxiv.org/pdf/2402.02047",
+        "links": {
+            "View Pre-Print": "https://arxiv.org/pdf/2402.02047"
+        },
         "bibtex": "@article{spiess2024quality,\ntitle={Quality and Trust in LLM-generated Code},\nauthor={Spiess, Claudio and Gros, David and Pai, Kunal Suresh and Pradel, Michael and Rabin, Md Rafiqul Islam and Jha, Susmit and Devanbu, Prem and Ahmed, Toufique},\njournal={arXiv preprint arXiv:2402.02047},\nyear={2024}\n}"
     },
     {
@@ -38,7 +40,9 @@
             "Cryogenic Computing",
             "Superconducting"
         ],
-        "link": "",
+        "links": {
+            "View Poster": ""
+        },
         "bibtex": "@inproceedings{kunal2024highfreqposter,\nauthor = {Pai, Kunal and Nand, Anusheel and Lowe-Power, Jason},\ntitle= {Potential and Limitation of High-Frequency Cores and Caches},\nyear= {2024},\nbooktitle = {Proceedings of the Workshop on Modeling & Simulation of Systems and Applications, ModSim 2024}\n}"
     },
     {
@@ -57,7 +61,9 @@
             "Machine Learning",
             "Naturalness of Software"
         ],
-        "link": "https://dl.acm.org/doi/pdf/10.1145/3597503.3639183",
+        "links": {
+            "View Publication": "https://dl.acm.org/doi/pdf/10.1145/3597503.3639183"
+        },
         "bibtex": "@inproceedings{ahmed2024automatic,\ntitle={Automatic semantic augmentation of language model prompts (for code summarization)},\nauthor={Ahmed, Toufique and Pai, Kunal Suresh and Devanbu, Premkumar and Barr, Earl},\nbooktitle={Proceedings of the IEEE/ACM 46th International Conference on Software Engineering},\npages={1--13},\nyear={2024}\n}"
     },
     {
@@ -74,7 +80,9 @@
             "Computer Architecture",
             "gem5"
         ],
-        "link": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/validating-hardware-and-simpoints-with-gem5-poster.pdf",
+        "links": {
+            "View Publication": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/validating-hardware-and-simpoints-with-gem5-poster.pdf"
+        },
         "bibtex": "@inproceedings{kunal2023matchedposter,\nauthor = {Pai, Kunal and Qiu, Zhantong and Lowe-Power, Jason},\ntitle= {Validating Hardware and SimPoints with gem5: A RISC-V Board Case Study},\nyear= {2023},\nbooktitle = {Proceedings of the gem5 Workshop, International Symposium on Computer Architecture 2023},\nurl = {https://www.gem5.org/assets/files/workshop-isca-2023/posters/validating-hardware-and-simpoints-with-gem5-poster.pdf}\n}"
     },
     {
@@ -92,7 +100,9 @@
             "Computer Architecture",
             "gem5"
         ],
-        "link": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf",
+        "links": {
+            "View Publication": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf"
+        },
         "bibtex": "@inproceedings{parth2023visionposter,\nauthor = {Shah, Parth and Pai, Kunal and Patel, Harshil and Ali, Arslan},\ntitle= {gem5 Vision},\nyear= {2023},\nbooktitle = {Proceedings of the gem5 Workshop, International Symposium on Computer Architecture 2023},\nurl = {https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf}\n}"
     }
 ]
