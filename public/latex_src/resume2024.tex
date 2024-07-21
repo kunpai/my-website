@@ -1,0 +1,192 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+% Font options
+\usepackage[sfdefault]{roboto}  % Sans-serif font
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{\Large\bfseries\scshape\raggedright}{}{0em}{}[\titlerule]
+
+% Ensure PDF is machine readable
+\pdfgentounicode=1
+
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{
+\vspace{-1pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4} \\
+  \end{tabular*}\vspace{-7pt}
+}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingList}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\begin{document}
+
+\begin{center}
+  \textbf{\Huge Kunal Pai} \\
+  \small 408-620-2339 $|$ \href{mailto:pai.kunal05@gmail.com}{pai.kunal05@gmail.com} $|$ 
+  \href{https://linkedin.com/in/kunpai}{linkedin.com/in/kunpai} $|$
+  \href{https://github.com/kunpai}{github.com/kunpai}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingList
+  \resumeSubheading
+      {University of California, Davis}{Davis, CA}
+      {M.S. in Computer Science}{Sep 2023 -- Present}
+  \resumeSubheading
+      {University of California, Davis}{Davis, CA}
+      {B.S. in Computer Science and Engineering}{Sep 2019 -- Jun 2023}
+\resumeSubHeadingListEnd
+
+\section{Publications}
+\resumeSubHeadingList
+\resumeSubheading
+      {Spiess, C., Gros, D., \underline{Pai, K.}, Pradel, M., Rabin, MRI, Alipour, A., Jha, S., Devanbu, P., \& Ahmed, T. (2025).}{}
+      {Calibration and Correctness of Language Models for Code}{ICSE 2025.}
+  \resumeSubheading
+      {Ahmed, T., \underline{Pai, K.}, Devanbu, P., \& Barr, E. (2024).}{}
+      {Automatic Semantic Augmentation of Language Model Prompts (for Code Summarization)}{ICSE 2024.}
+      % {Available: \url{https://www.computer.org/csdl/proceedings-article/icse/2024/021700b004/1V5BleCCB56}}.
+  \resumeSubheading
+      {Shah, P., \underline{Pai, K.}, Patel, H., \& Ali, A. (2023).}{}
+      {gem5 Vision}{ISCA 2023: gem5 Workshop.}
+      %Available: \url{https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf}}
+  \resumeSubheading
+      {\underline{Pai, K.}, Qiu, Z., \& Lowe-Power, J. (2023).}{}
+      {Validating Hardware and SimPoints with gem5: A RISC-V Board Case Study}{ISCA 2023: gem5 Workshop.}
+      % Available: \url{https://www.gem5.org/assets/files/workshop-isca-2023/posters/validating-hardware-and-simpoints-with-gem5-poster.pdf}}
+\resumeSubHeadingListEnd
+
+\section{Research Experience}
+\resumeSubHeadingList
+  \resumeSubheading
+      {Graduate Student Researcher}{Jun 2023 -- Present}
+      {DArchR Lab @ University of California, Davis}{Davis, CA}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Working with Prof. Jason Lowe-Power on computer architecture research.}
+          \resumeItem{\textbullet\ Leading a project to research cryogenic computing and superconducting electronics, including developing models for them in gem5.}
+          \resumeItem{\textbullet\ Collaborating with a team of 3 researchers to validate hardware and sampling techniques with gem5.}
+          \resumeItem{\textbullet\ Mentoring 5 undergraduate students in the Davis Computer Architecture Lab.}
+      \resumeSubHeadingListEnd
+\resumeSubHeadingListEnd
+
+
+
+% \section*{Summary}
+% Passionate AI/ML engineer with a strong background in deep learning, computer vision, and natural language processing. Skilled in Python, TensorFlow, PyTorch, and various ML libraries. Excellent problem-solving, research, and collaboration abilities. Seeking a challenging role to develop cutting-edge AI solutions.
+\section{Technical Skills}
+\resumeSubHeadingList
+  \resumeItem{\textbf{Programming Languages}: Python, JavaScript, C++, Java}
+    \resumeItem{\textbf{Tools \& Technologies}: Git, Docker, MongoDB, Django, React, Next.js, TensorFlow, PyTorch, gem5}
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingList
+  \resumeSubheading{Automated Frameworks of Semantic Augmentation to Improve MWP Solving}{Apr 2024 - Jun 2024}
+  {Machine Learning Project}{Python, NLP, Prompt Engineering}
+  \resumeSubHeadingList
+      \resumeItem{\textbullet\ Developed a framework leveraging digit-level semantics to improve language model performance in solving mathematical word problems (MWPs) by incorporating context-aware prompt generation techniques.}
+      \resumeItem{\textbullet\ Utilized BLEU scores and Levenshtein distance in a demonstration selection algorithm and a prompt selection model to identify the most similar equations for one-shot examples, optimizing prompt accuracy.}
+      \resumeItem{\textbullet\ Fine-tuned TinyLlama and prompted PaLM2 with prompt-enhanced GSM8K questions, resulting in improved accuracy on the SVAMP dataset and uncovering insights into the varying context requirements of different mathematical operations.}
+      \resumeItem{\textbullet\ Completed as part of ECS 271 : Machine Learning \& Discovery at UC Davis.}
+  \resumeSubHeadingListEnd
+  \resumeSubheading{Effects of Toxicity on Disengagement in Open Source Projects}{Jan 2024 - Mar 2024}
+  {Software Engineering Project}{Python, GitHub mining, scikit-learn}
+  \resumeSubHeadingList
+      \resumeItem{\textbullet\ Analyzed factors contributing to developer disengagement in open-source projects, focusing on the impact of toxic communications on contributor retention and project sustainability.}
+      \resumeItem{\textbullet\ Utilized sentiment analysis to quantify toxicity within open-source communities and examined its correlation with developer engagement across various programming communities and corporate/non-profit projects.}
+      \resumeItem{\textbullet\ Proposed community-driven policies and practical implications for project maintainers, aiming to mitigate negative interactions and enhance collaborative practices in open-source environments.}
+      \resumeItem{\textbullet\ Completed as part of ECS 260 : Software Engineering at UC Davis.}
+  \resumeSubHeadingListEnd
+  \resumeSubheading{Behavior of Spectre in Different Branch Predictors in gem5}{Oct 2023 - Dec 2023}
+  {Computer Architecture Project}{C++, gem5}
+  \resumeSubHeadingList
+      \resumeItem{\textbullet\ Investigated susceptibility of x86-based in-order and out-of-order processors to Spectre V1 attacks using gem5 v23.0, revealing correlations between Spectre effectiveness and branch predictor characteristics.}
+      \resumeItem{\textbullet\ Suggested features for a Spectre-resistant branch predictor, emphasizing extended training periods and mitigation of biased branches to improve processor security against speculative execution attacks.}
+      \resumeItem{\textbullet\ Completed as part of ECS 235A : Computer \& Info Security at UC Davis.}
+  \resumeSubHeadingListEnd
+  \resumeSubheading
+      {gem5 Vision}{Jan 2023 -- Jun 2023}
+      {Framework}{Next.js, Python, MongoDB, JSON Schema}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Implemented advanced search functionality to enhance resource discovery within the gem5 ecosystem.}
+          \resumeItem{\textbullet\ Introduced semantic versioning and built upon a comprehensive resource categorization system for easy access to newer resource versions under specific categories.}
+          \resumeItem{\textbullet\ Expanded gem5's database support by integrating local and remote JSON files and MongoDB, improving efficiency and user accessibility.}
+      \resumeSubHeadingListEnd
+  \resumeSubheading
+      {UNIfy - Course Assistant}{Jan 2022 -- Jan 2022}
+      {Hackathon Project}{Python, JavaScript, Discord API}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Utilized the UC Davis Schedule Builder API to extract class timings and professors.}
+          \resumeItem{\textbullet\ Formulated a class-based hierarchized dictionary to maintain schedules of over 100 server members in five Discord servers.}
+          \resumeItem{\textbullet\ Extracted data from APIs of Rate My Professor and Google Calendar to add additional features to the bot.}
+      \resumeSubHeadingListEnd
+\resumeSubHeadingListEnd
+
+\section{Work Experience}
+\resumeSubHeadingList
+  \resumeSubheading
+      {Teaching Assistant}{Sep 2023 -- Dec 2023}
+      {University of California, Davis}{Davis, CA}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Assisted 180 students in understanding course material and assignments for ECS 132: Probability \& Statistical Modeling for Computer Science.}
+          \resumeItem{\textbullet\ Conducted weekly office hours and provided feedback on student assignments.}
+      \resumeSubHeadingListEnd
+  \resumeSubheading
+      {Software Developer Intern \& Tech Lead}{Jan 2022 -- Jun 2022}
+      {humanID}{Davis, CA}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Coordinated project task completion with global teams, delivering 10 completed projects.}
+          \resumeItem{\textbullet\ Co-created documentation on the implementation of a Discord bot that combats spam and fake users.}
+          \resumeItem{\textbullet\ Algorithmically hierarchized 100 users and their associated permissions in a Django-based web application.}
+      \resumeSubHeadingListEnd
+  \resumeSubheading
+      {Technical Product Marketing Intern}{July 2021 -- Sep 2021}
+      {SiTime Corporation}{Santa Clara, CA}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Co-authored a product requirements document for a newly-released timing chip in the semiconductor industry.}
+          \resumeItem{\textbullet\ Conducted a market survey on optical transceivers and studied potential applications of MEMS timing chips.}
+          \resumeItem{\textbullet\ Presented strategy to hierarchize distributors and maximize stakeholders' earned profits by \$250,000.}
+      \resumeSubHeadingListEnd
+\resumeSubHeadingListEnd
+
+% \section{Certifications}
+% \resumeSubHeadingList
+%   \resumeItem{\textbullet\ AWS Certified Machine Learning - Specialty}
+%   \resumeItem{\textbullet\ TensorFlow Developer Certificate}
+% \resumeSubHeadingListEnd
+
+\end{document}
