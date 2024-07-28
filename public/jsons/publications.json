@@ -34,7 +34,7 @@
         ],
         "type": "poster",
         "conference": "ModSim 2024: Workshop on Modeling & Simulation of Systems and Applications",
-        "description": "The poster explores the potential and limitations of high-frequency cores and caches in modern processors, highlighting the trade-offs between performance, power consumption, and thermal constraints, and the implications for future processor designs.",
+        "description": "The poster presentation explores the potential and limitations of high-frequency in-order and out-of-order cores and caches in modern processors, highlighting the trade-offs between speedups and bandwidth.",
         "tags": [
             "Computer Architecture",
             "Cryogenic Computing",
