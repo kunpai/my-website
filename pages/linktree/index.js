@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, ListGroup } from 'react-bootstrap';
 import { LinkTree } from '@/components/linktree';
 import { useRouter } from 'next/router';
 import linktree from '@/public/jsons/linktree.json';
@@ -29,6 +29,44 @@ export default function LinkTreePage() {
             },
         });
     }, []);
+
+    // if path is "archived-conferences", then currentLinks should be set to a list of all the conferences of the JSON objects in linktree.json and link each conference to the corresponding linktree
+    if (path === 'archived-conferences') {
+        // Collect all the conference links
+        const conferences = links.map(linkGroup => ({
+            ...linkGroup,
+            links: linkGroup.links.filter(link => link.conference),
+            url: `/linktree/${linkGroup.path}`,
+        }));
+
+        console.log(conferences);
+
+        return (
+            <Container>
+                <Row>
+                    <div className="mt-5" ref={ref}>
+                        <h1 className="mb-3" id="linktree" style={{ textAlign: 'center' }}>
+                            Archived Conferences
+                        </h1>
+                        <h2 style={{
+                            textAlign: 'center',
+                            fontStyle: 'italic',
+                            marginBottom: '15px'
+                        }}>
+                            Click on a conference to view its LinkTree
+                        </h2>
+                        <ListGroup>
+                            {conferences.map((conference, index) => (
+                                <ListGroup.Item key={index} action href={`/linktree/${conference.path}`}>
+                                    {conference.conference}
+                                </ListGroup.Item>
+                            ))}
+                        </ListGroup>
+                    </div>
+                </Row>
+            </Container>
+        );
+    }
 
     return (
         <>
