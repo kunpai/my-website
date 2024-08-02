@@ -1,7 +1,13 @@
 [
     {
         "path": "modsim2024",
-        "title": "ModSim 2024 - Potential and Limitations of High-Frequency Cores and Caches",
+        "title": "Potential and Limitations of High-Frequency Cores and Caches",
+        "authors": [
+            "Kunal Pai",
+            "Anusheel Nand",
+            "Jason Lowe-Power"
+        ],
+        "conference": "ModSim 2024: Workshop on Modeling & Simulation of Systems and Applications",
         "links": [
             { "label": "Google", "url": "https://www.google.com"},
             { "label": "Facebook", "url": "https://www.facebook.com" },
