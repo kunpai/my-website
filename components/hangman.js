@@ -50,7 +50,7 @@ function Hangman() {
     }
   };
 
-  const maskedWord = word.split('').map(letter => 
+  const maskedWord = word.split('').map(letter =>
     guessedLetters.includes(letter) ? letter : '_'
   ).join(' ');
 
@@ -59,10 +59,10 @@ function Hangman() {
   const gameOver = remainingGuesses === 0 || !maskedWord.includes('_');
 
   return (
-    <div 
-      className="container mt-5" 
-      ref={gameContainerRef} 
-      tabIndex="0" 
+    <div
+      className="container mt-5"
+      ref={gameContainerRef}
+      tabIndex="0"
       onKeyDown={handleKeyDown}
       style={{ outline: 'none' }}
     >
