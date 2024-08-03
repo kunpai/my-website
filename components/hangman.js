@@ -2,14 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const HangmanFigure = ({ incorrectGuesses }) => {
-  const parts = [
-    <circle cx="150" cy="30" r="20" />, // Head
-    <line x1="150" y1="50" x2="150" y2="100" />, // Body
-    <line x1="150" y1="60" x2="120" y2="80" />, // Left arm
-    <line x1="150" y1="60" x2="180" y2="80" />, // Right arm
-    <line x1="150" y1="100" x2="120" y2="130" />, // Left leg
-    <line x1="150" y1="100" x2="180" y2="130" />, // Right leg
-  ];
+    const parts = [
+        <circle key="head" cx="150" cy="30" r="20" />, // Head
+        <line key="body" x1="150" y1="50" x2="150" y2="100" />, // Body
+        <line key="left-arm" x1="150" y1="60" x2="120" y2="80" />, // Left arm
+        <line key="right-arm" x1="150" y1="60" x2="180" y2="80" />, // Right arm
+        <line key="left-leg" x1="150" y1="100" x2="120" y2="130" />, // Left leg
+        <line key="right-leg" x1="150" y1="100" x2="180" y2="130" />, // Right leg
+    ];
 
   return (
     <svg height="200" width="300" style={{ backgroundColor: '#f0f0f0', borderRadius: '10px' }}>
