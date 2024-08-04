@@ -302,3 +302,125 @@ html[data-bs-theme="dark"] .copy-button {
 html[data-bs-theme="dark"] .copy-button:hover {
   fill: #f2f2f2;
 }
+
+.cricket-field {
+  background-color: #4caf50;
+  background-image: radial-gradient(circle at center, #8bc34a 0%, #4caf50 100%);
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.pitch {
+  background-color: #f4a460;
+  width: 60px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cricket-ball {
+  width: 20px;
+  height: 20px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.cricket-ball.animate {
+  display: block;
+  animation: throwBall 0.5s ease-out;
+}
+
+@keyframes throwBall {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -100%) scale(0.8);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.wicket {
+  width: 10px;
+  height: 40px;
+  background-color: #8b4513;
+  position: absolute;
+  bottom: 0;
+}
+
+.wicket-left {
+  left: calc(50% - 15px);
+}
+
+.wicket-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.wicket-right {
+  right: calc(50% - 15px);
+}
+
+.wicket-fall {
+  animation: fallWicket 0.5s ease-out;
+}
+
+@keyframes fallWicket {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+.score-change {
+  animation: scorePopup 0.5s ease-out;
+}
+
+@keyframes scorePopup {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.coin {
+  width: 100px;
+  height: 100px;
+  background-color: #ffd700;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.coin-flip {
+  animation: flip 2s linear;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(1800deg);
+  }
+}
