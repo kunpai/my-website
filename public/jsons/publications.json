@@ -42,7 +42,8 @@
         ],
         "links": {
             "View Poster": "",
-            "View Pre-Print": "https://arxiv.org/abs/2408.03308"
+            "View Pre-Print": "https://arxiv.org/abs/2408.03308",
+            "Link on DArchR": "https://arch.cs.ucdavis.edu/simulation/2024/08/06/potentiallimitationshighfrecorescaches.html"
         },
         "bibtex": "@inproceedings{kunal2024highfreqposter,\nauthor = {Pai, Kunal and Nand, Anusheel and Lowe-Power, Jason},\ntitle= {Potential and Limitation of High-Frequency Cores and Caches},\nyear= {2024},\nbooktitle = {Proceedings of the Workshop on Modeling & Simulation of Systems and Applications, ModSim 2024}\n}"
     },
