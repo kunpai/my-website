@@ -6,7 +6,8 @@
     "dev": "LAST_UPDATED=$(date) next dev",
     "build": "LAST_UPDATED=$(date) next build",
     "start": "LAST_UPDATED=$(date) next start",
-    "lint": "LAST_UPDATED=$(date) next lint"
+    "lint": "LAST_UPDATED=$(date) next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@vercel/analytics": "^1.0.1",
@@ -18,6 +19,7 @@
     "gsap": "^3.12.2",
     "html-react-parser": "^4.0.0",
     "next": "^13.4.6",
+    "next-sitemap": "^4.2.3",
     "nodemailer": "^6.9.3",
     "parse-md": "^3.0.3",
     "raw-loader": "^4.0.2",

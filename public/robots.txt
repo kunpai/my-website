@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.kunpai.space/
+
+# Sitemaps
+Sitemap: https://www.kunpai.space/sitemap.xml
