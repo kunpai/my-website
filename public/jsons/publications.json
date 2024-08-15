@@ -41,9 +41,10 @@
             "Superconducting"
         ],
         "links": {
-            "View Poster": "",
+            "View Poster": "https://arch.cs.ucdavis.edu/assets/papers/modsim2024-potentialhighfreq-poster.pdf",
+            "View Presentation": "https://arch.cs.ucdavis.edu/assets/papers/modsim2024-potentialhighfreq-presentation.pdf",
             "View Pre-Print": "https://arxiv.org/abs/2408.03308",
-            "Link on DArchR": "https://arch.cs.ucdavis.edu/simulation/2024/08/06/potentiallimitationshighfrecorescaches.html"
+            "Link on DArchR": "https://arch.cs.ucdavis.edu/simulation/2024/08/06/potentiallimitationhighfreqcorescaches.html"
         },
         "bibtex": "@inproceedings{kunal2024highfreqposter,\nauthor = {Pai, Kunal and Nand, Anusheel and Lowe-Power, Jason},\ntitle= {Potential and Limitation of High-Frequency Cores and Caches},\nyear= {2024},\nbooktitle = {Proceedings of the Workshop on Modeling & Simulation of Systems and Applications, ModSim 2024}\n}"
     },
