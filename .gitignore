@@ -35,3 +35,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# every file in public/latex_src/ is ignored except .tex files
+public/latex_src/*
+!public/latex_src/*.tex
