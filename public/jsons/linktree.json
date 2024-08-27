@@ -10,9 +10,9 @@
         "date" : "15 August 2024",
         "conference": "ModSim 2024: Workshop on Modeling & Simulation of Systems and Applications",
         "links": [
-            { "label": "Google", "url": "https://www.google.com"},
-            { "label": "Facebook", "url": "https://www.facebook.com" },
-            { "label": "Twitter", "url": "https://www.twitter.com" }
+            { "label": "Pre-Print", "url": "https://arxiv.org/abs/2408.03308"},
+            { "label": "Presentation", "url": "https://arch.cs.ucdavis.edu/assets/papers/modsim2024-potentialhighfreq-presentation.pdf" },
+            { "label": "Poster", "url": "https://arch.cs.ucdavis.edu/assets/papers/modsim2024-potentialhighfreq-poster.pdf" }
         ]
     }
 ]
