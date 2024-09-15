@@ -68,13 +68,17 @@ function EducationTile({ education }) {
                     </Col>
                 </Row>
                 <Row className="mt-2">
-                    <li variant="secondary">
-                        <b><u>GPA</u></b>: {education.gpa}
-                    </li>
-                    {education.description && (
+                    <div>
                         <li variant="secondary">
-                            {education.description}
+                            <b><u>GPA</u></b>: {education.gpa}
                         </li>
+                    </div>
+                    {education.description && (
+                        <div>
+                            <li variant="secondary">
+                                {education.description}
+                            </li>
+                        </div>
                     )}
                 </Row>
             </Col >

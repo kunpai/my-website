@@ -108,7 +108,11 @@ function ExperienceTile({ isExperience, experience }) {
                 <ul>
                     {experience.description != "" ? experience.description.split('\n').map((line, index) => {
                         return (
-                            <li key={index}>{line}</li>
+                            <>
+                            <div>
+                                <li key={index}>{line}</li>
+                            </div>
+                            </>
                         );
                     }) : "In progress"}
                 </ul>
