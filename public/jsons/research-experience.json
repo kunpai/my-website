@@ -4,7 +4,7 @@
         "organization": "UC Davis Computer Architecture Research Group",
         "start": "June 2023",
         "end": "Ongoing",
-        "description": "Researching trends of gem5 accuracy.\nBuilding hardware models for gem5.\nValidating gem5 models against real hardware.",
+        "description": "Leading a project to achieve 10x acceleration in the simulation of cryogenic semiconductor computing and superconductors.\nCollaborating with 3 researchers to develop and deliver 90% correlation between gem5 simulation and hardware measurements.\nMentoring 5 undergraduate students in the Davis Computer Architecture Lab to prepare them for graduate research.",
         "location": "Davis, CA",
         "image": "/images/darchr.png"
     },

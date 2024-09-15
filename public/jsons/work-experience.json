@@ -2,18 +2,9 @@
     {
         "title": "Tech Team Lead",
         "organization": "humanID",
-        "start": "April 2022",
-        "end": "June 2022",
-        "description": "Coordinated project task completion with global teams, delivering 10 completed projects.\nImplemented time-effective hiring practices for developers based on agile development principles, improving performance by 50%.\nCo-created documentation on the implementation of a Discord bot that combats spam and fake users.",
-        "location": "Davis, CA",
-        "image": "/images/humanid.webp"
-    },
-    {
-        "title": "Software Development Intern",
-        "organization": "humanID",
         "start": "January 2022",
-        "end": "April 2022",
-        "description": "Algorithmically hierarchized 100 users and their associated permissions in a Django-based web application.\nRefactored part of the code base to follow software craftsmanship principles.\nImplemented interactive features for a frontend website in collaboration with the Design team.",
+        "end": "June 2022",
+        "description": "Delivered 10 completed projects with global teams, including documentation of a Discord bot that combats spam and fake users, and a Django-based web application for permission management for 100 users.",
         "location": "Davis, CA",
         "image": "/images/humanid.webp"
     },
@@ -22,7 +13,7 @@
         "organization": "SiTime Corporation",
         "start": "July 2021",
         "end": "September 2021",
-        "description": "Co-authored a product requirements document for a newly-released timing chip in the semiconductor industry.\nConducted a market survey on optical transceivers and studied potential applications of MEMS timing chips.\nPresented strategy to hierarchize distributors and maximize stakeholders' earned profits by $250,000.",
+        "description": "Presented strategy to better distributor margin management and improve earned profits by $250,000.\nConducted a market survey on types of optical transceivers used in AI networking infrastructure to identify potential customers for MEMS timing chips.\nCreated Visio diagrams for the product requirements document for a timing chip.",
         "location": "Santa Clara, CA",
         "image": "/images/sitime.png"
     }
