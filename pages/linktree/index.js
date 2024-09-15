@@ -30,6 +30,13 @@ export default function LinkTreePage() {
         });
     }, []);
 
+    // 404 logic: If the currentLinks is not found, redirect to a 404 page
+    useEffect(() => {
+        if (!currentLinks && path !== 'archived-conferences') {
+            router.replace('/404');
+        }
+    }, [currentLinks, path]);
+
     // if path is "archived-conferences", then currentLinks should be set to a list of all the conferences of the JSON objects in linktree.json and link each conference to the corresponding linktree
     if (path === 'archived-conferences') {
         // Collect all the conference links
