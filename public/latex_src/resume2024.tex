@@ -62,8 +62,10 @@
   \end{tabular*}\vspace{-7pt}
 }
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\newcommand{\resumeSubHeadingList}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingList}{\begin{itemize}[leftmargin=0.15in, label={}, labelsep=0.15in]}
+\newcommand{\resumeJustifiedList}{\begin{itemize}[leftmargin=0.3in, label=\textbullet, labelsep=0.1in]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemDash}[1]{\item\small{\hspace{-0.1cm} -- #1} \vspace{-3pt}}
 
 \begin{document}
 
@@ -90,31 +92,33 @@
 \resumeSubHeadingList
     \resumeSubheadingSmall
         {Graduate Student Researcher, \textit{DArchR Lab @ University of California, Davis}}{Jun 2023 - Present}
-        \resumeSubHeadingList
-            \resumeItem{\textbullet\ Leading a team to deliver 10x acceleration in the simulation of cryogenic semiconductor and superconductor computing.}
-            \resumeItem{\textbullet\ Leading a team to develop the first add-on to the gem5 simulator for quantum error correcting codes (QECC).}
-            \resumeItem{\textbullet\ Collaborating with a team to develop an autotuning methodology with 90\% correlation between gem5 simulation results and hardware profiling metrics.}
-            \resumeItem{\textbullet\ Mentoring 5 undergraduate students in the Davis Computer Architecture Lab to prepare them for graduate research.}
+        \resumeJustifiedList
+            \resumeItem{Leading a team to deliver 10x acceleration in the simulation of cryogenic semiconductor and superconductor computing.}
+            \resumeItem{Leading a team to develop the first add-on to the gem5 simulator for quantum error correcting codes (QECC).}
+            \resumeItem{Collaborating with a team to develop an autotuning methodology with 90\% correlation between gem5 simulation results and hardware profiling metrics.}
+            \resumeItem{Mentoring 5 undergraduate students in the Davis Computer Architecture Lab to prepare them for graduate research.}
     \resumeSubHeadingListEnd
   \resumeSubheadingSmall
       {Teaching Assistant, \textit{University of California, Davis}}{Sep 2023 - Dec 2023}
-      \resumeSubHeadingList
-          \resumeItem{\textbullet\ Assisted 180 students in a senior-level Probability \& Statistical Modeling class.}
+      \resumeJustifiedList
+          \resumeItem{Assisted 180 students in a senior-level Probability \& Statistical Modeling class.}
       \resumeSubHeadingListEnd
   \resumeSubheadingSmall
   {Software Developer Intern \& Tech Lead, \textit{humanID, Davis}}{Jan 2022 - Jun 2022}
-  \resumeSubHeadingList
-      \resumeItem{\textbullet\ Completed 10 projects with global teams, including:}
-      \resumeItem{\hspace{0.5cm} \textbullet\ Documentation of a Discord bot that combats spam and fake users.}
-      \resumeItem{\hspace{0.5cm} \textbullet\ Django-based web application for permission management for 100 users.}
+  \resumeJustifiedList
+      \resumeItem{Completed 10 projects with global teams, including:}
+      \resumeSubHeadingList
+        \resumeItemDash{Documentation of a Discord bot that combats spam and fake users.}
+        \resumeItemDash{Django-based web application for permission management for 100 users.}
+      \resumeSubHeadingListEnd
   \resumeSubHeadingListEnd
 
   \resumeSubheadingSmall
       {Technical Product Marketing Intern, \textit{SiTime Corp., Santa Clara}}{Jul 2021 - Sep 2021}
-      \resumeSubHeadingList
-          \resumeItem{\textbullet\ Presented strategy to improve distributor margin management and earned profits by \$250,000.}
-          \resumeItem{\textbullet\ Conducted a market survey on optical transceivers used in AI networking, to identify customers for MEMS timing chips.}
-          \resumeItem{\textbullet\ Created Visio diagrams for the product requirements document (PRD) of a timing chip.}
+      \resumeJustifiedList
+          \resumeItem{Presented strategy to improve distributor margin management and earned profits by \$250,000.}
+          \resumeItem{Conducted a market survey on optical transceivers used in AI networking, to identify customers for MEMS timing chips.}
+          \resumeItem{Created Visio diagrams for the product requirements document (PRD) of a timing chip.}
       \resumeSubHeadingListEnd
 \resumeSubHeadingListEnd
 }
@@ -124,29 +128,29 @@
 \resumeSubHeadingList
   \resumeSubheading{\href{https://www.kunpai.space/assets/papers/prompting.pdf}{Automated Frameworks of Semantic Augmentation to Improve MWP Solving}}{Apr 2024 - Jun 2024}
   {Machine Learning Project}{Python, NLP, Prompt Engineering}
-  \resumeSubHeadingList
-      \resumeItem{\textbullet\ Improved \href{https://arxiv.org/pdf/2305.10403}{PaLM 2} \href{https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf}{LLM} prompting accuracy on math word problems (MWPs) by 10\% and \href{https://arxiv.org/pdf/2401.02385}{TinyLlama} fine-tuning LM accuracy by 60\% through a one-shot digit-level semantics framework.}
-      \resumeItem{\textbullet\ Introduced a novel demonstration selection model to improve accuracy of LLMs. Model used \href{https://aclanthology.org/P02-1040.pdf}{BLEU scores} and \href{http://profs.sci.univr.it/~liptak/ALBioinfo/2012_2013/2011_2012/files/levenshtein66.pdf}{Levenshtein distance} to identify the most similar equations for one-shot examples.}
+  \resumeJustifiedList
+      \resumeItem{Improved \href{https://arxiv.org/pdf/2305.10403}{PaLM 2} \href{https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf}{LLM} prompting accuracy on math word problems (MWPs) by 10\% and \href{https://arxiv.org/pdf/2401.02385}{TinyLlama} fine-tuning LM accuracy by 60\% through a one-shot digit-level semantics framework.}
+      \resumeItem{Introduced a novel demonstration selection model to improve accuracy of LLMs. Model used \href{https://aclanthology.org/P02-1040.pdf}{BLEU scores} and \href{http://profs.sci.univr.it/~liptak/ALBioinfo/2012_2013/2011_2012/files/levenshtein66.pdf}{Levenshtein distance} to identify the most similar equations for one-shot examples.}
   \resumeSubHeadingListEnd
   \resumeSubheading{\href{https://www.kunpai.space/assets/papers/toxicity.pdf}{Effects of Toxicity on Disengagement in Open-Source Projects}}{Jan 2024 - Mar 2024}
   {Software Engineering Project}{Python, GitHub mining, scikit-learn}
-  \resumeSubHeadingList
-  \resumeItem{\textbullet\ Found a strong correlation ($R^2 = 0.76$) between high developer engagement in FAANG projects with larger codebases and lower levels of toxicity, offering actionable insights for community management.}
-  \resumeItem{\textbullet\ Quantified toxic behavior using sentiment analysis and mining corporate and non-profit repositories, revealing how toxicity disproportionately impacts new developers compared to experienced ones (up to 1.3x more).}
+  \resumeJustifiedList
+  \resumeItem{Found a strong correlation ($R^2 = 0.76$) between high developer engagement in FAANG projects with larger codebases and lower levels of toxicity, offering actionable insights for community management.}
+  \resumeItem{Quantified toxic behavior using sentiment analysis and mining corporate and non-profit repositories, revealing how toxicity disproportionately impacts new developers compared to experienced ones (up to 1.3x more).}
   \resumeSubHeadingListEnd
   \resumeSubheading{\href{https://www.kunpai.space/assets/papers/spectre.pdf}{Behavior of Spectre in Different Branch Predictors in gem5}}{Oct 2023 - Dec 2023}
   {Computer Architecture Project}{Python, C++, gem5, Docker}
-  \resumeSubHeadingList
-  \resumeItem{\textbullet\ Demonstrated up to a 55\% reduction in susceptibility to speculative execution attacks by validating design enhancements like longer training periods and minimizing biased branches for Spectre-resistant branch predictors.}
-  \resumeItem{\textbullet\ Investigated the vulnerability of x86-based in-order and out-of-order processors to \href{https://dl.acm.org/doi/pdf/10.1145/3399742}{Spectre V1} attacks, revealing a strong correlation between branch predictor training periods and attack effectiveness.}
+  \resumeJustifiedList
+  \resumeItem{Demonstrated up to a 55\% reduction in susceptibility to speculative execution attacks by validating design enhancements like longer training periods and minimizing biased branches for Spectre-resistant branch predictors.}
+  \resumeItem{Investigated the vulnerability of x86-based in-order and out-of-order processors to \href{https://dl.acm.org/doi/pdf/10.1145/3399742}{Spectre V1} attacks, revealing a strong correlation between branch predictor training periods and attack effectiveness.}
   \resumeSubHeadingListEnd
   \resumeSubheading
       {\href{https://resources.gem5.org/}{gem5 Vision}}{Jan 2023 - Jun 2023}
       {Framework}{Next.js, Python, MongoDB, JSON Schema}
-      \resumeSubHeadingList
-          \resumeItem{\textbullet\ Boosted resource discovery speed by 20x with optimized search functionality across 1,200+ resources.}
-          \resumeItem{\textbullet\ Enabled faster retrieval of resources across 20+ categories by introducing categorization and semantic versioning.}
-          \resumeItem{\textbullet\ Enhanced accessibility for 500+ industry and academic user by integrating local/remote JSON files and MongoDB with gem5.}
+      \resumeJustifiedList
+          \resumeItem{Boosted resource discovery speed by 20x with optimized search functionality across 1,200+ resources.}
+          \resumeItem{Enabled faster retrieval of resources across 20+ categories by introducing categorization and semantic versioning.}
+          \resumeItem{Enhanced accessibility for 500+ industry and academic user by integrating local/remote JSON files and MongoDB with gem5.}
       \resumeSubHeadingListEnd
 \resumeSubHeadingListEnd
 }
