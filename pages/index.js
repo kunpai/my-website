@@ -45,6 +45,18 @@ export default function Home() {
         <Row>
           <Education />
         </Row>
+        {/* <Row>
+          <Experience jsonExperiences={researchExperience} title={"Research Experience"} isExperience />
+        </Row> */}
+        {/* <Row>
+          <Experience jsonExperiences={teachingExperience} title={"Teaching Experience"} isExperience />
+        </Row> */}
+        <Row>
+          <Experience jsonExperiences={workExperience} title={"Work Experience"} isExperience />
+        </Row>
+        <Row>
+          <Experience jsonExperiences={projects} title={"Projects"} />
+        </Row>
         <Row>
           <div className="mt-5">
             <h1 className="mb-3" id="publications">
@@ -52,18 +64,6 @@ export default function Home() {
             </h1>
             <Publication />
           </div>
-        </Row>
-        <Row>
-          <Experience jsonExperiences={researchExperience} title={"Research Experience"} isExperience />
-        </Row>
-        <Row>
-          <Experience jsonExperiences={teachingExperience} title={"Teaching Experience"} isExperience />
-        </Row>
-        <Row>
-          <Experience jsonExperiences={workExperience} title={"Work Experience"} isExperience />
-        </Row>
-        <Row>
-          <Experience jsonExperiences={projects} title={"Projects"} />
         </Row>
         <Row>
           <div className="mt-5">

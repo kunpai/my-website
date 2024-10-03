@@ -1,19 +1,37 @@
 [
     {
+        "title": "Graduate Student Researcher",
+        "organization": "DArchR Lab @ University of California, Davis",
+        "start": "June 2023",
+        "end": "Present",
+        "description": "Leading a team to deliver 10x acceleration in the simulation of cryogenic semiconductor and superconductor computing. \nLeading a team to develop the first add-on to the gem5 simulator for quantum error correcting codes (QECC). \nCollaborating with a team to develop an autotuning methodology to deliver 90% correlation between gem5 simulation results and hardware profiling metrics. \nMentoring 5 undergraduate students in the Davis Computer Architecture Lab to prepare them for graduate research.",
+        "location": "Davis, CA",
+        "image": "/images/darchr.png"
+    },
+    {
+        "title": "Teaching Assistant",
+        "organization": "University of California, Davis",
+        "start": "September 2023",
+        "end": "December 2023",
+        "description": "Assisted 180 students in a senior-level Probability & Statistical Modeling class.",
+        "location": "Davis, CA",
+        "image": "/images/ucdavis.png"
+    },
+    {
         "title": "Tech Team Lead",
         "organization": "humanID",
         "start": "January 2022",
         "end": "June 2022",
-        "description": "Delivered 10 completed projects with global teams, including documentation of a Discord bot that combats spam and fake users, and a Django-based web application for permission management for 100 users.",
+        "description": "Delivered 10 completed projects with global teams, including: \nDocumentation of a Discord bot that combats spam and fake users\n A Django-based web application for permission management for 100 users.",
         "location": "Davis, CA",
         "image": "/images/humanid.webp"
     },
     {
         "title": "Technical Product Marketing Intern",
-        "organization": "SiTime Corporation",
+        "organization": "SiTime Corp.",
         "start": "July 2021",
         "end": "September 2021",
-        "description": "Presented strategy to better distributor margin management and improve earned profits by $250,000.\nConducted a market survey on types of optical transceivers used in AI networking infrastructure to identify potential customers for MEMS timing chips.\nCreated Visio diagrams for the product requirements document for a timing chip.",
+        "description": "Presented strategy to improve distributor margin management and earned profits by $250,000.\nConducted a market survey on optical transceivers used in AI networking, to identify customers for MEMS timing chips.\n Created Visio diagrams for the product requirements document (PRD) of a timing chip.",
         "location": "Santa Clara, CA",
         "image": "/images/sitime.png"
     }

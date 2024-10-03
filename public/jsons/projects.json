@@ -3,7 +3,7 @@
         "title": "Automated Frameworks of Semantic Augmentation to Improve Mathematical Word Problem Solving",
         "start": "April 2024",
         "end": "June 2024",
-        "description": "Improved language model accuracy on MWPs by 10% (prompting PaLM2) and 60% (finetuning TinyLlama) through a one-shot digit-level semantics framework, over base model performance.\nIntroduced a novel demonstration selection model to identify the most similar equations for one-shot examples using BLEU scores and Levenshtein distance.\nCompleted as part of ECS 271 : Machine Learning & Discovery at UC Davis.",
+        "description": "Improved PaLM 2 LLM prompting accuracy on math word problems (MWPs) by 10% and TinyLlama fine-tuning LM accuracy by 60% through a one-shot digit-level semantics framework.\nIntroduced a novel demonstration selection model to improve accuracy of LLMs. Model used BLEU scores and Levenshtein distance to identify the most similar equations for one-shot examples.",
         "skills": [
             "NLP",
             "Prompting",
@@ -28,7 +28,7 @@
         "title": "The Effects of Toxicity on Disengagement in Open Source Projects",
         "start": "January 2024",
         "end": "March 2024",
-        "description": "Analyzed factors contributing to developer disengagement in open-source projects, identifying a 0.76 R-squared value between less toxicity and large codebase size with high engagement for FAANG projects.\nQuantified toxicity across corporate and non-profit open-source communities, categorizing comments and examining how toxic interactions disproportionately affected new developers compared to experienced ones.\nCompleted as part of ECS 260 : Software Engineering at UC Davis.",
+        "description": "Found a strong correlation ($R^2 = 0.76$) between high developer engagement in FAANG projects with larger codebases and lower levels of toxicity, offering actionable insights for community management.\nQuantified toxic behavior using sentiment analysis and mining corporate and non-profit repositories, revealing how toxicity disproportionately impacts new developers compared to experienced ones (up to 1.3x more).",
         "skills": [
             "Open Source",
             "GitHub Mining",
@@ -61,7 +61,7 @@
         "title": "What is the behavior of Spectre, a speculative prediction exploit, on the various branch predictors available in the computer architecture simulator gem5?",
         "start": "October 2023",
         "end": "December 2023",
-        "description": "Investigated susceptibility of x86-based in-order and out-of-order processors to Spectre V1 attacks using gem5 v23.0, identifying a strong correlation between Spectre attack effectiveness and branch predictor type.\nProposed design enhancements for a Spectre-resistant branch predictor, emphasizing longer training periods and mitigation of biased branches, aimed at reducing susceptibility to speculative execution attacks.\nCompleted as part of ECS 235A : Computer & Info Security at UC Davis.",
+        "description": "Demonstrated up to a 55% reduction in susceptibility to speculative execution attacks by validating design enhancements like longer training periods and minimizing biased branches for Spectre-resistant branch predictors.\nInvestigated the vulnerability of x86-based in-order and out-of-order processors to Spectre V1 attacks, revealing a strong correlation between branch predictor training periods and attack effectiveness.",
         "skills": [
             "gem5",
             "Spectre",
@@ -86,7 +86,7 @@
         "title": "gem5 Vision",
         "start": "January 2023",
         "end": "June 2023",
-        "description": "Boosted resource discovery speed by 20x with optimized search functionality across 1,200+ resources.\nIntroduced semantic versioning and built a categorization system, enabling faster retrieval of resources across 20+ categories.\nIntegrated local/remote JSON files and MongoDB for gem5, enhancing accessibility for 500+ users.",
+        "description": "Boosted resource discovery speed by 20x with optimized search functionality across 1,200+ resources.\nEnabled faster retrieval of resources across 20+ categories by introducing categorization and semantic versioning.\nEnhanced accessibility for 500+ industry and academic users by integrating local/remote JSON files and MongoDB with gem5.",
         "skills": [
             "NextJS",
             "MongoDB",
@@ -116,7 +116,7 @@
         "title": "QuixFolio",
         "start": "March 2023",
         "end": "April 2023",
-        "description": "Demonstrated strong coding and programming skills to create QuixFolio as an open-source project.\nStreamlined the portfolio creation process by providing a wide range of customizable templates and easy information input options.\nImplemented hosting capabilities on GitHub pages, enabling seamless portfolio sharing and accessibility.\nSuccessfully launched the alpha version of QuixFolio, which garnered significant traction with over 190 visitors and 1000+ page views within the first week.",
+        "description": "Developed a portfolio website template with a focus on modularity and ease of use.\nImplemented a dark mode toggle and a customizable theme switcher to personalize the website.\nDeployed the website on GitHub Pages and automated the deployment process with GitHub Actions.",
         "skills": [
             "ReactJS",
             "NextJS",
@@ -143,7 +143,7 @@
         "title": "OLED Paint",
         "start": "May 2022",
         "end": "May 2022",
-        "description": "Utilized SPI and I2C to create a tilt-based paint application between the CC3200 and Adafruit OLED.\nCreated a webserver and implemented a compression algorithm to transfer 128x128 bitmaps from a board to a computer.\nConferred Best Lab Project for Spring 2022.\nSolidified skills of utilizing datasheet information to interact with hardware better.",
+        "description": "Utilized SPI and I2C to create a tilt-based paint application between the CC3200 and Adafruit OLED.\nCreated a webserver and implemented a compression algorithm to transfer 128x128 bitmaps from a board to a computer 2x faster.\nConferred Best Lab Project for Spring 2022.\nSolidified skills of utilizing datasheet information to interact with hardware better.",
         "skills": [
             "C",
             "Python"
