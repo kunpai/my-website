@@ -1,5 +1,6 @@
 {
-    "programming-languages": ["Python", "C", "C++", "Java", "JavaScript", "HTML+CSS", "Golang"],
-    "languages": ["English", "Hindi", "Gujarati", "Spanish", "Marathi"],
-    "technologies": ["gem5", "React Bootstrap", "Chisel3", "Adobe Photoshop"]
+    "programming-languages": ["Python", "C++", "Java", "JavaScript"],
+    "frameworks": ["React", "Next.js", "TensorFlow", "PyTorch", "Django", "Flask", "scikit-learn", "pandas", "NumPy", "Matplotlib"],
+    "tools-and-technologies": ["Git", "Docker", "MongoDB", "gem5", "Unix/Linux", "LaTeX"],
+    "languages": ["English", "Gujarati", "Hindi", "Spanish"]
 }
