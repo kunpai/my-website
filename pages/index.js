@@ -55,7 +55,7 @@ export default function Home() {
           <Experience jsonExperiences={workExperience} title={"Work Experience"} isExperience />
         </Row>
         <Row>
-          <Experience jsonExperiences={projects} title={"Projects"} />
+          <Experience jsonExperiences={projects} title={"Academic Projects"} />
         </Row>
         <Row>
           <div className="mt-5">
