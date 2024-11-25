@@ -4,7 +4,7 @@
         "organization": "DArchR Lab @ University of California, Davis",
         "start": "June 2023",
         "end": "Present",
-        "description": "Leading a team to deliver 10x acceleration in the simulation of cryogenic semiconductor and superconductor computing. \nLeading a team to develop the first add-on to the gem5 simulator for quantum error correcting codes (QECC). \nCollaborating with a team to develop an autotuning methodology to deliver 90% correlation between gem5 simulation results and hardware profiling metrics. \nMentoring 5 undergraduate students in the Davis Computer Architecture Lab to prepare them for graduate research.",
+        "description": "Leading a team to develop a superconductor-based graph accelerator in the gem5 simulator.\nLeading a team to deliver full-system, cycle-level simulation models for cryogenic semiconductors and superconductors in gem5.\nCollaborating with a team to develop an autotuning methodology with 90% correlation between gem5 simulation results and hardware profiling metrics.\nMentoring 5 undergraduate students in the Davis Computer Architecture Lab to prepare them for graduate research.",
         "location": "Davis, CA",
         "image": "/images/darchr.png"
     },
