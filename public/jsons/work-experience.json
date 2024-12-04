@@ -9,6 +9,15 @@
         "image": "/images/darchr.png"
     },
     {
+        "title": "Student Researcher",
+        "organization": "University of California, Davis",
+        "start": "September 2022",
+        "end": "Present",
+        "description": "Developing a dataset for pairwise code-documentation alignment from open-source Python projects, to assist with future tasks in software maintenance.\nCreated a pipeline for measuring calibration and correctness of large language models for code repair, using Defects4J.\nAssisted in validating the efficacy of semantic augmentation of language model prompts for code summarization using precision and recall metrics like ROUGE and METEOR.",
+        "location": "Davis, CA",
+        "image": "/images/ucdavis.png"
+    },
+    {
         "title": "Teaching Assistant",
         "organization": "University of California, Davis",
         "start": "September 2023",
@@ -16,6 +25,15 @@
         "description": "Assisted 180 students in a senior-level Probability & Statistical Modeling class.",
         "location": "Davis, CA",
         "image": "/images/ucdavis.png"
+    },
+    {
+        "title": "Undergraduate Researcher",
+        "organization": "DArchR Lab @ University of California, Davis",
+        "start": "June 2022",
+        "end": "June 2023",
+        "description": "Implemented a model of the HiFive Unmatched RISC-V board in gem5, achieving 85% accuracy with hardware profiling metrics.\nAuthored a poster on the validation of hardware and simpoints with gem5, presented at the gem5 workshop at ISCA 2023.\nCo-authored tutorials on perf compilation for RISC-V and documentation for the Standard Library in gem5.",
+        "location": "Davis, CA",
+        "image": "/images/darchr.png"
     },
     {
         "title": "Tech Team Lead",
