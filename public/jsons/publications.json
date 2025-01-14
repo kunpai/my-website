@@ -1,5 +1,25 @@
 [
     {
+        "title": "CoDocBench: A Dataset for Code-Documentation Alignment in Software Maintenance",
+        "authors": [
+            "Kunal Suresh Pai",
+            "Premkumar Devanbu",
+            "Toufique Ahmed"
+        ],
+        "type": "conference",
+        "conference": "Mining Software Repositories (MSR) 2025: Data and Tool Showcase Track",
+        "description": "Understanding and implementing code changes is a key aspect of software maintenance. To support this, we introduce a new dataset of coupled changes to code and documentation mined from high-quality GitHub projects, where each sample represents a single commit with simultaneous updates to code and docstrings. This dataset enables training and evaluation on realistic, change-related tasks, which remain challenging for current models like Llama 3.1 405B and Mixtral 8×22B.",
+        "tags": [
+            "Software Engineering",
+            "GitHub Mining",
+            "Large Language Models (LLMs)"
+        ],
+        "links": {
+            "View Publication": ""
+        },
+        "bibtex": "@inproceedings{kunal2025codocbench,\nauthor = {Pai, Kunal Suresh and Devanbu, Premkumar and Ahmed, Toufique},\ntitle= {CoDocBench: A Dataset for Code-Documentation Alignment in Software Maintenance},\nyear= {2025},\nbooktitle = {Proceedings of the MSR 2025: Data and Tool Showcase Track}\n}"
+    },
+    {
         "title": "Calibration and Correctness of Language Models for Code",
         "authors": [
             "Claudio Spiess",
@@ -13,7 +33,7 @@
             "Toufique Ahmed"
         ],
         "type": "conference",
-        "conference": "ICSE 2025",
+        "conference": "International Conference on Software Engineering (ICSE) 2025",
         "description": "Machine learning models often produce incorrect outputs, making reliable confidence measures essential for determining the trustworthiness of these outputs. This paper introduces a framework to evaluate and improve the calibration of code-generating models, finding that these models are generally poorly calibrated initially but can be improved using methods like Platt scaling, thereby enhancing decision-making in software engineering.",
         "tags": [
             "Software Engineering",
@@ -56,7 +76,7 @@
             "Earl T. Barr"
         ],
         "type": "conference",
-        "conference": "ICSE 2024",
+        "conference": "International Conference on Software Engineering (ICSE) 2024",
         "description": "Adding explicit semantic facts as prompts to Large Language Models improves their performance in code summarization tasks, with notable improvements exceeding 2 BLEU and, in some cases, even surpassing 30 BLEU, demonstrating the effectiveness of this approach in enhancing code analysis and extraction of essential information.",
         "tags": [
             "Software Engineering",
@@ -77,7 +97,7 @@
         ],
         "type": "poster",
         "description": "The poster discusses the development of a RISC-V board model (RISCVMatched) in gem5, along with a methodology for fine-tuning gem5 configurations to closely match real-life systems, resulting in more accurate hardware validation and simulation capabilities.",
-        "conference": "ISCA 2023: gem5 Workshop",
+        "conference": "gem5 Workshop at International Symposium on Computer Architecture (ISCA) 2023",
         "tags": [
             "Computer Architecture",
             "gem5"
@@ -97,7 +117,7 @@
         ],
         "type": "poster",
         "description": "The gem5 Vision Project seeks to improve user-friendliness and accessibility by introducing advanced search functionality, comprehensive resource categorization, and expanded database support within the gem5 ecosystem for researchers and developers.",
-        "conference": "ISCA 2023: gem5 Workshop",
+        "conference": "gem5 Workshop at International Symposium on Computer Architecture (ISCA) 2023",
         "tags": [
             "Computer Architecture",
             "gem5"
