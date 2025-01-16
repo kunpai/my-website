@@ -7,7 +7,7 @@
             "Toufique Ahmed"
         ],
         "type": "conference",
-        "conference": "Mining Software Repositories (MSR) 2025: Data and Tool Showcase Track",
+        "conference": "International Conference on Mining Software Repositories (MSR) 2025: Data and Tool Showcase Track",
         "description": "Understanding and implementing code changes is a key aspect of software maintenance. To support this, we introduce a new dataset of coupled changes to code and documentation mined from high-quality GitHub projects, where each sample represents a single commit with simultaneous updates to code and docstrings. This dataset enables training and evaluation on realistic, change-related tasks, which remain challenging for current models like Llama 3.1 405B and Mixtral 8×22B.",
         "tags": [
             "Software Engineering",
