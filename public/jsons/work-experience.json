@@ -12,8 +12,8 @@
         "title": "Student Researcher",
         "organization": "University of California, Davis",
         "start": "September 2022",
-        "end": "Present",
-        "description": "Developing a dataset for pairwise code-documentation alignment from open-source Python projects, to assist with future tasks in software maintenance.\nCreated a pipeline for measuring calibration and correctness of large language models for code repair, using Defects4J.\nAssisted in validating the efficacy of semantic augmentation of language model prompts for code summarization using precision and recall metrics like ROUGE and METEOR.",
+        "end": "December 2024",
+        "description": "Developed a dataset for pairwise code-documentation alignment from open-source Python projects, to assist with future tasks in software maintenance.\nCreated a pipeline for measuring calibration and correctness of large language models for code repair, using Defects4J.\nAssisted in validating the efficacy of semantic augmentation of language model prompts for code summarization using precision and recall metrics like ROUGE and METEOR.",
         "location": "Davis, CA",
         "image": "/images/ucdavis.png"
     },
