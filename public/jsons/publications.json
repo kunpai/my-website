@@ -15,7 +15,8 @@
             "Large Language Models (LLMs)"
         ],
         "links": {
-            "View Source": "https://github.com/kunpai/codocbench"
+            "View Source": "https://github.com/kunpai/codocbench",
+            "View Pre-Print": "https://arxiv.org/abs/2502.00519"
         },
         "bibtex": "@inproceedings{kunal2025codocbench,\nauthor = {Pai, Kunal Suresh and Devanbu, Premkumar and Ahmed, Toufique},\ntitle= {CoDocBench: A Dataset for Code-Documentation Alignment in Software Maintenance},\nyear= {2025},\nbooktitle = {Proceedings of the MSR 2025: Data and Tool Showcase Track}\n}"
     },
