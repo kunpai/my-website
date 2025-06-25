@@ -7,6 +7,7 @@
             "Harshil Patel"
         ],
         "type": "preprint",
+        "conference": "arXiv preprint",
         "description": "To support resource-efficient multi-agent reasoning, we introduce HASHIRU, a hierarchical agent system that dynamically instantiates specialized agents under cost and memory constraints. HASHIRU combines hybrid LLM usage, autonomous API/tool creation, and a novel economic model for agent hiring/firing, outperforming larger models like Gemini 2.0 Flash on complex reasoning and safety tasks.",
         "tags": [
             "Artificial Intelligence",
