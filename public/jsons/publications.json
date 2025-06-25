@@ -19,7 +19,7 @@
             "View Publication": "https://ieeexplore.ieee.org/document/11025763",
             "View Pre-Print": "https://arxiv.org/abs/2502.00519"
         },
-        "bibtex": "@INPROCEEDINGS{11025763, author={Pai, Kunal and Devanbu, Premkumar and Ahmed, Toufique}, booktitle={2025 IEEE/ACM 22nd International Conference on Mining Software Repositories (MSR)}, title={CoDocBench: A Dataset for Code-Documentation Alignment in Software Maintenance}, year={2025}, pages={451-455}, keywords={Software maintenance;Codes;Source coding;Natural languages;Documentation;Data mining;Artificial intelligence;Software development management;llms;code generation;docstring generation}, doi={10.1109/MSR66628.2025.00077} }"
+        "bibtex": "@INPROCEEDINGS{11025763,\n author={Pai, Kunal and Devanbu, Premkumar and Ahmed, Toufique},\n booktitle={2025 IEEE/ACM 22nd International Conference on Mining Software Repositories (MSR)},\n title={CoDocBench: A Dataset for Code-Documentation Alignment in Software Maintenance},\n year={2025},\n pages={451-455},\n keywords={Software maintenance;Codes;Source coding;Natural languages;Documentation;Data mining;Artificial intelligence;Software development management;llms;code generation;docstring generation},\n doi={10.1109/MSR66628.2025.00077} }"
     },
     {
         "title": "Calibration and Correctness of Language Models for Code",
@@ -46,7 +46,7 @@
             "View Publication": "https://ieeexplore.ieee.org/document/11029728", 
             "View Pre-Print": "https://arxiv.org/pdf/2402.02047"
         },
-        "bibtex": "@INPROCEEDINGS{11029728, author={Spiess, Claudio and Gros, David and Pai, Kunal Suresh and Pradel, Michael and Rabin, Md Rafiqul Islam and Alipour, Amin and Jha, Susmit and Devanbu, Prem and Ahmed, Toufique}, booktitle={2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE)}, title={Calibration and Correctness of Language Models for Code}, year={2025}, pages={540-552}, keywords={Codes;Reviews;Decision making;Maintenance engineering;Reflection;Calibration;Software reliability;Software measurement;Standards;Software engineering;LLM;Calibration;Confidence Measure}, doi={10.1109/ICSE55347.2025.00040} }"
+        "bibtex": "@INPROCEEDINGS{11029728,\n author={Spiess, Claudio and Gros, David and Pai, Kunal Suresh and Pradel, Michael and Rabin, Md Rafiqul Islam and Alipour, Amin and Jha, Susmit and Devanbu, Prem and Ahmed, Toufique},\n booktitle={2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE)},\n title={Calibration and Correctness of Language Models for Code},\n year={2025},\n pages={540-552},\n keywords={Codes;Reviews;Decision making;Maintenance engineering;Reflection;Calibration;Software reliability;Software measurement;Standards;Software engineering;LLM;Calibration;Confidence Measure},\n doi={10.1109/ICSE55347.2025.00040} }"
     },
     {
         "title": "Potential and Limitation of High-Frequency Cores and Caches",
