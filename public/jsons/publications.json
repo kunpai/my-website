@@ -1,5 +1,25 @@
 [
     {
+        "title": "HASHIRU: Hierarchical Agent System for Hybrid Intelligent Resource Utilization",
+        "authors": [
+            "Kunal Pai",
+            "Parth Shah",
+            "Harshil Patel"
+        ],
+        "type": "preprint",
+        "description": "To support resource-efficient multi-agent reasoning, we introduce HASHIRU, a hierarchical agent system that dynamically instantiates specialized agents under cost and memory constraints. HASHIRU combines hybrid LLM usage, autonomous API/tool creation, and a novel economic model for agent hiring/firing, outperforming larger models like Gemini 2.0 Flash on complex reasoning and safety tasks.",
+        "tags": [
+            "Artificial Intelligence",
+            "Large Language Models (LLMs)",
+            "Multi-Agent Systems"
+        ],
+        "links": {
+            "View Pre-Print": "https://arxiv.org/pdf/2506.04255",
+            "View Source": "https://github.com/HASHIRU-AI/HASHIRU"
+        },
+        "bibtex": "@misc{hashiruai,\n title={HASHIRU: Hierarchical Agent System for Hybrid Intelligent Resource Utilization},\n author={Kunal Pai and Parth Shah and Harshil Patel},\n year={2025},\n eprint={2506.04255},\n archivePrefix={arXiv},\n primaryClass={cs.MA},\n url={https://arxiv.org/abs/2506.04255},\n}"
+    },
+    {
         "title": "CoDocBench: A Dataset for Code-Documentation Alignment in Software Maintenance",
         "authors": [
             "Kunal Pai",
