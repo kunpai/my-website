@@ -2,7 +2,7 @@
     "email": "pai.kunal05+contact@gmail.com",
     "name": "Kunal Pai",
     "image": "/images/kunal.jpeg",
-    "intro": "I am a Master's student at the University of California, Davis, primarily working on simulation accuracy, emerging computing technologies (superconductors and cryogenic semiconductors), and using large language models for software engineering tasks.",
+    "intro": "I am a Master's student at UC Davis working at the intersection of AI, Systems, and Software Engineering. My research centers on building and evaluating robust, autonomous agents for complex software engineering tasks, from secure code transpilation to automated bug repair.",
     "resume": "/resume2025.pdf",
     "resume_short": "/1.pdf",
     "footerLinks": {
