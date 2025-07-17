@@ -1,19 +1,37 @@
 [
     {
+        "title": "Research Intern",
+        "organization": "AIISC @ University of South Carolina",
+        "start": "July 2025",
+        "end": "Present",
+        "description": "Onboarded to the Composite AI for Enterprise program, exploring integrations of neuro-symbolic reasoning and LLMs.\nDeveloping early-stage ideas around culturally grounded reasoning, with a focus on Indian epistemologies and decision logic.\nCollaborating with researchers on frameworks for enterprise knowledge graphs and hybrid agent architectures.",
+        "location": "Columbia, SC (Remote)",
+        "image": "/images/aiisc.png"
+    },
+    {
+        "title": "Graduate Student Researcher",
+        "organization": "DavSec Lab @ University of California, Davis",
+        "start": "April 2025",
+        "end": "Present",
+        "description": "Built an automated pipeline for C-to-Rust transpilation using LLMs, targeting secure systems migration.\nIdentified Halstead vocabulary as the strongest metric for predicting translation difficulty.\nDiscovered temperature has negligible impact on high-confidence translations, simplifying hyperparameter tuning.\nIntroduced lightweight semantic augmentations (e.g., filename context) that improved functional accuracy by 5%.\nBenchmarked state-of-the-art LLMs across 746 C/C++ programs, achieving 70.2% functional accuracy with best prompt design.",
+        "location": "Davis, CA",
+        "image": "/images/ucdavis.png"
+    },
+    {
         "title": "Graduate Student Researcher",
         "organization": "DArchR Lab @ University of California, Davis",
         "start": "June 2023",
         "end": "Present",
-        "description": "Leading a team to develop a superconductor-based graph accelerator in the gem5 simulator.\nLeading a team to deliver full-system, cycle-level simulation models for cryogenic semiconductors and superconductors in gem5.\nCollaborating with a team to develop an autotuning methodology with 90% correlation between gem5 simulation results and hardware profiling metrics.\nMentoring 5 undergraduate students in the Davis Computer Architecture Lab to prepare them for graduate research.",
+        "description": "Leading a project to develop a full-system, cycle-level simulation model for a superconductor-based graph accelerator in the gem5 simulator, and to deliver models for cryogenic semiconductors and superconductors in gem5.\nMentored 5 undergraduate students in the Davis Computer Architecture Lab to prepare them for graduate research.",
         "location": "Davis, CA",
         "image": "/images/darchr.png"
     },
     {
-        "title": "Student Researcher",
+        "title": "Graduate Student Researcher",
         "organization": "DECAL Lab @ University of California, Davis",
         "start": "September 2022",
         "end": "December 2024",
-        "description": "Developed a dataset for pairwise code-documentation alignment from open-source Python projects, to assist with future tasks in software maintenance.\nCreated a pipeline for measuring calibration and correctness of large language models for code repair, using Defects4J.\nAssisted in validating the efficacy of semantic augmentation of language model prompts for code summarization using precision and recall metrics like ROUGE and METEOR.",
+        "description": "Developed a 2,250-sample dataset for pairwise code-documentation alignment from 200 open-source Python projects, enabling future research in software maintenance\nEngineered a pipeline for measuring calibration and correctness of large language models for code repair, using Defects4J\nCollaborated in validating efficacy of semantic augmentation of language model prompts for code summarization using precision and recall metrics like ROUGE and METEOR.",
         "location": "Davis, CA",
         "image": "/images/decallab.png"
     },
@@ -41,7 +59,7 @@
         "start": "January 2022",
         "end": "June 2022",
         "description": "Delivered 10 completed projects with global teams, including: \nDocumentation of a Discord bot that combats spam and fake users\n A Django-based web application for permission management for 100 users.",
-        "location": "Davis, CA",
+        "location": "Remote",
         "image": "/images/humanid.webp"
     },
     {
