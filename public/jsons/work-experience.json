@@ -31,7 +31,7 @@
         "organization": "DECAL Lab @ University of California, Davis",
         "start": "September 2022",
         "end": "December 2024",
-        "description": "Developed a 2,250-sample dataset for pairwise code-documentation alignment from 200 open-source Python projects, enabling future research in software maintenance\nEngineered a pipeline for measuring calibration and correctness of large language models for code repair, using Defects4J\nCollaborated in validating efficacy of semantic augmentation of language model prompts for code summarization using precision and recall metrics like ROUGE and METEOR.",
+        "description": "Developed a 4,500-sample dataset for pairwise code-documentation alignment from 200 open-source Python projects, enabling future research in software maintenance\nEngineered a pipeline for measuring calibration and correctness of large language models for code repair, using Defects4J\nCollaborated in validating efficacy of semantic augmentation of language model prompts for code summarization using precision and recall metrics like ROUGE and METEOR.",
         "location": "Davis, CA",
         "image": "/images/decallab.png"
     },
