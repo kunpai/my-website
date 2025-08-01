@@ -1,14 +1,5 @@
 [
     {
-        "title": "Research Intern",
-        "organization": "AIISC @ University of South Carolina",
-        "start": "July 2025",
-        "end": "Present",
-        "description": "Onboarded to the Composite AI for Enterprise program, exploring integrations of neuro-symbolic reasoning and LLMs.\nDeveloping early-stage ideas around culturally grounded reasoning, with a focus on Indian epistemologies and decision logic.\nCollaborating with researchers on frameworks for enterprise knowledge graphs and hybrid agent architectures.",
-        "location": "Columbia, SC (Remote)",
-        "image": "/images/aiisc.png"
-    },
-    {
         "title": "Graduate Student Researcher",
         "organization": "DavSec Lab @ University of California, Davis",
         "start": "April 2025",
