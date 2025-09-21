@@ -2,21 +2,53 @@ import { Row, Col, Button, Badge, Popover, OverlayTrigger } from "react-bootstra
 import publications from "/public/jsons/publications.json";
 import { generateMLACitation, generateChicagoCitation, generateIEEECitation, generateBibtexCitation } from "@/pages/api/citation";
 import CopyIcon from "./copyIcon";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useMemo } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Publication() {
+export default function Publication({ searchQuery }) {
     const name = process.env.CONFIG.name;
+
+    const filteredPublications = useMemo(() => {
+        if (!searchQuery || !searchQuery.trim()) {
+            return publications;
+        }
+
+        const query = searchQuery.toLowerCase().trim();
+        const queryWords = query.split(/\s+/).filter(word => word.length > 0);
+
+        return publications.filter(publication => {
+            const title = (publication.title || '').toLowerCase();
+            const description = (publication.description || '').toLowerCase();
+            const authors = (publication.authors || []).join(' ').toLowerCase();
+            const conference = (publication.conference || '').toLowerCase();
+            const tags = (publication.tags || []).join(' ').toLowerCase();
+
+            // Check if any query word matches in any field
+            return queryWords.some(word =>
+                title.includes(word) ||
+                description.includes(word) ||
+                authors.includes(word) ||
+                conference.includes(word) ||
+                tags.includes(word)
+            );
+        });
+    }, [searchQuery]);
 
     return (
         <>
-            {publications.map((publication, index) => {
-                return (
-                    <PublicationTile key={index} publication={publication} name={name} />
-                )
-            }
+            {filteredPublications.length === 0 && searchQuery ? (
+                <div className="text-center text-muted mt-4">
+                    <p>No publications found matching &quot;{searchQuery}&quot;</p>
+                    <p>Try searching for author names, conference names, or keywords.</p>
+                </div>
+            ) : (
+                filteredPublications.map((publication, index) => {
+                    return (
+                        <PublicationTile key={index} publication={publication} name={name} />
+                    )
+                })
             )}
         </>
     )

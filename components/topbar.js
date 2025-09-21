@@ -4,6 +4,7 @@ import { Container, Navbar, Nav, Offcanvas, ButtonGroup, ToggleButton, NavDropdo
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import linktree from '@/public/jsons/linktree.json';
+import SearchBar from './search';
 
 export default function Topbar() {
     const [show, setShow] = useState(false);
@@ -135,6 +136,9 @@ export default function Topbar() {
                             })}
                         </h1>
                     </Navbar.Brand>
+                    <div className="d-none d-lg-flex flex-grow-1 justify-content-center">
+                        <SearchBar />
+                    </div>
                     <Navbar.Toggle
                         aria-controls={`offcanvasNavbar-expand-sm`}
                         onClick={() => setShow(true)}
@@ -152,6 +156,9 @@ export default function Topbar() {
                             </Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body>
+                            <div className="d-lg-none mb-3">
+                                <SearchBar />
+                            </div>
                             <Nav className="justify-content-end flex-grow-1 pe-3">
                                 <Nav.Link href="/" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
                                     Home

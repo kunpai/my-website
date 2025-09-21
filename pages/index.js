@@ -18,6 +18,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import news from "/public/jsons/news.json";
 import ReactMarkdown from 'react-markdown';
+import linktree from "/public/jsons/linktree.json";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
@@ -116,6 +117,18 @@ export default function Home() {
             }
           </div>
         </Row>
+        {/* <Row>
+          <div className="mt-5">
+            <h1 className="mb-3" id="linktree">
+              LinkTree
+            </h1>
+            <div className="text-center">
+              <Link href="/linktree" className="btn btn-primary">
+                View LinkTree
+              </Link>
+            </div>
+          </div>
+        </Row> */}
       </div>
     </Containter>
   );
