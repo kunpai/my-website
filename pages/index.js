@@ -16,6 +16,8 @@ import skills from "/public/jsons/skills.json"
 import { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import news from "/public/jsons/news.json";
+import ReactMarkdown from 'react-markdown';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
@@ -42,6 +44,24 @@ export default function Home() {
         <Hello />
       </Row>
       <div className="content">
+        <Row>
+          <div className="mt-5">
+            <h1 className="mb-3" id="news">
+              News
+            </h1>
+            <ul className="list-unstyled">
+              {
+                news.map((item, index) => {
+                  return (
+                    <li key={index} className="mb-2 p-2 experience">
+                      <ReactMarkdown>{item}</ReactMarkdown>
+                    </li>
+                  )
+                })
+              }
+            </ul>
+          </div>
+        </Row>
         <Row>
           <Education />
         </Row>
