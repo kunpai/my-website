@@ -3,6 +3,10 @@ import { Form, InputGroup, Button, ListGroup } from 'react-bootstrap';
 import { useRouter } from 'next/router';
 import publications from '/public/jsons/publications.json';
 import Link from 'next/link';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function SearchBar() {
   const [query, setQuery] = useState('');
@@ -13,6 +17,7 @@ export default function SearchBar() {
   const router = useRouter();
   const searchInputRef = React.useRef(null);
   const dropdownRef = React.useRef(null);
+  const searchContainerRef = React.useRef(null);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -76,6 +81,22 @@ export default function SearchBar() {
     //   });
     setBlogs([]); // Empty array for now
     setLoading(false);
+  }, []);
+
+  // Animate search bar on scroll
+  useEffect(() => {
+    if (searchContainerRef.current) {
+      gsap.from(searchContainerRef.current, {
+        y: 24,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'ease',
+        scrollTrigger: {
+          trigger: searchContainerRef.current,
+          start: 'top 80%',
+        },
+      });
+    }
   }, []);
 
   // Index content for search
@@ -208,25 +229,27 @@ export default function SearchBar() {
 
   return (
     <div className="position-relative" ref={dropdownRef}>
-      <Form onSubmit={handleSearch} className="d-flex me-2">
-        <InputGroup>
-          <Form.Control
-            ref={searchInputRef}
-            type="search"
-            placeholder={loading ? "Loading..." : "Search publications... (Ctrl+K)"}
-            value={query}
-            onChange={handleInputChange}
-            onFocus={handleInputFocus}
-            disabled={loading}
-            style={{ minWidth: '250px' }}
-          />
-          <Button type="submit" variant="outline-secondary" disabled={loading}>
-            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-            </svg>
-          </Button>
-        </InputGroup>
-      </Form>
+      <div ref={searchContainerRef}>
+        <Form onSubmit={handleSearch} className="d-flex me-2">
+          <InputGroup>
+            <Form.Control
+              ref={searchInputRef}
+              type="search"
+              placeholder={loading ? "Loading..." : "Search publications... (Ctrl+K)"}
+              value={query}
+              onChange={handleInputChange}
+              onFocus={handleInputFocus}
+              disabled={loading}
+              style={{ minWidth: '250px' }}
+            />
+            <Button type="submit" variant="outline-secondary" disabled={loading}>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+            </Button>
+          </InputGroup>
+        </Form>
+      </div>
 
       {showDropdown && (
         <div
