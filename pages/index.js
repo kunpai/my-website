@@ -54,9 +54,7 @@ export default function Home() {
               {
                 news.map((item, index) => {
                   return (
-                    <li key={index} className="mb-2 p-2 experience">
-                      <ReactMarkdown>{item}</ReactMarkdown>
-                    </li>
+                    <NewsItem key={index} item={item} index={index} />
                   )
                 })
               }
@@ -169,6 +167,29 @@ function Award({ award }) {
       </Col>
     </Row>
   )
+}
+
+function NewsItem({ item, index }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    gsap.from(ref.current, {
+      y: 24,
+      opacity: 0,
+      duration: 0.8,
+      delay: index * 0.1,
+      ease: 'ease',
+      scrollTrigger: {
+        trigger: ref.current,
+        start: 'top 80%',
+      },
+    });
+  }, [index]);
+
+  return (
+    <li ref={ref} className="mb-2 p-2 experience">
+      <ReactMarkdown>{item}</ReactMarkdown>
+    </li>
+  );
 }
 
 // function to display skills.json

@@ -1,5 +1,27 @@
 [
     {
+        "title": "Implications of Full-System Modeling for Superconducting Architectures",
+        "authors": [
+            "Kunal Pai",
+            "Mahyar Samani",
+            "Anusheel Nand",
+            "Jason Lowe-Power"
+        ],
+        "type": "conference",
+        "conference": "Workshops of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC Workshops '25)",
+        "description": "As Moore's Law slows, superconducting electronics offer ultra-low-power, high-speed computation potential. This paper presents the first full-system superconducting modeling in gem5, including cryogenic and superconducting cores, caches, and interconnects. Our results show that superconducting cores and caches can yield up to 24× speedup for compute-intensive workloads, but memory-intensive applications remain bottlenecked by room-temperature DRAM. This makes superconducting technology more suitable for domain-specific accelerators rather than general-purpose computing, with performance dependent on workload memory access patterns and data widths.",
+        "tags": [
+            "Computer Architecture",
+            "Superconducting",
+            "Cryogenic Computing",
+            "gem5"
+        ],
+        "links": {
+            "View Publication": "https://doi.org/10.1145/3731599.3769278"
+        },
+        "bibtex": "@inproceedings{pai2025implications,\nauthor={Pai, Kunal and Samani, Mahyar and Nand, Anusheel and Lowe-Power, Jason},\ntitle={Implications of Full-System Modeling for Superconducting Architectures},\nbooktitle={Workshops of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC Workshops '25)},\nyear={2025},\npages={},\ndoi={10.1145/3731599.3769278}\n}"
+    },
+    {
         "title": "HASHIRU: Hierarchical Agent System for Hybrid Intelligent Resource Utilization",
         "authors": [
             "Kunal Pai",

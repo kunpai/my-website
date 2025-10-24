@@ -3,10 +3,6 @@ import { Form, InputGroup, Button, ListGroup } from 'react-bootstrap';
 import { useRouter } from 'next/router';
 import publications from '/public/jsons/publications.json';
 import Link from 'next/link';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function SearchBar() {
   const [query, setQuery] = useState('');
@@ -17,7 +13,6 @@ export default function SearchBar() {
   const router = useRouter();
   const searchInputRef = React.useRef(null);
   const dropdownRef = React.useRef(null);
-  const searchContainerRef = React.useRef(null);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -81,22 +76,6 @@ export default function SearchBar() {
     //   });
     setBlogs([]); // Empty array for now
     setLoading(false);
-  }, []);
-
-  // Animate search bar on scroll
-  useEffect(() => {
-    if (searchContainerRef.current) {
-      gsap.from(searchContainerRef.current, {
-        y: 24,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'ease',
-        scrollTrigger: {
-          trigger: searchContainerRef.current,
-          start: 'top 80%',
-        },
-      });
-    }
   }, []);
 
   // Index content for search
@@ -229,7 +208,7 @@ export default function SearchBar() {
 
   return (
     <div className="position-relative" ref={dropdownRef}>
-      <div ref={searchContainerRef}>
+      <div>
         <Form onSubmit={handleSearch} className="d-flex me-2">
           <InputGroup>
             <Form.Control
