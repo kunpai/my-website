@@ -1,6 +1,15 @@
 [
     {
         "title": "Graduate Student Researcher",
+        "organization": "DavSec Lab @ UC Davis",
+        "start": "April 2025",
+        "end": "Ongoing",
+        "description": "Built an automated pipeline for C-to-Rust transpilation using LLMs, with 5 prompt variations, targeting secure systems migration.\\nIdentified Halstead vocabulary as the strongest metric for predicting translation difficulty.\\nValidated lightweight semantic augmentations (e.g., filename context) that improved functional accuracy by 5%.\\nBenchmarked state-of-the-art LLMs across 746 C/C++ programs, achieving 70.2% functional accuracy with best prompt design.\\nIntroduced a cross-layer analysis framework combining compiler-level metrics with hardware performance counters for C vs. Rust translations.\\nExposed semantic and optimization gaps in LLM-translated and syntax-directed Rust translations.",
+        "location": "Davis, CA",
+        "image": "/images/ucdavis.png"
+    },
+    {
+        "title": "Graduate Student Researcher",
         "organization": "UC Davis Computer Architecture Research Group",
         "start": "June 2023",
         "end": "Ongoing",

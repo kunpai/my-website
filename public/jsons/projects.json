@@ -1,5 +1,27 @@
 [
     {
+        "title": "MARS: Multi-Agent Review System for Academic Papers",
+        "start": "January 2025",
+        "end": "March 2025",
+        "description": "Built a multi-agent LLM pipeline that simulates peer review with specialized agents for novelty, grammar, and critical questioning.\\nAchieved high accuracy on ICLR 2023 reviews, outperforming o3-mini and NotebookLM baselines.\\nDeployed privacy-preserving, local LLM evaluations using Ollama on consumer-grade hardware.",
+        "skills": [
+            "Python",
+            "LLMs",
+            "Multi-Agent Systems"
+        ],
+        "links": {
+            "GitHub": "https://github.com/kunpai/MARS",
+            "Paper": "/assets/papers/MARS.pdf"
+        },
+        "image": "/images/placeholder.png",
+        "collaborators": [
+            {
+                "name": "Saisha Shetty",
+                "link": "https://www.saishashetty.com/"
+            }
+        ]
+    },
+    {
         "title": "Automated Frameworks of Semantic Augmentation to Improve Mathematical Word Problem Solving",
         "start": "April 2024",
         "end": "June 2024",
@@ -41,7 +63,7 @@
         "collaborators": [
             {
                 "name": "Saisha Shetty",
-                "link": "https://www.linkedin.com/in/saisha-shetty/"
+                "link": "https://www.saishashetty.com/"
             },
             {
                 "name": "Vijeth KL",
@@ -104,7 +126,7 @@
             },
             {
                 "name": "Harshil Patel",
-                "link": "https://www.harshilpatel.me/"
+                "link": "https://media.licdn.com/dms/image/v2/D5635AQF-z3ST4o0csQ/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1680242379713?e=1762419600&v=beta&t=0CeViLM1Gl3rnmFN_golwlxyvcyNaUeGiVETo7fhHEg"
             },
             {
                 "name": "Arslan Ali",
