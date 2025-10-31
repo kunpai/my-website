@@ -3,7 +3,7 @@
         "title": "HASHIRU: Hierarchical Agent System for Hybrid Intelligent Resource Utilization",
         "start": "March 2025",
         "end": "Present",
-        "description": "Designed and deployed a multi-agent architecture enabling dynamic, LLM-driven collaboration across diverse tasks.\\nImplemented task decomposition with intelligent agent delegation based on resource cost models and task specialization.\\nEngineered autonomous generation of tools and APIs for task execution.\\nDeveloped a robust evaluation framework for agent performance across complex, multi-step tasks.",
+        "description": "Designed and deployed a multi-agent architecture enabling dynamic, LLM-driven collaboration across diverse tasks.\\nImplemented task decomposition with intelligent agent delegation based on resource cost models and task specialization.\nEngineered autonomous generation of tools and APIs for task execution.\nDeveloped a robust evaluation framework for agent performance across complex, multi-step tasks.",
         "skills": [
             "Python",
             "LLMs",
@@ -11,7 +11,8 @@
         ],
         "links": {
             "GitHub": "https://github.com/HASHIRU-AI/HASHIRU",
-            "Paper": "https://arxiv.org/pdf/2506.04255"
+            "Paper": "https://arxiv.org/pdf/2506.04255",
+            "Live Demo": "https://helloparthshah-hashiruai.hf.space/login-page/"
         },
         "image": "/images/HASHIRU_LOGO.png",
         "collaborators": [
@@ -29,7 +30,7 @@
         "title": "MARS: Multi-Agent Review System for Academic Papers",
         "start": "January 2025",
         "end": "March 2025",
-        "description": "Built a multi-agent LLM pipeline that simulates peer review with specialized agents for novelty, grammar, and critical questioning.\\nAchieved high accuracy on ICLR 2023 reviews, outperforming o3-mini and NotebookLM baselines.\\nDeployed privacy-preserving, local LLM evaluations using Ollama on consumer-grade hardware.",
+        "description": "Built a multi-agent LLM pipeline that simulates peer review with specialized agents for novelty, grammar, and critical questioning.\nAchieved high accuracy on ICLR 2023 reviews, outperforming o3-mini and NotebookLM baselines.\nDeployed privacy-preserving, local LLM evaluations using Ollama on consumer-grade hardware.",
         "skills": [
             "Python",
             "LLMs",
