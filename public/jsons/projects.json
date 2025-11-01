@@ -3,7 +3,7 @@
         "title": "HASHIRU: Hierarchical Agent System for Hybrid Intelligent Resource Utilization",
         "start": "March 2025",
         "end": "Present",
-        "description": "Designed and deployed a multi-agent architecture enabling dynamic, LLM-driven collaboration across diverse tasks.\\nImplemented task decomposition with intelligent agent delegation based on resource cost models and task specialization.\nEngineered autonomous generation of tools and APIs for task execution.\nDeveloped a robust evaluation framework for agent performance across complex, multi-step tasks.",
+        "description": "Designed and deployed a multi-agent architecture enabling dynamic, LLM-driven collaboration across diverse tasks.\nImplemented task decomposition with intelligent agent delegation based on resource cost models and task specialization.\nEngineered autonomous generation of tools and APIs for task execution.\nDeveloped a robust evaluation framework for agent performance across complex, multi-step tasks.",
         "skills": [
             "Python",
             "LLMs",
