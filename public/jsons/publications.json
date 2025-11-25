@@ -17,7 +17,9 @@
             "gem5"
         ],
         "links": {
-            "View Publication": "https://doi.org/10.1145/3731599.3769278"
+            "View Publication": "https://doi.org/10.1145/3731599.3769278",
+            "Slides": "https://pmbs-workshop.github.io/talk06.pdf",
+            "Talk": "https://sc25.conference-program.com/presentation/?id=ws_pmbss112&sess=sess198"
         },
         "bibtex": "@inproceedings{pai2025implications,\nauthor={Pai, Kunal and Samani, Mahyar and Nand, Anusheel and Lowe-Power, Jason},\ntitle={Implications of Full-System Modeling for Superconducting Architectures},\nbooktitle={Workshops of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC Workshops '25)},\nyear={2025},\npages={},\ndoi={10.1145/3731599.3769278}\n}"
     },
