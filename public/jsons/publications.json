@@ -1,29 +1,5 @@
 [
     {
-        "title": "Reproducibility and Standardization in gem5 Resources v25.0",
-        "authors": [
-            "Kunal Pai",
-            "Harshil Patel",
-            "Erin Le",
-            "Noah Krim",
-            "Mahyar Samani",
-            "Bobby R. Bruce",
-            "Jason Lowe-Power"
-        ],
-        "type": "preprint",
-        "conference": "arXiv preprint",
-        "description": "This paper adds features to gem5 and gem5 Resources to improve reproducibility in computer architecture simulations by standardizing disk image creation across ISAs, introducing hypercalls for better guest-host communication, and enabling parallel full-system simulations.",
-        "tags": [
-            "Computer Architecture",
-            "gem5",
-            "Reproducibility"
-        ],
-        "links": {
-            "View Pre-Print": "https://arxiv.org/abs/2512.13479"
-        },
-        "bibtex": "@misc{pai2025reproducibility,\n title={Reproducibility and Standardization in gem5 Resources v25.0},\n author={Kunal Pai and Harshil Patel and Erin Le and Noah Krim and Mahyar Samani and Bobby R. Bruce and Jason Lowe-Power},\n year={2025},\n eprint={2512.13479},\n archivePrefix={arXiv},\n primaryClass={cs.AR},\n url={https://arxiv.org/abs/2512.13479},\n}"
-    },
-    {
         "title": "Implications of Full-System Modeling for Superconducting Architectures",
         "authors": [
             "Kunal Pai",
