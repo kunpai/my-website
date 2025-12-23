@@ -32,6 +32,9 @@ export default function ContactForm() {
       <h6 className='text-secondary mb-3'>
         Hello there! I believe that every interaction holds the potential to spark creativity, forge new partnerships, and foster a genuine exchange of ideas. So, whether you&apos;re a fellow enthusiast in the same field, an aspiring artist, a tech wizard, or just someone looking to explore new horizons, don&apos;t hesitate to reach out!
       </h6>
+      <p className='text-secondary mb-3'>
+        You can contact me at <strong>pai DOT kunal05 AT gmail DOT com</strong> or <strong>kunpai AT ucdavis DOT edu</strong> or simply fill out the form below to redirect to an email client to send me a message directly.
+      </p>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formName">
           <Form.Label>Name</Form.Label>
