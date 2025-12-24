@@ -3,7 +3,7 @@
 import { Container, Navbar, Nav, Offcanvas, ButtonGroup, ToggleButton, NavDropdown } from "react-bootstrap";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import linktree from '@/public/jsons/linktree.json';
+// import linktree from '@/public/jsons/linktree.json';
 import SearchBar from './search';
 
 export default function Topbar() {
@@ -14,21 +14,21 @@ export default function Topbar() {
     const [isLightMode, setIsLightMode] = useState(false);
     const [theme, setTheme] = useState('auto');
 
-    const [latestConference, setLatestConference] = useState(null);
-    const [archivedConferences, setArchivedConferences] = useState([]);
+    // const [latestConference, setLatestConference] = useState(null);
+    // const [archivedConferences, setArchivedConferences] = useState([]);
 
-    useEffect(() => {
-      // Sort conferences by date (newest first)
-      const sortedConferences = linktree.sort((a, b) =>
-        new Date(b.date) - new Date(a.date)
-      );
+    // useEffect(() => {
+    //   // Sort conferences by date (newest first)
+    //   const sortedConferences = linktree.sort((a, b) =>
+    //     new Date(b.date) - new Date(a.date)
+    //   );
 
-      // Set the latest conference
-      setLatestConference(sortedConferences[0]);
+    //   // Set the latest conference
+    //   setLatestConference(sortedConferences[0]);
 
-      // Set the archived conferences (all except the latest)
-      setArchivedConferences(sortedConferences.slice(1));
-    }, []);
+    //   // Set the archived conferences (all except the latest)
+    //   setArchivedConferences(sortedConferences.slice(1));
+    // }, []);
 
     function toggleMode(isDarkMode) {
         if (isDarkMode) {
@@ -172,7 +172,7 @@ export default function Topbar() {
                                 <Nav.Link href="/blogs" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
                                     Blogs
                                 </Nav.Link>
-                                <NavDropdown title="Linktree" id="linktree-dropdown" className="main-text-regular">
+                                {/* <NavDropdown title="Linktree" id="linktree-dropdown" className="main-text-regular">
                                 {latestConference && (
                                     <NavDropdown.Item 
                                     href={`/linktree/${latestConference.path}`}
@@ -194,7 +194,7 @@ export default function Topbar() {
                                     </NavDropdown.Item>
                                 </>
                                 ) : null}
-                                </NavDropdown>
+                                </NavDropdown> */}
                                 <Nav.Link href="/contact" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
                                     Contact Me
                                 </Nav.Link>
