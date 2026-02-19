@@ -21,6 +21,26 @@ import ReactMarkdown from 'react-markdown';
 import linktree from "/public/jsons/linktree.json";
 gsap.registerPlugin(ScrollTrigger);
 
+function isAfterJune2023(end) {
+  if (end === "Present") return true;
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const [month, year] = end.split(" ");
+  const monthIndex = months.indexOf(month);
+  const date = new Date(parseInt(year), monthIndex);
+  const june2023 = new Date(2023, 5); // June is 5 (0-based)
+  return date >= june2023;
+}
+
+function isAfter2024(end) {
+  if (end === "Present") return true;
+  const [month, yearStr] = end.split(" ");
+  const year = parseInt(yearStr);
+  return year >= 2025;
+}
+
+const workExperienceFiltered = workExperience.filter(exp => isAfterJune2023(exp.end));
+const projectsFiltered = projects.filter(proj => isAfter2024(proj.end) || proj.title === "gem5 Vision");
+
 export default function Home() {
 
   useEffect(() => {
@@ -71,10 +91,16 @@ export default function Home() {
           <Experience jsonExperiences={teachingExperience} title={"Teaching Experience"} isExperience />
         </Row> */}
         <Row>
-          <Experience jsonExperiences={workExperience} title={"Work Experience"} isExperience />
+          <Experience jsonExperiences={workExperienceFiltered} title={"Work Experience"} isExperience />
+          <Link href="/work-experiences" className="btn btn-outline-secondary btn-lg d-block mx-auto mt-3">
+            View All Work Experiences <i className="bi bi-arrow-right ms-2"></i>
+          </Link>
         </Row>
         <Row>
-          <Experience jsonExperiences={projects} title={"Projects"} />
+          <Experience jsonExperiences={projectsFiltered} title={"Projects"} />
+          <Link href="/projects" className="btn btn-outline-secondary btn-lg d-block mx-auto mt-3">
+            View All Projects <i className="bi bi-arrow-right ms-2"></i>
+          </Link>
         </Row>
         <Row>
           <div className="mt-5">
