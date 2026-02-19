@@ -44,6 +44,11 @@ const projectsFiltered = projects.filter(proj => isAfter2024(proj.end) || proj.t
 
 export default function Home() {
 
+  const newsRef = useRef(null);
+  const serviceRef = useRef(null);
+  const workViewAllRef = useRef(null);
+  const projectsViewAllRef = useRef(null);
+
   useEffect(() => {
     const headings = document.querySelectorAll('.content h1');
     headings.forEach((heading) => {
@@ -59,6 +64,50 @@ export default function Home() {
         },
       });
     });
+
+    gsap.from(newsRef.current, {
+      y: 24,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'ease',
+      scrollTrigger: {
+        trigger: newsRef.current,
+        start: 'top 80%',
+      },
+    });
+
+    gsap.from(serviceRef.current, {
+      y: 24,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'ease',
+      scrollTrigger: {
+        trigger: serviceRef.current,
+        start: 'top 80%',
+      },
+    });
+
+    gsap.from(workViewAllRef.current, {
+      y: 24,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'ease',
+      scrollTrigger: {
+        trigger: workViewAllRef.current,
+        start: 'top 80%',
+      },
+    });
+
+    gsap.from(projectsViewAllRef.current, {
+      y: 24,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'ease',
+      scrollTrigger: {
+        trigger: projectsViewAllRef.current,
+        start: 'top 80%',
+      },
+    });
   }, []);
   return (
     <Containter className='home'>
@@ -67,7 +116,7 @@ export default function Home() {
       </Row>
       <div className="content">
         <Row>
-          <div className="mt-5">
+          <div ref={newsRef} className="mt-5">
             <h1 className="mb-3" id="news">
               News
             </h1>
@@ -93,15 +142,19 @@ export default function Home() {
         </Row> */}
         <Row>
           <Experience jsonExperiences={workExperienceFiltered} title={"Work Experience"} isExperience />
-          <Link href="/work-experiences" className="btn btn-outline-secondary btn-lg d-block mx-auto mt-3">
-            View All Work Experiences <i className="bi bi-arrow-right ms-2"></i>
-          </Link>
+          <div ref={workViewAllRef}>
+            <Link href="/work-experiences" className="btn btn-outline-secondary btn-lg d-block mx-auto mt-3">
+              View All Work Experiences <i className="bi bi-arrow-right ms-2"></i>
+            </Link>
+          </div>
         </Row>
         <Row>
           <Experience jsonExperiences={projectsFiltered} title={"Projects"} />
-          <Link href="/projects" className="btn btn-outline-secondary btn-lg d-block mx-auto mt-3">
-            View All Projects <i className="bi bi-arrow-right ms-2"></i>
-          </Link>
+          <div ref={projectsViewAllRef}>
+            <Link href="/projects" className="btn btn-outline-secondary btn-lg d-block mx-auto mt-3">
+              View All Projects <i className="bi bi-arrow-right ms-2"></i>
+            </Link>
+          </div>
         </Row>
         <Row>
           <div className="mt-5">
@@ -112,7 +165,7 @@ export default function Home() {
           </div>
         </Row>
         <Row>
-          <div className="mt-5">
+          <div ref={serviceRef} className="mt-5">
             <h1 className="mb-3" id="service">
               Service
             </h1>
