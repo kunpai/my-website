@@ -19,6 +19,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import news from "/public/jsons/news.json";
 import ReactMarkdown from 'react-markdown';
 import linktree from "/public/jsons/linktree.json";
+import service from "/public/jsons/service.json";
 gsap.registerPlugin(ScrollTrigger);
 
 function isAfterJune2023(end) {
@@ -108,6 +109,22 @@ export default function Home() {
               Publications / Talks
             </h1>
             <Publication />
+          </div>
+        </Row>
+        <Row>
+          <div className="mt-5">
+            <h1 className="mb-3" id="service">
+              Service
+            </h1>
+            <ul className="list-unstyled">
+              {
+                service.map((item, index) => {
+                  return (
+                    <NewsItem key={index} item={item} index={index} />
+                  )
+                })
+              }
+            </ul>
           </div>
         </Row>
         <Row>
