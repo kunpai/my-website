@@ -149,19 +149,19 @@ export default function Home() {
           </div>
         </Row>
         <Row>
+          <div className="mt-5">
+            {/* <h1 className="mb-3" id="publications">
+              Publications
+            </h1> */}
+            <Publication />
+          </div>
+        </Row>
+        <Row>
           <Experience jsonExperiences={projectsFiltered} title={"Projects"} />
           <div ref={projectsViewAllRef}>
             <Link href="/projects" className="btn btn-outline-secondary btn-lg d-block mx-auto mt-3">
               View All Projects <i className="bi bi-arrow-right ms-2"></i>
             </Link>
-          </div>
-        </Row>
-        <Row>
-          <div className="mt-5">
-            <h1 className="mb-3" id="publications">
-              Publications / Talks
-            </h1>
-            <Publication />
           </div>
         </Row>
         <Row>
