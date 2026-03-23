@@ -7,7 +7,7 @@
             "Anusheel Nand",
             "Jason Lowe-Power"
         ],
-        "type": "conference",
+        "type": "workshop",
         "conference": "Workshops of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC Workshops '25)",
         "description": "As Moore's Law slows, superconducting electronics offer ultra-low-power, high-speed computation potential. This paper presents the first full-system superconducting modeling in gem5, including cryogenic and superconducting cores, caches, and interconnects. Our results show that superconducting cores and caches can yield up to 24× speedup for compute-intensive workloads, but memory-intensive applications remain bottlenecked by room-temperature DRAM. This makes superconducting technology more suitable for domain-specific accelerators rather than general-purpose computing, with performance dependent on workload memory access patterns and data widths.",
         "tags": [
