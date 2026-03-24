@@ -1,5 +1,26 @@
 [
     {
+        "title": "NAAMSE: Framework for Evolutionary Security Evaluation of Agents",
+        "authors": [
+            "Kunal Pai",
+            "Parth Shah",
+            "Harshil Patel"
+        ],
+        "type": "workshop",
+        "conference": "ICLR 2026 Agents in the Wild: Safety, Security, and Beyond Workshop",
+        "description": "NAAMSE is an evolutionary framework that automates AI agent security testing by using a feedback-driven optimization process to mutate prompts and uncover high-severity vulnerabilities that manual or static benchmarks often miss.",
+        "tags": [
+            "Artificial Intelligence",
+            "Large Language Models (LLMs)",
+            "AI Safety",
+            "Adversarial Testing"
+        ],
+        "links": {
+            "View Publication": "https://arxiv.org/abs/2602.07391",
+            "View Source": "https://github.com/HASHIRU-AI/NAAMSE"
+        }
+    },
+    {
         "title": "Implications of Full-System Modeling for Superconducting Architectures",
         "authors": [
             "Kunal Pai",
