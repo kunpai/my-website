@@ -1,5 +1,30 @@
 [
     {
+        "title": "Toward Reproducible and Standardized Computer Architecture Simulation with gem5",
+        "authors": [
+            "Kunal Pai",
+            "Harshil Patel",
+            "Erin Le",
+            "Noah Krim",
+            "Mahyar Samani",
+            "Bobby R. Bruce",
+            "Jason Lowe-Power"
+        ],
+        "type": "conference",
+        "conference": "IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS) 2026",
+        "description": "To address the inconsistencies in simulation-based research, this work enhances the gem5 ecosystem by standardizing disk-image creation, introducing a flexible class-based exit event system for better guest-host communication, and implementing native tools like Suites and MultiSim to streamline and stabilize complex multi-workload workflows.",
+        "tags": [
+            "Computer Architecture",
+            "gem5",
+            "Simulation",
+            "Reproducibility"
+        ],
+        "links": {
+            "View Pre-Print": "https://arxiv.org/abs/2512.13479",
+            "View Artifact": "https://zenodo.org/records/18912932"
+        }
+    },
+    {
         "title": "NAAMSE: Framework for Evolutionary Security Evaluation of Agents",
         "authors": [
             "Kunal Pai",
