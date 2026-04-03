@@ -20,7 +20,7 @@ export default function PublicationPage(){
         <Row>
             <div className="mt-5">
             <h1 className="mb-3" id="publications">
-                Publications
+                {/* Publications */}
                 {searchQuery && <small className="text-muted"> - Filtered by: &quot;{searchQuery}&quot;</small>}
             </h1>
             <Publication searchQuery={searchQuery} />
