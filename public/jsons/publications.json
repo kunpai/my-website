@@ -23,7 +23,8 @@
             "View Publication": "https://ieeexplore.ieee.org/document/11527308",
             "View Pre-Print": "https://arxiv.org/abs/2512.13479",
             "View Artifact": "https://zenodo.org/records/18912932"
-        }
+        },
+        "bibtex": "@INPROCEEDINGS{pai2026toward,\n  author={Pai, Kunal and Patel, Harshil and Le, Erin and Krim, Noah and Samani, Mahyar and Bruce, Bobby R. and Lowe-Power, Jason},\n  booktitle={2026 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS)}, \n  title={Toward Reproducible and Standardized Computer Architecture Simulation with gem5}, \n  year={2026},\n  volume={},\n  number={},\n  pages={184-196},\n  keywords={Simulation;Timing;Radio access networks;Regional area networks;Kernel;Arm;Computer architecture;Printing;Testing;Booting;gem5;computer architecture;reproducibility},\n  doi={10.1109/ISPASS69572.2026.00027}}"
     },
     {
         "title": "NAAMSE: Framework for Evolutionary Security Evaluation of Agents",
@@ -44,7 +45,8 @@
         "links": {
             "View Publication": "https://openreview.net/pdf?id=RhoRECtymK",
             "View Source": "https://github.com/HASHIRU-AI/NAAMSE"
-        }
+        },
+        "bibtex": "@article{pai2026naamse,\n  title={NAAMSE: Framework for Evolutionary Security Evaluation of Agents},\n  author={Pai, Kunal and Shah, Parth and Patel, Harshil},\n  journal={arXiv preprint arXiv:2602.07391},\n  year={2026}\n}"
     },
     {
         "title": "Implications of Full-System Modeling for Superconducting Architectures",
