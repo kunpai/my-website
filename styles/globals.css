@@ -424,3 +424,114 @@ html[data-bs-theme="dark"] .copy-button:hover {
     transform: rotateY(1800deg);
   }
 }
+
+/* KunalAI Chatbot Widget */
+.kunalai-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Floating Action Button */
+.kunalai-fab {
+  width: 56px;
+  height: 56px;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  border: none;
+  background: linear-gradient(135deg, #0d6efd 0%, #00d2ff 100%) !important;
+  color: white;
+}
+
+.kunalai-fab:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 20px rgba(13, 110, 253, 0.4);
+}
+
+.kunalai-fab.open {
+  transform: rotate(90deg) !important;
+  background: #333 !important;
+}
+
+/* Chatbox Window */
+.kunalai-chatbox {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  width: 380px;
+  height: 500px;
+  max-height: calc(100vh - 120px);
+  border-radius: 16px !important;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color) !important;
+}
+
+@media (max-width: 576px) {
+  .kunalai-chatbox {
+    width: calc(100vw - 40px);
+    right: 0px;
+    height: calc(100vh - 100px);
+  }
+}
+
+.kunalai-body {
+  height: 0; /* allows flex-grow to work properly */
+  background: var(--bs-tertiary-bg);
+}
+
+.chat-messages-container {
+  scrollbar-width: thin;
+}
+
+/* Avatar Pulse indicator */
+.avatar-pulse {
+  width: 10px;
+  height: 10px;
+  background-color: #2ec4b6;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.7);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(46, 196, 182, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(46, 196, 182, 0);
+  }
+}
+
+/* Customize message bubbles */
+html[data-bs-theme="dark"] .chat-bubble.bg-body-secondary {
+  background-color: #2b3035 !important;
+  color: #f2f2f2 !important;
+}
+
+html[data-bs-theme="light"] .chat-bubble.bg-body-secondary {
+  background-color: #e9ecef !important;
+  color: #212529 !important;
+}
+
+/* ScrollToTop position conflict */
+.scrollToTop {
+  bottom: 85px !important; /* Move scroll-to-top button up slightly so it doesn't overlap the chatbot FAB */
+}
+
