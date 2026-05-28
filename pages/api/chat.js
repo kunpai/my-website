@@ -39,7 +39,20 @@ export default async function handler(req) {
 
     let verdict = 'YES';
     try {
-      // Use a fast, 1-token classification call to determine relevance
+      // Clone the messages array and insert classification instructions
+      const classificationMessages = [...messages];
+      if (classificationMessages[0] && classificationMessages[0].role === 'system') {
+        const originalSystemContent = classificationMessages[0].content;
+        const contextIndex = originalSystemContent.indexOf('Context:');
+        const contextSection = contextIndex !== -1 ? originalSystemContent.slice(contextIndex) : '';
+
+        classificationMessages[0] = {
+          role: 'system',
+          content: `You are a relevance classifier. Analyze the context and the conversation history below. Determine if the user's latest query is related to Kunal Pai's background, research, publications, projects, education, career, skills, contact info, or standard chatbot greetings.\n\nOutput your response in the following format:\nThought: [one brief sentence explaining if it is related or unrelated]\nVerdict: [YES or NO]\n\n${contextSection}`
+        };
+      }
+
+      // Use a fast classification call to determine relevance
       const classificationResponse = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
         method: 'POST',
         headers: {
@@ -48,24 +61,15 @@ export default async function handler(req) {
         },
         body: JSON.stringify({
           model: 'meta/llama-3.1-8b-instruct',
-          messages: [
-            {
-              role: 'system',
-              content: "Determine if the user query is directly related to Kunal Pai (the website owner), his research, publications, software projects, work/teaching experience, skills, education, contact info, or standard chatbot greetings. If it is related, output YES. If it is unrelated (e.g. general knowledge, recipes, unrelated coding help, math, essays), output NO. Output ONLY YES or NO."
-            },
-            {
-              role: 'user',
-              content: `Query: "${lastUserMessage}"`
-            }
-          ],
-          max_tokens: 3,
+          messages: classificationMessages,
+          max_tokens: 45,
           temperature: 0.0,
         }),
       });
 
       if (classificationResponse.ok) {
         const classData = await classificationResponse.json();
-        verdict = classData.choices?.[0]?.message?.content?.trim() || 'YES';
+        verdict = classData.choices?.[0]?.message?.content || 'YES';
       } else {
         throw new Error(`Classification call returned status ${classificationResponse.status}`);
       }
@@ -93,7 +97,7 @@ export default async function handler(req) {
       }
     }
 
-    if (verdict.toUpperCase().includes('NO')) {
+    if (verdict.toUpperCase().includes('VERDICT: NO')) {
       return new Response(
         JSON.stringify({ 
           error: "I can only answer questions related to Kunal Pai's portfolio, research, experience, or skills. Please ask a relevant question!" 
