@@ -1,0 +1,55 @@
+name: Build and Update Resumes
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'public/jsons/**'
+      - 'scripts/**'
+      - 'website.config.json'
+  workflow_dispatch:
+
+jobs:
+  build-resumes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-fonts-recommended \
+            texlive-latex-extra \
+            texlive-fonts-extra
+
+      - name: Run Resume Generator and Compiler
+        run: |
+          chmod +x scripts/generate_resumes.py
+          python3 scripts/generate_resumes.py
+
+      - name: Commit and Push Compiled Resumes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Stage the compiled PDFs and TeX sources
+          git add public/*.pdf public/latex_src/*.tex
+          
+          # Commit only if there are modifications
+          if ! git diff --cached --exit-code; then
+            git commit -m "chore: auto-regenerate resumes from JSON sources [skip ci]"
+            git push
+          else
+            echo "No changes to the compiled resumes."
+          fi

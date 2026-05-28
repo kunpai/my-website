@@ -12,7 +12,7 @@ export default function Education() {
                 Education
             </h1>
             {
-                educations.map((education, index) => {
+                educations.filter(edu => edu.show_on_website !== false).map((education, index) => {
                     return (
                         <EducationTile education={education} key={index} />
                     )

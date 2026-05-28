@@ -2,5 +2,14 @@
     "programming-languages": ["Python", "C++", "Java", "JavaScript"],
     "frameworks": ["React", "Next.js", "TensorFlow", "PyTorch", "Django", "Flask", "scikit-learn", "pandas", "NumPy", "Matplotlib"],
     "tools-and-technologies": ["Git", "Docker", "MongoDB", "gem5", "Unix/Linux", "LaTeX"],
-    "languages": ["English", "Gujarati", "Hindi", "Spanish"]
+    "languages": ["English", "Gujarati", "Hindi", "Spanish"],
+    "resume_skills": {
+        "Languages": ["Python", "C++", "C", "JavaScript", "Java"],
+        "resume_skills_long_override": {
+            "Languages": ["Python", "C++", "C", "JavaScript", "Java", "Rust"]
+        },
+        "ML/AI": ["TensorFlow", "PyTorch", "scikit-learn", "LLMs", "Prompt Engineering", "Ollama", "Hugging Face", "Multi-agent Systems"],
+        "Web/Data": ["React", "Next.js", "Django", "Flask", "MongoDB", "pandas", "NumPy", "Matplotlib"],
+        "Tools": ["Git", "Docker", "Unix/Linux", "gem5", "Jupyter", "LLVM", "Clang"]
+    }
 }

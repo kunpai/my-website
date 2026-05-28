@@ -5,6 +5,14 @@
     "intro": "I am a Master's student at UC Davis working at the intersection of AI, Systems, and Software Engineering. My research centers on building and evaluating robust, autonomous agents for complex software engineering tasks, from secure code transpilation to automated bug repair.",
     "resume": "/2 copy.pdf",
     "resume_short": "/2.pdf",
+    "resume_contact": {
+        "phone": "408-620-2339",
+        "website": "kunpai.space",
+        "website_url": "https://www.kunpai.space",
+        "email": "pai.kunal05@gmail.com",
+        "github": "github.com/kunpai",
+        "linkedin": "linkedin.com/in/kunpai"
+    },
     "footerLinks": {
         "Google Scholar": "https://scholar.google.com/citations?user=NOYGoDQAAAAJ&hl=en",
         "ORCID": "https://orcid.org/0009-0003-0675-7135",

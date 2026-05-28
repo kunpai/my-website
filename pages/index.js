@@ -186,7 +186,7 @@ export default function Home() {
               Skills
             </h1>
             {
-              Object.keys(skills).map((skill, index) => {
+              Object.keys(skills).filter(key => key !== "resume_skills").map((skill, index) => {
                 return (
                   <>
                     <h1>{skill.split("-").map(toTitleCase).join(" ")}</h1>
@@ -203,7 +203,7 @@ export default function Home() {
               Awards
             </h1>
             {
-              awards.map((award, index) => {
+              awards.filter(award => award.show_on_website !== false).map((award, index) => {
                 return (
                   <Award key={index} award={award} />
                 )

@@ -1,5 +1,6 @@
 import { Row, Col, Button, Badge, Popover, OverlayTrigger } from "react-bootstrap";
-import publications from "/public/jsons/publications.json";
+import publicationsRaw from "/public/jsons/publications.json";
+const publications = publicationsRaw.filter(p => p.show_on_website !== false);
 import { generateMLACitation, generateChicagoCitation, generateIEEECitation, generateBibtexCitation } from "@/pages/api/citation";
 import CopyIcon from "./copyIcon";
 import { useRef, useEffect, useMemo, useState } from "react";

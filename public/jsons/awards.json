@@ -1,27 +1,50 @@
 [
     {
-        "title": "Dean's List",
-        "awarder": "UC Davis College of Engineering",
-        "date": "Fall 2019"
+        "title": "2nd Place (Agent Safety)",
+        "awarder": "UC Berkeley RDI AgentBeats Competition",
+        "date": "2026",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": false
     },
     {
         "title": "Dean's List",
         "awarder": "UC Davis College of Engineering",
-        "date": "Fall 2020"
+        "date": "Fall 2019",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": false
     },
     {
         "title": "Dean's List",
         "awarder": "UC Davis College of Engineering",
-        "date": "Winter 2022"
+        "date": "Fall 2020",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": false
     },
     {
         "title": "Dean's List",
         "awarder": "UC Davis College of Engineering",
-        "date": "Spring 2022"
+        "date": "Winter 2022",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": false
+    },
+    {
+        "title": "Dean's List",
+        "awarder": "UC Davis College of Engineering",
+        "date": "Spring 2022",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": false
     },
     {
         "title": "Provost Award",
         "awarder": "UC Davis",
-        "date": "2019-2023"
+        "date": "2019-2023",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": false
     }
 ]

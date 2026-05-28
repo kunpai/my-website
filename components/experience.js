@@ -12,7 +12,7 @@ export default function Experience({ jsonExperiences, title, isExperience }) {
                 {title}
             </h1>
             {
-                jsonExperiences.map((experience, index) => {
+                jsonExperiences.filter(exp => exp.show_on_website !== false).map((experience, index) => {
                     return (
                         <ExperienceTile key={index} experience={experience} isExperience={isExperience} />
                     )

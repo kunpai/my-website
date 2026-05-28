@@ -24,7 +24,10 @@
             "View Pre-Print": "https://arxiv.org/abs/2512.13479",
             "View Artifact": "https://zenodo.org/records/18912932"
         },
-        "bibtex": "@INPROCEEDINGS{pai2026toward,\n  author={Pai, Kunal and Patel, Harshil and Le, Erin and Krim, Noah and Samani, Mahyar and Bruce, Bobby R. and Lowe-Power, Jason},\n  booktitle={2026 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS)}, \n  title={Toward Reproducible and Standardized Computer Architecture Simulation with gem5}, \n  year={2026},\n  volume={},\n  number={},\n  pages={184-196},\n  keywords={Simulation;Timing;Radio access networks;Regional area networks;Kernel;Arm;Computer architecture;Printing;Testing;Booting;gem5;computer architecture;reproducibility},\n  doi={10.1109/ISPASS69572.2026.00027}}"
+        "bibtex": "@INPROCEEDINGS{pai2026toward,\n  author={Pai, Kunal and Patel, Harshil and Le, Erin and Krim, Noah and Samani, Mahyar and Bruce, Bobby R. and Lowe-Power, Jason},\n  booktitle={2026 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS)}, \n  title={Toward Reproducible and Standardized Computer Architecture Simulation with gem5}, \n  year={2026},\n  volume={},\n  number={},\n  pages={184-196},\n  keywords={Simulation;Timing;Radio access networks;Regional area networks;Kernel;Arm;Computer architecture;Printing;Testing;Booting;gem5;computer architecture;reproducibility},\n  doi={10.1109/ISPASS69572.2026.00027}}",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": false
     },
     {
         "title": "NAAMSE: Framework for Evolutionary Security Evaluation of Agents",
@@ -46,7 +49,10 @@
             "View Publication": "https://openreview.net/pdf?id=RhoRECtymK",
             "View Source": "https://github.com/HASHIRU-AI/NAAMSE"
         },
-        "bibtex": "@article{pai2026naamse,\n  title={NAAMSE: Framework for Evolutionary Security Evaluation of Agents},\n  author={Pai, Kunal and Shah, Parth and Patel, Harshil},\n  journal={arXiv preprint arXiv:2602.07391},\n  year={2026}\n}"
+        "bibtex": "@article{pai2026naamse,\n  title={NAAMSE: Framework for Evolutionary Security Evaluation of Agents},\n  author={Pai, Kunal and Shah, Parth and Patel, Harshil},\n  journal={arXiv preprint arXiv:2602.07391},\n  year={2026}\n}",
+        "show_on_website": true,
+        "show_in_resume": false,
+        "show_in_resume_short": false
     },
     {
         "title": "Implications of Full-System Modeling for Superconducting Architectures",
@@ -70,7 +76,10 @@
             "Slides": "https://pmbs-workshop.github.io/talk06.pdf",
             "Talk": "https://sc25.conference-program.com/presentation/?id=ws_pmbss112&sess=sess198"
         },
-        "bibtex": "@inproceedings{pai2025implications,\nauthor={Pai, Kunal and Samani, Mahyar and Nand, Anusheel and Lowe-Power, Jason},\ntitle={Implications of Full-System Modeling for Superconducting Architectures},\nbooktitle={Workshops of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC Workshops '25)},\nyear={2025},\npages={},\ndoi={10.1145/3731599.3769278}\n}"
+        "bibtex": "@inproceedings{pai2025implications,\nauthor={Pai, Kunal and Samani, Mahyar & Nand, Anusheel and Lowe-Power, Jason},\ntitle={Implications of Full-System Modeling for Superconducting Architectures},\nbooktitle={Workshops of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC Workshops '25)},\nyear={2025},\npages={},\ndoi={10.1145/3731599.3769278}\n}",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": false
     },
     {
         "title": "HASHIRU: Hierarchical Agent System for Hybrid Intelligent Resource Utilization",
@@ -91,7 +100,10 @@
             "View Pre-Print": "https://arxiv.org/pdf/2506.04255",
             "View Source": "https://github.com/HASHIRU-AI/HASHIRU"
         },
-        "bibtex": "@misc{hashiruai,\n title={HASHIRU: Hierarchical Agent System for Hybrid Intelligent Resource Utilization},\n author={Kunal Pai and Parth Shah and Harshil Patel},\n year={2025},\n eprint={2506.04255},\n archivePrefix={arXiv},\n primaryClass={cs.MA},\n url={https://arxiv.org/abs/2506.04255},\n}"
+        "bibtex": "@misc{hashiruai,\n title={HASHIRU: Hierarchical Agent System for Hybrid Intelligent Resource Utilization},\n author={Kunal Pai and Parth Shah and Harshil Patel},\n year={2025},\n eprint={2506.04255},\n archivePrefix={arXiv},\n primaryClass={cs.MA},\n url={https://arxiv.org/abs/2506.04255},\n}",
+        "show_on_website": true,
+        "show_in_resume": false,
+        "show_in_resume_short": false
     },
     {
         "title": "CoDocBench: A Dataset for Code-Documentation Alignment in Software Maintenance",
@@ -113,7 +125,10 @@
             "View Publication": "https://ieeexplore.ieee.org/document/11025763",
             "View Pre-Print": "https://arxiv.org/abs/2502.00519"
         },
-        "bibtex": "@INPROCEEDINGS{11025763,\n author={Pai, Kunal and Devanbu, Premkumar and Ahmed, Toufique},\n booktitle={2025 IEEE/ACM 22nd International Conference on Mining Software Repositories (MSR)},\n title={CoDocBench: A Dataset for Code-Documentation Alignment in Software Maintenance},\n year={2025},\n pages={451-455},\n keywords={Software maintenance;Codes;Source coding;Natural languages;Documentation;Data mining;Artificial intelligence;Software development management;llms;code generation;docstring generation},\n doi={10.1109/MSR66628.2025.00077} }"
+        "bibtex": "@INPROCEEDINGS{11025763,\n author={Pai, Kunal and Devanbu, Premkumar and Ahmed, Toufique},\n booktitle={2025 IEEE/ACM 22nd International Conference on Mining Software Repositories (MSR)},\n title={CoDocBench: A Dataset for Code-Documentation Alignment in Software Maintenance},\n year={2025},\n pages={451-455},\n keywords={Software maintenance;Codes;Source coding;Natural languages;Documentation;Data mining;Artificial intelligence;Software development management;llms;code generation;docstring generation},\n doi={10.1109/MSR66628.2025.00077} }",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": true
     },
     {
         "title": "Calibration and Correctness of Language Models for Code",
@@ -140,7 +155,10 @@
             "View Publication": "https://ieeexplore.ieee.org/document/11029728", 
             "View Pre-Print": "https://arxiv.org/pdf/2402.02047"
         },
-        "bibtex": "@INPROCEEDINGS{11029728,\n author={Spiess, Claudio and Gros, David and Pai, Kunal Suresh and Pradel, Michael and Rabin, Md Rafiqul Islam and Alipour, Amin and Jha, Susmit and Devanbu, Prem and Ahmed, Toufique},\n booktitle={2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE)},\n title={Calibration and Correctness of Language Models for Code},\n year={2025},\n pages={540-552},\n keywords={Codes;Reviews;Decision making;Maintenance engineering;Reflection;Calibration;Software reliability;Software measurement;Standards;Software engineering;LLM;Calibration;Confidence Measure},\n doi={10.1109/ICSE55347.2025.00040} }"
+        "bibtex": "@INPROCEEDINGS{11029728,\n author={Spiess, Claudio and Gros, David and Pai, Kunal Suresh and Pradel, Michael and Rabin, Md Rafiqul Islam and Alipour, Amin and Jha, Susmit and Devanbu, Prem and Ahmed, Toufique},\n booktitle={2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE)},\n title={Calibration and Correctness of Language Models for Code},\n year={2025},\n pages={540-552},\n keywords={Codes;Reviews;Decision making;Maintenance engineering;Reflection;Calibration;Software reliability;Software measurement;Standards;Software engineering;LLM;Calibration;Confidence Measure},\n doi={10.1109/ICSE55347.2025.00040} }",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": true
     },
     {
         "title": "Potential and Limitation of High-Frequency Cores and Caches",
@@ -162,7 +180,10 @@
             "View Presentation": "https://arch.cs.ucdavis.edu/assets/papers/modsim2024-potentialhighfreq-presentation.pdf",
             "View Pre-Print": "https://arxiv.org/abs/2408.03308"
         },
-        "bibtex": "@inproceedings{kunal2024highfreqposter,\nauthor = {Pai, Kunal and Nand, Anusheel and Lowe-Power, Jason},\ntitle= {Potential and Limitation of High-Frequency Cores and Caches},\nyear= {2024},\nbooktitle = {Proceedings of the Workshop on Modeling & Simulation of Systems and Applications, ModSim 2024}\n}"
+        "bibtex": "@inproceedings{kunal2024highfreqposter,\nauthor = {Pai, Kunal and Nand, Anusheel and Lowe-Power, Jason},\ntitle= {Potential and Limitation of High-Frequency Cores and Caches},\nyear= {2024},\nbooktitle = {Proceedings of the Workshop on Modeling & Simulation of Systems and Applications, ModSim 2024}\n}",
+        "show_on_website": true,
+        "show_in_resume": false,
+        "show_in_resume_short": false
     },
     {
         "title": "Automatic semantic augmentation of language model prompts (for code summarization)",
@@ -183,7 +204,10 @@
         "links": {
             "View Publication": "https://dl.acm.org/doi/pdf/10.1145/3597503.3639183"
         },
-        "bibtex": "@inproceedings{ahmed2024automatic,\ntitle={Automatic semantic augmentation of language model prompts (for code summarization)},\nauthor={Ahmed, Toufique and Pai, Kunal Suresh and Devanbu, Premkumar and Barr, Earl},\nbooktitle={Proceedings of the IEEE/ACM 46th International Conference on Software Engineering},\npages={1--13},\nyear={2024}\n}"
+        "bibtex": "@inproceedings{ahmed2024automatic,\ntitle={Automatic semantic augmentation of language model prompts (for code summarization)},\nauthor={Ahmed, Toufique and Pai, Kunal Suresh and Devanbu, Premkumar and Barr, Earl},\nbooktitle={Proceedings of the IEEE/ACM 46th International Conference on Software Engineering},\npages={1--13},\nyear={2024}\n}",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": true
     },
     {
         "title": "Validating Hardware and SimPoints with gem5: A RISC-V Board Case Study",
@@ -202,7 +226,10 @@
         "links": {
             "View Publication": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/validating-hardware-and-simpoints-with-gem5-poster.pdf"
         },
-        "bibtex": "@inproceedings{kunal2023matchedposter,\nauthor = {Pai, Kunal and Qiu, Zhantong and Lowe-Power, Jason},\ntitle= {Validating Hardware and SimPoints with gem5: A RISC-V Board Case Study},\nyear= {2023},\nbooktitle = {Proceedings of the gem5 Workshop, International Symposium on Computer Architecture 2023},\nurl = {https://www.gem5.org/assets/files/workshop-isca-2023/posters/validating-hardware-and-simpoints-with-gem5-poster.pdf}\n}"
+        "bibtex": "@inproceedings{kunal2023matchedposter,\nauthor = {Pai, Kunal and Qiu, Zhantong and Lowe-Power, Jason},\ntitle= {Validating Hardware and SimPoints with gem5: A RISC-V Board Case Study},\nyear= {2023},\nbooktitle = {Proceedings of the gem5 Workshop, International Symposium on Computer Architecture 2023},\nurl = {https://www.gem5.org/assets/files/workshop-isca-2023/posters/validating-hardware-and-simpoints-with-gem5-poster.pdf}\n}",
+        "show_on_website": true,
+        "show_in_resume": false,
+        "show_in_resume_short": false
     },
     {
         "title": "gem5 Vision",
@@ -222,6 +249,9 @@
         "links": {
             "View Publication": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf"
         },
-        "bibtex": "@inproceedings{parth2023visionposter,\nauthor = {Shah, Parth and Pai, Kunal and Patel, Harshil and Ali, Arslan},\ntitle= {gem5 Vision},\nyear= {2023},\nbooktitle = {Proceedings of the gem5 Workshop, International Symposium on Computer Architecture 2023},\nurl = {https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf}\n}"
+        "bibtex": "@inproceedings{parth2023visionposter,\nauthor = {Shah, Parth and Pai, Kunal and Patel, Harshil and Ali, Arslan},\ntitle= {gem5 Vision},\nyear= {2023},\nbooktitle = {Proceedings of the gem5 Workshop, International Symposium on Computer Architecture 2023},\nurl = {https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf}\n}",
+        "show_on_website": true,
+        "show_in_resume": false,
+        "show_in_resume_short": false
     }
 ]

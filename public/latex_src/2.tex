@@ -1,0 +1,147 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\usepackage[sfdefault]{roboto}  % Sans-serif font
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{\Large\bfseries\scshape\raggedright}{}{0em}{}[\titlerule]
+
+\pdfgentounicode=1
+
+% Custom list commands
+\newcommand{\resumeItem}[1]{\item\small{#1} \vspace{-3pt}}
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{-1pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4} \\
+  \end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeSubheadingNoItal}[4]{%
+  \vspace{-1pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    #3 & #4 \\
+  \end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeSubheadingSmall}[2]{%
+  \vspace{-1pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+  \end{tabular*}\vspace{-7pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingList}{\begin{itemize}[leftmargin=0.15in, label={}, labelsep=0.15in]}
+\newcommand{\resumeJustifiedList}{\begin{itemize}[leftmargin=0.3in, label=\textbullet, labelsep=0.1in]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemDash}[1]{\item\small{\hspace{-0.1cm} -- #1} \vspace{-3pt}}
+
+\begin{document}
+
+{\Large
+\begin{center}
+  \textbf{\Huge Kunal Pai} \\
+  \small 408-620-2339 $|$ \href{mailto:pai.kunal05@gmail.com}{pai.kunal05@gmail.com} $|$ 
+  \href{https://linkedin.com/in/kunpai}{linkedin.com/in/kunpai} $|$
+  \href{https://github.com/kunpai}{github.com/kunpai} $|$
+  \href{https://www.kunpai.space}{kunpai.space}
+\end{center}
+}
+
+\section{Education}
+{\normalsize
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt]
+  \item \textbf{M.S., Computer Science}, University of California, Davis (GPA: \textbf{4.0/4.0}) \hfill Expected: June 2026
+  \item \textbf{B.S., Computer Science \& Engineering}, University of California, Davis (GPA: \textbf{3.8/4.0}), \textit{with Honors} \hfill June 2023
+\end{itemize}
+}
+
+\section{Relevant Skills}
+{\normalsize
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt]
+  \item \textbf{Languages}: Python, C++, C, JavaScript, Java
+  \item \textbf{ML/AI}: TensorFlow, PyTorch, scikit-learn, LLMs, Prompt Engineering, Ollama, Hugging Face, Multi-agent Systems
+  \item \textbf{Web/Data}: React, Next.js, Django, Flask, MongoDB, pandas, NumPy, Matplotlib
+  \item \textbf{Tools}: Git, Docker, Unix/Linux, gem5, Jupyter, LLVM, Clang
+\end{itemize}
+}
+
+\section{Work Experience}
+{\normalsize
+\resumeSubHeadingList
+  \resumeSubheadingSmall{Graduate Student Researcher, \textit{DavSec Lab @ UC Davis}}{April 2025 -- Present}
+  \resumeJustifiedList
+    \resumeItem{Built an automated pipeline for C-to-Rust transpilation using LLMs, with 5 prompt variations, targeting secure systems migration}
+    \resumeItem{Identified Halstead vocabulary as the strongest metric for predicting translation difficulty}
+    \resumeItem{Validated lightweight semantic augmentations (e.g., filename context) that improved functional accuracy by 5\%}
+    \resumeItem{Benchmarked state-of-the-art LLMs across 746 C/C++ programs, achieving 70.2\% functional accuracy with best prompt design}
+  \end{itemize}
+  \resumeSubheadingSmall{Graduate Student Researcher, \textit{DECAL Lab @ UC Davis}}{September 2022 -- December 2024}
+  \resumeJustifiedList
+    \resumeItem{Developed a 4,500-sample dataset for pairwise code-documentation alignment from 200 open-source Python projects, enabling future research in software maintenance}
+    \resumeItem{Engineered a pipeline for measuring calibration and correctness of large language models for code repair, using Defects4J}
+    \resumeItem{Collaborated in validating efficacy of semantic augmentation of language model prompts for code summarization using precision and recall metrics like ROUGE and METEOR}
+  \end{itemize}
+\resumeSubHeadingListEnd
+}
+
+\section{Publications (Selected)}
+{\normalsize
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt]
+  \resumeItem{\href{https://doi.org/10.1109/MSR66628.2025.00077}{\textbf{CoDocBench: A Dataset for Code-Documentation Alignment in Software Maintenance}}, \underline{Pai, K.}, Devanbu, P. \& Ahmed, T., \textit{International Conference on Mining Software Repositories (MSR) 2025: Data and Tool Showcase Track}}
+  \resumeItem{\href{https://doi.org/10.1109/ICSE55347.2025.00040}{\textbf{Calibration and Correctness of Language Models for Code}}, Spiess, C., Gros, D., \underline{Pai, K.S.}, et. al., \textit{International Conference on Software Engineering (ICSE) 2025}}
+  \resumeItem{\href{https://dl.acm.org/doi/pdf/10.1145/3597503.3639183}{\textbf{Automatic semantic augmentation of language model prompts (for code summarization)}}, Ahmed, T., \underline{Pai, K.S.}, Devanbu, P. \& Barr, E.T., \textit{International Conference on Software Engineering (ICSE) 2024}}
+\end{itemize}
+}
+
+\section{Project Experience}
+{\normalsize
+\resumeSubHeadingList
+  \resumeSubheading{\href{https://github.com/HASHIRU-AI/HASHIRU}{HASHIRU: Hierarchical, Resource-Aware Multi-Agent Framework}}{March 2025 -- Present}{Entrepreneurial Research Venture}{Python, LLMs, Multi-Agent Systems}
+  \resumeJustifiedList
+    \resumeItem{Designed and deployed a multi-agent architecture enabling dynamic, LLM-driven collaboration across diverse tasks.}
+    \resumeItem{Implemented task decomposition with intelligent agent delegation based on resource cost models and task specialization.}
+    \resumeItem{Engineered autonomous generation of tools and APIs for task execution.}
+    \resumeItem{Developed a robust evaluation framework for agent performance across complex, multi-step tasks.}
+  \end{itemize}
+  \resumeSubheading{SuperNOVA: Superconducting Graph Accelerator in gem5}{Jan 2024 -- Present}{Research Project, DArchR Lab @ UC Davis}{C++, Python, gem5, Hardware Simulation}
+  \resumeJustifiedList
+    \resumeItem{Modeling a superconducting graph accelerator in gem5, targeting sparse workloads under cryogenic conditions}
+    \resumeItem{Integrating energy and latency estimates from superconducting literature, and RTL simulations, to improve realism}
+    \resumeItem{Mentoring undergraduate researchers on modeling, benchmarking, and research writing; one co-authored a ModSim 2024 poster}
+  \end{itemize}
+  \resumeSubheading{\href{https://resources.gem5.org/}{gem5 Vision}}{January 2023 -- June 2023}{Resource Discovery Framework}{Next.js, Python, MongoDB, JSON Schema}
+  \resumeJustifiedList
+    \resumeItem{Boosted resource discovery speed by 20x with optimized search functionality across 1,200+ resources.}
+    \resumeItem{Enabled faster retrieval of resources across 20+ categories by introducing categorization and semantic versioning.}
+    \resumeItem{Enhanced accessibility for 500+ industry and academic users by integrating local/remote JSON files and MongoDB with gem5.}
+  \end{itemize}
+\resumeSubHeadingListEnd
+}
+
+\end{document}

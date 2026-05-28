@@ -2,64 +2,115 @@
     {
         "title": "Graduate Student Researcher",
         "organization": "DavSec Lab @ University of California, Davis",
+        "resume_organization": "DavSec Lab @ UC Davis",
         "start": "April 2025",
         "end": "Present",
-        "description": "Built an automated pipeline for C-to-Rust transpilation using LLMs, with 5 prompt variations, targeting secure systems migration.\nIdentified Halstead vocabulary as the strongest metric for predicting translation difficulty.\nValidated lightweight semantic augmentations (e.g., filename context) that improved functional accuracy by 5%.\nBenchmarked state-of-the-art LLMs across 746 C/C++ programs, achieving 70.2% functional accuracy with best prompt design.",
         "location": "Davis, CA",
-        "image": "/images/ucdavis.png"
+        "image": "/images/ucdavis.png",
+        "description": "Built an automated pipeline for C-to-Rust transpilation using LLMs, with 5 prompt variations, targeting secure systems migration.\nIdentified Halstead vocabulary as the strongest metric for predicting translation difficulty.\nValidated lightweight semantic augmentations (e.g., filename context) that improved functional accuracy by 5%.\nBenchmarked state-of-the-art LLMs across 746 C/C++ programs, achieving 70.2% functional accuracy with best prompt design.",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": true,
+        "resume_type": "Research Project",
+        "resume_skills": "Python, LLMs, C++, Rust, Compiler Analysis",
+        "resume_description": [
+            "Built automated C-to-Rust transpilation pipeline using LLMs with 5 prompt variations, benchmarking state-of-the-art models across 746 programs and achieving 70.2\\% functional accuracy",
+            "Engineered a multi-variant performance-aware transpilation framework that explores alternative Rust implementations in an evolutionary agent setting, yielding up to 3$\\times$ runtime reduction across benchmarks",
+            "Developed cross-layer analysis framework combining compiler metrics with hardware performance counters to expose semantic and optimization gaps in LLM-translated, syntax-directed and manually-written Rust translations"
+        ],
+        "resume_short_description": [
+            "Built an automated pipeline for C-to-Rust transpilation using LLMs, with 5 prompt variations, targeting secure systems migration",
+            "Identified Halstead vocabulary as the strongest metric for predicting translation difficulty",
+            "Validated lightweight semantic augmentations (e.g., filename context) that improved functional accuracy by 5\\%",
+            "Benchmarked state-of-the-art LLMs across 746 C/C++ programs, achieving 70.2\\% functional accuracy with best prompt design"
+        ]
     },
     {
         "title": "Graduate Student Researcher",
         "organization": "DArchR Lab @ University of California, Davis",
         "start": "June 2023",
         "end": "Present",
-        "description": "Leading a project to develop a full-system, cycle-level simulation model for a superconductor-based graph accelerator in the gem5 simulator, and to deliver models for cryogenic semiconductors and superconductors in gem5.\nMentored 5 undergraduate students in the Davis Computer Architecture Lab to prepare them for graduate research.",
         "location": "Davis, CA",
-        "image": "/images/darchr.png"
+        "image": "/images/darchr.png",
+        "description": "Leading a project to develop a full-system, cycle-level simulation model for a superconductor-based graph accelerator in the gem5 simulator, and to deliver models for cryogenic semiconductors and superconductors in gem5.\nMentored 5 undergraduate students in the Davis Computer Architecture Lab to prepare them for graduate research.",
+        "show_on_website": true,
+        "show_in_resume": false,
+        "show_in_resume_short": false
     },
     {
         "title": "Graduate Student Researcher",
         "organization": "DECAL Lab @ University of California, Davis",
+        "resume_organization": "DECAL Lab @ UC Davis",
         "start": "September 2022",
         "end": "December 2024",
-        "description": "Developed a 4,500-sample dataset for pairwise code-documentation alignment from 200 open-source Python projects, enabling future research in software maintenance\nEngineered a pipeline for measuring calibration and correctness of large language models for code repair, using Defects4J\nCollaborated in validating efficacy of semantic augmentation of language model prompts for code summarization using precision and recall metrics like ROUGE and METEOR.",
         "location": "Davis, CA",
-        "image": "/images/decallab.png"
+        "image": "/images/decallab.png",
+        "description": "Developed a 4,500-sample dataset for pairwise code-documentation alignment from 200 open-source Python projects, enabling future research in software maintenance\nEngineered a pipeline for measuring calibration and correctness of large language models for code repair, using Defects4J\nCollaborated in validating efficacy of semantic augmentation of language model prompts for code summarization using precision and recall metrics like ROUGE and METEOR.",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": true,
+        "resume_type": "Research Project",
+        "resume_skills": "Python, LLMs, Machine Learning, Code Analysis",
+        "resume_description": [
+            "Developed a 4,500-sample dataset for pairwise code-documentation alignment from 200 open-source Python projects, enabling future research in software maintenance",
+            "Engineered a pipeline for measuring calibration and correctness of large language models for code repair, using Defects4J",
+            "Collaborated in validating efficacy of semantic augmentation of language model prompts for code summarization using precision and recall metrics like ROUGE and METEOR"
+        ],
+        "resume_short_description": [
+            "Developed a 4,500-sample dataset for pairwise code-documentation alignment from 200 open-source Python projects, enabling future research in software maintenance",
+            "Engineered a pipeline for measuring calibration and correctness of large language models for code repair, using Defects4J",
+            "Collaborated in validating efficacy of semantic augmentation of language model prompts for code summarization using precision and recall metrics like ROUGE and METEOR"
+        ]
     },
     {
         "title": "Teaching Assistant",
         "organization": "University of California, Davis",
         "start": "September 2023",
         "end": "December 2023",
-        "description": "Assisted 180 students in a senior-level Probability & Statistical Modeling class.",
         "location": "Davis, CA",
-        "image": "/images/ucdavis.png"
+        "image": "/images/ucdavis.png",
+        "description": "Assisted 180 students in a senior-level Probability & Statistical Modeling class.",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": false,
+        "resume_description": [
+            "Assisted 180 students in a senior-level Probability \\& Statistical Modeling class."
+        ]
     },
     {
         "title": "Undergraduate Researcher",
         "organization": "DArchR Lab @ University of California, Davis",
         "start": "June 2022",
         "end": "June 2023",
-        "description": "Implemented a model of the HiFive Unmatched RISC-V board in gem5, achieving 85% accuracy with hardware profiling metrics.\nAuthored a poster on the validation of hardware and simpoints with gem5, presented at the gem5 workshop at ISCA 2023.\nCo-authored tutorials on perf compilation for RISC-V and documentation for the Standard Library in gem5.",
         "location": "Davis, CA",
-        "image": "/images/darchr.png"
+        "image": "/images/darchr.png",
+        "description": "Implemented a model of the HiFive Unmatched RISC-V board in gem5, achieving 85% accuracy with hardware profiling metrics.\nAuthored a poster on the validation of hardware and simpoints with gem5, presented at the gem5 workshop at ISCA 2023.\nCo-authored tutorials on perf compilation for RISC-V and documentation for the Standard Library in gem5.",
+        "show_on_website": true,
+        "show_in_resume": false,
+        "show_in_resume_short": false
     },
     {
         "title": "Tech Team Lead",
         "organization": "humanID",
         "start": "January 2022",
         "end": "June 2022",
-        "description": "Delivered 10 completed projects with global teams, including: \nDocumentation of a Discord bot that combats spam and fake users\n A Django-based web application for permission management for 100 users.",
         "location": "Remote",
-        "image": "/images/humanid.webp"
+        "image": "/images/humanid.webp",
+        "description": "Delivered 10 completed projects with global teams, including: \nDocumentation of a Discord bot that combats spam and fake users\n A Django-based web application for permission management for 100 users.",
+        "show_on_website": true,
+        "show_in_resume": false,
+        "show_in_resume_short": false
     },
     {
         "title": "Technical Product Marketing Intern",
         "organization": "SiTime Corp.",
         "start": "July 2021",
         "end": "September 2021",
-        "description": "Presented strategy to improve distributor margins, identified up to $250K in potential upside.\nConducted a market survey on optical transceivers used in AI networking, to identify customers for MEMS timing chips.\n Created Visio diagrams for the product requirements document (PRD) of a timing chip.",
         "location": "Santa Clara, CA",
-        "image": "/images/sitime.png"
+        "image": "/images/sitime.png",
+        "description": "Presented strategy to improve distributor margins, identified up to $250K in potential upside.\nConducted a market survey on optical transceivers used in AI networking, to identify customers for MEMS timing chips.\n Created Visio diagrams for the product requirements document (PRD) of a timing chip.",
+        "show_on_website": true,
+        "show_in_resume": false,
+        "show_in_resume_short": false
     }
 ]
