@@ -366,10 +366,13 @@ def generate_service_section(services):
     lines = []
     lines.append(r"\section{Service}")
     lines.append(r"{\normalsize")
-    lines.append(r"\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt]")
+    lines.append(r"\begin{itemize}[leftmargin=0.15in, label=\textbullet, itemsep=0pt]")
     
     for svc in services:
         formatted = markdown_links_to_latex(svc)
+        parts = formatted.split(",", 1)
+        if len(parts) == 2:
+            formatted = rf"\textbf{{{parts[0]}}},{parts[1]}"
         lines.append(rf"  \item {formatted}")
         
     lines.append(r"\end{itemize}")
