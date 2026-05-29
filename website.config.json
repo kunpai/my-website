@@ -3,8 +3,8 @@
     "name": "Kunal Pai",
     "image": "/images/kunal.jpeg",
     "intro": "I am a Master's student at UC Davis working at the intersection of AI, Systems, and Software Engineering. My research centers on building and evaluating robust, autonomous agents for complex software engineering tasks, from secure code transpilation to automated bug repair.",
-    "resume": "/2 copy.pdf",
-    "resume_short": "/2.pdf",
+    "resume": "/Kunal_Pai_CV.pdf",
+    "resume_short": "/Kunal_Pai_Resume.pdf",
     "resume_contact": {
         "phone": "408-620-2339",
         "website": "kunpai.space",
