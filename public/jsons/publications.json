@@ -47,7 +47,8 @@
         ],
         "links": {
             "View Publication": "https://openreview.net/pdf?id=RhoRECtymK",
-            "View Source": "https://github.com/HASHIRU-AI/NAAMSE"
+            "View Source": "https://github.com/HASHIRU-AI/NAAMSE",
+            "View Project Page": "https://iclr.cc/virtual/2026/10016329"
         },
         "bibtex": "@article{pai2026naamse,\n  title={NAAMSE: Framework for Evolutionary Security Evaluation of Agents},\n  author={Pai, Kunal and Shah, Parth and Patel, Harshil},\n  journal={arXiv preprint arXiv:2602.07391},\n  year={2026}\n}",
         "show_on_website": true,
