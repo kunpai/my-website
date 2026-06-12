@@ -1,9 +1,45 @@
 [
     {
+        "title": "NAAMSE: Neural Adversarial Agent Mutation-based Security Evaluator",
+        "start": "Nov 2025",
+        "end": "Present",
+        "description": "Won 2nd place (Agent Safety) at the UC Berkeley RDI AgentBeats Competition; framework infrastructure was subsequently forked by Mozilla’s 0din team.\nDesigned and implemented a clustering engine to identify semantic attack vectors in LLM-generated adversarial prompts.\nEngineered an attack pipeline that iteratively generates, evaluates, and refines adversarial prompts against target models.\nBenchmarked multiple frontier LLMs within the framework to validate attack effectiveness and refine scoring metrics.",
+        "skills": [
+            "Python",
+            "LLMs",
+            "Evolutionary Algorithms"
+        ],
+        "links": {
+            "Website": "https://naamse.com"
+        },
+        "image": "/images/naamse-n.svg",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": true,
+        "resume_type": "Research Project",
+        "resume_skills": "Python, LLMs, Evolutionary Algorithms",
+        "resume_description": [
+            "Won 2nd place (Agent Safety) at the UC Berkeley RDI AgentBeats Competition; framework infrastructure was subsequently forked by Mozilla’s 0din team.",
+            "Designed and implemented a clustering engine to identify semantic attack vectors in LLM-generated adversarial prompts",
+            "Engineered an attack pipeline that iteratively generates, evaluates, and refines adversarial prompts against target models",
+            "Benchmarked multiple frontier LLMs within the framework to validate attack effectiveness and refine scoring metrics"
+        ],
+        "collaborators": [
+            {
+                "name": "Parth Shah",
+                "link": "https://helloparthshah.vercel.app/"
+            },
+            {
+                "name": "Harshil Patel",
+                "link": "https://harshilpatel.vercel.app/"
+            }
+        ]
+    },
+    {
         "title": "HASHIRU: Hierarchical Agent System for Hybrid Intelligent Resource Utilization",
         "resume_title": "HASHIRU: Hierarchical, Resource-Aware Multi-Agent Framework",
         "start": "March 2025",
-        "end": "Present",
+        "end": "June 2025",
         "description": "Designed and deployed a multi-agent architecture enabling dynamic, LLM-driven collaboration across diverse tasks.\nImplemented task decomposition with intelligent agent delegation based on resource cost models and task specialization.\nEngineered autonomous generation of tools and APIs for task execution.\nDeveloped a robust evaluation framework for agent performance across complex, multi-step tasks.",
         "skills": [
             "Python",
@@ -23,12 +59,12 @@
             },
             {
                 "name": "Harshil Patel",
-                "link": "https://media.licdn.com/dms/image/v2/D5635AQF-z3ST4o0csQ/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1680242379713?e=1762419600&v=beta&t=0CeViLM1Gl3rnmFN_golwlxyvcyNaUeGiVETo7fhHEg"
+                "link": "https://harshilpatel.vercel.app/"
             }
         ],
         "show_on_website": true,
         "show_in_resume": true,
-        "show_in_resume_short": true,
+        "show_in_resume_short": false,
         "resume_type": "Research Project",
         "resume_type_short": "Entrepreneurial Research Venture",
         "resume_skills": "Python, LLMs, Multi-Agent Systems",
@@ -40,34 +76,9 @@
         ]
     },
     {
-        "title": "NAAMSE: Neural Adversarial Agent Mutation-based Security Evaluator",
-        "start": "Nov 2025",
-        "end": "Feb 2026",
-        "description": "Won 2nd place (Agent Safety) at the UC Berkeley RDI AgentBeats Competition; framework infrastructure was subsequently forked by Mozilla’s 0din team.\nDesigned and implemented a clustering engine to identify semantic attack vectors in LLM-generated adversarial prompts.\nEngineered an attack pipeline that iteratively generates, evaluates, and refines adversarial prompts against target models.\nBenchmarked multiple frontier LLMs within the framework to validate attack effectiveness and refine scoring metrics.",
-        "skills": [
-            "Python",
-            "LLMs",
-            "Evolutionary Algorithms"
-        ],
-        "links": {
-            "Website": "https://hashiru-ai.github.io/naamse-website/"
-        },
-        "show_on_website": false,
-        "show_in_resume": true,
-        "show_in_resume_short": false,
-        "resume_type": "Research Project",
-        "resume_skills": "Python, LLMs, Evolutionary Algorithms",
-        "resume_description": [
-            "Won 2nd place (Agent Safety) at the UC Berkeley RDI AgentBeats Competition; framework infrastructure was subsequently forked by Mozilla’s 0din team.",
-            "Designed and implemented a clustering engine to identify semantic attack vectors in LLM-generated adversarial prompts",
-            "Engineered an attack pipeline that iteratively generates, evaluates, and refines adversarial prompts against target models",
-            "Benchmarked multiple frontier LLMs within the framework to validate attack effectiveness and refine scoring metrics"
-        ]
-    },
-    {
         "title": "SuperNOVA: Superconducting Graph Accelerator in gem5",
-        "start": "Jan 2024",
-        "end": "Present",
+        "start": "January 2024",
+        "end": "March 2026",
         "description": "Modeling a superconducting graph accelerator and interconnect in gem5, targeting sparse workloads under cryogenic conditions.\nIntegrating energy and latency estimates from superconducting literature and RTL simulations to improve realism.\nMentoring undergraduate researchers on modeling, benchmarking, and research writing.",
         "skills": [
             "C++",
@@ -230,7 +241,7 @@
             },
             {
                 "name": "Harshil Patel",
-                "link": "https://media.licdn.com/dms/image/v2/D5635AQF-z3ST4o0csQ/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1680242379713?e=1762419600&v=beta&t=0CeViLM1Gl3rnmFN_golwlxyvcyNaUeGiVETo7fhHEg"
+                "link": "https://harshilpatel.vercel.app/"
             },
             {
                 "name": "Arslan Ali",
