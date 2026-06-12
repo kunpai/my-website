@@ -3,8 +3,8 @@
         "title": "Graduate Student Researcher",
         "organization": "DavSec Lab @ UC Davis",
         "start": "April 2025",
-        "end": "Ongoing",
-        "description": "Built an automated pipeline for C-to-Rust transpilation using LLMs, with 5 prompt variations, targeting secure systems migration.\\nIdentified Halstead vocabulary as the strongest metric for predicting translation difficulty.\\nValidated lightweight semantic augmentations (e.g., filename context) that improved functional accuracy by 5%.\\nBenchmarked state-of-the-art LLMs across 746 C/C++ programs, achieving 70.2% functional accuracy with best prompt design.\\nIntroduced a cross-layer analysis framework combining compiler-level metrics with hardware performance counters for C vs. Rust translations.\\nExposed semantic and optimization gaps in LLM-translated and syntax-directed Rust translations.",
+        "end": "Present",
+        "description": "Built an automated pipeline for C-to-Rust transpilation using LLMs, with 5 prompt variations, targeting secure systems migration.\nIdentified Halstead vocabulary as the strongest metric for predicting translation difficulty.\nValidated lightweight semantic augmentations (e.g., filename context) that improved functional accuracy by 5%.\nBenchmarked state-of-the-art LLMs across 746 C/C++ programs, achieving 70.2% functional accuracy with best prompt design.\nIntroduced a cross-layer analysis framework combining compiler-level metrics with hardware performance counters for C vs. Rust translations.\nExposed semantic and optimization gaps in LLM-translated and syntax-directed Rust translations.",
         "location": "Davis, CA",
         "image": "/images/ucdavis.png"
     },
@@ -12,8 +12,8 @@
         "title": "Graduate Student Researcher",
         "organization": "UC Davis Computer Architecture Research Group",
         "start": "June 2023",
-        "end": "Ongoing",
-        "description": "Leading a project to achieve 10x acceleration in the simulation of cryogenic semiconductor computing and superconductors.\nCollaborating with 3 researchers to develop and deliver 90% correlation between gem5 simulation and hardware measurements.\nMentoring 5 undergraduate students in the Davis Computer Architecture Lab to prepare them for graduate research.",
+        "end": "June 2026",
+        "description": "Co-developed SuperNOVA, a domain-specific superconducting graph accelerator that achieved an over 1800x reduction in power consumption and up to a 2157x improvement in energy efficiency over a CMOS baseline.\nImplemented custom full-system models in gem5 to simulate 100 GHz superconducting architectures, discovering that general-purpose performance is fundamentally bottlenecked by room-temperature main memory.\nMentored 5 undergraduate students in the Davis Computer Architecture Lab to prepare them for graduate research.",
         "location": "Davis, CA",
         "image": "/images/darchr.png"
     },
@@ -21,7 +21,7 @@
         "title": "Student Researcher",
         "organization": "Davis Excellent/Eclectic/Extreme Computational Analytics Lab",
         "start": "September 2022",
-        "end": "Ongoing",
+        "end": "Present",
         "description": "Co-authored paper on appending semantic information for better code summarization.\nCo-authored paper on calibration of LLM models, particularly involved in the bug repair section and tested models on Defects4J.",
         "location": "Davis, CA",
         "image": "/images/decallab.png"
