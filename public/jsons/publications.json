@@ -1,5 +1,27 @@
 [
     {
+        "title": "VATS: Exploiting Implicit Authority in Error-Path Injection via Systematic Mutation",
+        "authors": [
+            "Harshil Patel",
+            "Kunal Pai"
+        ],
+        "type": "workshop",
+        "conference": "Second Workshop on Agents in the Wild: Safety, Security, and Beyond",
+        "description": "This paper introduces VATS, a framework demonstrating that autonomous agents are highly vulnerable to \"error-path injections,\" where adversarial payloads disguised as tool error messages exploit the Model Context Protocol (MCP) to bypass safety heuristics and triple the success rate of standard indirect prompt injections across major frontier models.",
+        "tags": [
+            "Artificial Intelligence",
+            "Large Language Models (LLMs)",
+            "AI Safety"
+        ],
+        "links": {
+            "View Pre-Print": "https://arxiv.org/pdf/2606.07992"
+        },
+        "bibtex": "@inproceedings{patel2026vats,\n  title={{VATS}: Exploiting Implicit Authority in Error-Path Injection via Systematic Mutation},\n  author={Harshil Patel and Kunal Pai},\n  booktitle={Second Workshop on Agents in the Wild: Safety, Security, and Beyond},\n  year={2026},\n  url={https://openreview.net/forum?id=8Sldm0szdA}\n}",
+        "show_on_website": true,
+        "show_in_resume": false,
+        "show_in_resume_short": false
+    },
+    {
         "title": "Toward Reproducible and Standardized Computer Architecture Simulation with gem5",
         "authors": [
             "Kunal Pai",
@@ -153,7 +175,7 @@
             "Naturalness of Software"
         ],
         "links": {
-            "View Publication": "https://ieeexplore.ieee.org/document/11029728", 
+            "View Publication": "https://ieeexplore.ieee.org/document/11029728",
             "View Pre-Print": "https://arxiv.org/pdf/2402.02047"
         },
         "bibtex": "@INPROCEEDINGS{11029728,\n author={Spiess, Claudio and Gros, David and Pai, Kunal Suresh and Pradel, Michael and Rabin, Md Rafiqul Islam and Alipour, Amin and Jha, Susmit and Devanbu, Prem and Ahmed, Toufique},\n booktitle={2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE)},\n title={Calibration and Correctness of Language Models for Code},\n year={2025},\n pages={540-552},\n keywords={Codes;Reviews;Decision making;Maintenance engineering;Reflection;Calibration;Software reliability;Software measurement;Standards;Software engineering;LLM;Calibration;Confidence Measure},\n doi={10.1109/ICSE55347.2025.00040} }",
