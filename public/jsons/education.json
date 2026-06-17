@@ -7,9 +7,9 @@
         "degree": "Ph.D.",
         "major": "Computer Science",
         "gpa": "",
-        "show_on_website": false,
+        "show_on_website": true,
         "show_in_resume": true,
-        "show_in_resume_short": false
+        "show_in_resume_short": true
     },
     {
         "university": "University of California, Davis",
@@ -40,6 +40,6 @@
         "description": "Provost Scholar, Graduated with Honors",
         "show_on_website": true,
         "show_in_resume": true,
-        "show_in_resume_short": true
+        "show_in_resume_short": false
     }
 ]
