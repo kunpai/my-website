@@ -6,7 +6,7 @@
             "Kunal Pai"
         ],
         "type": "workshop",
-        "conference": "Second Workshop on Agents in the Wild: Safety, Security, and Beyond",
+        "conference": "Second Workshop on Agents in the Wild: Safety, Security, and Beyond, ICML 2026",
         "description": "This paper introduces VATS, a framework demonstrating that autonomous agents are highly vulnerable to \"error-path injections,\" where adversarial payloads disguised as tool error messages exploit the Model Context Protocol (MCP) to bypass safety heuristics and triple the success rate of standard indirect prompt injections across major frontier models.",
         "tags": [
             "Artificial Intelligence",
