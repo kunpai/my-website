@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { gsap } from 'gsap';
 import SplitType from 'split-type';
 import { useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 
 const name = process.env.CONFIG.name;
 
@@ -10,8 +11,7 @@ export default function Hello() {
 
   useEffect(() => {
     const heading = new SplitType('.name', { types: 'words' });
-    const description = new SplitType('.hello p', { types: 'lines' });
-    const heroElements = [...heading.words, ...description.lines, '.btn'];
+    const heroElements = [...heading.words, '.description', '.btn'];
     gsap.from(heroElements, {
       y: 24,
       opacity: 0,
@@ -40,9 +40,9 @@ export default function Hello() {
           </h1>
         </Row>
         <Row>
-          <p className='description'>
-            {process.env.CONFIG.intro}
-          </p>
+          <div className='description'>
+            <ReactMarkdown>{process.env.CONFIG.intro}</ReactMarkdown>
+          </div>
         </Row>
         <Row className='mt-3'>
           <Col className='d-flex justify-content-start gap-4'>

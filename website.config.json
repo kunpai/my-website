@@ -2,7 +2,7 @@
     "email": "pai.kunal05+contact@gmail.com",
     "name": "Kunal Pai",
     "image": "/images/kunal.jpeg",
-    "intro": "I am a Master's student at UC Davis working at the intersection of AI, Systems, and Software Engineering. My research centers on building and evaluating robust, autonomous agents for complex software engineering tasks, from secure code transpilation to automated bug repair.",
+    "intro": "I am an incoming PhD student at **UCLA**, advised by [Prof. Miryung Kim](http://www.cs.ucla.edu/~miryung/).\n\nPreviously, at **UC Davis**, I was fortunate to work with [Prof. Jason Lowe-Power](https://arch.cs.ucdavis.edu/) on gem5 and simulation of superconducting architectures, with [Prof. Prem Devanbu](http://www.cs.ucdavis.edu/~devanbu) on code summarization, calibration, and code-documentation alignment, and with [Prof. Tapti Palit](https://taptipalit.github.io) on agentic performance optimization and benchmarking for C-to-Rust transpilation.",
     "resume": "/Kunal_Pai_CV.pdf",
     "resume_short": "/Kunal_Pai_Resume.pdf",
     "resume_contact": {
