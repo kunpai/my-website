@@ -43,6 +43,7 @@ export default function CopyIcon(props) {
     const copy = async (string) => {
         setShow(true);
         await navigator.clipboard.writeText(string);
+        window.dispatchEvent(new CustomEvent('text-copied', { detail: { text: string } }));
         setTimeout(() => setShow(false), 750);
     }
 

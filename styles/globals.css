@@ -535,3 +535,204 @@ html[data-bs-theme="light"] .chat-bubble.bg-body-secondary {
   bottom: 85px !important; /* Move scroll-to-top button up slightly so it doesn't overlap the chatbot FAB */
 }
 
+/* ==========================================================================
+   Research Graph & Word Map Styles
+   ========================================================================== */
+
+/* Visual Wrapper & Cards */
+.viz-card {
+  border: 1px solid var(--bs-border-color);
+  background: var(--bs-body-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+html[data-bs-theme="dark"] .viz-card {
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+  background: #1e1e24;
+}
+
+/* Visualization Navigation Toggles */
+.viz-nav-btn {
+  border-radius: 20px !important;
+  font-weight: 500;
+  padding: 0.4rem 1.2rem !important;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Interactive SVG Graph styling */
+.research-graph-svg {
+  overflow: visible;
+  user-select: none;
+}
+
+.graph-node {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.graph-node circle {
+  transition: r 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), fill 0.3s ease, stroke 0.3s ease, filter 0.3s ease;
+}
+
+/* Color codes for main categories */
+.graph-node.category-arch circle {
+  fill: #ff9f1c;
+  stroke: #ff9f1c;
+}
+.graph-node.category-llm circle {
+  fill: #4361ee;
+  stroke: #4361ee;
+}
+.graph-node.category-se circle {
+  fill: #2ec4b6;
+  stroke: #2ec4b6;
+}
+.graph-node.category-sys circle {
+  fill: #e63946;
+  stroke: #e63946;
+}
+
+/* Tag nodes default styling */
+.graph-node.tag-node circle {
+  fill: var(--bs-secondary-bg);
+  stroke: var(--bs-secondary-color);
+  stroke-width: 1.5px;
+}
+
+html[data-bs-theme="dark"] .graph-node.tag-node circle {
+  fill: #2c2c35;
+  stroke: #888899;
+}
+
+/* Hover and active effects */
+.graph-node:hover circle {
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+.graph-node.active circle {
+  stroke-width: 3px;
+  stroke: var(--bs-primary);
+  filter: drop-shadow(0 0 12px var(--bs-primary));
+}
+
+html[data-bs-theme="dark"] .graph-node.category-arch.active circle { filter: drop-shadow(0 0 12px #ff9f1c); stroke: #ffea7f; }
+html[data-bs-theme="dark"] .graph-node.category-llm.active circle { filter: drop-shadow(0 0 12px #4361ee); stroke: #8ca0ff; }
+html[data-bs-theme="dark"] .graph-node.category-se.active circle { filter: drop-shadow(0 0 12px #2ec4b6); stroke: #8efff7; }
+html[data-bs-theme="dark"] .graph-node.category-sys.active circle { filter: drop-shadow(0 0 12px #e63946); stroke: #ff9da6; }
+
+/* Text labels */
+.graph-node text {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  fill: var(--bs-body-color);
+  font-weight: 500;
+  transition: fill 0.3s ease, font-weight 0.3s ease;
+  pointer-events: none;
+}
+
+.graph-node.category-node text {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Connecting link lines */
+.graph-link {
+  stroke: var(--bs-border-color);
+  stroke-opacity: 0.35;
+  stroke-width: 1.5px;
+  transition: stroke 0.3s ease, stroke-opacity 0.3s ease, stroke-width 0.3s ease;
+  stroke-dasharray: 4 2;
+}
+
+.graph-link.active-link {
+  stroke: var(--bs-primary);
+  stroke-opacity: 0.85;
+  stroke-width: 2px;
+  stroke-dasharray: none;
+}
+
+/* Dimming nodes and links that are inactive */
+.graph-node.dimmed {
+  opacity: 0.25;
+}
+
+.graph-link.dimmed-link {
+  opacity: 0.05;
+}
+
+/* Word Cloud Styles */
+.word-cloud-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 1.5rem;
+  min-height: 250px;
+}
+
+.word-cloud-tag {
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--bs-secondary);
+}
+
+.word-cloud-tag:hover {
+  transform: scale(1.15) translateY(-2px);
+  color: var(--bs-primary) !important;
+  text-shadow: 0 0 10px rgba(46, 196, 182, 0.4);
+  background: var(--bs-secondary-bg);
+}
+
+html[data-bs-theme="dark"] .word-cloud-tag:hover {
+  text-shadow: 0 0 15px currentColor;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Filter badge notifications */
+.active-filter-badge {
+  background: var(--bs-primary-bg-subtle) !important;
+  color: var(--bs-primary-text-emphasis) !important;
+  border: 1px solid var(--bs-primary-border-subtle);
+  font-size: 0.9rem !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.active-filter-badge:hover {
+  filter: brightness(0.9);
+}
+
+/* Custom Citation Copy Alert */
+.copied-alert {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #2ec4b6;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(46, 196, 182, 0.4);
+  z-index: 10000;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+}
+
+.copied-alert.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
