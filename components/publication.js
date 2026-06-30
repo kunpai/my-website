@@ -264,12 +264,12 @@ function ResearchGraph({ activeFilter, onSelectFilter }) {
 }
 
 // Main Publication Component
-export default function Publication({ searchQuery }) {
+export default function Publication({ searchQuery, hideGraph = false }) {
     const name = process.env.CONFIG?.name || "Kunal Pai";
 
     const [selectedType, setSelectedType] = useState("All");
     const [activeFilter, setActiveFilter] = useState(null); // { type: "tag"|"keyword", value: [...], name: "" }
-    const [viewMode, setViewMode] = useState("graph"); // "graph" | "compact"
+    const [viewMode, setViewMode] = useState(hideGraph ? "compact" : "graph"); // "graph" | "compact"
     const [showToast, setShowToast] = useState(false);
 
     // Watch for custom copied event
@@ -365,24 +365,26 @@ export default function Publication({ searchQuery }) {
                 </Col>
                 
                 {/* View Mode Switcher */}
-                <Col xs="auto" className="d-flex gap-2">
-                    <Button
-                        variant={viewMode === "graph" ? "secondary" : "outline-secondary"}
-                        size="sm"
-                        onClick={() => setViewMode("graph")}
-                        className="viz-nav-btn"
-                    >
-                        Topic Graph
-                    </Button>
-                    <Button
-                        variant={viewMode === "compact" ? "secondary" : "outline-secondary"}
-                        size="sm"
-                        onClick={() => setViewMode("compact")}
-                        className="viz-nav-btn"
-                    >
-                        Standard Feed
-                    </Button>
-                </Col>
+                {!hideGraph && (
+                    <Col xs="auto" className="d-flex gap-2">
+                        <Button
+                            variant={viewMode === "graph" ? "secondary" : "outline-secondary"}
+                            size="sm"
+                            onClick={() => setViewMode("graph")}
+                            className="viz-nav-btn"
+                        >
+                            Topic Graph
+                        </Button>
+                        <Button
+                            variant={viewMode === "compact" ? "secondary" : "outline-secondary"}
+                            size="sm"
+                            onClick={() => setViewMode("compact")}
+                            className="viz-nav-btn"
+                        >
+                            Standard Feed
+                        </Button>
+                    </Col>
+                )}
             </Row>
 
             {/* Interactive Panel wrapper */}

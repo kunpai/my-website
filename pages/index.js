@@ -153,7 +153,7 @@ export default function Home() {
             {/* <h1 className="mb-3" id="publications">
               Publications
             </h1> */}
-            <Publication />
+            <Publication hideGraph />
           </div>
         </Row>
         <Row>
