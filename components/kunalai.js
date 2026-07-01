@@ -35,7 +35,11 @@ export default function KunalAI() {
     const buildSystemPrompt = () => {
         const pubList = publications
             .filter(p => p.show_on_website !== false)
-            .map(p => `- ${p.title} (${p.conference || p.type}). ${p.description ? p.description : ""}`)
+            .map(p => {
+                const badgeVal = p.badge || (p.spotlight ? (typeof p.spotlight === "string" ? p.spotlight : "Spotlight") : "");
+                const badgeStr = badgeVal ? ` [${badgeVal}]` : "";
+                return `- ${p.title} (${p.conference || p.type})${badgeStr}. ${p.description ? p.description : ""}`;
+            })
             .join("\n");
 
         const projList = projects
@@ -70,7 +74,11 @@ export default function KunalAI() {
 
         const awardList = awards
             .filter(a => a.show_on_website !== false)
-            .map(a => `- ${a.title} from ${a.awarder} (${a.date})`)
+            .map(a => {
+                const badgeVal = a.badge || (a.spotlight ? (typeof a.spotlight === "string" ? a.spotlight : "Spotlight") : "");
+                const badgeStr = badgeVal ? ` [${badgeVal}]` : "";
+                return `- ${a.title} from ${a.awarder} (${a.date})${badgeStr}`;
+            })
             .join("\n");
 
         const serviceList = service

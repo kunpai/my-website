@@ -17,6 +17,7 @@
             "View Pre-Print": "https://arxiv.org/pdf/2606.07992"
         },
         "bibtex": "@inproceedings{patel2026vats,\n  title={{VATS}: Exploiting Implicit Authority in Error-Path Injection via Systematic Mutation},\n  author={Harshil Patel and Kunal Pai},\n  booktitle={Second Workshop on Agents in the Wild: Safety, Security, and Beyond},\n  year={2026},\n  url={https://openreview.net/forum?id=8Sldm0szdA}\n}",
+        "badge": "Spotlight",
         "show_on_website": true,
         "show_in_resume": false,
         "show_in_resume_short": false

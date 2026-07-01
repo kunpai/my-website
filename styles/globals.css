@@ -736,3 +736,35 @@ html[data-bs-theme="dark"] .word-cloud-tag:hover {
   opacity: 1;
 }
 
+/* Spotlight highlighting styles */
+.spotlight-badge {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+  border: none;
+  font-size: 0.75rem;
+  padding: 0.35em 0.75em;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+[data-bs-theme="dark"] .spotlight-badge {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+  color: #1e293b !important;
+  box-shadow: 0 2px 10px rgba(251, 191, 36, 0.5);
+}
+
+.spotlight-trophy {
+  fill: #f59e0b !important;
+  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.6));
+  transition: all 0.3s ease;
+}
+
+[data-bs-theme="dark"] .spotlight-trophy {
+  fill: #fbbf24 !important;
+  filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.7));
+}
+
+

@@ -514,7 +514,14 @@ function PublicationTile({ publication, name }) {
                     <Col>
                         <h5>{publication.title}</h5>
                     </Col>
-                    <Col className="d-flex justify-content-end">
+                    <Col className="d-flex justify-content-end align-items-start gap-2">
+                        {(publication.badge || publication.spotlight) && (
+                            <h5>
+                                <Badge className="spotlight-badge">
+                                    {publication.badge || (typeof publication.spotlight === "string" ? publication.spotlight : "Spotlight")}
+                                </Badge>
+                            </h5>
+                        )}
                         <h5>
                             <Badge bg="secondary" style={{ textTransform: "capitalize" }}>
                                 {publication.type}
