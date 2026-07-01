@@ -264,10 +264,10 @@ function ResearchGraph({ activeFilter, onSelectFilter }) {
 }
 
 // Main Publication Component
-export default function Publication({ searchQuery, hideGraph = false }) {
+export default function Publication({ searchQuery, hideGraph = false, defaultType = "All" }) {
     const name = process.env.CONFIG?.name || "Kunal Pai";
 
-    const [selectedType, setSelectedType] = useState("All");
+    const [selectedType, setSelectedType] = useState(defaultType);
     const [activeFilter, setActiveFilter] = useState(null); // { type: "tag"|"keyword", value: [...], name: "" }
     const [viewMode, setViewMode] = useState(hideGraph ? "compact" : "graph"); // "graph" | "compact"
     const [showToast, setShowToast] = useState(false);
@@ -353,6 +353,15 @@ export default function Publication({ searchQuery, hideGraph = false }) {
 
         return filtered;
     }, [searchQuery, selectedType, activeFilter]);
+
+    useEffect(() => {
+        // Refresh ScrollTrigger when filteredPublications changes (e.g. on switching tabs)
+        // to ensure any scroll-triggered elements below recalculate their positions.
+        const timer = setTimeout(() => {
+            ScrollTrigger.refresh();
+        }, 100);
+        return () => clearTimeout(timer);
+    }, [filteredPublications]);
 
     return (
         <div className="publications-container">
@@ -480,7 +489,7 @@ function PublicationTile({ publication, name }) {
     };
 
     useEffect(() => {
-        gsap.from(ref.current, {
+        const anim = gsap.from(ref.current, {
             y: 24,
             opacity: 0,
             duration: 0.8,
@@ -490,6 +499,12 @@ function PublicationTile({ publication, name }) {
                 start: 'top 80%',
             },
         });
+        return () => {
+            if (anim.scrollTrigger) {
+                anim.scrollTrigger.kill();
+            }
+            anim.kill();
+        };
     }, []);
 
     return (
