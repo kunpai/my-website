@@ -4,7 +4,7 @@ import Footer from './footer'
 import ScrollToTop from './scrollToTop'
 import dynamic from 'next/dynamic'
 
-const KunalAI = dynamic(() => import('./kunalai'), { ssr: false })
+// const KunalAI = dynamic(() => import('./kunalai'), { ssr: false })
 
 export default function Layout({ children }) {
     return (
@@ -16,7 +16,7 @@ export default function Layout({ children }) {
                 </main>
             </Fade>
             <ScrollToTop />
-            <KunalAI />
+            {/* <KunalAI /> */}
             <Footer />
         </>
     )

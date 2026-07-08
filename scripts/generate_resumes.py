@@ -252,6 +252,10 @@ def generate_publications_section(publications, is_short):
             title_str = rf"\href{{{url}}}{{\textbf{{{tex_escape(pub_title)}}}}}"
         else:
             title_str = rf"\textbf{{{tex_escape(pub_title)}}}"
+
+        spotlight_str = ""
+        if pub.get("badge") or pub.get("spotlight"):
+            spotlight_str = r" \,(\textit{Spotlight})"
             
         # Format authors
         authors = pub.get("authors", [])
@@ -269,7 +273,7 @@ def generate_publications_section(publications, is_short):
         venue = pub.get("conference", "")
         
         # Output list item
-        lines.append(rf"  \resumeItem{{{title_str}, {authors_str}, \textit{{{tex_escape(venue)}}}}}")
+        lines.append(rf"  \resumeItem{{{title_str}{spotlight_str}, {authors_str}, \textit{{{tex_escape(venue)}}}}}")
         
     lines.append(r"\end{itemize}")
     lines.append(r"}")
