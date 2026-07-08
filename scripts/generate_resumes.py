@@ -255,7 +255,7 @@ def generate_publications_section(publications, is_short):
 
         spotlight_str = ""
         if pub.get("badge") or pub.get("spotlight"):
-            spotlight_str = r" \,(\textit{Spotlight})"
+            spotlight_str = r" \,\textbf{\textsc{[Spotlight]}}"
             
         # Format authors
         authors = pub.get("authors", [])
