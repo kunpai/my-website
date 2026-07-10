@@ -75,7 +75,7 @@
         },
         "bibtex": "@article{pai2026naamse,\n  title={NAAMSE: Framework for Evolutionary Security Evaluation of Agents},\n  author={Pai, Kunal and Shah, Parth and Patel, Harshil},\n  journal={arXiv preprint arXiv:2602.07391},\n  year={2026}\n}",
         "show_on_website": true,
-        "show_in_resume": false,
+        "show_in_resume": true,
         "show_in_resume_short": false
     },
     {
