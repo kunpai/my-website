@@ -10,7 +10,7 @@ export default function WorkExperiences() {
       <Row>
         <div className="content">
           <Row>
-            <Experience jsonExperiences={workExperience} title={"Work Experience"} isExperience />
+            <Experience jsonExperiences={workExperience} title={"Research & Professional Experience"} isExperience />
           </Row>
         </div>
       </Row>

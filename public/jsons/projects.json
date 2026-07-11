@@ -250,7 +250,7 @@
         ],
         "show_on_website": true,
         "show_in_resume": true,
-        "show_in_resume_short": true,
+        "show_in_resume_short": false,
         "resume_title": "gem5 Vision",
         "resume_link": "https://resources.gem5.org/",
         "resume_type": "Resource Discovery Framework",

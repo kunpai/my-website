@@ -141,10 +141,10 @@ export default function Home() {
           <Experience jsonExperiences={teachingExperience} title={"Teaching Experience"} isExperience />
         </Row> */}
         <Row>
-          <Experience jsonExperiences={workExperienceFiltered} title={"Work Experience"} isExperience />
+          <Experience jsonExperiences={workExperienceFiltered} title={"Research & Professional Experience"} isExperience />
           <div ref={workViewAllRef}>
             <Link href="/work-experiences" className="btn btn-outline-secondary btn-lg d-block mx-auto mt-3">
-              View All Work Experiences <i className="bi bi-arrow-right ms-2"></i>
+              View All Research & Professional Experiences <i className="bi bi-arrow-right ms-2"></i>
             </Link>
           </div>
         </Row>
@@ -187,11 +187,12 @@ export default function Home() {
             </h1>
             {
               Object.keys(skills).filter(key => key !== "resume_skills").map((skill, index) => {
+                const displayName = skill === "systems-and-compilers" ? "Systems & Compilers" : skill.split("-").map(toTitleCase).join(" ");
                 return (
-                  <>
-                    <h1>{skill.split("-").map(toTitleCase).join(" ")}</h1>
-                    <Skill key={index} skill={skills[skill]} />
-                  </>
+                  <React.Fragment key={index}>
+                    <h1>{displayName}</h1>
+                    <Skill skill={skills[skill]} />
+                  </React.Fragment>
                 )
               })
             }

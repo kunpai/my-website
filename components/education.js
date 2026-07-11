@@ -62,7 +62,7 @@ function EducationTile({ education }) {
                     <Col>
                         <b>
                             <span className="d-flex justify-content-end" variant="secondary">
-                                {education.start} - {education.end}
+                                {education.end ? `${education.start} - ${education.end}` : education.start}
                             </span>
                         </b>
                     </Col>

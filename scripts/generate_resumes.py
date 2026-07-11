@@ -167,6 +167,19 @@ def generate_skills_section(skills_data, is_short):
     resume_skills = skills_data.get("resume_skills", {})
     long_overrides = resume_skills.get("resume_skills_long_override", {})
     
+    if is_short:
+        # Merge Systems & Compilers back into Tools for short resume
+        sys_comp = resume_skills.get("Systems & Compilers", [])
+        resume_skills_modified = {}
+        for category, skills in resume_skills.items():
+            if category == "Systems & Compilers":
+                continue
+            elif category == "Tools":
+                resume_skills_modified[category] = skills + sys_comp
+            else:
+                resume_skills_modified[category] = skills
+        resume_skills = resume_skills_modified
+        
     for category, skills in resume_skills.items():
         if category == "resume_skills_long_override":
             continue
@@ -185,7 +198,7 @@ def generate_skills_section(skills_data, is_short):
 
 def generate_experience_section(experiences, is_short):
     lines = []
-    lines.append(r"\section{Work Experience}")
+    lines.append(r"\section{Research \& Professional Experience}")
     lines.append(r"{\normalsize")
     lines.append(r"\resumeSubHeadingList")
     
