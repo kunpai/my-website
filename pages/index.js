@@ -20,6 +20,7 @@ import news from "/public/jsons/news.json";
 import ReactMarkdown from 'react-markdown';
 import linktree from "/public/jsons/linktree.json";
 import service from "/public/jsons/service.json";
+import talks from "/public/jsons/talks.json";
 gsap.registerPlugin(ScrollTrigger);
 
 function isAfterJune2023(end) {
@@ -46,6 +47,7 @@ export default function Home() {
 
   const newsRef = useRef(null);
   const serviceRef = useRef(null);
+  const talksRef = useRef(null);
   const workViewAllRef = useRef(null);
   const projectsViewAllRef = useRef(null);
 
@@ -83,6 +85,17 @@ export default function Home() {
       ease: 'ease',
       scrollTrigger: {
         trigger: serviceRef.current,
+        start: 'top 80%',
+      },
+    });
+
+    gsap.from(talksRef.current, {
+      y: 24,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'ease',
+      scrollTrigger: {
+        trigger: talksRef.current,
         start: 'top 80%',
       },
     });
@@ -154,6 +167,22 @@ export default function Home() {
               Publications
             </h1> */}
             <Publication hideGraph defaultType="conference" />
+          </div>
+        </Row>
+        <Row>
+          <div ref={talksRef} className="mt-5">
+            <h1 className="mb-3" id="talks-presentations">
+              Talks & Presentations
+            </h1>
+            <ul className="list-unstyled">
+              {
+                talks.map((item, index) => {
+                  return (
+                    <NewsItem key={index} item={item} index={index} />
+                  )
+                })
+              }
+            </ul>
           </div>
         </Row>
         <Row>
