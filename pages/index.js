@@ -196,17 +196,34 @@ export default function Home() {
         <Row>
           <div ref={serviceRef} className="mt-5">
             <h1 className="mb-3" id="service">
-              Service
+              Academic Services
             </h1>
-            <ul className="list-unstyled">
+            <div className="ps-2">
               {
-                service.map((item, index) => {
+                service.map((cat, index) => {
                   return (
-                    <NewsItem key={index} item={item} index={index} />
+                    <div key={index} className="mb-4">
+                      <h3 className="h5 mb-2 text-dark font-weight-bold" style={{ fontWeight: 600 }}>
+                        {cat.category}
+                      </h3>
+                      <ul className="list-unstyled">
+                        {
+                          cat.items.map((item, idx) => (
+                            <ServiceItem
+                              key={idx}
+                              name={item.name}
+                              years={item.years}
+                              link={item.link}
+                              index={idx}
+                            />
+                          ))
+                        }
+                      </ul>
+                    </div>
                   )
                 })
               }
-            </ul>
+            </div>
           </div>
         </Row>
         <Row>
@@ -347,6 +364,38 @@ function Skill({skill}) {
       </Col>
     </Row>
   )
+}
+
+function ServiceItem({ name, years, link, index }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    gsap.from(ref.current, {
+      y: 12,
+      opacity: 0,
+      duration: 0.6,
+      delay: index * 0.05,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: ref.current,
+        start: 'top 90%',
+      },
+    });
+  }, [index]);
+
+  const yearStr = years && years.length > 0 ? ` (${years.join(", ")})` : "";
+
+  return (
+    <li ref={ref} className="mb-2" style={{ listStyleType: 'disc', listStylePosition: 'outside', marginLeft: '1.5rem' }}>
+      {link ? (
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          <ReactMarkdown components={{ p: 'span' }}>{name}</ReactMarkdown>
+        </a>
+      ) : (
+        <ReactMarkdown components={{ p: 'span' }}>{name}</ReactMarkdown>
+      )}
+      {yearStr}
+    </li>
+  );
 }
 
 const toTitleCase = (word) => {

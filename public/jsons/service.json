@@ -1,7 +1,52 @@
 [
-    "- Program Committee member, [23rd International Conference on Mining Software Repositories: Data and Tool Showcase Track](https://2026.msrconf.org/track/msr-2026-data-and-tool-showcase-track)",
-    "- Artifact Evaluation Committee member, [2026 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS)](https://ispass.org/ispass2026/)",
-    "- Reviewer, [Second Workshop on Agents in the Wild: Safety, Security, and Beyond (ICML 2026)](https://agentwild-workshop.github.io/icml2026/)",
-    "- Artifact Evaluation Committee member, [35th ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)](https://conf.researchr.org/track/issta-2026/issta-2026-artifact-evaluation)",
-    "- Artifact Evaluation Committee member, [41st IEEE/ACM International Conference on Automated Software Engineering (ASE)](https://conf.researchr.org/track/ase-2026/ase-2026-artifact-evaluation)"
+  {
+    "category": "Program Committee",
+    "items": [
+      {
+        "name": "MSR, Data and Tool Showcase Track",
+        "years": [
+          2026
+        ],
+        "link": "https://2026.msrconf.org/track/msr-2026-data-and-tool-showcase-track"
+      }
+    ]
+  },
+  {
+    "category": "Artifact Evaluation Committee",
+    "items": [
+      {
+        "name": "ISSTA",
+        "years": [
+          2026
+        ],
+        "link": "https://conf.researchr.org/track/issta-2026/issta-2026-artifact-evaluation"
+      },
+      {
+        "name": "ASE",
+        "years": [
+          2026
+        ],
+        "link": "https://conf.researchr.org/track/ase-2026/ase-2026-artifact-evaluation"
+      },
+      {
+        "name": "ISPASS",
+        "years": [
+          2026
+        ],
+        "link": "https://ispass.org/ispass2026/"
+      }
+    ]
+  },
+  {
+    "category": "Reviewer",
+    "items": [
+      {
+        "name": "ICML, Agents in the Wild Workshop",
+        "years": [
+          2026
+        ],
+        "link": "https://agentwild-workshop.github.io/icml2026/"
+      }
+    ]
+  }
 ]

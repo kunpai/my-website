@@ -82,7 +82,16 @@ export default function KunalAI() {
             .join("\n");
 
         const serviceList = service
-            .join("\n");
+            .map(cat => {
+                const catName = cat.category;
+                const itemsStr = cat.items.map(item => {
+                    const yearStr = item.years && item.years.length > 0 ? ` (${item.years.join(", ")})` : "";
+                    const linkStr = item.link ? ` [Link](${item.link})` : "";
+                    return `- ${item.name}${yearStr}${linkStr}`;
+                }).join("\n");
+                return `${catName}:\n${itemsStr}`;
+            })
+            .join("\n\n");
 
         const teachingList = teachingExperience
             .map(t => `- ${t.title} at ${t.organization} (${t.start} - ${t.end}): ${t.description}`)

@@ -383,14 +383,29 @@ def generate_service_section(services):
     lines = []
     lines.append(r"\section{Service}")
     lines.append(r"{\normalsize")
-    lines.append(r"\begin{itemize}[leftmargin=0.15in, label=\textbullet, itemsep=0pt]")
+    lines.append(r"\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0.4em]")
     
-    for svc in services:
-        formatted = markdown_links_to_latex(svc)
-        parts = formatted.split(",", 1)
-        if len(parts) == 2:
-            formatted = rf"\textbf{{{parts[0]}}},{parts[1]}"
-        lines.append(rf"  \item {formatted}")
+    for cat in services:
+        category = cat.get("category", "")
+        items = cat.get("items", [])
+        if not items:
+            continue
+        lines.append(rf"  \item \textbf{{{tex_escape(category)}}}")
+        lines.append(r"  \begin{itemize}[leftmargin=0.15in, label=\textbullet, itemsep=0pt]")
+        for item in items:
+            name = item.get("name", "")
+            years = item.get("years", [])
+            link = item.get("link", "")
+            year_str = f" ({', '.join(map(str, years))})" if years else ""
+            
+            escaped_name = tex_escape(name)
+            escaped_year_str = tex_escape(year_str)
+            if link:
+                formatted = rf"\href{{{link}}}{{{escaped_name}}}{escaped_year_str}"
+            else:
+                formatted = rf"{escaped_name}{escaped_year_str}"
+            lines.append(rf"    \item {formatted}")
+        lines.append(r"  \end{itemize}")
         
     lines.append(r"\end{itemize}")
     lines.append(r"}")
