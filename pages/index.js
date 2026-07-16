@@ -203,7 +203,7 @@ export default function Home() {
                 service.map((cat, index) => {
                   return (
                     <div key={index} className="mb-4">
-                      <h3 className="h5 mb-2 text-dark font-weight-bold" style={{ fontWeight: 600 }}>
+                      <h3 className="h5 mb-2 font-weight-bold" style={{ fontWeight: 600 }}>
                         {cat.category}
                       </h3>
                       <ul className="list-unstyled">
