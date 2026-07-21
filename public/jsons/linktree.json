@@ -7,12 +7,21 @@
             "Anusheel Nand",
             "Jason Lowe-Power"
         ],
-        "date" : "15 August 2024",
+        "date": "15 August 2024",
         "conference": "ModSim 2024: Workshop on Modeling & Simulation of Systems and Applications",
         "links": [
-            { "label": "Pre-Print", "url": "https://arxiv.org/abs/2408.03308"},
-            { "label": "Presentation", "url": "https://arch.cs.ucdavis.edu/assets/papers/modsim2024-potentialhighfreq-presentation.pdf" },
-            { "label": "Poster", "url": "https://arch.cs.ucdavis.edu/assets/papers/modsim2024-potentialhighfreq-poster.pdf" }
+            {
+                "label": "Pre-Print",
+                "url": "https://arxiv.org/abs/2408.03308"
+            },
+            {
+                "label": "Presentation",
+                "url": "https://arch.cs.ucdavis.edu/assets/papers/modsim2024-potentialhighfreq-presentation.pdf"
+            },
+            {
+                "label": "Poster",
+                "url": "https://arch.cs.ucdavis.edu/assets/papers/modsim2024-potentialhighfreq-poster.pdf"
+            }
         ]
     },
     {
@@ -26,10 +35,26 @@
         "date": "July 2026",
         "conference": "YCML Research Symposium (Startup School 2026)",
         "links": [
-            { "label": "Website", "url": "https://naamse.com/" },
-            { "label": "Paper", "url": "https://arxiv.org/abs/2602.07391" },
-            { "label": "Demo", "url": "https://www.youtube.com/watch?v=OA8Fz_UmaqQ" },
-            { "label": "GitHub", "url": "https://github.com/HASHIRU-AI/NAAMSE" }
+            {
+                "label": "Website",
+                "url": "https://naamse.com/"
+            },
+            {
+                "label": "Paper",
+                "url": "https://openreview.net/pdf?id=RhoRECtymK"
+            },
+            {
+                "label": "Demo",
+                "url": "https://www.youtube.com/watch?v=OA8Fz_UmaqQ"
+            },
+            {
+                "label": "Poster",
+                "url": "/assets/posters/naamse-ycml.pdf"
+            },
+            {
+                "label": "GitHub",
+                "url": "https://github.com/HASHIRU-AI/NAAMSE"
+            }
         ]
     }
 ]
