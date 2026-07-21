@@ -14,5 +14,22 @@
             { "label": "Presentation", "url": "https://arch.cs.ucdavis.edu/assets/papers/modsim2024-potentialhighfreq-presentation.pdf" },
             { "label": "Poster", "url": "https://arch.cs.ucdavis.edu/assets/papers/modsim2024-potentialhighfreq-poster.pdf" }
         ]
+    },
+    {
+        "path": "naamse-ycml",
+        "title": "NAAMSE: Neural Adversarial Agent Mutation-based Security Evaluator",
+        "authors": [
+            "Kunal Pai",
+            "Parth Shah",
+            "Harshil Patel"
+        ],
+        "date": "July 2026",
+        "conference": "YCML Research Symposium (Startup School 2026)",
+        "links": [
+            { "label": "Website", "url": "https://naamse.com/" },
+            { "label": "Paper", "url": "https://arxiv.org/abs/2602.07391" },
+            { "label": "Demo", "url": "https://www.youtube.com/watch?v=OA8Fz_UmaqQ" },
+            { "label": "GitHub", "url": "https://github.com/HASHIRU-AI/NAAMSE" }
+        ]
     }
 ]
