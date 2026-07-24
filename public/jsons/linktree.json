@@ -54,6 +54,10 @@
             {
                 "label": "GitHub",
                 "url": "https://github.com/HASHIRU-AI/NAAMSE"
+            },
+            {
+                "label": "Get in Touch",
+                "url": "mailto:hello@naamse.com"
             }
         ]
     }
