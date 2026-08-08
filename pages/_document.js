@@ -9,6 +9,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <link rel="alternate" type="text/markdown" title="LLM Summary (llms.txt)" href="/llms.txt" />
       </Head>
       <body>
         <Main />
