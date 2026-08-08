@@ -10,6 +10,8 @@ Previously, at **UC Davis**, I was fortunate to work with [Prof. Jason Lowe-Powe
 - **GitHub**: https://github.com/kunpai
 - **LinkedIn**: https://linkedin.com/in/kunpai
 - **Google Scholar**: https://scholar.google.com/citations?user=NOYGoDQAAAAJ&hl=en
+- **ORCID**: https://orcid.org/0009-0003-0675-7135
+- **Website Source**: https://github.com/kunpai/my-website
 - **CV / Resume**: https://www.kunpai.space/Kunal_Pai_CV.pdf
 
 ## Education

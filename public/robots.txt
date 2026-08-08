@@ -1,12 +1,9 @@
 # *
 User-agent: *
 Allow: /
-Allow: /llms.txt
-Allow: /llms-full.txt
 
 # Host
 Host: https://www.kunpai.space/
 
 # Sitemaps
 Sitemap: https://www.kunpai.space/sitemap.xml
-

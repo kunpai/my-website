@@ -5,16 +5,14 @@
 Previously, at **UC Davis**, I was fortunate to work with [Prof. Jason Lowe-Power](https://arch.cs.ucdavis.edu/) on gem5 and simulation of superconducting architectures, with [Prof. Prem Devanbu](http://www.cs.ucdavis.edu/~devanbu) and [Dr. Toufique Ahmed](https://toufiqueparag.github.io/toufique.github.io/) on LLM-based approaches to code summarization, calibration, and code-documentation alignment, and with [Prof. Tapti Palit](https://taptipalit.github.io) on agentic performance optimization and benchmarking for C-to-Rust transpilation.
 
 ## Contact Information
-- **Name**: Kunal Pai
-- **Email**: pai.kunal05+contact@gmail.com
 - **Website**: https://www.kunpai.space
+- **Email**: pai.kunal05+contact@gmail.com
 - **GitHub**: https://github.com/kunpai
 - **LinkedIn**: https://linkedin.com/in/kunpai
 - **Google Scholar**: https://scholar.google.com/citations?user=NOYGoDQAAAAJ&hl=en
 - **ORCID**: https://orcid.org/0009-0003-0675-7135
-- **GitHub**: https://github.com/kunpai
-- **LinkedIn**: https://www.linkedin.com/in/kunpai/
 - **Website Source**: https://github.com/kunpai/my-website
+- **CV / Resume**: https://www.kunpai.space/Kunal_Pai_CV.pdf
 
 ## Education
 ### Ph.D. in Computer Science
@@ -394,33 +392,35 @@ Enhanced accessibility for 500+ industry and academic users by integrating local
   - Created Visio diagrams for the product requirements document (PRD) of a timing chip.
 
 ## Talks & Presentations
-- **** (, )
-  [Link](function link() { [native code] })
-- **** (, )
-  [Link](function link() { [native code] })
-- **** (, )
-  [Link](function link() { [native code] })
+- **[July 2026]** **Presenter**, [YCML Research Symposium](https://events.ycombinator.com/startup-school-2026) (Startup School 2026), JP Morgan Club at Chase Center, San Francisco, CA.
+- **[Nov 2025]** **Contributed Talk**, [PMBS Workshop (SC Workshops '25)](https://pmbs-workshop.github.io/talk06.pdf), St. Louis, MO.
+- **[Aug 2024]** **Poster & Presentation**, [ModSim 2024](https://arch.cs.ucdavis.edu/assets/papers/modsim2024-potentialhighfreq-presentation.pdf), Seattle, WA.
 
 ## Teaching Experience
-- **Teaching Assistant**: undefined at undefined (undefined)
+- **Teaching Assistant, ECS 132**, University of California, Davis (June 2023 – December 2023)
   Assisted 180 students in understanding course material and assignments, conducted weekly office hours, and gave and graded assignments for senior-level Probability & Statistical modeling class.
 
 ## Awards & Honors
-- **2nd Place (Agent Safety)** (2026) - 
-- **Dean's List** (Fall 2019) - 
-- **Dean's List** (Fall 2020) - 
-- **Dean's List** (Winter 2022) - 
-- **Dean's List** (Spring 2022) - 
-- **Provost Award** (2019-2023) - 
+- **2nd Place (Agent Safety)** - UC Berkeley RDI AgentBeats Competition (2026)
+- **Dean's List** - UC Davis College of Engineering (Fall 2019)
+- **Dean's List** - UC Davis College of Engineering (Fall 2020)
+- **Dean's List** - UC Davis College of Engineering (Winter 2022)
+- **Dean's List** - UC Davis College of Engineering (Spring 2022)
+- **Provost Award** - UC Davis (2019-2023)
 
 ## Recent News
-- **undefined**: 
-- **undefined**: 
+- I will be presenting our research at the first-ever [YCML Research Symposium](https://events.ycombinator.com/startup-school-2026) during Y Combinator's Startup School 2026 at the Chase Center!
+- Our paper, [VATS: Exploiting Implicit Authority in Error-Path Injection via Systematic Mutation](https://arxiv.org/abs/2606.07992), received a **Spotlight** at the [Second Workshop on Agents in the Wild: Safety, Security, and Beyond](https://agentwild-workshop.github.io/icml2026/). A huge thank you to my collaborator, Harshil "Chussu" Patel!
 
 ## Service & Outreach
-- **undefined**, undefined ()
-- **undefined**, undefined ()
-- **undefined**, undefined ()
+- **Program Committee**:
+  - MSR, Data and Tool Showcase Track (2026) [Link](https://2026.msrconf.org/track/msr-2026-data-and-tool-showcase-track)
+- **Artifact Evaluation Committee**:
+  - ISSTA (2026) [Link](https://conf.researchr.org/track/issta-2026/issta-2026-artifact-evaluation)
+  - ASE (2026) [Link](https://conf.researchr.org/track/ase-2026/ase-2026-artifact-evaluation)
+  - ISPASS (2026) [Link](https://ispass.org/ispass2026/)
+- **Reviewer**:
+  - ICML, Agents in the Wild Workshop (2026) [Link](https://agentwild-workshop.github.io/icml2026/)
 
 ## Technical & Language Skills
 - **Languages**: Python, C++, C, JavaScript, Java

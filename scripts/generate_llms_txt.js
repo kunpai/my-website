@@ -28,15 +28,52 @@ function cleanText(text) {
                .trim();
 }
 
+function getUniqueContactLinks(config) {
+    const links = [];
+    const seenLabels = new Set();
+    const seenUrls = new Set();
+
+    function normalizeUrl(url) {
+        if (!url) return '';
+        return url.toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/$/, '');
+    }
+
+    function addLink(label, url) {
+        if (!url) return;
+        const normKey = normalizeUrl(url);
+        const normLabel = label.toLowerCase();
+        if (seenLabels.has(normLabel) || seenUrls.has(normKey)) return;
+        seenLabels.add(normLabel);
+        seenUrls.add(normKey);
+        links.push({ label, url });
+    }
+
+    if (config.resume_contact?.website_url) addLink('Website', config.resume_contact.website_url);
+    if (config.email) addLink('Email', config.email);
+    if (config.resume_contact?.github) addLink('GitHub', `https://${config.resume_contact.github}`);
+    if (config.resume_contact?.linkedin) addLink('LinkedIn', `https://${config.resume_contact.linkedin}`);
+
+    if (config.footerLinks) {
+        for (const [k, v] of Object.entries(config.footerLinks)) {
+            addLink(k, v);
+        }
+    }
+
+    if (config.resume) {
+        const resumeUrl = `${config.resume_contact?.website_url || 'https://www.kunpai.space'}${config.resume}`;
+        addLink('CV / Resume', resumeUrl);
+    }
+
+    return links;
+}
+
 function generateLlmsTxt() {
     const config = loadConfig();
     const education = loadJson('education.json') || [];
     const publications = loadJson('publications.json') || [];
-    const researchExp = loadJson('research-experience.json') || [];
     const projects = loadJson('projects.json') || [];
     const skills = loadJson('skills.json') || {};
     const awards = loadJson('awards.json') || [];
-    const news = loadJson('news.json') || [];
 
     const lines = [];
 
@@ -48,12 +85,10 @@ function generateLlmsTxt() {
 
     // Contact & Quick Links
     lines.push('## Contact & Links');
-    lines.push(`- **Website**: ${config.resume_contact?.website_url || 'https://www.kunpai.space'}`);
-    lines.push(`- **Email**: ${config.email || 'pai.kunal05@gmail.com'}`);
-    lines.push(`- **GitHub**: https://${config.resume_contact?.github || 'github.com/kunpai'}`);
-    lines.push(`- **LinkedIn**: https://${config.resume_contact?.linkedin || 'linkedin.com/in/kunpai'}`);
-    lines.push(`- **Google Scholar**: ${config.footerLinks?.['Google Scholar'] || ''}`);
-    lines.push(`- **CV / Resume**: ${config.resume_contact?.website_url || 'https://www.kunpai.space'}${config.resume || '/Kunal_Pai_CV.pdf'}`);
+    const contactLinks = getUniqueContactLinks(config);
+    for (const { label, url } of contactLinks) {
+        lines.push(`- **${label}**: ${url}`);
+    }
     lines.push('');
 
     // Education
@@ -108,7 +143,7 @@ function generateLlmsTxt() {
         lines.push('## Awards & Honors');
         for (const award of awards) {
             if (award.show_on_website !== false) {
-                const awarderStr = award.awarder ? ` - ${award.awarder}` : '';
+                const awarderStr = (award.awarder || award.issuer) ? ` - ${award.awarder || award.issuer}` : '';
                 const dateStr = (award.date || award.year) ? ` (${award.date || award.year})` : '';
                 lines.push(`- **${cleanText(award.title)}**${awarderStr}${dateStr}`);
                 if (award.description) lines.push(`  ${cleanText(award.description)}`);
@@ -167,17 +202,9 @@ function generateLlmsFullTxt() {
 
     // Contact Information
     lines.push('## Contact Information');
-    lines.push(`- **Name**: ${config.name}`);
-    lines.push(`- **Email**: ${config.email}`);
-    if (config.resume_contact) {
-        lines.push(`- **Website**: ${config.resume_contact.website_url}`);
-        lines.push(`- **GitHub**: https://${config.resume_contact.github}`);
-        lines.push(`- **LinkedIn**: https://${config.resume_contact.linkedin}`);
-    }
-    if (config.footerLinks) {
-        for (const [k, v] of Object.entries(config.footerLinks)) {
-            lines.push(`- **${k}**: ${v}`);
-        }
+    const contactLinks = getUniqueContactLinks(config);
+    for (const { label, url } of contactLinks) {
+        lines.push(`- **${label}**: ${url}`);
     }
     lines.push('');
 
@@ -272,9 +299,17 @@ function generateLlmsFullTxt() {
     if (talks.length > 0) {
         lines.push('## Talks & Presentations');
         for (const talk of talks) {
-            lines.push(`- **${cleanText(talk.title)}** (${talk.event || ''}, ${talk.date || ''})`);
-            if (talk.description) lines.push(`  ${cleanText(talk.description)}`);
-            if (talk.link) lines.push(`  [Link](${talk.link})`);
+            if (typeof talk === 'string') {
+                lines.push(cleanText(talk));
+            } else if (typeof talk === 'object') {
+                const title = talk.title || talk.name || '';
+                const event = talk.event || talk.venue || '';
+                const date = talk.date || talk.year || '';
+                const link = talk.link || talk.url || '';
+                lines.push(`- **${cleanText(title)}**${event ? ` (${event}${date ? `, ${date}` : ''})` : date ? ` (${date})` : ''}`);
+                if (talk.description) lines.push(`  ${cleanText(talk.description)}`);
+                if (link) lines.push(`  [Link](${link})`);
+            }
         }
         lines.push('');
     }
@@ -283,7 +318,9 @@ function generateLlmsFullTxt() {
     if (teaching.length > 0) {
         lines.push('## Teaching Experience');
         for (const t of teaching) {
-            lines.push(`- **${t.role || 'Teaching Assistant'}**: ${t.course} at ${t.institution} (${t.term})`);
+            const period = [t.start, t.end].filter(Boolean).join(' – ');
+            const org = t.organization || t.institution || '';
+            lines.push(`- **${cleanText(t.title)}**${org ? `, ${org}` : ''}${period ? ` (${period})` : ''}`);
             if (t.description) lines.push(`  ${cleanText(t.description)}`);
         }
         lines.push('');
@@ -293,7 +330,9 @@ function generateLlmsFullTxt() {
     if (awards.length > 0) {
         lines.push('## Awards & Honors');
         for (const award of awards) {
-            lines.push(`- **${award.title}** (${award.year || award.date || ''}) - ${award.issuer || ''}`);
+            const awarderStr = (award.awarder || award.issuer) ? ` - ${award.awarder || award.issuer}` : '';
+            const dateStr = (award.date || award.year) ? ` (${award.date || award.year})` : '';
+            lines.push(`- **${cleanText(award.title)}**${awarderStr}${dateStr}`);
             if (award.description) lines.push(`  ${cleanText(award.description)}`);
         }
         lines.push('');
@@ -303,7 +342,11 @@ function generateLlmsFullTxt() {
     if (news.length > 0) {
         lines.push('## Recent News');
         for (const item of news) {
-            lines.push(`- **${item.date}**: ${cleanText(item.content || item.title || '')}`);
+            if (typeof item === 'string') {
+                lines.push(cleanText(item));
+            } else if (typeof item === 'object') {
+                lines.push(`- **${item.date || ''}**: ${cleanText(item.content || item.title || '')}`);
+            }
         }
         lines.push('');
     }
@@ -312,8 +355,22 @@ function generateLlmsFullTxt() {
     if (service.length > 0) {
         lines.push('## Service & Outreach');
         for (const s of service) {
-            lines.push(`- **${s.role}**, ${s.organization} (${s.year || s.date || ''})`);
-            if (s.description) lines.push(`  ${cleanText(s.description)}`);
+            if (typeof s === 'string') {
+                lines.push(cleanText(s));
+            } else if (s.category && Array.isArray(s.items)) {
+                lines.push(`- **${s.category}**:`);
+                for (const item of s.items) {
+                    const yearsStr = Array.isArray(item.years) ? item.years.join(', ') : item.years || '';
+                    const linkStr = item.link ? ` [Link](${item.link})` : '';
+                    lines.push(`  - ${item.name}${yearsStr ? ` (${yearsStr})` : ''}${linkStr}`);
+                }
+            } else if (typeof s === 'object') {
+                const role = s.role || s.title || s.name || '';
+                const org = s.organization || s.event || '';
+                const date = s.date || s.year || '';
+                lines.push(`- **${role}**${org ? `, ${org}` : ''}${date ? ` (${date})` : ''}`);
+                if (s.description) lines.push(`  ${cleanText(s.description)}`);
+            }
         }
         lines.push('');
     }
