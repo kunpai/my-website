@@ -67,16 +67,18 @@ export default function Home() {
       });
     });
 
-    gsap.from(newsRef.current, {
-      y: 24,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'ease',
-      scrollTrigger: {
-        trigger: newsRef.current,
-        start: 'top 80%',
-      },
-    });
+    if (newsRef.current) {
+      gsap.from(newsRef.current, {
+        y: 24,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'ease',
+        scrollTrigger: {
+          trigger: newsRef.current,
+          start: 'top 80%',
+        },
+      });
+    }
 
     gsap.from(serviceRef.current, {
       y: 24,
@@ -128,22 +130,24 @@ export default function Home() {
         <Hello />
       </Row>
       <div className="content">
-        <Row>
-          <div ref={newsRef} className="mt-5">
-            <h1 className="mb-3" id="news">
-              News
-            </h1>
-            <ul className="list-unstyled">
-              {
-                news.map((item, index) => {
-                  return (
-                    <NewsItem key={index} item={item} index={index} />
-                  )
-                })
-              }
-            </ul>
-          </div>
-        </Row>
+        {news && news.length > 0 && (
+          <Row>
+            <div ref={newsRef} className="mt-5">
+              <h1 className="mb-3" id="news">
+                News
+              </h1>
+              <ul className="list-unstyled">
+                {
+                  news.map((item, index) => {
+                    return (
+                      <NewsItem key={index} item={item} index={index} />
+                    )
+                  })
+                }
+              </ul>
+            </div>
+          </Row>
+        )}
         <Row>
           <Education />
         </Row>

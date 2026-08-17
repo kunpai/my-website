@@ -41,6 +41,13 @@
     "category": "Reviewer",
     "items": [
       {
+        "name": "NeurIPS, CODEC-FM Workshop",
+        "years": [
+          2026
+        ],
+        "link": "https://collaborative-open-decentralized-fomo.github.io/"
+      },
+      {
         "name": "ICML, Agents in the Wild Workshop",
         "years": [
           2026

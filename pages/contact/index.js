@@ -5,7 +5,6 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     message: '',
-    fax_number: '',
   });
 
   function handleChange(e) {
@@ -15,11 +14,6 @@ export default function ContactForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (formData.fax_number) {
-      console.warn('[SPAM BOT TRAPPED] Contact form submission blocked via honeypot field.');
-      setFormData({ name: '', message: '', fax_number: '' });
-      return;
-    }
     // Handle form submission logic here (e.g., sending data to the server)
     // run mailto: link
     window.open(`mailto: ${process.env.CONFIG.email}?subject=Message from ${formData.name}&body=${formData.message}`);
@@ -29,7 +23,6 @@ export default function ContactForm() {
     setFormData({
       name: '',
       message: '',
-      fax_number: '',
     });
   };
 
@@ -43,20 +36,6 @@ export default function ContactForm() {
         You can contact me at <strong>pai DOT kunal05 AT gmail DOT com</strong> or <strong>kunpai AT ucla DOT edu</strong> or simply fill out the form below to redirect to an email client to send me a message directly.
       </p>
       <Form onSubmit={handleSubmit}>
-        {/* Invisible Honeypot Field for Spam Bots */}
-        <div style={{ display: 'none' }} aria-hidden="true">
-          <Form.Group controlId="formFaxNumber">
-            <Form.Label>Fax Number</Form.Label>
-            <Form.Control
-              type="text"
-              name="fax_number"
-              value={formData.fax_number}
-              onChange={handleChange}
-              tabIndex={-1}
-              autoComplete="off"
-            />
-          </Form.Group>
-        </div>
 
         <Form.Group controlId="formName">
           <Form.Label>Name</Form.Label>

@@ -12,8 +12,6 @@ export default function Document() {
         <link rel="alternate" type="text/markdown" title="LLM Summary (llms.txt)" href="/llms.txt" />
       </Head>
       <body>
-        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-        <a href="/api/honeypot" style={{ display: 'none' }} aria-hidden="true" tabIndex={-1} rel="nofollow">Do not click</a>
         <Main />
         <NextScript />
       </body>
