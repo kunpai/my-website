@@ -1,4 +1,4 @@
-name: Build and Update Resumes
+name: Build and Update Resumes & LLM Docs
 
 on:
   push:
@@ -25,6 +25,11 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
       - name: Install TeX Live
         run: |
           sudo apt-get update
@@ -40,18 +45,22 @@ jobs:
           chmod +x scripts/generate_resumes.py
           python3 scripts/generate_resumes.py
 
-      - name: Commit and Push Compiled Resumes
+      - name: Run LLM Docs Generator
+        run: |
+          node scripts/generate_llms_txt.js
+
+      - name: Commit and Push Compiled Resumes & LLM Docs
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          # Stage the compiled PDFs and TeX sources
-          git add public/*.pdf public/latex_src/*.tex
+          # Stage the compiled PDFs, TeX sources, and generated LLM text files
+          git add public/*.pdf public/latex_src/*.tex public/llms.txt public/llms-full.txt public/index.md
           
           # Commit only if there are modifications
           if ! git diff --cached --exit-code; then
-            git commit -m "chore: auto-regenerate resumes from JSON sources [skip ci]"
+            git commit -m "chore: auto-regenerate resumes and LLM docs from JSON sources [skip ci]"
             git push
           else
-            echo "No changes to the compiled resumes."
+            echo "No changes to the compiled resumes or LLM docs."
           fi
