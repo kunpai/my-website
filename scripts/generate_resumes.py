@@ -473,9 +473,23 @@ def main():
     header_github = resume_contact.get("github", "")
     header_website = resume_contact.get("website", "")
     
+    contact_parts = []
+    if header_phone:
+        contact_parts.append(header_phone)
+    if header_email:
+        contact_parts.append(rf"\href{{mailto:{header_email}}}{{{header_email}}}")
+    if header_linkedin:
+        contact_parts.append(rf"\href{{https://{header_linkedin}}}{{{header_linkedin}}}")
+    if header_github:
+        contact_parts.append(rf"\href{{https://{header_github}}}{{{header_github}}}")
+    if header_website:
+        contact_parts.append(rf"\href{{https://www.{header_website}}}{{{header_website}}}")
+    contact_line = " $|$ ".join(contact_parts)
+
     # Prepare base template replacements
     base_template = template
     base_template = base_template.replace("<<NAME>>", header_name)
+    base_template = base_template.replace("<<CONTACT_LINE>>", contact_line)
     base_template = base_template.replace("<<PHONE>>", header_phone)
     base_template = base_template.replace("<<EMAIL>>", header_email)
     base_template = base_template.replace("<<LINKEDIN>>", header_linkedin)
