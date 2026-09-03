@@ -767,4 +767,21 @@ html[data-bs-theme="dark"] .word-cloud-tag:hover {
   filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.7));
 }
 
+/* Publication hash anchors & scroll margin */
+#publications,
+.pub-hash-anchor {
+  scroll-margin-top: 85px;
+}
+
+.pub-hash-anchor {
+  position: relative;
+  top: -85px;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+
 

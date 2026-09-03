@@ -263,6 +263,48 @@ function ResearchGraph({ activeFilter, onSelectFilter }) {
     );
 }
 
+const PREFERRED_TYPE_ORDER = ["All", "conference", "workshop", "preprint", "poster"];
+
+const TYPE_LABELS = {
+    "All": "All",
+    "conference": "Papers",
+    "workshop": "Workshops",
+    "preprint": "Preprints",
+    "poster": "Posters",
+};
+
+const TYPE_TO_HASH = {
+    "All": "all",
+    "conference": "papers",
+    "workshop": "workshops",
+    "preprint": "preprints",
+    "poster": "posters",
+};
+
+const HASH_TO_TYPE = {
+    "all": "All",
+    "papers": "conference",
+    "paper": "conference",
+    "conference": "conference",
+    "conferences": "conference",
+    "workshops": "workshop",
+    "workshop": "workshop",
+    "preprints": "preprint",
+    "preprint": "preprint",
+    "posters": "poster",
+    "poster": "poster",
+};
+
+const getTypeLabel = (type) => {
+    if (TYPE_LABELS[type]) return TYPE_LABELS[type];
+    return type.charAt(0).toUpperCase() + type.slice(1);
+};
+
+const getTypeHash = (type) => {
+    if (TYPE_TO_HASH[type]) return TYPE_TO_HASH[type];
+    return type.toLowerCase().replace(/\s+/g, '-');
+};
+
 // Main Publication Component
 export default function Publication({ searchQuery, hideGraph = false, defaultType = "All" }) {
     const name = process.env.CONFIG?.name || "Kunal Pai";
@@ -284,12 +326,46 @@ export default function Publication({ searchQuery, hideGraph = false, defaultTyp
         return () => window.removeEventListener('text-copied', handleCopied);
     }, []);
 
-    // Extract unique types, sort them alphabetically, and put "All" first
+    // Extract unique types, sort them by preferred order, and put "All" first
     const publicationTypes = useMemo(() => {
-        const types = publications.map(p => p.type);
-        const uniqueSortedTypes = [...new Set(types)].sort((a, b) => a.localeCompare(b));
-        return ["All", ...uniqueSortedTypes];
+        const types = [...new Set(publications.map(p => p.type))];
+        types.sort((a, b) => {
+            const idxA = PREFERRED_TYPE_ORDER.indexOf(a);
+            const idxB = PREFERRED_TYPE_ORDER.indexOf(b);
+            if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+            if (idxA !== -1) return -1;
+            if (idxB !== -1) return 1;
+            return a.localeCompare(b);
+        });
+        return ["All", ...types];
     }, []);
+
+    const handleTypeSelect = (type) => {
+        setSelectedType(type);
+        setActiveFilter(null);
+        if (typeof window !== 'undefined') {
+            const hash = getTypeHash(type);
+            if (window.location.hash !== `#${hash}`) {
+                window.history.pushState(null, '', `#${hash}`);
+            }
+        }
+    };
+
+    const handleViewModeChange = (mode) => {
+        setViewMode(mode);
+        if (typeof window !== 'undefined') {
+            if (mode === "graph") {
+                if (window.location.hash !== '#graph') {
+                    window.history.pushState(null, '', '#graph');
+                }
+            } else {
+                const hash = getTypeHash(selectedType);
+                if (window.location.hash !== `#${hash}`) {
+                    window.history.pushState(null, '', `#${hash}`);
+                }
+            }
+        }
+    };
 
     const handleSelectFilter = (filter) => {
         setSelectedType("All"); // Reset type filter when tag/keyword is clicked
@@ -299,7 +375,67 @@ export default function Publication({ searchQuery, hideGraph = false, defaultTyp
     const clearFilters = () => {
         setActiveFilter(null);
         setSelectedType("All");
+        if (typeof window !== 'undefined') {
+            if (window.location.hash !== '#all') {
+                window.history.pushState(null, '', '#all');
+            }
+        }
     };
+
+    // Synchronize selectedType with URL hash (#all, #workshops, #papers, etc.)
+    useEffect(() => {
+        const onHashChange = () => {
+            if (typeof window === 'undefined') return;
+            const rawHash = window.location.hash ? window.location.hash.replace(/^#/, '').toLowerCase() : '';
+            if (rawHash === 'graph') {
+                if (!hideGraph) {
+                    setViewMode('graph');
+                }
+                return;
+            }
+
+            if (rawHash && HASH_TO_TYPE[rawHash]) {
+                const matchedType = HASH_TO_TYPE[rawHash];
+                setSelectedType(matchedType);
+                setActiveFilter(null);
+                if (!hideGraph) {
+                    setViewMode('compact');
+                }
+            } else if (!rawHash) {
+                setSelectedType(defaultType);
+                setActiveFilter(null);
+                if (!hideGraph) {
+                    setViewMode('graph');
+                }
+            }
+        };
+
+        // Check on initial load if hash is present
+        if (typeof window !== 'undefined' && window.location.hash) {
+            const rawHash = window.location.hash.replace(/^#/, '').toLowerCase();
+            if (rawHash === 'graph') {
+                if (!hideGraph) setViewMode('graph');
+            } else if (HASH_TO_TYPE[rawHash]) {
+                setSelectedType(HASH_TO_TYPE[rawHash]);
+                setActiveFilter(null);
+                if (!hideGraph) setViewMode('compact');
+                setTimeout(() => {
+                    const pubElement = document.getElementById('publications');
+                    if (pubElement) {
+                        pubElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 250);
+            }
+        }
+
+        window.addEventListener('hashchange', onHashChange);
+        window.addEventListener('popstate', onHashChange);
+
+        return () => {
+            window.removeEventListener('hashchange', onHashChange);
+            window.removeEventListener('popstate', onHashChange);
+        };
+    }, [defaultType, hideGraph]);
 
     const filteredPublications = useMemo(() => {
         let filtered = publications;
@@ -365,6 +501,18 @@ export default function Publication({ searchQuery, hideGraph = false, defaultTyp
 
     return (
         <div className="publications-container">
+            {/* Hidden anchor targets for native deep linking */}
+            <div id="all" className="pub-hash-anchor" />
+            <div id="papers" className="pub-hash-anchor" />
+            <div id="conference" className="pub-hash-anchor" />
+            <div id="conferences" className="pub-hash-anchor" />
+            <div id="workshops" className="pub-hash-anchor" />
+            <div id="workshop" className="pub-hash-anchor" />
+            <div id="preprints" className="pub-hash-anchor" />
+            <div id="preprint" className="pub-hash-anchor" />
+            <div id="posters" className="pub-hash-anchor" />
+            <div id="poster" className="pub-hash-anchor" />
+
             {/* Title section */}
             <Row className="align-items-center mb-4">
                 <Col>
@@ -379,7 +527,7 @@ export default function Publication({ searchQuery, hideGraph = false, defaultTyp
                         <Button
                             variant={viewMode === "graph" ? "secondary" : "outline-secondary"}
                             size="sm"
-                            onClick={() => setViewMode("graph")}
+                            onClick={() => handleViewModeChange("graph")}
                             className="viz-nav-btn"
                         >
                             Topic Graph
@@ -387,7 +535,7 @@ export default function Publication({ searchQuery, hideGraph = false, defaultTyp
                         <Button
                             variant={viewMode === "compact" ? "secondary" : "outline-secondary"}
                             size="sm"
-                            onClick={() => setViewMode("compact")}
+                            onClick={() => handleViewModeChange("compact")}
                             className="viz-nav-btn"
                         >
                             Standard Feed
@@ -412,6 +560,7 @@ export default function Publication({ searchQuery, hideGraph = false, defaultTyp
                                 bg="secondary" 
                                 className="active-filter-badge"
                                 onClick={clearFilters}
+                                style={{ cursor: "pointer" }}
                             >
                                 Active Filter: <strong>{activeFilter.name}</strong> 
                                 <i className="bi bi-x-circle ms-2"></i> (Clear)
@@ -425,14 +574,13 @@ export default function Publication({ searchQuery, hideGraph = false, defaultTyp
                                         key={index}
                                         variant={selectedType === type ? "secondary" : "outline-secondary"}
                                         size="sm"
-                                        onClick={() => setSelectedType(type)}
+                                        onClick={() => handleTypeSelect(type)}
                                         style={{ 
-                                            textTransform: "capitalize", 
                                             borderRadius: "20px",
                                             padding: "0.25rem 1rem"
                                         }}
                                     >
-                                        {type}
+                                        {getTypeLabel(type)}
                                     </Button>
                                 ))}
                             </div>

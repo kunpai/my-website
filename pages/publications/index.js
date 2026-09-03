@@ -19,10 +19,11 @@ export default function PublicationPage(){
         <Container>
         <Row>
             <div className="mt-5">
-            <h1 className="mb-3" id="publications">
-                {/* Publications */}
-                {searchQuery && <small className="text-muted"> - Filtered by: &quot;{searchQuery}&quot;</small>}
-            </h1>
+            {searchQuery && (
+                <div className="mb-3">
+                    <small className="text-muted">Filtered by: &quot;{searchQuery}&quot;</small>
+                </div>
+            )}
             <Publication searchQuery={searchQuery} />
             </div>
         </Row>
