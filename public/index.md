@@ -149,6 +149,7 @@ Enhanced accessibility for 500+ industry and academic users by integrating local
   - ISPASS (2026) [Link](https://ispass.org/ispass2026/)
 - **Reviewer**:
   - NeurIPS, CODEC-FM Workshop (2026) [Link](https://collaborative-open-decentralized-fomo.github.io/)
+  - NeurIPS, SocialAgent Workshop (Second Workshop on Large Language Models for Social Reasoning and Simulation) (2026) [Link](https://social-llm-workshop.github.io/)
   - ICML, Agents in the Wild Workshop (2026) [Link](https://agentwild-workshop.github.io/icml2026/)
 
 ## Technical Skills

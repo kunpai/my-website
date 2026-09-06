@@ -34,7 +34,7 @@ Previously, at **UC Davis**, I was fortunate to work with [Prof. Jason Lowe-Powe
 
 ## Research Experience
 ### Graduate Student Researcher - DavSec Lab @ UC Davis
-- **Period**: April 2025 – Present
+- **Period**: April 2025 – June 2026
 - **Location**: Davis, CA
 - **Description**:
   - Built an automated pipeline for C-to-Rust transpilation using LLMs, with 5 prompt variations, targeting secure systems migration.
@@ -335,7 +335,7 @@ Enhanced accessibility for 500+ industry and academic users by integrating local
 
 ## Work Experience
 ### Graduate Student Researcher - DavSec Lab @ University of California, Davis
-- **Period**: April 2025 – Present
+- **Period**: April 2025 – June 2026
 - **Location**: Davis, CA
 - **Description**:
   - Built an automated pipeline for C-to-Rust transpilation using LLMs, with 5 prompt variations, targeting secure systems migration.
@@ -417,6 +417,7 @@ Enhanced accessibility for 500+ industry and academic users by integrating local
   - ISPASS (2026) [Link](https://ispass.org/ispass2026/)
 - **Reviewer**:
   - NeurIPS, CODEC-FM Workshop (2026) [Link](https://collaborative-open-decentralized-fomo.github.io/)
+  - NeurIPS, SocialAgent Workshop (Second Workshop on Large Language Models for Social Reasoning and Simulation) (2026) [Link](https://social-llm-workshop.github.io/)
   - ICML, Agents in the Wild Workshop (2026) [Link](https://agentwild-workshop.github.io/icml2026/)
 
 ## Technical & Language Skills
