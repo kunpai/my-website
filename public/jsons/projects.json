@@ -19,7 +19,13 @@
         "resume_type": "Research Project",
         "resume_skills": "Python, LLMs, Evolutionary Algorithms",
         "resume_description": [
-            "Won 2nd place (Agent Safety) at the UC Berkeley RDI AgentBeats Competition; framework infrastructure was subsequently forked by Mozilla’s 0din team.",
+            "Won 2nd place (Agent Safety) at UC Berkeley RDI AgentBeats Competition; framework infrastructure was subsequently forked by \\textbf{Mozilla's 0din} team",
+            "Designed and implemented a clustering engine to identify semantic attack vectors in LLM-generated adversarial prompts",
+            "Engineered an attack pipeline that iteratively generates, evaluates, and refines adversarial prompts against target models",
+            "Benchmarked multiple frontier LLMs within the framework to validate attack effectiveness and refine scoring metrics"
+        ],
+        "resume_short_description": [
+            "Won 2nd place (Agent Safety) at UC Berkeley RDI AgentBeats Competition; framework infrastructure was subsequently forked by \\textbf{Mozilla's 0din} team",
             "Designed and implemented a clustering engine to identify semantic attack vectors in LLM-generated adversarial prompts",
             "Engineered an attack pipeline that iteratively generates, evaluates, and refines adversarial prompts against target models",
             "Benchmarked multiple frontier LLMs within the framework to validate attack effectiveness and refine scoring metrics"

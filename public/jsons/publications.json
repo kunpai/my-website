@@ -50,7 +50,7 @@
         "bibtex": "@INPROCEEDINGS{pai2026toward,\n  author={Pai, Kunal and Patel, Harshil and Le, Erin and Krim, Noah and Samani, Mahyar and Bruce, Bobby R. and Lowe-Power, Jason},\n  booktitle={2026 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS)}, \n  title={Toward Reproducible and Standardized Computer Architecture Simulation with gem5}, \n  year={2026},\n  volume={},\n  number={},\n  pages={184-196},\n  keywords={Simulation;Timing;Radio access networks;Regional area networks;Kernel;Arm;Computer architecture;Printing;Testing;Booting;gem5;computer architecture;reproducibility},\n  doi={10.1109/ISPASS69572.2026.00027}}",
         "show_on_website": true,
         "show_in_resume": true,
-        "show_in_resume_short": false
+        "show_in_resume_short": true
     },
     {
         "title": "NAAMSE: Framework for Evolutionary Security Evaluation of Agents",

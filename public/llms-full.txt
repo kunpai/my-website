@@ -422,7 +422,7 @@ Enhanced accessibility for 500+ industry and academic users by integrating local
   - ICML, Agents in the Wild Workshop (2026) [Link](https://agentwild-workshop.github.io/icml2026/)
 
 ## Technical & Language Skills
-- **Languages**: Python, C++, C, JavaScript, Java
+- **Languages**: Python, C++, C, Rust, JavaScript, Java
 - **ML/AI**: TensorFlow, PyTorch, scikit-learn, LLMs, Prompt Engineering, Ollama, Hugging Face, Multi-agent Systems
 - **Systems & Compilers**: LLVM, Clang, gem5
 - **Web/Data**: React, Next.js, Django, Flask, MongoDB, pandas, NumPy, Matplotlib

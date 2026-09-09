@@ -54,12 +54,12 @@
         "resume_description": [
             "Developed a 4,500-sample dataset for pairwise code-documentation alignment from 200 open-source Python projects, enabling future research in software maintenance",
             "Engineered a pipeline for measuring calibration and correctness of large language models for code repair, using Defects4J",
-            "Collaborated in validating efficacy of semantic augmentation of language model prompts for code summarization using precision and recall metrics like ROUGE and METEOR"
+            "Quantified precision and recall gains (ROUGE, METEOR) from semantic augmentation in LLM prompt pipelines for code summarization"
         ],
         "resume_short_description": [
             "Developed a 4,500-sample dataset for pairwise code-documentation alignment from 200 open-source Python projects, enabling future research in software maintenance",
             "Engineered a pipeline for measuring calibration and correctness of large language models for code repair, using Defects4J",
-            "Collaborated in validating efficacy of semantic augmentation of language model prompts for code summarization using precision and recall metrics like ROUGE and METEOR"
+            "Quantified precision and recall gains (ROUGE, METEOR) from semantic augmentation in LLM prompt pipelines for code summarization"
         ]
     },
     {
