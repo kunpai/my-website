@@ -55,6 +55,13 @@
         "link": "https://social-llm-workshop.github.io/"
       },
       {
+        "name": "NeurIPS, Agents in the Wild Workshop",
+        "years": [
+          2026
+        ],
+        "link": "https://agentwild-workshop.github.io/neurips2026/"
+      },
+      {
         "name": "ICML, Agents in the Wild Workshop",
         "years": [
           2026

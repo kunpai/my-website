@@ -418,6 +418,7 @@ Enhanced accessibility for 500+ industry and academic users by integrating local
 - **Reviewer**:
   - NeurIPS, CODEC-FM Workshop (2026) [Link](https://collaborative-open-decentralized-fomo.github.io/)
   - NeurIPS, SocialAgent Workshop (2026) [Link](https://social-llm-workshop.github.io/)
+  - NeurIPS, Agents in the Wild Workshop (2026) [Link](https://agentwild-workshop.github.io/neurips2026/)
   - ICML, Agents in the Wild Workshop (2026) [Link](https://agentwild-workshop.github.io/icml2026/)
 
 ## Technical & Language Skills
