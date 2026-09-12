@@ -783,5 +783,111 @@ html[data-bs-theme="dark"] .word-cloud-tag:hover {
   padding: 0;
 }
 
+/* Publication Modern Action Pill Buttons & Layout */
+.pub-footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.pub-tags-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.pub-tag-badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.3em 0.65em;
+  border-radius: 6px;
+  letter-spacing: 0.01em;
+  opacity: 0.9;
+}
+
+.pub-actions-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pub-action-btn {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.28rem 0.75rem !important;
+  line-height: 1.35;
+  border-radius: 50rem !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.pub-action-btn svg {
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.pub-action-btn .external-arrow {
+  transition: transform 0.2s ease;
+}
+
+.pub-action-btn:hover {
+  transform: translateY(-1px);
+}
+
+.pub-action-btn:hover .external-arrow {
+  transform: translate(1.5px, -1.5px);
+}
+
+/* Light Theme Styling for Publication Action Pills */
+html[data-bs-theme="light"] .pub-action-btn {
+  color: #475569;
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+}
+
+html[data-bs-theme="light"] .pub-action-btn:hover,
+html[data-bs-theme="light"] .pub-action-btn:focus,
+html[data-bs-theme="light"] .pub-action-btn:active {
+  color: #0f172a !important;
+  background-color: #e2e8f0 !important;
+  border-color: #94a3b8 !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+}
+
+/* Dark Theme Styling for Publication Action Pills */
+html[data-bs-theme="dark"] .pub-action-btn {
+  color: #e2e8f0;
+  border-color: rgba(255, 255, 255, 0.16);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+html[data-bs-theme="dark"] .pub-action-btn:hover,
+html[data-bs-theme="dark"] .pub-action-btn:focus,
+html[data-bs-theme="dark"] .pub-action-btn:active {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .pub-footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .pub-actions-group {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+
 
 
