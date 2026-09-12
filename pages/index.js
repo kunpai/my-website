@@ -1,3 +1,4 @@
+import Seo from '@/components/seo';
 import React from 'react';
 import { Row, Col, Badge } from "react-bootstrap";
 import Experience from "@/components/experience";
@@ -126,6 +127,7 @@ export default function Home() {
   }, []);
   return (
     <Containter className='home'>
+      <Seo path="/" noTitleSuffix title="Kunal Pai — PhD Student, Computer Science, UCLA" />
       <Row>
         <Hello />
       </Row>

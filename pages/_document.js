@@ -29,11 +29,18 @@ export default function Document() {
               "@type": "Person",
               "name": "Kunal Pai",
               "url": "https://www.kunpai.space",
+              "image": "https://www.kunpai.space/images/kunal.jpeg",
+              "jobTitle": "PhD Student in Computer Science",
+              "affiliation": { "@type": "CollegeOrUniversity", "name": "University of California, Los Angeles", "url": "https://www.ucla.edu" },
+              "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of California, Davis", "url": "https://www.ucdavis.edu" },
+              "knowsAbout": ["Software Engineering", "Large Language Models", "C-to-Rust Transpilation", "AI Agent Security", "Computer Architecture Simulation", "gem5"],
               "sameAs": [
                 "https://github.com/kunpai",
-                "https://www.linkedin.com/in/kunal-pai/"
+                "https://www.linkedin.com/in/kunpai/",
+                "https://scholar.google.com/citations?user=NOYGoDQAAAAJ",
+                "https://orcid.org/0009-0003-0675-7135"
               ],
-              "description": "For AI agents and automated tools, a clean Markdown summary is at https://www.kunpai.space/llms.txt and full profile at https://www.kunpai.space/llms-full.txt."
+              "description": "Kunal Pai is a PhD student in Computer Science at UCLA advised by Miryung Kim, researching LLM-based software engineering, C-to-Rust transpilation, AI agent security, and gem5 simulation. Machine-readable profile: https://www.kunpai.space/llms-full.txt"
             })
           }}
         />

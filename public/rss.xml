@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Kunal Pai — Blog</title>
+    <link>https://www.kunpai.space/blogs</link>
+    <description>Posts by Kunal Pai on computer architecture simulation, LLMs for software engineering, and side projects.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Sep 2026 01:34:34 GMT</lastBuildDate>
+    <atom:link href="https://www.kunpai.space/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Potential and Limitation of High-Frequency Cores and Caches</title>
+      <link>https://www.kunpai.space/blogs/potential-limitation-high-freq-cores-caches</link>
+      <guid isPermaLink="true">https://www.kunpai.space/blogs/potential-limitation-high-freq-cores-caches</guid>
+      <pubDate>Thu, 15 Aug 2024 07:00:00 GMT</pubDate>
+      <description>This paper explores the potential of cryogenic computing and superconducting electronics as promising alternatives to traditional semiconductor devices. As semiconductor devices face challenges such as increased leakage currents and reduced performance at higher temperatures, these novel…</description>
+      <dc:creator>Kunal Pai</dc:creator>
+      <dc:creator>Anusheel Nand</dc:creator>
+      <dc:creator>Jason Lowe-Power</dc:creator>
+      <category>simulation</category>
+      <category>cryogenic computing</category>
+      <category>superconducting electronics</category>
+    </item>
+    <item>
+      <title>OLED Paint</title>
+      <link>https://www.kunpai.space/blogs/oledpaint</link>
+      <guid isPermaLink="true">https://www.kunpai.space/blogs/oledpaint</guid>
+      <pubDate>Sun, 02 Jul 2023 07:00:00 GMT</pubDate>
+      <description>Project Details Our final lab project is a paint program similar to that of MSPaint. Using SPI, we allow the OLED screen to be the canvas that the user can paint on. The cursor that displays on the screen can be controlled by the user using the tilt readings acquired by the CC3200 accelerometer.…</description>
+      <dc:creator>Kunal Pai</dc:creator>
+      <dc:creator>Steven To</dc:creator>
+      <category>projects</category>
+    </item>
+    <item>
+      <title>UNIfy - Course Assistant</title>
+      <link>https://www.kunpai.space/blogs/unifycourseassistant</link>
+      <guid isPermaLink="true">https://www.kunpai.space/blogs/unifycourseassistant</guid>
+      <pubDate>Sun, 02 Jul 2023 07:00:00 GMT</pubDate>
+      <description>Inspiration What is the single biggest issue that we face as undergraduates living off-campus? Resoundingly, in our group, we answered, &quot;finding classes coherently and meeting new people in classes&quot;. We feel that after the pandemic, we had lost touch with the campus and we had forgotten how campus…</description>
+      <dc:creator>Kunal Pai</dc:creator>
+      <dc:creator>Parth Shah</dc:creator>
+      <dc:creator>Harshil Patel</dc:creator>
+      <dc:creator>Keshav Agrawal</dc:creator>
+      <category>projects</category>
+    </item>
+    <item>
+      <title>Welcome to the New Website</title>
+      <link>https://www.kunpai.space/blogs/new-website</link>
+      <guid isPermaLink="true">https://www.kunpai.space/blogs/new-website</guid>
+      <pubDate>Sat, 01 Jul 2023 07:00:00 GMT</pubDate>
+      <description>Welcome to the new website. This is my first post. I don't have much to say besides a huge thank you to my friends Parth Shah and Harshil Patel for helping me with this website.</description>
+      <dc:creator>Kunal Pai</dc:creator>
+      <category>website</category>
+    </item>
+  </channel>
+</rss>

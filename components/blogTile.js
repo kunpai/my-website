@@ -78,7 +78,7 @@ export default function BlogTile({ blog }) {
                                     }) : null
                                 }
                                 {" • "}
-                                {readingTime(blog.content) + " min read"}
+                                {(blog.readingTime ? `${blog.readingTime} min read` : `${readingTime(blog.content)} min read`)}
                             </p>
                         </Row>
                     </Col>
