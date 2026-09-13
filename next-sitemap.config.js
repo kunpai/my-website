@@ -1,11 +1,12 @@
 const fs = require('fs');
 const path = require('path');
+const siteConfig = require('./website.config.json');
 
 const BLOG_DIR = path.join(__dirname, 'public', 'blogs');
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: process.env.SITE_URL || 'https://www.kunpai.space',
+    siteUrl: process.env.SITE_URL || siteConfig.siteUrl || 'https://www.kunpai.space',
     generateRobotsTxt: true,
     changefreq: 'weekly',
     priority: 0.7,

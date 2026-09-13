@@ -13,11 +13,15 @@ import teachingExperience from "@/public/jsons/teaching-experience.json";
 import config from "@/website.config.json";
 
 export default function KunalAI() {
+    const name = config.name || "Kunal Pai";
+    const firstName = name.split(" ")[0];
+    const botName = config.botName || `${firstName}AI`;
+
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([
         {
             role: "assistant",
-            content: "Hi! I am KunalAI. I can help answer questions about Kunal's research, experience, or skills. Ask me anything!"
+            content: `Hi! I am ${botName}. I can help answer questions about ${firstName}'s research, experience, or skills. Ask me anything!`
         }
     ]);
     const [input, setInput] = useState("");
@@ -97,11 +101,11 @@ export default function KunalAI() {
             .map(t => `- ${t.title} at ${t.organization} (${t.start} - ${t.end}): ${t.description}`)
             .join("\n");
 
-        return `You represent Kunal Pai. Answer questions on behalf of Kunal using the context below. 
+        return `You represent ${name}. Answer questions on behalf of ${firstName} using the context below. 
 
 Rules:
-1. Always speak about Kunal in the third person (e.g. "Kunal is...", "He worked on...").
-2. When asked if he is available for a job/internship, explain his current status based on the "Availability" and "Education" sections in the context.
+1. Always speak about ${firstName} in the third person (e.g. "${firstName} is...", "They worked on...").
+2. When asked if they are available for a job/internship, explain their current status based on the "Availability" and "Education" sections in the context.
 3. If asked for contact details, provide the exact email: ${config.email}.
 4. Keep your responses short (1-3 sentences maximum) and friendly.
 5. Only answer questions based on the context below. If the context doesn't contain the answer, say you don't know.
@@ -230,13 +234,17 @@ ${serviceList}
         }
     };
 
+    if (config.enableChatbot === false) {
+        return null;
+    }
+
     return (
         <div className="kunalai-widget">
             {/* Floating Action Button */}
             <Button
                 className={`kunalai-fab ${isOpen ? "open" : ""}`}
                 onClick={() => setIsOpen(!isOpen)}
-                aria-label="Toggle KunalAI Chatbot"
+                aria-label={`Toggle ${botName} Chatbot`}
             >
                 {isOpen ? (
                     <svg
@@ -271,7 +279,7 @@ ${serviceList}
                         <div className="d-flex align-items-center gap-2">
                             <div className="avatar-pulse"></div>
                             <div>
-                                <h6 className="mb-0 fw-bold">KunalAI</h6>
+                                <h6 className="mb-0 fw-bold">{botName}</h6>
                                 <small className="text-muted d-block" style={{ fontSize: "10px" }}>
                                     AI Assistant (NVIDIA NIM Llama-3.1)
                                 </small>

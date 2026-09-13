@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <link rel="icon" href="/images/favicon.ico" />
-        <link rel="alternate" type="application/rss+xml" title="Kunal Pai — Blog" href="/rss.xml" />
+        <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} — Blog`} href="/rss.xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet" />

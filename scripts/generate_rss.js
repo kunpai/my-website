@@ -3,8 +3,11 @@ const fs = require('fs');
 const path = require('path');
 const parseMD = require('parse-md').default || require('parse-md');
 
-const SITE_URL = 'https://www.kunpai.space';
 const ROOT = path.resolve(__dirname, '..');
+const config = require(path.join(ROOT, 'website.config.json'));
+const SITE_URL = config.siteUrl || config.resume_contact?.website_url || 'https://www.kunpai.space';
+const name = config.name || 'Kunal Pai';
+const blogDesc = config.blogDescription || `Posts by ${name}.`;
 const BLOG_DIR = path.join(ROOT, 'public', 'blogs');
 const OUT = path.join(ROOT, 'public', 'rss.xml');
 
@@ -36,9 +39,9 @@ ${p.tags.map((t) => `      <category>${esc(t)}</category>`).join('\n')}
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>Kunal Pai — Blog</title>
+    <title>${esc(name)} — Blog</title>
     <link>${SITE_URL}/blogs</link>
-    <description>Posts by Kunal Pai on computer architecture simulation, LLMs for software engineering, and side projects.</description>
+    <description>${esc(blogDesc)}</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml" />

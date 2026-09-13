@@ -1,8 +1,17 @@
+import siteConfig from '@/website.config.json';
+
 export const config = {
   runtime: 'edge',
 };
 
 export default async function handler(req) {
+  if (siteConfig.enableChatbot === false) {
+    return new Response(JSON.stringify({ error: 'Chatbot is disabled' }), {
+      status: 403,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
   if (req.method !== 'POST') {
     return new Response(JSON.stringify({ error: 'Method not allowed' }), {
       status: 405,
@@ -12,6 +21,7 @@ export default async function handler(req) {
 
   try {
     const { messages } = await req.json();
+    const name = siteConfig.name || "Kunal Pai";
 
     if (!Array.isArray(messages)) {
       return new Response(JSON.stringify({ error: 'Invalid messages format' }), {
@@ -20,7 +30,7 @@ export default async function handler(req) {
       });
     }
 
-    // Guard to ensure the query is related to Kunal Pai's portfolio, skills, or experience
+    // Guard to ensure the query is related to the portfolio, skills, or experience
     const lastUserMessage = messages
       .filter(m => m.role === 'user')
       .slice(-1)[0]?.content || '';
@@ -48,7 +58,7 @@ export default async function handler(req) {
 
         classificationMessages[0] = {
           role: 'system',
-          content: `You are a relevance classifier. Analyze the context and the conversation history below. Determine if the user's latest query is related to Kunal Pai's background, research, publications, projects, education, career, skills, contact info, or standard chatbot greetings.\n\nOutput your response in the following format:\nThought: [one brief sentence explaining if it is related or unrelated]\nVerdict: [YES or NO]\n\n${contextSection}`
+          content: `You are a relevance classifier. Analyze the context and the conversation history below. Determine if the user's latest query is related to ${name}'s background, research, publications, projects, education, career, skills, contact info, or standard chatbot greetings.\n\nOutput your response in the following format:\nThought: [one brief sentence explaining if it is related or unrelated]\nVerdict: [YES or NO]\n\n${contextSection}`
         };
       }
 
@@ -62,28 +72,25 @@ export default async function handler(req) {
         body: JSON.stringify({
           model: 'meta/llama-3.1-8b-instruct',
           messages: classificationMessages,
-          max_tokens: 45,
-          temperature: 0.0,
+          max_tokens: 40,
+          temperature: 0.1,
         }),
       });
 
       if (classificationResponse.ok) {
-        const classData = await classificationResponse.json();
-        verdict = classData.choices?.[0]?.message?.content || 'YES';
-      } else {
-        throw new Error(`Classification call returned status ${classificationResponse.status}`);
+        const data = await classificationResponse.json();
+        verdict = data.choices?.[0]?.message?.content || 'YES';
       }
-    } catch (e) {
-      console.warn("Classification call failed, using heuristic regex fallback", e);
+    } catch (classifyErr) {
+      console.warn('Classifier fallback triggered:', classifyErr);
       
-      // Heuristic fallback check if API fails
+      const nameParts = name.toLowerCase().split(/\s+/);
       const keywords = [
-        'kunal', 'pai', 'ucla', 'uc davis', 'davis', 'phd', 'master', 'advisor', 
+        ...nameParts, 'phd', 'master', 'advisor', 
         'research', 'paper', 'publication', 'project', 'experience', 'work', 
         'job', 'intern', 'skill', 'resume', 'cv', 'email', 'contact', 'git', 
-        'linkedin', 'portfolio', 'website', 'thesis', 'agent', 'gem5', 'naamse', 
-        'ispass', 'iclr', 'icml', 'msr', 'seal', 'miryung', 'kim', 'academic', 
-        'student', 'gpa', 'course', 'class', 'teach', 'ecs 132', 'ecs', 'award',
+        'linkedin', 'portfolio', 'website', 'thesis', 'agent', 
+        'academic', 'student', 'gpa', 'course', 'class', 'teach', 'award',
         'hi', 'hello', 'hey', 'yo', 'greetings', 'help', 'introduce', 'about',
         'who is', 'who are', 'who was', 'what is', 'what are', 'where did', 'tell me'
       ];
@@ -100,7 +107,7 @@ export default async function handler(req) {
     if (verdict.toUpperCase().includes('VERDICT: NO')) {
       return new Response(
         JSON.stringify({ 
-          error: "I can only answer questions related to Kunal Pai's portfolio, research, experience, or skills. Please ask a relevant question!" 
+          error: `I can only answer questions related to ${name}'s portfolio, research, experience, or skills. Please ask a relevant question!` 
         }), 
         {
           status: 400,

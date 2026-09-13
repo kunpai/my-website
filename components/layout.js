@@ -3,8 +3,9 @@ import { Fade } from 'react-bootstrap'
 import Footer from './footer'
 import ScrollToTop from './scrollToTop'
 import dynamic from 'next/dynamic'
+import config from '@/website.config.json'
 
-// const KunalAI = dynamic(() => import('./kunalai'), { ssr: false })
+const KunalAI = dynamic(() => import('./kunalai'), { ssr: false })
 
 export default function Layout({ children }) {
     return (
@@ -16,7 +17,7 @@ export default function Layout({ children }) {
                 </main>
             </Fade>
             <ScrollToTop />
-            {/* <KunalAI /> */}
+            {config.enableChatbot && <KunalAI />}
             <Footer />
         </>
     )

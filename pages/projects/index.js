@@ -1,4 +1,5 @@
 import Seo from '@/components/seo';
+import config from '@/website.config.json';
 import React from 'react';
 import { Row, Col } from "react-bootstrap";
 import Experience from "@/components/experience";
@@ -8,7 +9,7 @@ import projects from "/public/jsons/projects.json";
 export default function Projects() {
   return (
     <Containter className='projects'>
-      <Seo title="Projects" path="/projects" description="Research and software projects by Kunal Pai, including NAAMSE, HASHIRU, MARS, and gem5 Vision." />
+      <Seo title="Projects" path="/projects" description={`Research, open-source software, and academic projects by ${config.name}.`} />
       <Row>
         <div className="content">
           <Row>

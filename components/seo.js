@@ -1,10 +1,14 @@
 import Head from 'next/head';
+import config from '@/website.config.json';
 
-export const SITE_URL = 'https://www.kunpai.space';
-export const SITE_NAME = 'Kunal Pai';
+export const SITE_URL = config.siteUrl || config.resume_contact?.website_url || 'https://www.kunpai.space';
+export const SITE_NAME = config.name || 'Kunal Pai';
 export const DEFAULT_DESCRIPTION =
-    'Kunal Pai — PhD student in Computer Science at UCLA (advised by Miryung Kim). Research on LLM-based software engineering, C-to-Rust transpilation, AI agent security, and gem5 computer architecture simulation.';
-export const DEFAULT_IMAGE = `${SITE_URL}/images/kunal.jpeg`;
+    config.bio ||
+    `${config.name} — ${config.title || 'Personal Portfolio'}.`;
+export const DEFAULT_IMAGE = config.image
+    ? (config.image.startsWith('http') ? config.image : `${SITE_URL}${config.image.startsWith('/') ? config.image : `/${config.image}`}`)
+    : `${SITE_URL}/images/placeholder.png`;
 
 /**
  * Per-page SEO tags. Uses fixed `key`s so a page's values override the

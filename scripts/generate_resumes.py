@@ -13,6 +13,14 @@ PUBLIC_DIR = os.path.join(ROOT_DIR, "public")
 TEMPLATE_PATH = os.path.join(ROOT_DIR, "scripts", "resume_template.tex")
 CONFIG_PATH = os.path.join(ROOT_DIR, "website.config.json")
 
+def load_config():
+    if not os.path.exists(CONFIG_PATH):
+        return {}
+    with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+GLOBAL_CONFIG = load_config()
+
 def load_json(filename):
     path = os.path.join(JSON_DIR, filename)
     if not os.path.exists(path):
@@ -71,8 +79,11 @@ def markdown_links_to_latex(text):
     return "".join(result)
 
 def format_author_name(name):
-    # Underline user "Kunal Pai" or "Kunal Suresh Pai"
-    is_user = "Kunal" in name and "Pai" in name
+    # Underline user based on config name
+    user_name = GLOBAL_CONFIG.get("name", "Kunal Pai")
+    user_parts = [p.lower() for p in user_name.split()]
+    name_lower = name.lower()
+    is_user = len(user_parts) >= 2 and all(p in name_lower for p in [user_parts[0], user_parts[-1]])
     
     parts = name.strip().split()
     if len(parts) >= 2:

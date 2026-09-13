@@ -1,4 +1,5 @@
 import Seo from '@/components/seo';
+import config from '@/website.config.json';
 import React from 'react';
 import { Row, Col, Badge } from "react-bootstrap";
 import Experience from "@/components/experience";
@@ -127,7 +128,7 @@ export default function Home() {
   }, []);
   return (
     <Containter className='home'>
-      <Seo path="/" noTitleSuffix title="Kunal Pai — PhD Student, Computer Science, UCLA" />
+      <Seo path="/" noTitleSuffix title={config.homepageTitle || (config.title ? `${config.name} — ${config.title}` : config.name)} />
       <Row>
         <Hello />
       </Row>

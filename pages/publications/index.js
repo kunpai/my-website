@@ -1,4 +1,5 @@
 import Seo from '@/components/seo';
+import config from '@/website.config.json';
 import Publication from "@/components/publication";
 import { Container, Row } from "react-bootstrap";
 import { useRouter } from 'next/router';
@@ -18,7 +19,7 @@ export default function PublicationPage(){
     return(
         <>
         <Container>
-        <Seo title="Publications" path="/publications" description="Peer-reviewed papers and preprints by Kunal Pai at ICSE, MSR, ISPASS, and NeurIPS/ICML workshops, with BibTeX and links." />
+        <Seo title="Publications" path="/publications" description={`Peer-reviewed papers, preprints, and research publications by ${config.name}, with BibTeX and links.`} />
         <Row>
             <div className="mt-5">
             {searchQuery && (

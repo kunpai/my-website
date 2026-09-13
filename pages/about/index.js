@@ -1,4 +1,5 @@
 import Seo from '@/components/seo';
+import config from '@/website.config.json';
 import about from './about.md';
 import { Container } from "react-bootstrap";
 import ReactMarkdown from 'react-markdown'
@@ -12,7 +13,7 @@ import remarkFrontmatter from 'remark-frontmatter';
 export default function About() {
     return (
         <Container className='about'>
-            <Seo title="About" path="/about" description="About Kunal Pai: background, education at UC Davis and UCLA, and research interests in LLMs for software engineering and computer architecture." />
+            <Seo title="About" path="/about" description={`About ${config.name}: background, education, and research interests.`} />
             <ReactMarkdown
                 className='markdown-body mt-3'
                 rehypePlugins={[[rehypeHighlight, { ignoreMissing: true }], rehypeRaw, rehypeSlug]}

@@ -22,7 +22,9 @@ import { getLinkMeta, ExternalArrowIcon } from "./linkMeta";
 // Coordinates for the Interactive SVG Research Graph
 // Function to dynamically discover topics and calculate SVG coordinates at runtime
 const generateGraphData = (pubs) => {
-    const coreCategoryTags = ["Computer Architecture", "Large Language Models (LLMs)", "Software Engineering"];
+    const coreCategoryTags = (process.env.CONFIG?.publicationCategories && process.env.CONFIG.publicationCategories.length > 0)
+        ? process.env.CONFIG.publicationCategories
+        : ["Computer Architecture", "Large Language Models (LLMs)", "Software Engineering"];
     
     // Extract unique tags across all publications
     const allTags = new Set();
@@ -42,11 +44,12 @@ const generateGraphData = (pubs) => {
     
     // Position categories in a central triangle layout
     const rCategory = 85;
-    const categoryDescriptions = {
+    const defaultDescriptions = {
         "Computer Architecture": "Hardware simulation, cryogenic systems, and reproducibility.",
         "Large Language Models (LLMs)": "Vulnerabilities in agentic systems, prompt injections, and multi-agents.",
         "Software Engineering": "Code documentation, repository mining, and model calibration."
     };
+    const categoryDescriptions = process.env.CONFIG?.categoryDescriptions || defaultDescriptions;
     
     const categoryNodes = coreCategoryTags.map((tag, i) => {
         const angle = (2 * Math.PI * i) / coreCategoryTags.length - Math.PI / 2;

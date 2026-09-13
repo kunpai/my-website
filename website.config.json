@@ -1,7 +1,16 @@
 {
-    "email": "pai.kunal05+contact@gmail.com",
     "name": "Kunal Pai",
+    "initials": "KP",
+    "title": "PhD Student in Computer Science",
+    "homepageTitle": "Kunal Pai — PhD Student, Computer Science, UCLA",
+    "institution": "University of California, Los Angeles",
+    "institutionUrl": "https://www.ucla.edu",
+    "alumniOf": "University of California, Davis",
+    "alumniOfUrl": "https://www.ucdavis.edu",
+    "siteUrl": "https://www.kunpai.space",
+    "email": "pai.kunal05+contact@gmail.com",
     "image": "/images/kunal.jpeg",
+    "bio": "Kunal Pai is a PhD student in Computer Science at UCLA advised by Miryung Kim, researching LLM-based software engineering, C-to-Rust transpilation, AI agent security, and gem5 simulation. Machine-readable profile: https://www.kunpai.space/llms-full.txt",
     "intro": "I am an incoming PhD student at **UCLA**, advised by [Prof. Miryung Kim](http://www.cs.ucla.edu/~miryung/).\n\nPreviously, at **UC Davis**, I was fortunate to work with [Prof. Jason Lowe-Power](https://arch.cs.ucdavis.edu/) on gem5 and simulation of superconducting architectures, with [Prof. Prem Devanbu](http://www.cs.ucdavis.edu/~devanbu) and [Dr. Toufique Ahmed](https://toufiqueparag.github.io/toufique.github.io/) on LLM-based approaches to code summarization, calibration, and code-documentation alignment, and with [Prof. Tapti Palit](https://taptipalit.github.io) on agentic performance optimization and benchmarking for C-to-Rust transpilation.",
     "resume": "/Kunal_Pai_CV.pdf",
     "resume_short": "/Kunal_Pai_Resume.pdf",
@@ -12,6 +21,33 @@
         "github": "github.com/kunpai",
         "linkedin": "linkedin.com/in/kunpai"
     },
+    "contactEmails": [
+        "pai.kunal05@gmail.com",
+        "kunpai@ucla.edu"
+    ],
+    "contactText": "You can contact me at **pai DOT kunal05 AT gmail DOT com** or **kunpai AT ucla DOT edu** or simply fill out the form below to redirect to an email client to send me a message directly.",
+    "botName": "KunalAI",
+    "enableChatbot": false,
+    "knowsAbout": [
+        "Software Engineering",
+        "Large Language Models",
+        "C-to-Rust Transpilation",
+        "AI Agent Security",
+        "Computer Architecture Simulation",
+        "gem5"
+    ],
+    "publicationCategories": [
+        "Computer Architecture",
+        "Large Language Models (LLMs)",
+        "Software Engineering"
+    ],
+    "categoryDescriptions": {
+        "Computer Architecture": "Hardware simulation, cryogenic systems, and reproducibility.",
+        "Large Language Models (LLMs)": "Vulnerabilities in agentic systems, prompt injections, and multi-agents.",
+        "Software Engineering": "Code documentation, repository mining, and model calibration."
+    },
+    "blogDescription": "Posts by Kunal Pai on computer architecture simulation, LLMs for software engineering, and side projects.",
+    "footerText": "This website was created by Kunal Pai, Parth Shah and Harshil Patel.",
     "footerLinks": {
         "Google Scholar": "https://scholar.google.com/citations?user=NOYGoDQAAAAJ&hl=en",
         "ORCID": "https://orcid.org/0009-0003-0675-7135",
