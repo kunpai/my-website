@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { getLinkMeta, ExternalArrowIcon } from "./linkMeta";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Experience({ jsonExperiences, title, isExperience }) {
@@ -80,16 +81,28 @@ function ExperienceTile({ isExperience, experience }) {
                         }
                     </h6>
                 </Row>
-                <Row className="gap-2">
-                    {
-                        experience.links ? Object.keys(experience.links).map((key, index) => {
+                {experience.links && Object.keys(experience.links).length > 0 && (
+                    <div className="project-actions-group my-2 justify-content-center">
+                        {Object.keys(experience.links).map((key, index) => {
+                            const meta = getLinkMeta(key, experience.links[key]);
                             return (
-                                <Button key={index} variant="outline-secondary" href={experience.links[key]} target="_blank">{key}</Button>
+                                <Button
+                                    key={index}
+                                    variant="outline-secondary"
+                                    size="sm"
+                                    href={experience.links[key]}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="project-action-btn d-inline-flex align-items-center"
+                                >
+                                    {meta.icon}
+                                    <span>{meta.label}</span>
+                                    <ExternalArrowIcon />
+                                </Button>
                             );
-                        }
-                        ) : null
-                    }
-                </Row>
+                        })}
+                    </div>
+                )}
                 <Row>
                 <h6 className="mt-2">
                     {experience.collaborators ? 'Collaborators: ' : null}
@@ -106,15 +119,9 @@ function ExperienceTile({ isExperience, experience }) {
             </Col>
             <Col className="d-flex justify-content-center flex-column">
                 <ul>
-                    {experience.description != "" ? experience.description.split('\n').map((line, index) => {
-                        return (
-                            <>
-                            <div>
-                                <li key={index}>{line}</li>
-                            </div>
-                            </>
-                        );
-                    }) : "In progress"}
+                    {experience.description != "" ? experience.description.split('\n').map((line, index) => (
+                        <li key={index}>{line}</li>
+                    )) : <li>In progress</li>}
                 </ul>
             </Col>
         </Row>

@@ -808,14 +808,17 @@ html[data-bs-theme="dark"] .word-cloud-tag:hover {
   opacity: 0.9;
 }
 
-.pub-actions-group {
+.pub-actions-group,
+.project-actions-group {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem;
 }
 
-.pub-action-btn {
+.pub-action-btn,
+.project-action-btn,
+.action-pill-btn {
   font-size: 0.8125rem;
   font-weight: 500;
   padding: 0.28rem 0.75rem !important;
@@ -826,25 +829,35 @@ html[data-bs-theme="dark"] .word-cloud-tag:hover {
   white-space: nowrap;
 }
 
-.pub-action-btn svg {
+.pub-action-btn svg,
+.project-action-btn svg,
+.action-pill-btn svg {
   flex-shrink: 0;
   vertical-align: middle;
 }
 
-.pub-action-btn .external-arrow {
+.pub-action-btn .external-arrow,
+.project-action-btn .external-arrow,
+.action-pill-btn .external-arrow {
   transition: transform 0.2s ease;
 }
 
-.pub-action-btn:hover {
+.pub-action-btn:hover,
+.project-action-btn:hover,
+.action-pill-btn:hover {
   transform: translateY(-1px);
 }
 
-.pub-action-btn:hover .external-arrow {
+.pub-action-btn:hover .external-arrow,
+.project-action-btn:hover .external-arrow,
+.action-pill-btn:hover .external-arrow {
   transform: translate(1.5px, -1.5px);
 }
 
-/* Light Theme Styling for Publication Action Pills */
-html[data-bs-theme="light"] .pub-action-btn {
+/* Light Theme Styling for Action Pills */
+html[data-bs-theme="light"] .pub-action-btn,
+html[data-bs-theme="light"] .project-action-btn,
+html[data-bs-theme="light"] .action-pill-btn {
   color: #475569;
   border-color: #cbd5e1;
   background-color: #f8fafc;
@@ -852,15 +865,23 @@ html[data-bs-theme="light"] .pub-action-btn {
 
 html[data-bs-theme="light"] .pub-action-btn:hover,
 html[data-bs-theme="light"] .pub-action-btn:focus,
-html[data-bs-theme="light"] .pub-action-btn:active {
+html[data-bs-theme="light"] .pub-action-btn:active,
+html[data-bs-theme="light"] .project-action-btn:hover,
+html[data-bs-theme="light"] .project-action-btn:focus,
+html[data-bs-theme="light"] .project-action-btn:active,
+html[data-bs-theme="light"] .action-pill-btn:hover,
+html[data-bs-theme="light"] .action-pill-btn:focus,
+html[data-bs-theme="light"] .action-pill-btn:active {
   color: #0f172a !important;
   background-color: #e2e8f0 !important;
   border-color: #94a3b8 !important;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
 }
 
-/* Dark Theme Styling for Publication Action Pills */
-html[data-bs-theme="dark"] .pub-action-btn {
+/* Dark Theme Styling for Action Pills */
+html[data-bs-theme="dark"] .pub-action-btn,
+html[data-bs-theme="dark"] .project-action-btn,
+html[data-bs-theme="dark"] .action-pill-btn {
   color: #e2e8f0;
   border-color: rgba(255, 255, 255, 0.16);
   background-color: rgba(255, 255, 255, 0.04);
@@ -868,7 +889,13 @@ html[data-bs-theme="dark"] .pub-action-btn {
 
 html[data-bs-theme="dark"] .pub-action-btn:hover,
 html[data-bs-theme="dark"] .pub-action-btn:focus,
-html[data-bs-theme="dark"] .pub-action-btn:active {
+html[data-bs-theme="dark"] .pub-action-btn:active,
+html[data-bs-theme="dark"] .project-action-btn:hover,
+html[data-bs-theme="dark"] .project-action-btn:focus,
+html[data-bs-theme="dark"] .project-action-btn:active,
+html[data-bs-theme="dark"] .action-pill-btn:hover,
+html[data-bs-theme="dark"] .action-pill-btn:focus,
+html[data-bs-theme="dark"] .action-pill-btn:active {
   color: #ffffff !important;
   background-color: rgba(255, 255, 255, 0.12) !important;
   border-color: rgba(255, 255, 255, 0.35) !important;
