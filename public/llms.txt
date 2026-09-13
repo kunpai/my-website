@@ -46,7 +46,7 @@ Previously, at **UC Davis**, I was fortunate to work with [Prof. Jason Lowe-Powe
   Authors: Kunal Pai, Mahyar Samani, Anusheel Nand, Jason Lowe-Power
   Venue: Workshops of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC Workshops '25)
   Summary: As Moore's Law slows, superconducting electronics offer ultra-low-power, high-speed computation potential. This paper presents the first full-system superconducting modeling in gem5, including cryogenic and superconducting cores, caches, and interconnects. Our results show that superconducting cores and caches can yield up to 24× speedup for compute-intensive workloads, but memory-intensive applications remain bottlenecked by room-temperature DRAM. This makes superconducting technology more suitable for domain-specific accelerators rather than general-purpose computing, with performance dependent on workload memory access patterns and data widths.
-  Links: [View Publication](https://doi.org/10.1145/3731599.3769278) | [Slides](https://pmbs-workshop.github.io/talk06.pdf) | [Talk](https://sc25.conference-program.com/presentation/?id=ws_pmbss112&sess=sess198)
+  Links: [View Publication](https://doi.org/10.1145/3731599.3769278) | [Slides](https://pmbs-workshop.github.io/past-workshops/pmbs25/talk06.pdf) | [Talk](https://sc25.conference-program.com/presentation/?id=ws_pmbss112&sess=sess198)
 
 - **HASHIRU: Hierarchical Agent System for Hybrid Intelligent Resource Utilization**
   Authors: Kunal Pai, Parth Shah, Harshil Patel
