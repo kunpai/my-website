@@ -425,8 +425,8 @@ html[data-bs-theme="dark"] .copy-button:hover {
   }
 }
 
-/* KunalAI Chatbot Widget */
-.kunalai-widget {
+/* AI Chatbot Widget */
+.chatbot-widget {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -435,7 +435,7 @@ html[data-bs-theme="dark"] .copy-button:hover {
 }
 
 /* Floating Action Button */
-.kunalai-fab {
+.chatbot-fab {
   width: 56px;
   height: 56px;
   border-radius: 50% !important;
@@ -450,18 +450,18 @@ html[data-bs-theme="dark"] .copy-button:hover {
   color: white;
 }
 
-.kunalai-fab:hover {
+.chatbot-fab:hover {
   transform: scale(1.1) rotate(5deg);
   box-shadow: 0 6px 20px rgba(13, 110, 253, 0.4);
 }
 
-.kunalai-fab.open {
+.chatbot-fab.open {
   transform: rotate(90deg) !important;
   background: #333 !important;
 }
 
 /* Chatbox Window */
-.kunalai-chatbox {
+.chatbot-chatbox {
   position: absolute;
   bottom: 70px;
   right: 0;
@@ -478,14 +478,14 @@ html[data-bs-theme="dark"] .copy-button:hover {
 }
 
 @media (max-width: 576px) {
-  .kunalai-chatbox {
+  .chatbot-chatbox {
     width: calc(100vw - 40px);
     right: 0px;
     height: calc(100vh - 100px);
   }
 }
 
-.kunalai-body {
+.chatbot-body {
   height: 0; /* allows flex-grow to work properly */
   background: var(--bs-tertiary-bg);
 }

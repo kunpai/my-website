@@ -5,9 +5,9 @@ const parseMD = require('parse-md').default || require('parse-md');
 
 const ROOT = path.resolve(__dirname, '..');
 const config = require(path.join(ROOT, 'website.config.json'));
-const SITE_URL = config.siteUrl || config.resume_contact?.website_url || 'https://www.kunpai.space';
-const name = config.name || 'Kunal Pai';
-const blogDesc = config.blogDescription || `Posts by ${name}.`;
+const SITE_URL = config.siteUrl || config.resume_contact?.website_url || '';
+const name = config.name || '';
+const blogDesc = config.blogDescription || (name ? `Posts by ${name}.` : 'Blog posts.');
 const BLOG_DIR = path.join(ROOT, 'public', 'blogs');
 const OUT = path.join(ROOT, 'public', 'rss.xml');
 

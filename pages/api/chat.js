@@ -21,7 +21,7 @@ export default async function handler(req) {
 
   try {
     const { messages } = await req.json();
-    const name = siteConfig.name || "Kunal Pai";
+    const name = siteConfig.name || "";
 
     if (!Array.isArray(messages)) {
       return new Response(JSON.stringify({ error: 'Invalid messages format' }), {

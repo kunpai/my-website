@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import config from '@/website.config.json';
 
-export const SITE_URL = config.siteUrl || config.resume_contact?.website_url || 'https://www.kunpai.space';
-export const SITE_NAME = config.name || 'Kunal Pai';
+export const SITE_URL = config.siteUrl || config.resume_contact?.website_url || '';
+export const SITE_NAME = config.name || '';
 export const DEFAULT_DESCRIPTION =
     config.bio ||
     `${config.name} — ${config.title || 'Personal Portfolio'}.`;

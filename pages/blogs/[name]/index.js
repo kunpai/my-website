@@ -8,7 +8,7 @@ import remarkSlug from "remark-slug";
 import remarkFrontmatter from 'remark-frontmatter';
 import Head from 'next/head';
 import Metadata from '@/components/metadata'
-import Seo, { SITE_URL, DEFAULT_IMAGE } from '@/components/seo'
+import Seo, { SITE_URL, SITE_NAME, DEFAULT_IMAGE } from '@/components/seo'
 import { Container } from 'react-bootstrap'
 
 export async function getStaticPaths() {
@@ -42,7 +42,7 @@ export default function Page({ blog }) {
         "image": blogImage,
         "keywords": (blog.tags ?? []).join(', '),
         "author": (blog.authors ?? []).map((name) => ({ "@type": "Person", "name": name })),
-        "publisher": { "@type": "Person", "name": "Kunal Pai", "url": SITE_URL },
+        "publisher": { "@type": "Person", "name": SITE_NAME, "url": SITE_URL },
     };
 
     return (

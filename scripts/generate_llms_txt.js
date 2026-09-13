@@ -79,7 +79,7 @@ function generateLlmsTxt() {
     const lines = [];
 
     // Header & Summary
-    lines.push(`# ${config.name || 'Kunal Pai'}`);
+    lines.push(`# ${config.name || 'Portfolio'}`);
     lines.push('');
     lines.push(`> ${cleanText(config.intro || '')}`);
     lines.push('');
@@ -220,7 +220,7 @@ function generateLlmsFullTxt() {
 
     const lines = [];
 
-    lines.push(`# ${config.name || 'Kunal Pai'} - Complete Portfolio & Academic Profile`);
+    lines.push(`# ${config.name ? `${config.name} - Complete Portfolio & Academic Profile` : 'Portfolio & Academic Profile'}`);
     lines.push('');
     lines.push(`> ${cleanText(config.intro || '')}`);
     lines.push('');

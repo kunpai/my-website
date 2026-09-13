@@ -12,16 +12,16 @@ import service from "@/public/jsons/service.json";
 import teachingExperience from "@/public/jsons/teaching-experience.json";
 import config from "@/website.config.json";
 
-export default function KunalAI() {
-    const name = config.name || "Kunal Pai";
-    const firstName = name.split(" ")[0];
-    const botName = config.botName || `${firstName}AI`;
+export default function Chatbot() {
+    const name = config.name || "";
+    const firstName = name ? name.split(" ")[0] : "";
+    const botName = config.botName || (firstName ? `${firstName}AI` : "AI Assistant");
 
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([
         {
             role: "assistant",
-            content: `Hi! I am ${botName}. I can help answer questions about ${firstName}'s research, experience, or skills. Ask me anything!`
+            content: `Hi! I am ${botName}. I can help answer questions about ${firstName ? `${firstName}'s` : "my"} research, experience, or skills. Ask me anything!`
         }
     ]);
     const [input, setInput] = useState("");
@@ -239,10 +239,10 @@ ${serviceList}
     }
 
     return (
-        <div className="kunalai-widget">
+        <div className="chatbot-widget">
             {/* Floating Action Button */}
             <Button
-                className={`kunalai-fab ${isOpen ? "open" : ""}`}
+                className={`chatbot-fab ${isOpen ? "open" : ""}`}
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label={`Toggle ${botName} Chatbot`}
             >
@@ -274,7 +274,7 @@ ${serviceList}
 
             {/* Chatbox Window */}
             {isOpen && (
-                <Card className="kunalai-chatbox shadow-lg border-0">
+                <Card className="chatbot-chatbox shadow-lg border-0">
                     <Card.Header className="d-flex align-items-center justify-content-between py-3 border-0 bg-transparent">
                         <div className="d-flex align-items-center gap-2">
                             <div className="avatar-pulse"></div>
@@ -305,7 +305,7 @@ ${serviceList}
                         </Button>
                     </Card.Header>
 
-                    <Card.Body className="kunalai-body d-flex flex-column p-0">
+                    <Card.Body className="chatbot-body d-flex flex-column p-0">
                         <div className="chat-messages-container p-3 flex-grow-1 overflow-auto">
                             {messages.map((msg, index) => (
                                 <div

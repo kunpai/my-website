@@ -5,7 +5,7 @@ import ScrollToTop from './scrollToTop'
 import dynamic from 'next/dynamic'
 import config from '@/website.config.json'
 
-const KunalAI = dynamic(() => import('./kunalai'), { ssr: false })
+const Chatbot = dynamic(() => import('./chatbot'), { ssr: false })
 
 export default function Layout({ children }) {
     return (
@@ -17,7 +17,7 @@ export default function Layout({ children }) {
                 </main>
             </Fade>
             <ScrollToTop />
-            {config.enableChatbot && <KunalAI />}
+            {config.enableChatbot && <Chatbot />}
             <Footer />
         </>
     )

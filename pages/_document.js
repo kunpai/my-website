@@ -7,8 +7,8 @@ import config from '@/website.config.json'
  * @returns {JSX.Element} The JSX element to be rendered.
 */
 export default function Document() {
-  const siteUrl = config.siteUrl || config.resume_contact?.website_url || 'https://www.kunpai.space';
-  const name = config.name || 'Kunal Pai';
+  const siteUrl = config.siteUrl || config.resume_contact?.website_url || '';
+  const name = config.name || '';
   const imageUrl = config.image
     ? (config.image.startsWith('http') ? config.image : `${siteUrl}${config.image.startsWith('/') ? config.image : `/${config.image}`}`)
     : `${siteUrl}/images/placeholder.png`;

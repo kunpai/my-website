@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import BlogTile from '@/components/blogTile';
 import Seo from '@/components/seo';
 import { filterBlogs } from '@/lib/blogFilter';
+import config from '@/website.config.json';
 
 // Posts are read at build time so the list is in the HTML crawlers see
 // (previously fetched client-side, which rendered "No Blogs Found" to bots).
@@ -44,7 +45,7 @@ export default function Blogs({ blogs }) {
             <Seo
                 title="Blog"
                 path="/blogs"
-                description="Posts by Kunal Pai on computer architecture simulation, LLMs for software engineering, and side projects."
+                description={config.blogDescription || (config.name ? `Posts by ${config.name}.` : "Blog posts.")}
             />
             <h1 className="text-center mt-5" style={{ fontSize: '3rem' }}>
                 Blogs
