@@ -7,7 +7,7 @@
     "institutionUrl": "https://university.example.org",
     "alumniOf": "Example College",
     "alumniOfUrl": "https://college.example.org",
-    "siteUrl": "https://janedoe.example.com",
+    "siteUrl": "https://academic-site-template.vercel.app",
     "email": "jane.doe@example.com",
     "image": "/images/placeholder.png",
     "favicon": "/images/favicon.ico",

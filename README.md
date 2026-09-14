@@ -2,7 +2,8 @@
 > **This repository is the source of [kunpai.space](https://www.kunpai.space).**
 > To build your own site from it, start from the template instead:
 > **[kunpai/academic-site-template](https://github.com/kunpai/academic-site-template)**. It is generated from
-> this repo automatically, with the example content in place of mine.
+> this repo automatically, with the example content in place of mine
+> ([live demo](https://academic-site-template.vercel.app)).
 
 <!-- personal-only:end -->
 # Academic Site Template
@@ -11,6 +12,9 @@ A personal website for researchers, PhD students and academics: publications wit
 a blog, a CV/resume built from the same data, and a site that search engines and LLMs can read.
 Built with Next.js 13, React and Bootstrap. All your content lives in one folder, `content/`, so
 you can take updates to the site code without merge conflicts.
+
+**Live demo: [academic-site-template.vercel.app](https://academic-site-template.vercel.app)**,
+built from this repository with the example content for the fictional Jane Doe.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkunpai%2Facademic-site-template)
 
