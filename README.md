@@ -22,6 +22,15 @@ you can take updates to the site code without merge conflicts.
 The demo at [academic-site-template.vercel.app](https://academic-site-template.vercel.app) is
 built from this repository with the example content for the fictional Jane Doe.
 
+## Updates without merge conflicts
+
+Your content lives in `content/` and the template only ships site code, so taking a new release
+is one command. This is a real run on a site made with **Use this template**:
+
+![npm run update merging 24 changed template files into a customised site with 0 conflicts](docs/images/update.gif)
+
+See [Getting updates](#getting-updates) for how it works.
+
 ## Features
 
 - **Everything personal lives in `content/`**: config, data (JSON), about page, blog posts.

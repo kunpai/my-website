@@ -37,11 +37,15 @@ function copyMissing(src, dest) {
     return copied;
 }
 
-/** First run: content/ comes from examples/content; the demo's PDFs only when installing it as-is. */
+/**
+ * First run: content/ comes from examples/content, plus the images its entries point at.
+ * The demo's CV/resume PDFs are only copied when installing the example site as-is.
+ */
 function installExamples(withDemoFiles) {
     fs.mkdirSync(CONTENT_DIR, { recursive: true });
     const copied = [
         ...copyMissing(path.join(EXAMPLES_DIR, 'content'), CONTENT_DIR),
+        ...copyMissing(path.join(EXAMPLES_DIR, 'public', 'images'), path.join(PUBLIC_DIR, 'images')),
         ...(withDemoFiles ? copyMissing(path.join(EXAMPLES_DIR, 'public'), PUBLIC_DIR) : []),
     ];
     console.log(`Created ${copied.length} starter files from examples/.`);
@@ -197,6 +201,7 @@ function applyAnswers(config, answers, isFreshInstall) {
             blogDescription: `Posts by ${name}.`,
             resume: '/CV.pdf',
             resume_short: '/Resume.pdf',
+            image: '/images/placeholder.png', // the example avatar is Jane Doe's
         }));
         for (const key of ['alumniOf', 'alumniOfUrl', 'authorAliases', 'knowsAbout']) delete next[key];
     }
