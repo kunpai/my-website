@@ -50,6 +50,8 @@ const NOT_EXPORTED = ['scripts/export-template.js'];
 
 // Marked blocks in text files that only make sense in this repo (e.g. README banner).
 const PERSONAL_BLOCK = /<!-- personal-only:start -->[\s\S]*?<!-- personal-only:end -->\n?/g;
+// Deliberate credits to the people who built the template; exported, and exempt from the leak scan.
+const CREDITS_BLOCK = /<!-- credits:start -->[\s\S]*?<!-- credits:end -->/g;
 const TEXT_EXT = /\.(js|jsx|json|md|css|yml|yaml|txt|tex|py|html|svg|xml)$|^(LICENSE|\.gitignore)$/;
 
 function parseArgs() {
@@ -194,7 +196,8 @@ function main() {
     const strip = (s) => allowed.reduce((acc, a) => acc.split(a).join(''), s.toLowerCase());
     for (const file of files) {
         const isText = TEXT_EXT.test(path.basename(file));
-        const body = file === 'LICENSE' ? '' : strip(fs.readFileSync(path.join(outDir, file), 'latin1'));
+        const raw = file === 'LICENSE' ? '' : fs.readFileSync(path.join(outDir, file), 'latin1');
+        const body = strip(isText ? raw.replace(CREDITS_BLOCK, '') : raw);
         const name = strip(file);
         for (const { text, short, matches } of fingerprints) {
             if (matches(name) || ((isText || !short) && matches(body))) leaks.push(`${file}: mentions "${text}"`);

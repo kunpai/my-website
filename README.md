@@ -182,6 +182,14 @@ Built something with this template? Share it in the
 Questions go in [Discussions](https://github.com/kunpai/academic-site-template/discussions), and bugs in
 [Issues](https://github.com/kunpai/academic-site-template/issues).
 
+## Credits
+
+<!-- credits:start -->
+This template grew out of [Kunal Pai's website](https://www.kunpai.space), which he first built
+with help from [Parth Shah](https://helloparthshah.vercel.app/) and
+[Harshil Patel](https://harshilpatel.vercel.app/). All three of their sites are built on it.
+<!-- credits:end -->
+
 ## License
 
 The code is under the [MIT License](LICENSE). The example content in `examples/` is yours to
