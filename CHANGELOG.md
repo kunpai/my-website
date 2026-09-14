@@ -3,6 +3,17 @@
 All notable changes to the template. Your site records the release it came from in
 `.template-version`; `npm run update` brings in everything listed above that release.
 
+## 1.0.1 (2026-09-14)
+
+- **Credits.** The README now credits [Parth Shah](https://helloparthshah.vercel.app/) and
+  [Harshil Patel](https://harshilpatel.vercel.app/), who helped build the original site this
+  template grew out of, and the repository history lists them as co-authors.
+- **`npm run update` fix.** When two template releases carried the same `.template-version`
+  stamp, the first update could start from the newer one and skip a change. It now starts from
+  the oldest match, which is always safe.
+
+Nothing to do after updating beyond `npm run update`.
+
 ## 1.0.0 (2026-09-14)
 
 The first stable release.
