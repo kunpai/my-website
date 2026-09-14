@@ -24,7 +24,9 @@ const FILE_FEATURE = {
 function loadJson(filename) {
     const feature = FILE_FEATURE[filename];
     if (feature && !features[feature]) return null;
-    return loadData(filename.replace(/\.json$/, ''));
+    const data = loadData(filename.replace(/\.json$/, ''));
+    // Entries hidden from the site ("show_on_website": false) aren't published here either.
+    return Array.isArray(data) ? data.filter((e) => !e || typeof e !== 'object' || e.show_on_website !== false) : data;
 }
 
 // Clean markdown text of TeX escape characters if any

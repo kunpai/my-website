@@ -47,7 +47,8 @@ export default function Chatbot() {
             .join("\n");
 
         const projList = projects
-            .map(p => `- ${p.title}: ${p.description ? p.description : ""} (Tech: ${p.tags ? p.tags.join(", ") : ""})`)
+            .filter(p => p.show_on_website !== false)
+            .map(p => `- ${p.title}: ${p.description ? p.description : ""} (Tech: ${p.skills ? p.skills.join(", ") : ""})`)
             .join("\n");
 
         const workList = workExperience
@@ -56,6 +57,7 @@ export default function Chatbot() {
             .join("\n");
 
         const researchList = researchExperience
+            .filter(r => r.show_on_website !== false)
             .map(r => `- Research: ${r.title} at ${r.organization} (${r.start} - ${r.end}): ${r.description ? r.description : ""}`)
             .join("\n");
 
@@ -98,6 +100,7 @@ export default function Chatbot() {
             .join("\n\n");
 
         const teachingList = teachingExperience
+            .filter(t => t.show_on_website !== false)
             .map(t => `- ${t.title} at ${t.organization} (${t.start} - ${t.end}): ${t.description}`)
             .join("\n");
 
