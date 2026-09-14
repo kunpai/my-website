@@ -18,9 +18,10 @@ How the implementation differs from the plan below:
   - an empty "GPA:" line
   - the chatbot reading `tags` for projects instead of `skills`
 
-Still needed from the owner: create the empty repo `kunpai/academic-site-template` (and mark
-it as a template), then add the secret `TEMPLATE_REPO_TOKEN` (a fine-grained PAT with
-Contents: read and write on that repo only).
+Still needed from the owner: in kunpai/my-website, add the secret `TEMPLATE_REPO_TOKEN`. It
+must be a fine-grained PAT for kunpai/academic-site-template only, with "Contents: Read and
+write" and "Workflows: Read and write". The template repo already exists and is marked as a
+template; its first version was pushed by hand from the export.
 
 ## Goal
 
