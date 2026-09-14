@@ -5,12 +5,12 @@ export const getStaticProps = featureGate('experience');
 import React from 'react';
 import { Row, Col } from "react-bootstrap";
 import Experience from "@/components/experience";
-import Containter from "react-bootstrap/Container";
+import Container from "react-bootstrap/Container";
 import workExperience from "@/content/data/work-experience.json";
 
 export default function WorkExperiences() {
   return (
-    <Containter className='work-experiences'>
+    <Container className='work-experiences'>
       <Seo title="Experience" path="/work-experiences" description={`Research and professional experience of ${config.name}.`} />
       <Row>
         <div className="content">
@@ -19,6 +19,6 @@ export default function WorkExperiences() {
           </Row>
         </div>
       </Row>
-    </Containter>
+    </Container>
   );
 }

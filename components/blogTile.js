@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Row, Col, Containter, Badge } from "react-bootstrap"
+import { Row, Col, Badge } from "react-bootstrap"
 import Image from "next/image"
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
@@ -10,6 +10,11 @@ import rehypeRaw from 'rehype-raw'
 import remarkSlug from "remark-slug";
 import remarkFrontmatter from 'remark-frontmatter';
 import placeholder from "/public/images/placeholder.png"
+
+const EXCERPT_COMPONENTS = {
+    a: ({ node, ...props }) => <span {...props} />,
+    button: ({ node, ...props }) => <span {...props} />,
+};
 
 export default function BlogTile({ blog }) {
     function readingTime(text) {
@@ -60,7 +65,10 @@ export default function BlogTile({ blog }) {
                                 }}>
                                 <ReactMarkdown
                                     remarkPlugins={[remarkGfm, remarkToc, remarkFrontmatter, remarkSlug]}
-                                    rehypePlugins={[rehypeHighlight, { ignoreMissing: true }, rehypeSlug, rehypeRaw]}
+                                    rehypePlugins={[rehypeRaw, [rehypeHighlight, { ignoreMissing: true }], rehypeSlug]}
+                                    // The whole tile is a link, so nested links/buttons would be invalid HTML
+                                    // (and break hydration); render them as plain text here.
+                                    components={EXCERPT_COMPONENTS}
                                 >
                                     {blog.content}
                                 </ReactMarkdown>

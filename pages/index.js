@@ -3,24 +3,20 @@ import config, { features, labels } from '@/lib/content';
 import React from 'react';
 import { Row, Col, Badge } from "react-bootstrap";
 import Experience from "@/components/experience";
-import Containter from "react-bootstrap/Container";
+import Container from "react-bootstrap/Container";
 import Hello from '@/components/hello';
-import researchExperience from "@/content/data/research-experience.json";
 import workExperience from "@/content/data/work-experience.json";
-import teachingExperience from "@/content/data/teaching-experience.json";
 import projects from "@/content/data/projects.json";
 import awards from "@/content/data/awards.json";
-import Image from "next/image";
 import Publication from '@/components/publication';
 import Education from '@/components/education';
 import Link from 'next/link';
 import skills from "@/content/data/skills.json"
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import news from "@/content/data/news.json";
 import ReactMarkdown from 'react-markdown';
-import linktree from "@/content/data/linktree.json";
 import service from "@/content/data/service.json";
 import talks from "@/content/data/talks.json";
 gsap.registerPlugin(ScrollTrigger);
@@ -119,7 +115,7 @@ export default function Home() {
     }
   }, []);
   return (
-    <Containter className='home'>
+    <Container className='home'>
       <Seo path="/" noTitleSuffix title={config.homepageTitle || (config.title ? `${config.name} — ${config.title}` : config.name)} />
       <Row>
         <Hello />
@@ -148,12 +144,6 @@ export default function Home() {
             <Education />
           </Row>
         )}
-        {/* <Row>
-          <Experience jsonExperiences={researchExperience} title={"Research Experience"} isExperience />
-        </Row> */}
-        {/* <Row>
-          <Experience jsonExperiences={teachingExperience} title={"Teaching Experience"} isExperience />
-        </Row> */}
         {features.experience && (
           <Row>
             <Experience jsonExperiences={workExperienceFiltered} title={labels.experienceTitle} isExperience />
@@ -167,9 +157,6 @@ export default function Home() {
         {features.publications && (
           <Row>
             <div className="mt-5">
-              {/* <h1 className="mb-3" id="publications">
-                Publications
-              </h1> */}
               <Publication hideGraph defaultType="conference" />
             </div>
           </Row>
@@ -273,20 +260,8 @@ export default function Home() {
             </div>
           </Row>
         )}
-        {/* <Row>
-          <div className="mt-5">
-            <h1 className="mb-3" id="linktree">
-              LinkTree
-            </h1>
-            <div className="text-center">
-              <Link href="/linktree" className="btn btn-primary">
-                View LinkTree
-              </Link>
-            </div>
-          </div>
-        </Row> */}
       </div>
-    </Containter>
+    </Container>
   );
 }
 

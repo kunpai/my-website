@@ -20,9 +20,10 @@ export default function ContactForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    window.open(`mailto:${recipientEmail}?subject=Message from ${formData.name}&body=${formData.message}`);
+    const subject = encodeURIComponent(`Message from ${formData.name}`);
+    const body = encodeURIComponent(formData.message);
+    window.open(`mailto:${recipientEmail}?subject=${subject}&body=${body}`);
 
-    console.log('Form data submitted:', formData);
     // Reset the form after submission
     setFormData({
       name: '',

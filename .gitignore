@@ -49,3 +49,11 @@ Claude outputs/
 
 # Python bytecode
 __pycache__/
+
+# Generated at build time (npm run build: prebuild + postbuild)
+/public/llms.txt
+/public/llms-full.txt
+/public/index.md
+/public/rss.xml
+/public/robots.txt
+/public/sitemap*.xml

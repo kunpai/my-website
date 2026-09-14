@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Education() {
     return (
         <div className="mt-5">
-            <h1 className="mb-3" id="publications">
+            <h1 className="mb-3" id="education">
                 Education
             </h1>
             {

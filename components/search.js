@@ -8,8 +8,6 @@ export default function SearchBar() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [blogs, setBlogs] = useState([]);
-  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const searchInputRef = React.useRef(null);
   const dropdownRef = React.useRef(null);
@@ -40,44 +38,6 @@ export default function SearchBar() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Fetch blogs on component mount
-  useEffect(() => {
-    setLoading(true);
-    // Temporarily disable blog fetching to fix errors
-    // fetch('/api/getBlogNames', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ query: '' })
-    // })
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     // data is an array of blog objects with name, title, etc.
-    //     const blogPromises = data.map(blog =>
-    //       fetch('/api/getBlogContent', {
-    //         method: 'POST',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify({ blogName: blog.name })
-    //       }).then(res => res.json())
-    //       .then(content => ({
-    //         name: blog.name,
-    //         metadata: blog,
-    //         content: content
-    //       }))
-    //     );
-
-    //     Promise.all(blogPromises).then(blogContents => {
-    //       setBlogs(blogContents);
-    //       setLoading(false);
-    //     });
-    //   })
-    //   .catch(err => {
-    //     console.error('Error fetching blogs:', err);
-    //     setLoading(false);
-    //   });
-    setBlogs([]); // Empty array for now
-    setLoading(false);
-  }, []);
-
   // Index content for search
   const searchIndex = React.useMemo(() => {
     const index = [];
@@ -97,26 +57,8 @@ export default function SearchBar() {
       });
     });
 
-        // Index blogs
-    blogs.forEach((blog, idx) => {
-      if (blog.content) {
-        const metadata = blog.metadata || {};
-        index.push({
-          id: `blog-${idx}`,
-          type: 'blog',
-          title: metadata.title || blog.name,
-          content: blog.content.content || '',
-          authors: metadata.authors?.join(' ') || '',
-          conference: metadata.conference || '',
-          tags: metadata.tags?.join(' ') || '',
-          url: `/blogs/${blog.name}`,
-          data: blog
-        });
-      }
-    });
-
     return index;
-  }, [blogs]);
+  }, []);
 
   const performSearch = (searchQuery) => {
     if (!searchQuery.trim()) {
@@ -214,14 +156,13 @@ export default function SearchBar() {
             <Form.Control
               ref={searchInputRef}
               type="search"
-              placeholder={loading ? "Loading..." : "Search publications... (Ctrl+K)"}
+              placeholder="Search publications... (Ctrl+K)"
               value={query}
               onChange={handleInputChange}
               onFocus={handleInputFocus}
-              disabled={loading}
               style={{ minWidth: '250px' }}
             />
-            <Button type="submit" variant="outline-secondary" disabled={loading}>
+            <Button type="submit" variant="outline-secondary">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
               </svg>

@@ -2,7 +2,7 @@ import { Row, Col, Button, Badge, Popover, OverlayTrigger } from "react-bootstra
 import publicationsRaw from "@/content/data/publications.json";
 const publications = publicationsRaw.filter(p => p.show_on_website !== false);
 import config, { features, isSiteOwner } from "@/lib/content";
-import { generateMLACitation, generateChicagoCitation, generateIEEECitation, generateBibtexCitation } from "@/pages/api/citation";
+import { generateBibtexCitation } from "@/lib/citation";
 import CopyIcon from "./copyIcon";
 import { useRef, useEffect, useMemo, useState } from "react";
 import { gsap } from "gsap";

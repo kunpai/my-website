@@ -51,8 +51,6 @@ export default function LinkTreePage() {
             url: `/linktree/${linkGroup.path}`,
         }));
 
-        console.log(conferences);
-
         return (
             <Container>
                 <Row>

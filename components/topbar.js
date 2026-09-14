@@ -3,7 +3,6 @@
 import { Container, Navbar, Nav, Offcanvas, ButtonGroup, ToggleButton, NavDropdown } from "react-bootstrap";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-// import linktree from '@/content/data/linktree.json';
 import SearchBar from './search';
 import config, { features } from '@/lib/content';
 
@@ -14,22 +13,6 @@ export default function Topbar() {
     const name = config.name || "";
     const [isLightMode, setIsLightMode] = useState(false);
     const [theme, setTheme] = useState('auto');
-
-    // const [latestConference, setLatestConference] = useState(null);
-    // const [archivedConferences, setArchivedConferences] = useState([]);
-
-    // useEffect(() => {
-    //   // Sort conferences by date (newest first)
-    //   const sortedConferences = linktree.sort((a, b) =>
-    //     new Date(b.date) - new Date(a.date)
-    //   );
-
-    //   // Set the latest conference
-    //   setLatestConference(sortedConferences[0]);
-
-    //   // Set the archived conferences (all except the latest)
-    //   setArchivedConferences(sortedConferences.slice(1));
-    // }, []);
 
     function toggleMode(isDarkMode) {
         if (isDarkMode) {
@@ -44,7 +27,6 @@ export default function Topbar() {
     useEffect(() => {
         // check local storage for preference
         const theme = localStorage.getItem('theme');
-        console.log(theme);
         if (theme) {
             setTheme(theme);
         } else {
@@ -251,7 +233,4 @@ export default function Topbar() {
             </Navbar >
         </>
     )
-}
-
-function DarkModeToggle() {
 }
