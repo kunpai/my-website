@@ -32,3 +32,5 @@ The first stable release.
   `botName` and `chatbot` from `content/config.json`; `npm run validate` lists them as unknown
   keys until you do.
 - Run `npm install` after updating: the Next.js 16 upgrade changes most dependencies.
+- If example entries show broken images, copy the example artwork in once:
+  `cp -n examples/public/images/* public/images/` (setup does this for new sites now).
