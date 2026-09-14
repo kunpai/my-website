@@ -203,6 +203,9 @@ function main() {
         fs.rmSync(outDir, { recursive: true, force: true });
         process.exit(1);
     }
+    // Release stamp: `npm run update` uses it to find the template commit a site started from.
+    const version = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: ROOT_DIR, encoding: 'utf8' }).trim();
+    fs.writeFileSync(path.join(outDir, '.template-version'), `${version}\n`);
     console.log(`Exported ${files.length} files to ${outDir} (checked ${fingerprints.length} owner fingerprints)`);
 }
 

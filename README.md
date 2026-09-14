@@ -52,7 +52,7 @@ makes different trade-offs:
 |---|---|---|---|
 | **Stack** | Next.js 13 (React), Node | Jekyll (Ruby) | Jekyll (Ruby), based on Minimal Mistakes |
 | **Your content** | One folder, `content/`, checked against JSON Schemas | Spread across `_pages/`, `_posts/`, `_bibliography/`, `_config.yml` | Spread across `_pages/`, `_publications/`, `_talks/`, `_config.yml` |
-| **Updating** | `git merge template/main` only touches site code, so no conflicts with your content | Merge upstream; files you customised can conflict | Fork; no separate update path |
+| **Updating** | `npm run update` merges the new template; only site code changes, so your content never conflicts | Merge upstream; files you customised can conflict | Fork; no separate update path |
 | **Publications** | JSON with a BibTeX entry each, plus an interactive topic graph | A BibTeX file, rendered with jekyll-scholar | One Markdown file per paper (scripts can generate them from TSV/BibTeX) |
 | **CV** | CV and short resume compiled to PDF with LaTeX from the same data, locally or by a GitHub Action | CV page from JSON Resume or YAML; you supply the PDF | CV page in Markdown; you supply the PDF |
 | **Deploy target** | Vercel (or any Next.js host) | GitHub Pages | GitHub Pages |
@@ -137,6 +137,7 @@ workflow does the same on every push that changes `content/`.
 | `npm run dev` | Development server (regenerates `llms.txt` and RSS first) |
 | `npm run validate` | Check `content/` against the schemas |
 | `npm run build` | Validate, generate `llms.txt`/RSS, build, write the sitemap |
+| `npm run update` | Merge the latest template into your site ([details](#getting-updates)) |
 | `npm run indexnow` | After a deploy, tell Bing and others about your pages |
 
 **Environment variables:** `NVIDIA_API_KEY` is needed only if the chatbot is on. `SITE_URL`
@@ -145,15 +146,19 @@ optionally overrides `siteUrl` for the sitemap.
 ## Getting updates
 
 Your content lives in `content/` and `public/`, and template updates only touch site code. To
-pull updates:
+pull the latest version, commit your work and run:
 
 ```bash
-git remote add template https://github.com/kunpai/academic-site-template.git
-git fetch template
-git merge template/main --allow-unrelated-histories   # the flag is only needed the first time
+npm run update
 ```
 
-You only get conflicts in files you changed yourself (for example if you edited a component).
+This fetches the template and merges it. You only get conflicts in site files you edited yourself
+(say, a component you customised), never in your content.
+
+Why a script: **Use this template** gives your repository fresh history with no commit in common
+with the template, so a plain `git merge` would conflict on every file the template changed. Each
+release carries a `.template-version` stamp. On the first update, the script uses it to find the
+version you started from and links the two histories, so later merges are ordinary merges.
 
 ## Show your site
 

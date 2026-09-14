@@ -16,7 +16,8 @@
     "postbuild": "next-sitemap",
     "start": "LAST_UPDATED=$(date) next start",
     "lint": "LAST_UPDATED=$(date) next lint",
-    "indexnow": "node scripts/indexnow.js"
+    "indexnow": "node scripts/indexnow.js",
+    "update": "node scripts/update-from-template.js"
   },
   "dependencies": {
     "@vercel/analytics": "^1.0.1",
