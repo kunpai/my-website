@@ -1,4 +1,4 @@
-import { Col, Row, Button } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import SplitType from 'split-type';
@@ -10,16 +10,28 @@ export default function Hello() {
   const name = config.name || '';
 
   useEffect(() => {
-    const heading = new SplitType('.name', { types: 'words' });
-    const heroElements = [...heading.words, '.description', '.btn'];
-    gsap.from(heroElements, {
-      y: 24,
-      opacity: 0,
-      duration: 0.8,
-      delay: 0.5,
-      stagger: { amount: 1 },
-      ease: 'ease',
-    });
+    try {
+      const heading = new SplitType('.name', { types: 'words' });
+      const words = heading.words || [];
+      const desc = document.querySelector('.description');
+      const buttons = Array.from(document.querySelectorAll('.hello a.btn'));
+
+      const elements = [...words, desc, ...buttons].filter(Boolean);
+
+      if (elements.length > 0) {
+        gsap.from(elements, {
+          y: 20,
+          opacity: 0,
+          duration: 0.7,
+          delay: 0.2,
+          stagger: 0.06,
+          ease: 'power2.out',
+          clearProps: 'all',
+        });
+      }
+    } catch (e) {
+      console.warn('Hero animation bypassed:', e);
+    }
   }, []);
 
   return (
@@ -49,22 +61,22 @@ export default function Hello() {
           <Row className='mt-3'>
             <Col className='d-flex justify-content-start gap-4 flex-wrap'>
               {config.resume && (
-                <Button className='btn-theme-primary' href={config.resume} target='_blank'>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-box-arrow-down me-1" viewBox="0 0 16 16">
+                <a className='btn btn-theme-primary' href={config.resume} target='_blank' rel='noopener noreferrer' role='button'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-box-arrow-down me-2" viewBox="0 0 16 16">
                     <path fillRule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z" />
                     <path fillRule="evenodd" d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z" />
                   </svg>
-                  {' Download Full Resume'}
-                </Button>
+                  <span>Download Full Resume</span>
+                </a>
               )}
               {config.resume_short && (
-                <Button className='btn-theme-outline' href={config.resume_short} target='_blank'>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-box-arrow-down me-1" viewBox="0 0 16 16">
+                <a className='btn btn-theme-outline' href={config.resume_short} target='_blank' rel='noopener noreferrer' role='button'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-box-arrow-down me-2" viewBox="0 0 16 16">
                     <path fillRule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z" />
                     <path fillRule="evenodd" d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z" />
                   </svg>
-                  {' Download Short Resume'}
-                </Button>
+                  <span>Download Short Resume</span>
+                </a>
               )}
             </Col>
           </Row>

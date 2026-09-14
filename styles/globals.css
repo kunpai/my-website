@@ -104,7 +104,7 @@
 .name,
 .name .word,
 .name .char {
-  font-size: 6rem;
+  font-size: clamp(3rem, 5.2vw, 5.2rem);
   font-weight: 700;
   font-family: 'Audiowide', cursive;
   padding: 0;
@@ -113,6 +113,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
+  line-height: 1.15;
 }
 
 .topbar .navbar-brand h1 {
@@ -141,14 +142,20 @@
   background: var(--brand-gradient) !important;
   color: #ffffff !important;
   border: none !important;
-  font-weight: 500;
+  font-weight: 600;
+  padding: 0.55rem 1.25rem !important;
+  border-radius: 8px !important;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-theme-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
   color: #ffffff !important;
 }
 
@@ -156,8 +163,14 @@
   color: var(--brand-accent) !important;
   border: 1.5px solid var(--brand-accent) !important;
   background: transparent !important;
-  font-weight: 500;
+  font-weight: 600;
+  padding: 0.55rem 1.25rem !important;
+  border-radius: 8px !important;
   transition: all 0.25s ease;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-theme-outline:hover {
