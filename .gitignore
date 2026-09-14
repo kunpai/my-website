@@ -43,3 +43,6 @@ public/latex_src/*
 # Local scratch
 Claude outputs/
 
+
+# Claude Code local session data
+.claude/
