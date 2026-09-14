@@ -123,8 +123,6 @@ async function collectAnswers(config, isFreshInstall) {
         ['projects', 'Projects', true],
         ['experience', 'Research & work experience', true],
         ['blogs', 'Blog', true],
-        ['games', 'Games (cricket, hangman, tic-tac-toe)', false],
-        ['chatbot', 'AI chatbot (needs NVIDIA_API_KEY)', false],
     ]) {
         await askYesNo(`feature:${key}`, `Enable ${label}?`, typeof features[key] === 'boolean' ? features[key] : fallback);
     }
@@ -197,11 +195,10 @@ function applyAnswers(config, answers, isFreshInstall) {
             intro: `I am ${role}${institution ? ` at **${institution}**` : ''}.`,
             contactText: email ? `You can reach me at **${email.replace('@', ' AT ').replace(/\./g, ' DOT ')}**.` : '',
             blogDescription: `Posts by ${name}.`,
-            botName: `${name.split(/\s+/)[0]}AI`,
             resume: '/CV.pdf',
             resume_short: '/Resume.pdf',
         }));
-        for (const key of ['alumniOf', 'alumniOfUrl', 'authorAliases', 'knowsAbout', 'chatbot']) delete next[key];
+        for (const key of ['alumniOf', 'alumniOfUrl', 'authorAliases', 'knowsAbout']) delete next[key];
     }
     return next;
 }

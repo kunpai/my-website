@@ -12,8 +12,8 @@ module.exports = {
     generateRobotsTxt: true,
     changefreq: 'weekly',
     priority: 0.7,
-    // Keep low-value toys out of the sitemap (they only dilute crawl budget), plus disabled sections.
-    exclude: [...new Set(['/games/*', '/linktree', '/linktree/*', ...disabledRoutes(features)])],
+    // Link-in-bio pages don't belong in search results; neither do disabled sections.
+    exclude: [...new Set(['/linktree', '/linktree/*', ...disabledRoutes(features)])],
     transform: async (config, loc) => {
         const high = ['/', '/publications', '/blogs', '/projects'];
         return {

@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Teaching experience",
-    "description": "content/data/teaching-experience.json: TA / instructor roles. Not rendered as a page section at the moment; used in llms-full.txt and the chatbot context (when features.experience is on). Array of entries.",
+    "description": "content/data/teaching-experience.json: TA / instructor roles. Not rendered as a page section at the moment; used in llms-full.txt (when features.experience is on). Array of entries.",
     "type": "array",
     "items": {
         "type": "object",
@@ -51,7 +51,7 @@
             },
             "description": {
                 "type": "string",
-                "description": "What you did. Each line (separated by \\n) becomes a bullet; an empty string shows \"In progress\". Required: llms-full.txt and the chatbot print it, and the Experience component crashes without it. Must be a string, not an array."
+                "description": "What you did. Each line (separated by \\n) becomes a bullet; an empty string shows \"In progress\". Required: llms-full.txt print it, and the Experience component crashes without it. Must be a string, not an array."
             },
             "skills": {
                 "type": "array",
@@ -96,7 +96,7 @@
             },
             "show_on_website": {
                 "type": "boolean",
-                "description": "Not read for teaching-experience.json yet: these entries currently appear only in llms-full.txt and the chatbot context.",
+                "description": "Not read for teaching-experience.json yet: these entries currently appear only in llms-full.txt.",
                 "default": true
             },
             "show_in_resume": {

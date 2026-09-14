@@ -66,15 +66,7 @@
         "skills": true,
         "awards": true,
         "contact": true,
-        "games": false,
-        "chatbot": false,
         "linktree": false
-    },
-    "botName": "JaneAI",
-    "chatbot": {
-        "title": "Ask about Jane's research",
-        "model": "meta/llama-3.1-8b-instruct",
-        "availability": "Open to research internships for summer 2026."
     },
     "labels": {
         "skillCategories": {

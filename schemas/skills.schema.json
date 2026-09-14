@@ -6,7 +6,7 @@
     "properties": {
         "resume_skills": {
             "type": "object",
-            "description": "Categories for the resumes, llms.txt and the chatbot: display name -> list of skills. Two special keys configure the resumes.",
+            "description": "Categories for the resumes and llms.txt: display name -> list of skills. Two special keys configure the resumes.",
             "properties": {
                 "resume_skills_long_override": {
                     "type": "object",

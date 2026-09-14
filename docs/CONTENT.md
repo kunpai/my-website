@@ -47,7 +47,7 @@ Most data entries accept these booleans:
 
 | Field | Default | Effect |
 |---|---|---|
-| `show_on_website` | `true` | `false` hides the entry on the site's pages, search and topic graph, and leaves it out of `llms.txt`, `llms-full.txt` and the chatbot. The resume uses its own flags below. |
+| `show_on_website` | `true` | `false` hides the entry on the site's pages, search and topic graph, and leaves it out of `llms.txt` and `llms-full.txt`. The resume uses its own flags below. |
 | `show_on_homepage` | `true` | `projects.json` and `work-experience.json` only: `false` lists the entry on `/projects` or `/work-experiences` but not on the homepage. |
 | `show_in_resume` | `true` | Include in the full CV built by `scripts/generate_resumes.py`. |
 | `show_in_resume_short` | `false` (`true` for education) | Include in the short resume. |
@@ -80,7 +80,7 @@ Only `name` is required. Everything else has a sensible default.
 | Field | Type | Meaning |
 |---|---|---|
 | `siteUrl` | URL | Where the site is deployed, **no trailing slash**: `"https://janedoe.example.com"`. Used for canonical URLs, sitemap, RSS, llms.txt. Falls back to `resume_contact.website_url`. |
-| `email` | email | The `/contact` form sends here; the chatbot quotes it. |
+| `email` | email | The `/contact` form sends here. |
 | `contactText` | string | Paragraph on `/contact`. Only `**bold**` is supported. Default: a sentence with `email`. |
 | `contactEmails` | string[] | Written by `npm run setup`; not displayed. Put addresses in `contactText`. |
 | `footerLinks` | object | Label → URL, e.g. `{"Google Scholar": "https://…", "GitHub": "https://…"}`. Also listed in llms.txt; labels without "source" become JSON-LD `sameAs` profiles. |
@@ -113,7 +113,7 @@ Only `name` is required. Everything else has a sensible default.
 
 `features` turns sections on or off; omitted keys use the default. Turning a feature off removes its
 homepage section and navigation link, makes its routes return 404 and drops them from the sitemap.
-llms.txt, RSS, the search box and the chatbot skip it too.
+llms.txt, RSS and the search box skip it too.
 
 | Key | Default | Controls | Routes |
 |---|---|---|---|
@@ -121,7 +121,7 @@ llms.txt, RSS, the search box and the chatbot skip it too.
 | `publications` | on | Publications on the homepage and their page, navbar search | `/publications` |
 | `researchGraph` | on | Topic graph on `/publications` | — |
 | `projects` | on | Projects section and page | `/projects` |
-| `experience` | on | Experience section and page (`work-experience.json`); research and teaching experience in llms-full.txt and the chatbot | `/work-experiences` |
+| `experience` | on | Experience section and page (`work-experience.json`); research and teaching experience in llms-full.txt | `/work-experiences` |
 | `education` | on | Education section | — |
 | `blogs` | on | Blog and RSS feed | `/blogs`, `/blogs/*` |
 | `news` | on | News list | — |
@@ -130,18 +130,7 @@ llms.txt, RSS, the search box and the chatbot skip it too.
 | `skills` | on | Skills section | — |
 | `awards` | on | Awards section | — |
 | `contact` | on | Contact page with a mailto form | `/contact` |
-| `games` | off | Games menu (cricket, hangman, tic-tac-toe) | `/games/*` |
-| `chatbot` | off | Floating AI assistant; needs the `NVIDIA_API_KEY` environment variable | `/api/chat` (403 when off) |
 | `linktree` | off | Link-in-bio pages from `linktree.json` | `/linktree`, `/linktree/*` |
-
-### Chatbot
-
-| Field | Default | Meaning |
-|---|---|---|
-| `botName` | `"<first name>AI"` | Name used in the greeting. |
-| `chatbot.title` | `"AI Assistant"` | Chat window title. |
-| `chatbot.model` | `"meta/llama-3.1-8b-instruct"` | NVIDIA NIM model id. |
-| `chatbot.availability` | `""` | Your current availability, given to the bot as context. |
 
 ### Labels
 
@@ -174,7 +163,6 @@ Still honoured, with a warning from the validator:
 | Old | New |
 |---|---|
 | `features.workExperience` | `features.experience` |
-| `enableChatbot` (top level) | `features.chatbot` |
 
 ### Example
 
@@ -189,7 +177,7 @@ Still honoured, with a warning from the validator:
     "resume": "/Jane_Doe_CV.pdf",
     "footerLinks": { "Google Scholar": "https://scholar.example.org/janedoe" },
     "publicationCategories": ["Machine Learning", "Systems", "Software Engineering"],
-    "features": { "games": false, "chatbot": false, "linktree": false },
+    "features": { "talks": false, "linktree": false },
     "theme": { "accentColor": "#2f6fed", "gradientStart": "#2f6fed", "gradientEnd": "#14b8a6" }
 }
 ```
@@ -306,7 +294,7 @@ The Experience section on the homepage and `/work-experiences` (heading: `labels
 ### research-experience.json and teaching-experience.json
 
 Same fields as `work-experience.json` (`title`, `organization`, `start`, `end`, `description` required).
-These files are not shown as a page section at the moment. They feed llms-full.txt and the chatbot
+These files are not shown as a page section at the moment. They feed llms-full.txt
 when `features.experience` is on, and they are not used by the resume generator.
 
 ```json
@@ -360,7 +348,7 @@ The Awards section and the full CV.
 An object. Every key except `resume_skills` is a homepage category with a list of skills. Keys are
 title-cased for display unless `labels.skillCategories` names them.
 
-`resume_skills` holds the categories for the resumes, llms.txt and the chatbot (display name → list),
+`resume_skills` holds the categories for the resumes and llms.txt (display name → list),
 plus two optional settings:
 
 - `resume_skills_long_override`: category → list that replaces it on the full CV only.

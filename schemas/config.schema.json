@@ -87,7 +87,7 @@
         },
         "email": {
             "type": "string",
-            "description": "Contact email: the /contact form sends to it and the chatbot quotes it.",
+            "description": "Contact email: the /contact form sends to it.",
             "pattern": "^[^@\\s]+@[^@\\s]+$"
         },
         "contactText": {
@@ -200,7 +200,7 @@
                 },
                 "experience": {
                     "type": "boolean",
-                    "description": "Experience section on the homepage and /work-experiences (work-experience.json); research and teaching experience in llms-full.txt and the chatbot. Default: true. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
+                    "description": "Experience section on the homepage and /work-experiences (work-experience.json); research and teaching experience in llms-full.txt. Default: true. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
                     "default": true
                 },
                 "education": {
@@ -243,16 +243,6 @@
                     "description": "Contact page (/contact) with a mailto form. Default: true. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
                     "default": true
                 },
-                "games": {
-                    "type": "boolean",
-                    "description": "Games menu and /games/* pages (cricket, hangman, tic-tac-toe). Default: false. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
-                    "default": false
-                },
-                "chatbot": {
-                    "type": "boolean",
-                    "description": "Floating AI chatbot and /api/chat. Needs the NVIDIA_API_KEY environment variable. Default: false. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
-                    "default": false
-                },
                 "linktree": {
                     "type": "boolean",
                     "description": "Link-in-bio pages at /linktree and /linktree/<path> (linktree.json). Default: false. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
@@ -261,35 +251,6 @@
                 "workExperience": {
                     "type": "boolean",
                     "description": "Deprecated: use experience. Still honoured when experience is not set."
-                }
-            }
-        },
-        "enableChatbot": {
-            "type": "boolean",
-            "description": "Deprecated: use features.chatbot. Still honoured when features.chatbot is not set."
-        },
-        "botName": {
-            "type": "string",
-            "description": "Chatbot name in its greeting. Defaults to \"<first name>AI\"."
-        },
-        "chatbot": {
-            "type": "object",
-            "description": "Chatbot settings (only used when features.chatbot is on).",
-            "properties": {
-                "title": {
-                    "type": "string",
-                    "description": "Chat window title.",
-                    "default": "AI Assistant"
-                },
-                "model": {
-                    "type": "string",
-                    "description": "NVIDIA NIM model id used by /api/chat.",
-                    "default": "meta/llama-3.1-8b-instruct"
-                },
-                "availability": {
-                    "type": "string",
-                    "description": "Your current availability (e.g. \"Open to summer 2026 internships\"), given to the bot as context.",
-                    "default": ""
                 }
             }
         },

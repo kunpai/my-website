@@ -24,7 +24,7 @@ const SOURCE_DIRS = ['components', 'pages', 'lib'].map((d) => path.join(ROOT_DIR
 const DATA_IMPORT = /@\/content\/data\/([\w.-]+)\.json/g;
 
 // Config objects whose keys are a fixed set: an unknown key there is almost always a typo.
-const CLOSED_CONFIG_OBJECTS = ['features', 'labels', 'theme', 'chatbot', 'resume_contact'];
+const CLOSED_CONFIG_OBJECTS = ['features', 'labels', 'theme', 'resume_contact'];
 
 // Friendlier text for schema patterns (keyed by the pattern string).
 const PATTERN_HINTS = {

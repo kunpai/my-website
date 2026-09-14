@@ -27,8 +27,8 @@ built from this repository with the example content for the fictional Jane Doe.
 - **Everything personal lives in `content/`**: config, data (JSON), about page, blog posts.
   Photos and PDFs go in `public/`.
 - **Sections you can switch off.** Turning off `projects`, `blogs` and so on removes the page (it
-  returns 404), its nav link, its homepage block, and its entries in the sitemap, RSS, `llms.txt`
-  and the chatbot.
+  returns 404), its nav link, its homepage block, and its entries in the sitemap, RSS and
+  `llms.txt`.
 - **Publications** with tabs by type, a topic graph built from your tags, BibTeX, and your name
   highlighted in author lists.
 - **Blog** in Markdown (GitHub-flavoured, raw HTML allowed), with reading time and an RSS feed.
@@ -38,8 +38,7 @@ built from this repository with the example content for the fictional Jane Doe.
 - **Checked content:** JSON Schemas give editor autocomplete, and `npm run validate` runs before
   every build.
 - Light and dark mode, a configurable accent colour and heading font.
-- Optional extras (off by default): an AI chatbot (NVIDIA NIM), small games, and link pages for
-  posters (`linktree`).
+- Optional link pages for posters and talks (`linktree`, off by default).
 
 ## Compared to al-folio and academicpages
 
@@ -98,10 +97,10 @@ against `schemas/`.
 **Sections.** Set `features.<name>` to `false` in `content/config.json`:
 
 ```json
-"features": { "projects": false, "blogs": true, "games": false }
+"features": { "projects": false, "blogs": true, "talks": false }
 ```
 
-All sections are on by default except `games`, `chatbot` and `linktree`. The full table is in
+All sections are on by default except `linktree`. The full table is in
 [docs/CONTENT.md](docs/CONTENT.md#feature-flags).
 
 **Look.** Pick any Google Fonts family for headings, and optionally an accent colour:
@@ -140,8 +139,8 @@ workflow does the same on every push that changes `content/`.
 | `npm run update` | Merge the latest template into your site ([details](#getting-updates)) |
 | `npm run indexnow` | After a deploy, tell Bing and others about your pages |
 
-**Environment variables:** `NVIDIA_API_KEY` is needed only if the chatbot is on. `SITE_URL`
-optionally overrides `siteUrl` for the sitemap.
+**Environment variables:** none are required. `SITE_URL` optionally overrides `siteUrl` for the
+sitemap.
 
 ## Getting updates
 

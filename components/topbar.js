@@ -1,6 +1,6 @@
 'use client'
 
-import { Container, Navbar, Nav, Offcanvas, ButtonGroup, ToggleButton, NavDropdown } from "react-bootstrap";
+import { Container, Navbar, Nav, Offcanvas, ButtonGroup, ToggleButton } from "react-bootstrap";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import SearchBar from './search';
@@ -170,19 +170,6 @@ export default function Topbar() {
                                     <Nav.Link href="/blogs" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
                                         Blogs
                                     </Nav.Link>
-                                )}
-                                {features.games && (
-                                    <NavDropdown title="Games" id="games-dropdown" className="main-text-regular">
-                                        <NavDropdown.Item href="/games/cricket" as={Link} onClick={() => setShow(false)}>
-                                            Cricket
-                                        </NavDropdown.Item>
-                                        <NavDropdown.Item href="/games/hangman" as={Link} onClick={() => setShow(false)}>
-                                            Hangman
-                                        </NavDropdown.Item>
-                                        <NavDropdown.Item href="/games/tictactoe" as={Link} onClick={() => setShow(false)}>
-                                            Tic Tac Toe
-                                        </NavDropdown.Item>
-                                    </NavDropdown>
                                 )}
                                 {features.contact && (
                                     <Nav.Link href="/contact" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
