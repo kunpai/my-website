@@ -25,6 +25,7 @@ export default function Blogs({ blogs }) {
     useEffect(() => {
         if (!router.isReady) return;
         const q = router.query.query ?? '';
+        // eslint-disable-next-line react-hooks/set-state-in-effect -- router.query is only populated after hydration
         setQuery(q);
         setSearch(q);
     }, [router.isReady, router.query.query]);
@@ -64,9 +65,10 @@ export default function Blogs({ blogs }) {
             <hr />
             {
                 shown.length === 0 ? <h2 className="text-center mt-5">No Blogs Found</h2> :
-                    shown.map((blog) => (
+                    shown.map((blog, index) => (
                         <div key={blog.name}>
-                            <BlogTile blog={blog} />
+                            {/* The first tile's image is usually the page's largest paint. */}
+                            <BlogTile blog={blog} eager={index === 0} />
                             <hr />
                         </div>
                     ))

@@ -20,6 +20,10 @@ const CiteQuoteIcon = () => (
 import { getLinkMeta, ExternalArrowIcon } from "./linkMeta";
 
 
+// Rounded to 0.01px: Math.cos/sin can differ in the last digit between Node and the browser,
+// which would make the server-rendered SVG attributes mismatch on hydration.
+const round2 = (v) => Math.round(v * 100) / 100;
+
 // Category nodes cycle through .category-0 … .category-3 (colours in globals.css).
 const CATEGORY_COLOR_COUNT = 4;
 
@@ -62,8 +66,8 @@ const generateGraphData = (pubs) => {
         return {
             id: tag,
             label: tag,
-            x: xc + rCategory * Math.cos(angle),
-            y: yc + rCategory * Math.sin(angle),
+            x: round2(xc + rCategory * Math.cos(angle)),
+            y: round2(yc + rCategory * Math.sin(angle)),
             size: 24,
             type: "category",
             className: `category-${i % CATEGORY_COLOR_COUNT}`,
@@ -147,8 +151,8 @@ const generateGraphData = (pubs) => {
             tagNodes.push({
                 id: tag,
                 label: tag,
-                x: xc + rSubtopic * Math.cos(angle),
-                y: yc + rSubtopic * Math.sin(angle),
+                x: round2(xc + rSubtopic * Math.cos(angle)),
+                y: round2(yc + rSubtopic * Math.sin(angle)),
                 size: 10,
                 type: "tag",
                 parent: parents.length > 0 ? parents[0] : null,
@@ -432,6 +436,7 @@ export default function Publication({ searchQuery, hideGraph = !features.researc
         if (typeof window !== 'undefined' && window.location.hash) {
             const rawHash = window.location.hash.replace(/^#/, '').toLowerCase();
             if (rawHash === 'graph') {
+                // eslint-disable-next-line react-hooks/set-state-in-effect -- the URL hash is only available after hydration
                 if (!hideGraph) setViewMode('graph');
             } else if (HASH_TO_TYPE[rawHash]) {
                 setSelectedType(HASH_TO_TYPE[rawHash]);

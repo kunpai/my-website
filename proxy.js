@@ -18,7 +18,7 @@ const AI_USER_AGENTS = [
     'llm'
 ];
 
-export function middleware(request) {
+export function proxy(request) {
     const { pathname } = request.nextUrl;
 
     // Exclude static assets, images, API routes, and PDF files

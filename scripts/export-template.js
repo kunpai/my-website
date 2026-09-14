@@ -20,7 +20,6 @@ const TEMPLATE_PACKAGE_NAME = 'academic-site-template';
 
 // Tracked paths that are exported (exact files, or directories ending in '/').
 const EXPORTED = [
-    '.eslintrc.json',
     '.github/workflows/build-resume.yml',
     '.gitignore',
     '.vscode/',
@@ -31,7 +30,8 @@ const EXPORTED = [
     'examples/',
     'jsconfig.json',
     'lib/',
-    'middleware.js',
+    'eslint.config.mjs',
+    'proxy.js',
     'next-sitemap.config.js',
     'next.config.js',
     'package-lock.json',

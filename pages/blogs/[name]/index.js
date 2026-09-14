@@ -11,6 +11,7 @@ import Metadata from '@/components/metadata'
 import Seo, { SITE_URL, SITE_NAME, DEFAULT_IMAGE } from '@/components/seo'
 import { Container } from 'react-bootstrap'
 import { features, featureGate } from '@/lib/content'
+import { markdownComponents } from '@/lib/markdown'
 
 export async function getStaticPaths() {
     if (!features.blogs) return { paths: [], fallback: false };
@@ -70,6 +71,7 @@ export default function Page({ blog }) {
                     className="markdown-body"
                     remarkPlugins={[remarkGfm, remarkToc, remarkFrontmatter, remarkSlug]}
                     rehypePlugins={[[rehypeHighlight, { ignoreMissing: true }], rehypeSlug, rehypeRaw]}
+                    components={markdownComponents}
                 >
                     {content}
                 </ReactMarkdown>

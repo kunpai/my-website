@@ -28,6 +28,7 @@ export default function Topbar() {
         // check local storage for preference
         const theme = localStorage.getItem('theme');
         if (theme) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect -- the saved theme lives in localStorage, only available after hydration
             setTheme(theme);
         } else {
             setTheme('auto');

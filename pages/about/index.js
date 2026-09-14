@@ -1,6 +1,5 @@
 import Seo from '@/components/seo';
 import config, { featureGate } from '@/lib/content';
-import defaultAbout from './about.md';
 import { Container } from "react-bootstrap";
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -10,17 +9,14 @@ import rehypeSlug from 'rehype-slug'
 import rehypeRaw from 'rehype-raw'
 import remarkFrontmatter from 'remark-frontmatter';
 import fs from 'fs';
-import { ABOUT_PATH } from '@/lib/content-paths';
+import path from 'path';
+import { ABOUT_PATH, ROOT_DIR } from '@/lib/content-paths';
+import { markdownComponents } from '@/lib/markdown';
 
 export const getStaticProps = featureGate('about', async () => {
-    let content = defaultAbout;
-    try {
-        if (fs.existsSync(ABOUT_PATH)) {
-            content = fs.readFileSync(ABOUT_PATH, 'utf8');
-        }
-    } catch (e) {
-        // Fallback to defaultAbout
-    }
+    // content/about.md, or the generic page shipped in lib/ when it doesn't exist.
+    const source = fs.existsSync(ABOUT_PATH) ? ABOUT_PATH : path.join(ROOT_DIR, 'lib', 'default-about.md');
+    const content = fs.readFileSync(source, 'utf8');
     return {
         props: {
             content
@@ -36,8 +32,9 @@ export default function About({ content }) {
                 className='markdown-body mt-3'
                 rehypePlugins={[[rehypeHighlight, { ignoreMissing: true }], rehypeRaw, rehypeSlug]}
                 remarkPlugins={[remarkGfm, remarkToc, remarkFrontmatter]}
+                components={markdownComponents}
             >
-                {content || defaultAbout}
+                {content}
             </ReactMarkdown>
         </Container>
     )

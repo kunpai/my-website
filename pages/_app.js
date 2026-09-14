@@ -5,7 +5,6 @@ import Head from 'next/head';
 import { Analytics } from '@vercel/analytics/react';
 import { SITE_NAME, DEFAULT_DESCRIPTION, DEFAULT_IMAGE, SITE_URL } from '@/components/seo';
 import config, { features, theme, themeCss } from '@/lib/content';
-const headingFontUrl = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(theme.headingFont).replace(/%20/g, '+')}&display=swap`;
 const customThemeCss = themeCss();
 // JSON.stringify quotes the family name; '<' is escaped so the value can't close the <style> element.
 const themeFontCss = `:root{--font-heading:${JSON.stringify(theme.headingFont).replace(/</g, '\\3c ')};}`;
@@ -34,9 +33,6 @@ export default function App({ Component, pageProps }) {
         <meta name="theme-color" content="#000000" />
         <link rel="icon" href={config.favicon || "/images/favicon.ico"} />
         {features.blogs && <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} — Blog`} href="/rss.xml" />}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href={headingFontUrl} rel="stylesheet" />
       </Head>
       <Layout>
         <Component {...pageProps} />

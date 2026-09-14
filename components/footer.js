@@ -10,6 +10,7 @@ export default function Footer() {
   useEffect(() => {
     const date = new Date(process.env.LAST_UPDATED);
     const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- formats with the visitor's locale, which only exists in the browser
     setLastUpdated(date.toLocaleDateString(undefined, options));
   }, []);
 

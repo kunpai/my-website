@@ -9,14 +9,15 @@ import rehypeSlug from 'rehype-slug'
 import rehypeRaw from 'rehype-raw'
 import remarkSlug from "remark-slug";
 import remarkFrontmatter from 'remark-frontmatter';
-import placeholder from "/public/images/placeholder.png"
+import placeholder from "@/public/images/placeholder.png"
+import { withoutStringHandlers } from "@/lib/markdown"
 
 const EXCERPT_COMPONENTS = {
-    a: ({ node, ...props }) => <span {...props} />,
-    button: ({ node, ...props }) => <span {...props} />,
+    a: ({ node, ...props }) => <span {...withoutStringHandlers(props)} />,
+    button: ({ node, ...props }) => <span {...withoutStringHandlers(props)} />,
 };
 
-export default function BlogTile({ blog }) {
+export default function BlogTile({ blog, eager = false }) {
     function readingTime(text) {
         const wpm = 225;
         const words = text.trim().split(/\s+/).length;
@@ -97,6 +98,8 @@ export default function BlogTile({ blog }) {
                                     src={blog.image ?? placeholder}
                                     alt={blog.title}
                                     fill
+                                    loading={eager ? 'eager' : 'lazy'}
+                                    sizes="(max-width: 786px) 100vw, 25vw"
                                     style={{
                                         borderRadius: '10px',
                                         objectFit: 'cover',

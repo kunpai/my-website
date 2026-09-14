@@ -1,5 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import config from '@/lib/content'
+import config, { theme } from '@/lib/content'
+
+const headingFontUrl = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(theme.headingFont).replace(/%20/g, '+')}&display=swap`;
 
 /**
  * @component
@@ -47,6 +49,10 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* Global stylesheets belong here rather than in next/head, so every page loads the heading font. */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href={headingFontUrl} rel="stylesheet" />
         <link rel="alternate" type="text/markdown" title="LLM Summary (llms.txt)" href="/llms.txt" />
         <link rel="alternate" type="text/markdown" title="Full LLM Profile (llms-full.txt)" href="/llms-full.txt" />
         <meta

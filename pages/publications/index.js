@@ -14,6 +14,7 @@ export default function PublicationPage(){
 
     useEffect(() => {
         if (q) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect -- router.query is only populated after hydration
             setSearchQuery(q);
         }
     }, [q]);

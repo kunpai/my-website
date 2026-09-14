@@ -45,6 +45,7 @@ function ExperienceTile({ isExperience, experience }) {
                     <div style={{ position: 'relative' }}>
                         <Image src={experience.image ?? "/images/placeholder.png"}
                             fill
+                            sizes={isExperience ? '100px' : '(max-width: 768px) 100vw, 33vw'}
                             style={{
                                 borderRadius: isExperience ? '50%' : "10px",
                                 objectFit: 'cover',

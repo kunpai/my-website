@@ -42,6 +42,7 @@ export default function Hello() {
           <Image src={config.image || '/images/placeholder.png'}
             alt={name}
             fill
+            sizes='(max-width: 786px) 75vw, 40vw'
             style={{ objectFit: 'cover' }}
             priority
           />

@@ -40,7 +40,7 @@ export default function LinkTreePage() {
         if (!currentLinks && path !== 'archived-conferences') {
             router.replace('/404');
         }
-    }, [currentLinks, path, router.isReady]);
+    }, [currentLinks, path, router]);
 
     // if path is "archived-conferences", then currentLinks should be set to a list of all the conferences of the JSON objects in linktree.json and link each conference to the corresponding linktree
     if (path === 'archived-conferences') {
