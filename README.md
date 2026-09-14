@@ -1,156 +1,133 @@
-# Academic & Researcher Portfolio Template 🚀
+<!-- personal-only:start -->
+> **This repository is the source of [kunpai.space](https://www.kunpai.space).**
+> To build your own site from it, start from the template instead:
+> **[kunpai/academic-site-template](https://github.com/kunpai/academic-site-template)**. It is generated from
+> this repo automatically, with the example content in place of mine.
 
-A modern, high-performance, and fully configurable personal portfolio website designed for PhD students, researchers, professors, and software engineers. Built with **Next.js 13**, **React**, **Bootstrap**, and **LaTeX**.
+<!-- personal-only:end -->
+# Academic Site Template
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkunpai%2Fmy-website)
+A personal website for researchers, PhD students and academics: publications with a topic graph,
+a blog, a CV/resume built from the same data, and a site that search engines and LLMs can read.
+Built with Next.js 13, React and Bootstrap. All your content lives in one folder, `content/`, so
+you can take updates to the site code without merge conflicts.
 
----
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkunpai%2Facademic-site-template)
 
-## ✨ Features
+## Features
 
-- ⚙️ **100% Config-Driven**: Control name, title, bio, SEO, social links, and theme accents from a single [`website.config.json`](website.config.json).
-- 🧭 **Modular Navigation & Feature Toggles**: Easily enable or disable sections (`publications`, `projects`, `workExperience`, `blogs`, `games`, `chatbot`) with a boolean switch.
-- 📄 **Automated LaTeX Resume & CV Generator**: Keep your resume and CV synced with your JSON data. Generates formatted LaTeX files and compiles production-ready PDFs via Python and GitHub Actions.
-- 📊 **Interactive SVG Research Graph**: Clustered research topics and publication graph that dynamically computes layout from your data.
-- 📝 **Markdown Blog & RSS Feed**: Write articles in `public/blogs/*.md` with syntax highlighting, automatic reading time, and an auto-generated RSS 2.0 feed (`public/rss.xml`).
-- 🤖 **AI Search & LLM Ready**: Automatically generates `public/llms.txt`, `public/llms-full.txt`, and JSON-LD schema for Perplexity, ChatGPT, and search crawlers.
-- 🎨 **Adaptive Light/Dark Mode**: Built-in system preference detection, theme toggler, and customizable CSS color variables.
+- **Everything personal lives in `content/`**: config, data (JSON), about page, blog posts.
+  Photos and PDFs go in `public/`.
+- **Sections you can switch off.** Turning off `projects`, `blogs` and so on removes the page (it
+  returns 404), its nav link, its homepage block, and its entries in the sitemap, RSS, `llms.txt`
+  and the chatbot.
+- **Publications** with tabs by type, a topic graph built from your tags, BibTeX, and your name
+  highlighted in author lists.
+- **Blog** in Markdown (GitHub-flavoured, raw HTML allowed), with reading time and an RSS feed.
+- **CV and resume PDFs** generated with LaTeX from the same data. A GitHub Action rebuilds them
+  when you push.
+- **Readable by search engines and LLMs:** JSON-LD, a sitemap, and `llms.txt` / `llms-full.txt`.
+- **Checked content:** JSON Schemas give editor autocomplete, and `npm run validate` runs before
+  every build.
+- Light and dark mode, a configurable accent colour and heading font.
+- Optional extras (off by default): an AI chatbot (NVIDIA NIM), small games, and link pages for
+  posters (`linktree`).
 
----
+## Quickstart
 
-## ⚡ Quickstart
+1. Click **Use this template** on GitHub (or clone the repo), then:
+   ```bash
+   npm install
+   npm run setup     # creates content/ from examples/ and asks for your name, links, sections
+   npm run dev       # http://localhost:3000
+   ```
+2. Replace the example entries in `content/data/*.json` with yours. See
+   [docs/CONTENT.md](docs/CONTENT.md) for every field.
+3. Deploy: import the repository in [Vercel](https://vercel.com). The default Next.js settings
+   work as they are.
 
-### 1. Clone or Use as Template
-Click **"Use this template"** above or clone the repository:
-```bash
-git clone https://github.com/kunpai/my-website.git my-portfolio
-cd my-portfolio
-npm install
-```
+`npm run setup -- --defaults` installs the example site without asking any questions, which is
+handy for a quick look.
 
-### 2. Run the Interactive Setup Wizard
-Run the built-in CLI to personalize your website configuration:
-```bash
-npm run setup
-```
-This wizard will prompt for your name, institution, contact links, feature selections, and theme colors, automatically updating `website.config.json`.
+## What lives where
 
-### 3. Launch Development Server
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+| Path | What it is |
+|---|---|
+| `content/config.json` | Name, links, SEO, feature flags, theme, UI labels |
+| `content/data/*.json` | Publications, education, experience, projects, skills, awards, news, talks, service |
+| `content/about.md` | The About page |
+| `content/blogs/*.md` | Blog posts (front matter: `title`, `date`, `tags`, `authors`, `image`) |
+| `public/` | Your photo, images, and CV/resume PDFs, served as-is |
+| `examples/` | The starter content that `npm run setup` copies |
+| `schemas/` | JSON Schemas for everything in `content/` |
+| `components/`, `pages/`, `lib/`, `styles/`, `scripts/` | Site code |
 
----
+Your editor (VS Code, via `.vscode/settings.json`) autocompletes and checks `content/` files
+against `schemas/`.
 
-## 📁 Repository Structure
+## Customising
 
-```text
-├── website.config.json        # Main configuration (identity, SEO, features, theme)
-├── website.config.example.json# Documented configuration template
-├── public/
-│   ├── about.md               # User-editable About page content
-│   ├── blogs/                 # Markdown blog posts
-│   ├── jsons/                 # Structured portfolio data
-│   │   ├── education.json
-│   │   ├── projects.json
-│   │   ├── publications.json
-│   │   ├── work-experience.json
-│   │   ├── skills.json
-│   │   └── examples/          # Minimal starter examples for new users
-│   └── latex_src/             # Generated LaTeX resume files
-├── scripts/
-│   ├── setup.js               # Interactive setup wizard CLI (npm run setup)
-│   ├── generate_resumes.py    # Generates & compiles LaTeX CV/Resume from JSON
-│   ├── generate_llms_txt.js   # Generates llms.txt and llms-full.txt
-│   └── generate_rss.js        # Generates public/rss.xml
-├── pages/                     # Next.js routes
-└── components/                # Modular React UI components
-```
+**Sections.** Set `features.<name>` to `false` in `content/config.json`:
 
----
-
-## 🛠️ Customization Guide
-
-### 1. Enabling or Disabling Sections
-In `website.config.json`, toggle any section under `features`:
 ```json
-"features": {
-    "about": true,
-    "projects": true,
-    "publications": true,
-    "workExperience": true,
-    "blogs": true,
-    "games": false,
-    "chatbot": false,
-    "researchGraph": true
-}
+"features": { "projects": false, "blogs": true, "games": false }
 ```
-Disabling a feature automatically updates the topbar navigation and hides the corresponding homepage section.
 
-### 2. Customizing Theme & Accent Colors
-Personalize brand colors without writing CSS:
+All sections are on by default except `games`, `chatbot` and `linktree`. The full table is in
+[docs/CONTENT.md](docs/CONTENT.md#feature-flags).
+
+**Look.** Pick any Google Fonts family for headings, and optionally an accent colour:
+
 ```json
-"theme": {
-    "accentColor": "#0d6efd",
-    "gradientStart": "#0d6efd",
-    "gradientEnd": "#00d2ff"
-}
+"theme": { "headingFont": "Audiowide", "accentColor": "#0d6efd", "gradientStart": "#0d6efd", "gradientEnd": "#00d2ff" }
 ```
 
-### 3. Updating Publications & Research
-Add entries to `public/jsons/publications.json`:
-```json
-{
-    "title": "Your Paper Title",
-    "authors": ["Your Name", "Co-author Name"],
-    "conference": "Conference or Journal Name (ISCA '26)",
-    "date": "June 2026",
-    "type": "Conference",
-    "tags": ["Machine Learning", "Computer Architecture"],
-    "links": [
-        { "label": "Paper", "url": "https://arxiv.org/..." },
-        { "label": "Code", "url": "https://github.com/..." }
-    ],
-    "bibtex": "@inproceedings{...}"
-}
-```
+Without colours the site uses Bootstrap's default palette. Setting `gradientStart` and
+`gradientEnd` adds a gradient to your name in the hero.
 
-### 4. Compiling LaTeX Resumes
-To generate and compile your CV and Resume PDFs locally:
+**Wording.** Button and heading text can be overridden under `labels`, for example
+`"labels": { "resumeButton": "Download CV" }`.
+
+**Homepage.** Work and project entries appear on the homepage unless they set
+`"show_on_homepage": false`. The full pages always list everything.
+
+## CV and resume
+
 ```bash
-python3 scripts/generate_resumes.py
-```
-*(Requires a local LaTeX installation such as `pdflatex` or MacTeX. In GitHub, this compiles automatically via GitHub Actions on every push.)*
-
-### 5. Writing Blog Posts
-Create a markdown file in `public/blogs/my-first-post.md`:
-```markdown
----
-title: "My First Blog Post"
-date: "2026-09-15"
-description: "A summary of my latest research findings."
-tags: ["Systems", "Research"]
-authors: ["Your Name"]
-image: "/images/blog-cover.jpg"
----
-
-Your content here in standard Markdown...
+python3 scripts/generate_resumes.py   # needs a LaTeX install (MacTeX, TeX Live)
 ```
 
----
+This writes the PDFs named by `resume` and `resume_short` in your config into `public/`. Entries
+opt in or out with `show_in_resume` and `show_in_resume_short`. On GitHub, the **Build Resumes**
+workflow does the same on every push that changes `content/`.
 
-## 🚢 Deployment
+## Scripts
 
-### Deploy with Vercel (Recommended)
-1. Push your repository to GitHub.
-2. Import the project into [Vercel](https://vercel.com).
-3. The default Next.js build settings will build and deploy your site automatically.
+| Command | What it does |
+|---|---|
+| `npm run setup` | First-time setup and identity wizard |
+| `npm run dev` | Development server (regenerates `llms.txt` and RSS first) |
+| `npm run validate` | Check `content/` against the schemas |
+| `npm run build` | Validate, generate `llms.txt`/RSS, build, write the sitemap |
+| `npm run indexnow` | After a deploy, tell Bing and others about your pages |
 
-### Automated GitHub Actions
-This repository includes `.github/workflows/auto-resume-and-llm.yml` which automatically compiles your LaTeX resumes and generates `llms.txt` and `rss.xml` upon each push to `main`.
+**Environment variables:** `NVIDIA_API_KEY` is needed only if the chatbot is on. `SITE_URL`
+optionally overrides `siteUrl` for the sitemap.
 
----
+## Getting updates
 
-## 📄 License
-Open source and available under the [MIT License](LICENSE). Contributions, forks, and suggestions are welcome!
+Your content lives in `content/` and `public/`, and template updates only touch site code. To
+pull updates:
+
+```bash
+git remote add template https://github.com/kunpai/academic-site-template.git
+git fetch template
+git merge template/main --allow-unrelated-histories   # the flag is only needed the first time
+```
+
+You only get conflicts in files you changed yourself (for example if you edited a component).
+
+## License
+
+The code is under the [MIT License](LICENSE). The example content in `examples/` is yours to
+replace.
