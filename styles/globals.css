@@ -220,6 +220,11 @@
     margin: 0 !important;
   }
 
+  /* Stack the intro under the photo instead of squeezing it into the leftover 25% */
+  .hello>.col {
+    flex: 0 0 100%;
+  }
+
   .experience {
     flex-direction: column;
     height: unset;

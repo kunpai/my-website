@@ -26,7 +26,8 @@ export default function Hello() {
           delay: 0.2,
           stagger: 0.06,
           ease: 'power2.out',
-          clearProps: 'all',
+          // Only clear what we animate; 'all' would strip SplitType's inline-block on words.
+          clearProps: 'transform,opacity',
         });
       }
     } catch (e) {
