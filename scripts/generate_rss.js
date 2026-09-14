@@ -3,12 +3,19 @@ const fs = require('fs');
 const path = require('path');
 const parseMD = require('parse-md').default || require('parse-md');
 const { ROOT_DIR: ROOT, BLOG_DIR, loadConfig } = require('../lib/content-paths');
+const { resolveFeatures } = require('../lib/features');
 
 const config = loadConfig();
 const SITE_URL = config.siteUrl || config.resume_contact?.website_url || '';
 const name = config.name || '';
 const blogDesc = config.blogDescription || (name ? `Posts by ${name}.` : 'Blog posts.');
 const OUT = path.join(ROOT, 'public', 'rss.xml');
+
+if (!resolveFeatures(config).blogs || !fs.existsSync(BLOG_DIR)) {
+    if (fs.existsSync(OUT)) fs.unlinkSync(OUT);
+    console.log('rss.xml: skipped (blogs disabled or content/blogs missing)');
+    process.exit(0);
+}
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const strip = (md) => (md || '').replace(/<button[\s\S]*?<\/button>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/```[\s\S]*?```/g, ' ').replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')

@@ -3,7 +3,7 @@ import { Fade } from 'react-bootstrap'
 import Footer from './footer'
 import ScrollToTop from './scrollToTop'
 import dynamic from 'next/dynamic'
-import config from '@/lib/content'
+import { features } from '@/lib/content'
 
 const Chatbot = dynamic(() => import('./chatbot'), { ssr: false })
 
@@ -17,7 +17,7 @@ export default function Layout({ children }) {
                 </main>
             </Fade>
             <ScrollToTop />
-            {config.enableChatbot && <Chatbot />}
+            {features.chatbot && <Chatbot />}
             <Footer />
         </>
     )

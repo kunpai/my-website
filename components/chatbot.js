@@ -10,7 +10,7 @@ import news from "@/content/data/news.json";
 import awards from "@/content/data/awards.json";
 import service from "@/content/data/service.json";
 import teachingExperience from "@/content/data/teaching-experience.json";
-import config from "@/lib/content";
+import config, { features } from "@/lib/content";
 
 export default function Chatbot() {
     const name = config.name || "";
@@ -101,6 +101,23 @@ export default function Chatbot() {
             .map(t => `- ${t.title} at ${t.organization} (${t.start} - ${t.end}): ${t.description}`)
             .join("\n");
 
+        // Only describe sections the site actually shows.
+        const contextSections = [
+            [features.news, 'Recent News & Updates', newsList],
+            [features.education, 'Education', eduList],
+            [features.skills, 'Skills', skillList],
+            [features.experience, 'Work Experience', workList],
+            [features.experience, 'Research Experience', researchList],
+            [features.experience, 'Teaching Experience', teachingList],
+            [features.publications, 'Publications', pubList],
+            [features.projects, 'Projects', projList],
+            [features.awards, 'Awards & Honors', awardList],
+            [features.services, 'Professional Service', serviceList],
+        ]
+            .filter(([enabled, , list]) => enabled && list)
+            .map(([, title, list]) => `- ${title}:\n${list}`)
+            .join("\n");
+
         return `You represent ${name}. Answer questions on behalf of ${firstName} using the context below. 
 
 Rules:
@@ -112,27 +129,8 @@ Rules:
 
 Context:
 - Intro: ${config.intro}
-- Recent News & Updates:
-${newsList}
 - Availability: Currently a student open to internships, research collaborations, and academic discussions.
-- Education:
-${eduList}
-- Skills:
-${skillList}
-- Work Experience:
-${workList}
-- Research Experience:
-${researchList}
-- Teaching Experience:
-${teachingList}
-- Publications:
-${pubList}
-- Projects:
-${projList}
-- Awards & Honors:
-${awardList}
-- Professional Service:
-${serviceList}
+${contextSections}
 `;
     };
 
@@ -234,7 +232,7 @@ ${serviceList}
         }
     };
 
-    if (config.enableChatbot === false) {
+    if (!features.chatbot) {
         return null;
     }
 

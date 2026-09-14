@@ -3,6 +3,9 @@ import { Container, Row, ListGroup } from 'react-bootstrap';
 import { LinkTree } from '@/components/linktree';
 import { useRouter } from 'next/router';
 import linktree from '@/content/data/linktree.json';
+import { featureGate } from '@/lib/content';
+
+export const getStaticProps = featureGate('linktree');
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 

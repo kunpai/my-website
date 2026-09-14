@@ -5,14 +5,13 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 // import linktree from '@/content/data/linktree.json';
 import SearchBar from './search';
-import config from '@/lib/content';
+import config, { features } from '@/lib/content';
 
 export default function Topbar() {
     const [show, setShow] = useState(false);
     const [visible, setVisible] = useState(false);
     const pageYOffsetTrigger = 150;
     const name = config.name || "";
-    const features = config.features || {};
     const [isLightMode, setIsLightMode] = useState(false);
     const [theme, setTheme] = useState('auto');
 
@@ -137,7 +136,7 @@ export default function Topbar() {
                         </h1>
                     </Navbar.Brand>
                     <div className="d-none d-lg-flex flex-grow-1 justify-content-center">
-                        <SearchBar />
+                        {features.publications && <SearchBar />}
                     </div>
                     <Navbar.Toggle
                         aria-controls={`offcanvasNavbar-expand-sm`}
@@ -156,39 +155,41 @@ export default function Topbar() {
                             </Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body>
-                            <div className="d-lg-none mb-3">
-                                <SearchBar />
-                            </div>
+                            {features.publications && (
+                                <div className="d-lg-none mb-3">
+                                    <SearchBar />
+                                </div>
+                            )}
                             <Nav className="justify-content-end flex-grow-1 pe-3">
                                 <Nav.Link href="/" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
                                     Home
                                 </Nav.Link>
-                                {features.about !== false && (
+                                {features.about && (
                                     <Nav.Link href="/about" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
                                         About
                                     </Nav.Link>
                                 )}
-                                {features.projects !== false && (
+                                {features.projects && (
                                     <Nav.Link href="/projects" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
                                         Projects
                                     </Nav.Link>
                                 )}
-                                {features.publications !== false && (
+                                {features.publications && (
                                     <Nav.Link href="/publications" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
                                         Publications
                                     </Nav.Link>
                                 )}
-                                {features.workExperience !== false && features.experience !== false && (
+                                {features.experience && (
                                     <Nav.Link href="/work-experiences" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
                                         Experience
                                     </Nav.Link>
                                 )}
-                                {features.blogs !== false && (
+                                {features.blogs && (
                                     <Nav.Link href="/blogs" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
                                         Blogs
                                     </Nav.Link>
                                 )}
-                                {features.games === true && (
+                                {features.games && (
                                     <NavDropdown title="Games" id="games-dropdown" className="main-text-regular">
                                         <NavDropdown.Item href="/games/cricket" as={Link} onClick={() => setShow(false)}>
                                             Cricket
@@ -201,7 +202,7 @@ export default function Topbar() {
                                         </NavDropdown.Item>
                                     </NavDropdown>
                                 )}
-                                {features.contact !== false && (
+                                {features.contact && (
                                     <Nav.Link href="/contact" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
                                         Contact
                                     </Nav.Link>

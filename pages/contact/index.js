@@ -1,5 +1,7 @@
 import Seo from '@/components/seo';
-import config from '@/lib/content';
+import config, { featureGate } from '@/lib/content';
+
+export const getStaticProps = featureGate('contact');
 import React, { useState } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 

@@ -1,11 +1,11 @@
-import siteConfig from '@/lib/content';
+import siteConfig, { features } from '@/lib/content';
 
 export const config = {
   runtime: 'edge',
 };
 
 export default async function handler(req) {
-  if (siteConfig.enableChatbot === false) {
+  if (!features.chatbot) {
     return new Response(JSON.stringify({ error: 'Chatbot is disabled' }), {
       status: 403,
       headers: { 'Content-Type': 'application/json' },

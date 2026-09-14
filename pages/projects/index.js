@@ -1,5 +1,7 @@
 import Seo from '@/components/seo';
-import config from '@/lib/content';
+import config, { featureGate } from '@/lib/content';
+
+export const getStaticProps = featureGate('projects');
 import React from 'react';
 import { Row, Col } from "react-bootstrap";
 import Experience from "@/components/experience";

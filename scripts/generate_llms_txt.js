@@ -2,8 +2,28 @@ const fs = require('fs');
 const path = require('path');
 
 const { PUBLIC_DIR, loadConfig, loadData } = require('../lib/content-paths');
+const { resolveFeatures } = require('../lib/features');
+
+const features = resolveFeatures(loadConfig());
+
+// Data files belonging to a disabled feature are treated as empty, so they aren't published.
+const FILE_FEATURE = {
+    'education.json': 'education',
+    'publications.json': 'publications',
+    'projects.json': 'projects',
+    'work-experience.json': 'experience',
+    'research-experience.json': 'experience',
+    'teaching-experience.json': 'experience',
+    'skills.json': 'skills',
+    'awards.json': 'awards',
+    'news.json': 'news',
+    'service.json': 'services',
+    'talks.json': 'talks',
+};
 
 function loadJson(filename) {
+    const feature = FILE_FEATURE[filename];
+    if (feature && !features[feature]) return null;
     return loadData(filename.replace(/\.json$/, ''));
 }
 
@@ -83,49 +103,55 @@ function generateLlmsTxt() {
     lines.push('');
 
     // Education
-    lines.push('## Education');
-    for (const edu of education) {
-        if (edu.show_on_website !== false) {
-            const period = [edu.start, edu.end].filter(Boolean).join(' – ');
-            lines.push(`- **${edu.degree} in ${edu.major}**, ${edu.university} (${period})`);
-            if (edu.description) {
-                lines.push(`  ${cleanText(edu.description)}`);
+    if (education.length > 0) {
+        lines.push('## Education');
+        for (const edu of education) {
+            if (edu.show_on_website !== false) {
+                const period = [edu.start, edu.end].filter(Boolean).join(' – ');
+                lines.push(`- **${edu.degree} in ${edu.major}**, ${edu.university} (${period})`);
+                if (edu.description) {
+                    lines.push(`  ${cleanText(edu.description)}`);
+                }
             }
         }
+        lines.push('');
     }
-    lines.push('');
 
     // Key Publications
-    lines.push('## Key Publications & Pre-prints');
-    for (const pub of publications) {
-        if (pub.show_on_website !== false) {
-            const authorsStr = (pub.authors || []).join(', ');
-            const venueStr = pub.conference || pub.type || '';
-            const badgeStr = pub.badge ? ` **[${pub.badge}]**` : '';
-            const linksStr = pub.links ? Object.entries(pub.links).map(([k, v]) => `[${k}](${v})`).join(' | ') : '';
-            lines.push(`- **${cleanText(pub.title)}**${badgeStr}`);
-            lines.push(`  Authors: ${authorsStr}`);
-            if (venueStr) lines.push(`  Venue: ${venueStr}`);
-            if (pub.badge) lines.push(`  Recognition: ${pub.badge}`);
-            if (pub.description) lines.push(`  Summary: ${cleanText(pub.description)}`);
-            if (linksStr) lines.push(`  Links: ${linksStr}`);
-            lines.push('');
+    if (publications.length > 0) {
+        lines.push('## Key Publications & Pre-prints');
+        for (const pub of publications) {
+            if (pub.show_on_website !== false) {
+                const authorsStr = (pub.authors || []).join(', ');
+                const venueStr = pub.conference || pub.type || '';
+                const badgeStr = pub.badge ? ` **[${pub.badge}]**` : '';
+                const linksStr = pub.links ? Object.entries(pub.links).map(([k, v]) => `[${k}](${v})`).join(' | ') : '';
+                lines.push(`- **${cleanText(pub.title)}**${badgeStr}`);
+                lines.push(`  Authors: ${authorsStr}`);
+                if (venueStr) lines.push(`  Venue: ${venueStr}`);
+                if (pub.badge) lines.push(`  Recognition: ${pub.badge}`);
+                if (pub.description) lines.push(`  Summary: ${cleanText(pub.description)}`);
+                if (linksStr) lines.push(`  Links: ${linksStr}`);
+                lines.push('');
+            }
         }
     }
 
     // Core Research & Projects
-    lines.push('## Selected Research & Projects');
-    for (const proj of projects) {
-        if (proj.show_on_website !== false) {
-            const period = [proj.start, proj.end].filter(Boolean).join(' – ');
-            const skillsStr = proj.skills ? ` (${proj.skills.join(', ')})` : '';
-            lines.push(`- **${cleanText(proj.title)}**${skillsStr} [${period}]`);
-            if (proj.description) lines.push(`  ${cleanText(proj.description)}`);
-            if (proj.links) {
-                const pLinks = Object.entries(proj.links).map(([k, v]) => `[${k}](${v})`).join(' | ');
-                lines.push(`  Links: ${pLinks}`);
+    if (projects.length > 0) {
+        lines.push('## Selected Research & Projects');
+        for (const proj of projects) {
+            if (proj.show_on_website !== false) {
+                const period = [proj.start, proj.end].filter(Boolean).join(' – ');
+                const skillsStr = proj.skills ? ` (${proj.skills.join(', ')})` : '';
+                lines.push(`- **${cleanText(proj.title)}**${skillsStr} [${period}]`);
+                if (proj.description) lines.push(`  ${cleanText(proj.description)}`);
+                if (proj.links) {
+                    const pLinks = Object.entries(proj.links).map(([k, v]) => `[${k}](${v})`).join(' | ');
+                    lines.push(`  Links: ${pLinks}`);
+                }
+                lines.push('');
             }
-            lines.push('');
         }
     }
 
@@ -168,22 +194,24 @@ function generateLlmsTxt() {
     }
 
     // Technical Skills
-    lines.push('## Technical Skills');
-    if (skills.resume_skills) {
-        for (const [category, items] of Object.entries(skills.resume_skills)) {
-            if (Array.isArray(items)) {
-                lines.push(`- **${category}**: ${items.join(', ')}`);
+    if (Object.keys(skills).length > 0) {
+        lines.push('## Technical Skills');
+        if (skills.resume_skills) {
+            for (const [category, items] of Object.entries(skills.resume_skills)) {
+                if (Array.isArray(items)) {
+                    lines.push(`- **${category}**: ${items.join(', ')}`);
+                }
+            }
+        } else {
+            for (const [category, items] of Object.entries(skills)) {
+                if (Array.isArray(items)) {
+                    const catName = category.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+                    lines.push(`- **${catName}**: ${items.join(', ')}`);
+                }
             }
         }
-    } else {
-        for (const [category, items] of Object.entries(skills)) {
-            if (Array.isArray(items)) {
-                const catName = category.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-                lines.push(`- **${catName}**: ${items.join(', ')}`);
-            }
-        }
+        lines.push('');
     }
-    lines.push('');
 
     // Detailed Files Notice
     lines.push('## Full Details');
@@ -224,71 +252,79 @@ function generateLlmsFullTxt() {
     lines.push('');
 
     // Education
-    lines.push('## Education');
-    for (const edu of education) {
-        const period = [edu.start, edu.end].filter(Boolean).join(' – ');
-        lines.push(`### ${edu.degree} in ${edu.major}`);
-        lines.push(`- **Institution**: ${edu.university}`);
-        lines.push(`- **Timeline**: ${period}`);
-        if (edu.gpa) lines.push(`- **GPA**: ${edu.gpa}`);
-        if (edu.description) lines.push(`- **Details**: ${cleanText(edu.description)}`);
-        lines.push('');
+    if (education.length > 0) {
+        lines.push('## Education');
+        for (const edu of education) {
+            const period = [edu.start, edu.end].filter(Boolean).join(' – ');
+            lines.push(`### ${edu.degree} in ${edu.major}`);
+            lines.push(`- **Institution**: ${edu.university}`);
+            lines.push(`- **Timeline**: ${period}`);
+            if (edu.gpa) lines.push(`- **GPA**: ${edu.gpa}`);
+            if (edu.description) lines.push(`- **Details**: ${cleanText(edu.description)}`);
+            lines.push('');
+        }
     }
 
     // Research Experience
-    lines.push('## Research Experience');
-    for (const exp of researchExp) {
-        const period = [exp.start, exp.end].filter(Boolean).join(' – ');
-        lines.push(`### ${exp.title} - ${exp.organization}`);
-        lines.push(`- **Period**: ${period}`);
-        if (exp.location) lines.push(`- **Location**: ${exp.location}`);
-        lines.push(`- **Description**:`);
-        const bullets = cleanText(exp.description).split('\n');
-        for (const bullet of bullets) {
-            if (bullet.trim()) lines.push(`  - ${bullet.trim()}`);
+    if (researchExp.length > 0) {
+        lines.push('## Research Experience');
+        for (const exp of researchExp) {
+            const period = [exp.start, exp.end].filter(Boolean).join(' – ');
+            lines.push(`### ${exp.title} - ${exp.organization}`);
+            lines.push(`- **Period**: ${period}`);
+            if (exp.location) lines.push(`- **Location**: ${exp.location}`);
+            lines.push(`- **Description**:`);
+            const bullets = cleanText(exp.description).split('\n');
+            for (const bullet of bullets) {
+                if (bullet.trim()) lines.push(`  - ${bullet.trim()}`);
+            }
+            lines.push('');
         }
-        lines.push('');
     }
 
     // Publications
-    lines.push('## Publications & Pre-prints');
-    for (const pub of publications) {
-        lines.push(`### ${cleanText(pub.title)}`);
-        lines.push(`- **Authors**: ${(pub.authors || []).join(', ')}`);
-        if (pub.conference) lines.push(`- **Venue**: ${pub.conference}`);
-        if (pub.badge) lines.push(`- **Recognition**: ${pub.badge}`);
-        if (pub.description) lines.push(`- **Abstract / Summary**: ${cleanText(pub.description)}`);
-        if (pub.tags && pub.tags.length > 0) lines.push(`- **Tags**: ${pub.tags.join(', ')}`);
-        if (pub.links) {
-            const pLinks = Object.entries(pub.links).map(([k, v]) => `[${k}](${v})`).join(' | ');
-            lines.push(`- **Links**: ${pLinks}`);
+    if (publications.length > 0) {
+        lines.push('## Publications & Pre-prints');
+        for (const pub of publications) {
+            lines.push(`### ${cleanText(pub.title)}`);
+            lines.push(`- **Authors**: ${(pub.authors || []).join(', ')}`);
+            if (pub.conference) lines.push(`- **Venue**: ${pub.conference}`);
+            if (pub.badge) lines.push(`- **Recognition**: ${pub.badge}`);
+            if (pub.description) lines.push(`- **Abstract / Summary**: ${cleanText(pub.description)}`);
+            if (pub.tags && pub.tags.length > 0) lines.push(`- **Tags**: ${pub.tags.join(', ')}`);
+            if (pub.links) {
+                const pLinks = Object.entries(pub.links).map(([k, v]) => `[${k}](${v})`).join(' | ');
+                lines.push(`- **Links**: ${pLinks}`);
+            }
+            if (pub.bibtex) {
+                lines.push(`- **BibTeX**:`);
+                lines.push('```bibtex');
+                lines.push(pub.bibtex);
+                lines.push('```');
+            }
+            lines.push('');
         }
-        if (pub.bibtex) {
-            lines.push(`- **BibTeX**:`);
-            lines.push('```bibtex');
-            lines.push(pub.bibtex);
-            lines.push('```');
-        }
-        lines.push('');
     }
 
     // Projects
-    lines.push('## Projects');
-    for (const proj of projects) {
-        const period = [proj.start, proj.end].filter(Boolean).join(' – ');
-        lines.push(`### ${cleanText(proj.title)}`);
-        lines.push(`- **Timeline**: ${period}`);
-        if (proj.skills) lines.push(`- **Technologies**: ${proj.skills.join(', ')}`);
-        if (proj.description) lines.push(`- **Summary**: ${cleanText(proj.description)}`);
-        if (proj.collaborators && proj.collaborators.length > 0) {
-            const collabStr = proj.collaborators.map(c => `[${c.name}](${c.link})`).join(', ');
-            lines.push(`- **Collaborators**: ${collabStr}`);
+    if (projects.length > 0) {
+        lines.push('## Projects');
+        for (const proj of projects) {
+            const period = [proj.start, proj.end].filter(Boolean).join(' – ');
+            lines.push(`### ${cleanText(proj.title)}`);
+            lines.push(`- **Timeline**: ${period}`);
+            if (proj.skills) lines.push(`- **Technologies**: ${proj.skills.join(', ')}`);
+            if (proj.description) lines.push(`- **Summary**: ${cleanText(proj.description)}`);
+            if (proj.collaborators && proj.collaborators.length > 0) {
+                const collabStr = proj.collaborators.map(c => `[${c.name}](${c.link})`).join(', ');
+                lines.push(`- **Collaborators**: ${collabStr}`);
+            }
+            if (proj.links) {
+                const pLinks = Object.entries(proj.links).map(([k, v]) => `[${k}](${v})`).join(' | ');
+                lines.push(`- **Links**: ${pLinks}`);
+            }
+            lines.push('');
         }
-        if (proj.links) {
-            const pLinks = Object.entries(proj.links).map(([k, v]) => `[${k}](${v})`).join(' | ');
-            lines.push(`- **Links**: ${pLinks}`);
-        }
-        lines.push('');
     }
 
     // Work Experience
@@ -391,15 +427,17 @@ function generateLlmsFullTxt() {
     }
 
     // Skills
-    lines.push('## Technical & Language Skills');
-    if (skills.resume_skills) {
-        for (const [cat, items] of Object.entries(skills.resume_skills)) {
-            if (Array.isArray(items)) {
-                lines.push(`- **${cat}**: ${items.join(', ')}`);
+    if (Object.keys(skills).length > 0) {
+        lines.push('## Technical & Language Skills');
+        if (skills.resume_skills) {
+            for (const [cat, items] of Object.entries(skills.resume_skills)) {
+                if (Array.isArray(items)) {
+                    lines.push(`- **${cat}**: ${items.join(', ')}`);
+                }
             }
         }
+        lines.push('');
     }
-    lines.push('');
 
     return lines.join('\n');
 }

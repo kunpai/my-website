@@ -1,7 +1,7 @@
 import { Row, Col, Button, Badge, Popover, OverlayTrigger } from "react-bootstrap";
 import publicationsRaw from "@/content/data/publications.json";
 const publications = publicationsRaw.filter(p => p.show_on_website !== false);
-import config from "@/lib/content";
+import config, { features } from "@/lib/content";
 import { generateMLACitation, generateChicagoCitation, generateIEEECitation, generateBibtexCitation } from "@/pages/api/citation";
 import CopyIcon from "./copyIcon";
 import { useRef, useEffect, useMemo, useState } from "react";
@@ -320,7 +320,7 @@ const getTypeHash = (type) => {
 };
 
 // Main Publication Component
-export default function Publication({ searchQuery, hideGraph = false, defaultType = "All" }) {
+export default function Publication({ searchQuery, hideGraph = !features.researchGraph, defaultType = "All" }) {
     const name = config.name || "";
 
     const [selectedType, setSelectedType] = useState(defaultType);

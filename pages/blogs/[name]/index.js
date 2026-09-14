@@ -10,8 +10,10 @@ import Head from 'next/head';
 import Metadata from '@/components/metadata'
 import Seo, { SITE_URL, SITE_NAME, DEFAULT_IMAGE } from '@/components/seo'
 import { Container } from 'react-bootstrap'
+import { features, featureGate } from '@/lib/content'
 
 export async function getStaticPaths() {
+    if (!features.blogs) return { paths: [], fallback: false };
     const { readAllBlogs } = await import('@/lib/blogs');
     return {
         paths: readAllBlogs().map((b) => ({ params: { name: b.name } })),
@@ -19,11 +21,11 @@ export async function getStaticPaths() {
     };
 }
 
-export async function getStaticProps({ params }) {
+export const getStaticProps = featureGate('blogs', async ({ params }) => {
     const { readBlog } = await import('@/lib/blogs');
     const blog = readBlog(params.name);
     return { props: { blog } };
-}
+});
 
 export default function Page({ blog }) {
     const { content, ...metadata } = blog;

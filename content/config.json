@@ -27,17 +27,16 @@
     ],
     "contactText": "You can contact me at **pai DOT kunal05 AT gmail DOT com** or **kunpai AT ucla DOT edu** or simply fill out the form below to redirect to an email client to send me a message directly.",
     "botName": "KunalAI",
-    "enableChatbot": false,
     "features": {
         "about": true,
         "projects": false,
         "publications": true,
-        "workExperience": false,
         "experience": false,
         "blogs": true,
         "games": false,
         "chatbot": false,
-        "researchGraph": true
+        "researchGraph": true,
+        "linktree": true
     },
     "knowsAbout": [
         "Software Engineering",

@@ -1,5 +1,5 @@
 import Seo from '@/components/seo';
-import config from '@/lib/content';
+import config, { features } from '@/lib/content';
 import React from 'react';
 import { Row, Col, Badge } from "react-bootstrap";
 import Experience from "@/components/experience";
@@ -46,7 +46,6 @@ const workExperienceFiltered = workExperience.filter(exp => isAfterJune2023(exp.
 const projectsFiltered = projects.filter(proj => isAfter2024(proj.end) || proj.title === "gem5 Vision");
 
 export default function Home() {
-  const features = config.features || {};
   const newsRef = useRef(null);
   const serviceRef = useRef(null);
   const talksRef = useRef(null);
@@ -141,7 +140,7 @@ export default function Home() {
         <Hello />
       </Row>
       <div className="content">
-        {features.news !== false && news && news.length > 0 && (
+        {features.news && news && news.length > 0 && (
           <Row>
             <div ref={newsRef} className="mt-5">
               <h1 className="mb-3" id="news">
@@ -159,7 +158,7 @@ export default function Home() {
             </div>
           </Row>
         )}
-        {features.education !== false && (
+        {features.education && (
           <Row>
             <Education />
           </Row>
@@ -170,7 +169,7 @@ export default function Home() {
         {/* <Row>
           <Experience jsonExperiences={teachingExperience} title={"Teaching Experience"} isExperience />
         </Row> */}
-        {features.workExperience !== false && features.experience !== false && (
+        {features.experience && (
           <Row>
             <Experience jsonExperiences={workExperienceFiltered} title={"Research & Professional Experience"} isExperience />
             <div ref={workViewAllRef}>
@@ -180,7 +179,7 @@ export default function Home() {
             </div>
           </Row>
         )}
-        {features.publications !== false && (
+        {features.publications && (
           <Row>
             <div className="mt-5">
               {/* <h1 className="mb-3" id="publications">
@@ -190,7 +189,7 @@ export default function Home() {
             </div>
           </Row>
         )}
-        {features.talks !== false && talks && talks.length > 0 && (
+        {features.talks && talks && talks.length > 0 && (
           <Row>
             <div ref={talksRef} className="mt-5">
               <h1 className="mb-3" id="talks-presentations">
@@ -208,7 +207,7 @@ export default function Home() {
             </div>
           </Row>
         )}
-        {features.projects !== false && (
+        {features.projects && (
           <Row>
             <Experience jsonExperiences={projectsFiltered} title={"Projects"} />
             <div ref={projectsViewAllRef}>
@@ -218,7 +217,7 @@ export default function Home() {
             </div>
           </Row>
         )}
-        {features.services !== false && service && service.length > 0 && (
+        {features.services && service && service.length > 0 && (
           <Row>
             <div ref={serviceRef} className="mt-5">
               <h1 className="mb-3" id="service">
@@ -253,7 +252,7 @@ export default function Home() {
             </div>
           </Row>
         )}
-        {features.skills !== false && skills && (
+        {features.skills && skills && (
           <Row>
             <div className="mt-5">
               <h1 className="mb-3" id="skills">
@@ -273,7 +272,7 @@ export default function Home() {
             </div>
           </Row>
         )}
-        {features.awards !== false && awards && (
+        {features.awards && awards && (
           <Row>
             <div className="mt-5">
               <h1 className="mb-3" id="awards">

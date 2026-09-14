@@ -1,5 +1,5 @@
 import Seo from '@/components/seo';
-import config from '@/lib/content';
+import config, { featureGate } from '@/lib/content';
 import defaultAbout from './about.md';
 import { Container } from "react-bootstrap";
 import ReactMarkdown from 'react-markdown'
@@ -12,7 +12,7 @@ import remarkFrontmatter from 'remark-frontmatter';
 import fs from 'fs';
 import { ABOUT_PATH } from '@/lib/content-paths';
 
-export async function getStaticProps() {
+export const getStaticProps = featureGate('about', async () => {
     let content = defaultAbout;
     try {
         if (fs.existsSync(ABOUT_PATH)) {
@@ -26,7 +26,7 @@ export async function getStaticProps() {
             content
         }
     };
-}
+});
 
 export default function About({ content }) {
     return (

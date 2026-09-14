@@ -1,8 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 const { BLOG_DIR, loadConfig } = require('./lib/content-paths');
+const { resolveFeatures, disabledRoutes } = require('./lib/features');
 
 const siteConfig = loadConfig();
+const features = resolveFeatures(siteConfig);
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
@@ -10,8 +12,8 @@ module.exports = {
     generateRobotsTxt: true,
     changefreq: 'weekly',
     priority: 0.7,
-    // Keep low-value toys out of the sitemap; they only dilute crawl budget.
-    exclude: ['/games/*', '/linktree', '/linktree/*'],
+    // Keep low-value toys out of the sitemap (they only dilute crawl budget), plus disabled sections.
+    exclude: [...new Set(['/games/*', '/linktree', '/linktree/*', ...disabledRoutes(features)])],
     transform: async (config, loc) => {
         const high = ['/', '/publications', '/blogs', '/projects'];
         return {
@@ -23,7 +25,7 @@ module.exports = {
     },
     // Blog posts are dynamic routes; list them explicitly with their file mtime.
     additionalPaths: async () => {
-        if (!fs.existsSync(BLOG_DIR)) return [];
+        if (!features.blogs || !fs.existsSync(BLOG_DIR)) return [];
         return fs.readdirSync(BLOG_DIR)
             .filter((f) => f.endsWith('.md'))
             .map((f) => ({

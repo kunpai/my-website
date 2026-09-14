@@ -4,18 +4,18 @@ import { useRouter } from 'next/router';
 import BlogTile from '@/components/blogTile';
 import Seo from '@/components/seo';
 import { filterBlogs } from '@/lib/blogFilter';
-import config from '@/lib/content';
+import config, { featureGate } from '@/lib/content';
 
 // Posts are read at build time so the list is in the HTML crawlers see
 // (previously fetched client-side, which rendered "No Blogs Found" to bots).
-export async function getStaticProps() {
+export const getStaticProps = featureGate('blogs', async () => {
     const { readAllBlogs } = await import('@/lib/blogs');
     const blogs = readAllBlogs().map(({ content, ...rest }) => ({
         ...rest,
         content: content.length > 1200 ? content.slice(0, 1200).replace(/\s+\S*$/, '') : content,
     }));
     return { props: { blogs } };
-}
+});
 
 export default function Blogs({ blogs }) {
     const router = useRouter();
