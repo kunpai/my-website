@@ -5,12 +5,14 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 // import linktree from '@/public/jsons/linktree.json';
 import SearchBar from './search';
+import config from '@/website.config.json';
 
 export default function Topbar() {
     const [show, setShow] = useState(false);
     const [visible, setVisible] = useState(false);
     const pageYOffsetTrigger = 150;
-    const name = process.env.CONFIG.name;
+    const name = config.name || process.env.CONFIG?.name || "";
+    const features = config.features || {};
     const [isLightMode, setIsLightMode] = useState(false);
     const [theme, setTheme] = useState('auto');
 
@@ -161,41 +163,49 @@ export default function Topbar() {
                                 <Nav.Link href="/" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
                                     Home
                                 </Nav.Link>
-                                <Nav.Link href="/about" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
-                                    About
-                                </Nav.Link>
-                                <Nav.Link href="/publications" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
-                                    Publications
-                                </Nav.Link>
-                                <Nav.Link href="/blogs" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
-                                    Blogs
-                                </Nav.Link>
-                                {/* <NavDropdown title="Linktree" id="linktree-dropdown" className="main-text-regular">
-                                {latestConference && (
-                                    <NavDropdown.Item 
-                                    href={`/linktree/${latestConference.path}`}
-                                    as={Link}
-                                    onClick={() => setShow(false)}
-                                    >
-                                    Latest Conference
-                                    </NavDropdown.Item>
+                                {features.about !== false && (
+                                    <Nav.Link href="/about" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
+                                        About
+                                    </Nav.Link>
                                 )}
-                                {archivedConferences.length > 0 ? (
-                                <>
-                                    <NavDropdown.Divider />
-                                    <NavDropdown.Item
-                                    href="/linktree/archived-conferences"
-                                    as={Link}
-                                    onClick={() => setShow(false)}
-                                    >
-                                    Archived Conferences
-                                    </NavDropdown.Item>
-                                </>
-                                ) : null}
-                                </NavDropdown> */}
-                                <Nav.Link href="/contact" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
-                                    Contact Me
-                                </Nav.Link>
+                                {features.projects !== false && (
+                                    <Nav.Link href="/projects" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
+                                        Projects
+                                    </Nav.Link>
+                                )}
+                                {features.publications !== false && (
+                                    <Nav.Link href="/publications" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
+                                        Publications
+                                    </Nav.Link>
+                                )}
+                                {features.workExperience !== false && (
+                                    <Nav.Link href="/work-experiences" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
+                                        Experience
+                                    </Nav.Link>
+                                )}
+                                {features.blogs !== false && (
+                                    <Nav.Link href="/blogs" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
+                                        Blogs
+                                    </Nav.Link>
+                                )}
+                                {features.games === true && (
+                                    <NavDropdown title="Games" id="games-dropdown" className="main-text-regular">
+                                        <NavDropdown.Item href="/games/cricket" as={Link} onClick={() => setShow(false)}>
+                                            Cricket
+                                        </NavDropdown.Item>
+                                        <NavDropdown.Item href="/games/hangman" as={Link} onClick={() => setShow(false)}>
+                                            Hangman
+                                        </NavDropdown.Item>
+                                        <NavDropdown.Item href="/games/tictactoe" as={Link} onClick={() => setShow(false)}>
+                                            Tic Tac Toe
+                                        </NavDropdown.Item>
+                                    </NavDropdown>
+                                )}
+                                {features.contact !== false && (
+                                    <Nav.Link href="/contact" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
+                                        Contact
+                                    </Nav.Link>
+                                )}
                             </Nav>
                             <ButtonGroup>
                                 {

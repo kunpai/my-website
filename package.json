@@ -14,7 +14,8 @@
     "lint": "LAST_UPDATED=$(date) next lint",
     "postbuild": "next-sitemap",
     "generate:rss": "node scripts/generate_rss.js",
-    "indexnow": "node scripts/indexnow.js"
+    "indexnow": "node scripts/indexnow.js",
+    "setup": "node scripts/setup.js"
   },
   "dependencies": {
     "@vercel/analytics": "^1.0.1",

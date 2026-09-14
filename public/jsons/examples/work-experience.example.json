@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Graduate Research Assistant",
+        "company": "Stanford University",
+        "start": "September 2024",
+        "end": "Present",
+        "location": "Stanford, CA",
+        "description": [
+            "Investigating scalable consensus protocols and distributed coordination mechanisms."
+        ]
+    },
+    {
+        "title": "Software Engineering Intern",
+        "company": "Tech Company",
+        "start": "June 2024",
+        "end": "September 2024",
+        "location": "San Francisco, CA",
+        "description": [
+            "Engineered high-throughput streaming pipelines reducing end-to-end latency by 35%."
+        ]
+    }
+]

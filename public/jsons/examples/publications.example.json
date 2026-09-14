@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Scalable Consensus in Heterogeneous Multi-Cloud Environments",
+        "authors": [
+            "Jane Doe",
+            "Alex Smith",
+            "Taylor Reed"
+        ],
+        "conference": "Proceedings of the 2026 USENIX Symposium on Networked Systems Design and Implementation (NSDI '26)",
+        "date": "April 2026",
+        "type": "Conference",
+        "tags": [
+            "Distributed Systems"
+        ],
+        "links": [
+            {
+                "label": "Paper",
+                "url": "https://example.com/paper.pdf"
+            },
+            {
+                "label": "Code",
+                "url": "https://github.com/example/nsdi26"
+            }
+        ],
+        "bibtex": "@inproceedings{doe2026scalable,\n  title={Scalable Consensus in Heterogeneous Multi-Cloud Environments},\n  author={Doe, Jane and Smith, Alex and Reed, Taylor},\n  booktitle={NSDI},\n  year={2026}\n}"
+    }
+]

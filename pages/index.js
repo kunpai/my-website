@@ -46,7 +46,7 @@ const workExperienceFiltered = workExperience.filter(exp => isAfterJune2023(exp.
 const projectsFiltered = projects.filter(proj => isAfter2024(proj.end) || proj.title === "gem5 Vision");
 
 export default function Home() {
-
+  const features = config.features || {};
   const newsRef = useRef(null);
   const serviceRef = useRef(null);
   const talksRef = useRef(null);
@@ -82,49 +82,57 @@ export default function Home() {
       });
     }
 
-    gsap.from(serviceRef.current, {
-      y: 24,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'ease',
-      scrollTrigger: {
-        trigger: serviceRef.current,
-        start: 'top 80%',
-      },
-    });
+    if (serviceRef.current) {
+      gsap.from(serviceRef.current, {
+        y: 24,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'ease',
+        scrollTrigger: {
+          trigger: serviceRef.current,
+          start: 'top 80%',
+        },
+      });
+    }
 
-    gsap.from(talksRef.current, {
-      y: 24,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'ease',
-      scrollTrigger: {
-        trigger: talksRef.current,
-        start: 'top 80%',
-      },
-    });
+    if (talksRef.current) {
+      gsap.from(talksRef.current, {
+        y: 24,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'ease',
+        scrollTrigger: {
+          trigger: talksRef.current,
+          start: 'top 80%',
+        },
+      });
+    }
 
-    gsap.from(workViewAllRef.current, {
-      y: 24,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'ease',
-      scrollTrigger: {
-        trigger: workViewAllRef.current,
-        start: 'top 80%',
-      },
-    });
+    if (workViewAllRef.current) {
+      gsap.from(workViewAllRef.current, {
+        y: 24,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'ease',
+        scrollTrigger: {
+          trigger: workViewAllRef.current,
+          start: 'top 80%',
+        },
+      });
+    }
 
-    gsap.from(projectsViewAllRef.current, {
-      y: 24,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'ease',
-      scrollTrigger: {
-        trigger: projectsViewAllRef.current,
-        start: 'top 80%',
-      },
-    });
+    if (projectsViewAllRef.current) {
+      gsap.from(projectsViewAllRef.current, {
+        y: 24,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'ease',
+        scrollTrigger: {
+          trigger: projectsViewAllRef.current,
+          start: 'top 80%',
+        },
+      });
+    }
   }, []);
   return (
     <Containter className='home'>
@@ -133,7 +141,7 @@ export default function Home() {
         <Hello />
       </Row>
       <div className="content">
-        {news && news.length > 0 && (
+        {features.news !== false && news && news.length > 0 && (
           <Row>
             <div ref={newsRef} className="mt-5">
               <h1 className="mb-3" id="news">
@@ -151,120 +159,136 @@ export default function Home() {
             </div>
           </Row>
         )}
-        <Row>
-          <Education />
-        </Row>
+        {features.education !== false && (
+          <Row>
+            <Education />
+          </Row>
+        )}
         {/* <Row>
           <Experience jsonExperiences={researchExperience} title={"Research Experience"} isExperience />
         </Row> */}
         {/* <Row>
           <Experience jsonExperiences={teachingExperience} title={"Teaching Experience"} isExperience />
         </Row> */}
-        <Row>
-          <Experience jsonExperiences={workExperienceFiltered} title={"Research & Professional Experience"} isExperience />
-          <div ref={workViewAllRef}>
-            <Link href="/work-experiences" className="btn btn-outline-secondary btn-lg d-block mx-auto mt-3">
-              View All Research & Professional Experiences <i className="bi bi-arrow-right ms-2"></i>
-            </Link>
-          </div>
-        </Row>
-        <Row>
-          <div className="mt-5">
-            {/* <h1 className="mb-3" id="publications">
-              Publications
-            </h1> */}
-            <Publication hideGraph defaultType="conference" />
-          </div>
-        </Row>
-        <Row>
-          <div ref={talksRef} className="mt-5">
-            <h1 className="mb-3" id="talks-presentations">
-              Talks & Presentations
-            </h1>
-            <ul className="list-unstyled">
+        {features.workExperience !== false && (
+          <Row>
+            <Experience jsonExperiences={workExperienceFiltered} title={"Research & Professional Experience"} isExperience />
+            <div ref={workViewAllRef}>
+              <Link href="/work-experiences" className="btn btn-outline-secondary btn-lg d-block mx-auto mt-3">
+                View All Research & Professional Experiences <i className="bi bi-arrow-right ms-2"></i>
+              </Link>
+            </div>
+          </Row>
+        )}
+        {features.publications !== false && (
+          <Row>
+            <div className="mt-5">
+              {/* <h1 className="mb-3" id="publications">
+                Publications
+              </h1> */}
+              <Publication hideGraph defaultType="conference" />
+            </div>
+          </Row>
+        )}
+        {features.talks !== false && talks && talks.length > 0 && (
+          <Row>
+            <div ref={talksRef} className="mt-5">
+              <h1 className="mb-3" id="talks-presentations">
+                Talks & Presentations
+              </h1>
+              <ul className="list-unstyled">
+                {
+                  talks.map((item, index) => {
+                    return (
+                      <NewsItem key={index} item={item} index={index} />
+                    )
+                  })
+                }
+              </ul>
+            </div>
+          </Row>
+        )}
+        {features.projects !== false && (
+          <Row>
+            <Experience jsonExperiences={projectsFiltered} title={"Projects"} />
+            <div ref={projectsViewAllRef}>
+              <Link href="/projects" className="btn btn-outline-secondary btn-lg d-block mx-auto mt-3">
+                View All Projects <i className="bi bi-arrow-right ms-2"></i>
+              </Link>
+            </div>
+          </Row>
+        )}
+        {features.services !== false && service && service.length > 0 && (
+          <Row>
+            <div ref={serviceRef} className="mt-5">
+              <h1 className="mb-3" id="service">
+                Academic Services
+              </h1>
+              <div className="ps-2">
+                {
+                  service.map((cat, index) => {
+                    return (
+                      <div key={index} className="mb-4">
+                        <h3 className="h5 mb-2 font-weight-bold" style={{ fontWeight: 600 }}>
+                          {cat.category}
+                        </h3>
+                        <ul className="list-unstyled">
+                          {
+                            cat.items.map((item, idx) => (
+                              <ServiceItem
+                                key={idx}
+                                name={item.name}
+                                years={item.years}
+                                link={item.link}
+                                index={idx}
+                              />
+                            ))
+                          }
+                        </ul>
+                      </div>
+                    )
+                  })
+                }
+              </div>
+            </div>
+          </Row>
+        )}
+        {features.skills !== false && skills && (
+          <Row>
+            <div className="mt-5">
+              <h1 className="mb-3" id="skills">
+                Skills
+              </h1>
               {
-                talks.map((item, index) => {
+                Object.keys(skills).filter(key => key !== "resume_skills").map((skill, index) => {
+                  const displayName = skill === "systems-and-compilers" ? "Systems & Compilers" : skill.split("-").map(toTitleCase).join(" ");
                   return (
-                    <NewsItem key={index} item={item} index={index} />
-                  )
-                })
-              }
-            </ul>
-          </div>
-        </Row>
-        <Row>
-          <Experience jsonExperiences={projectsFiltered} title={"Projects"} />
-          <div ref={projectsViewAllRef}>
-            <Link href="/projects" className="btn btn-outline-secondary btn-lg d-block mx-auto mt-3">
-              View All Projects <i className="bi bi-arrow-right ms-2"></i>
-            </Link>
-          </div>
-        </Row>
-        <Row>
-          <div ref={serviceRef} className="mt-5">
-            <h1 className="mb-3" id="service">
-              Academic Services
-            </h1>
-            <div className="ps-2">
-              {
-                service.map((cat, index) => {
-                  return (
-                    <div key={index} className="mb-4">
-                      <h3 className="h5 mb-2 font-weight-bold" style={{ fontWeight: 600 }}>
-                        {cat.category}
-                      </h3>
-                      <ul className="list-unstyled">
-                        {
-                          cat.items.map((item, idx) => (
-                            <ServiceItem
-                              key={idx}
-                              name={item.name}
-                              years={item.years}
-                              link={item.link}
-                              index={idx}
-                            />
-                          ))
-                        }
-                      </ul>
-                    </div>
+                    <React.Fragment key={index}>
+                      <h1>{displayName}</h1>
+                      <Skill skill={skills[skill]} />
+                    </React.Fragment>
                   )
                 })
               }
             </div>
-          </div>
-        </Row>
-        <Row>
-          <div className="mt-5">
-            <h1 className="mb-3" id="skills">
-              Skills
-            </h1>
-            {
-              Object.keys(skills).filter(key => key !== "resume_skills").map((skill, index) => {
-                const displayName = skill === "systems-and-compilers" ? "Systems & Compilers" : skill.split("-").map(toTitleCase).join(" ");
-                return (
-                  <React.Fragment key={index}>
-                    <h1>{displayName}</h1>
-                    <Skill skill={skills[skill]} />
-                  </React.Fragment>
-                )
-              })
-            }
-          </div>
-        </Row>
-        <Row>
-          <div className="mt-5">
-            <h1 className="mb-3" id="awards">
-              Awards
-            </h1>
-            {
-              awards.filter(award => award.show_on_website !== false).map((award, index) => {
-                return (
-                  <Award key={index} award={award} />
-                )
-              })
-            }
-          </div>
-        </Row>
+          </Row>
+        )}
+        {features.awards !== false && awards && (
+          <Row>
+            <div className="mt-5">
+              <h1 className="mb-3" id="awards">
+                Awards
+              </h1>
+              {
+                awards.filter(award => award.show_on_website !== false).map((award, index) => {
+                  return (
+                    <Award key={index} award={award} />
+                  )
+                })
+              }
+            </div>
+          </Row>
+        )}
         {/* <Row>
           <div className="mt-5">
             <h1 className="mb-3" id="linktree">

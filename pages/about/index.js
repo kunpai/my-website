@@ -1,6 +1,6 @@
 import Seo from '@/components/seo';
 import config from '@/website.config.json';
-import about from './about.md';
+import defaultAbout from './about.md';
 import { Container } from "react-bootstrap";
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -9,8 +9,27 @@ import rehypeHighlight from 'rehype-highlight'
 import rehypeSlug from 'rehype-slug'
 import rehypeRaw from 'rehype-raw'
 import remarkFrontmatter from 'remark-frontmatter';
+import fs from 'fs';
+import path from 'path';
 
-export default function About() {
+export async function getStaticProps() {
+    let content = defaultAbout;
+    try {
+        const publicAboutPath = path.join(process.cwd(), 'public', 'about.md');
+        if (fs.existsSync(publicAboutPath)) {
+            content = fs.readFileSync(publicAboutPath, 'utf8');
+        }
+    } catch (e) {
+        // Fallback to defaultAbout
+    }
+    return {
+        props: {
+            content
+        }
+    };
+}
+
+export default function About({ content }) {
     return (
         <Container className='about'>
             <Seo title="About" path="/about" description={`About ${config.name}: background, education, and research interests.`} />
@@ -19,7 +38,7 @@ export default function About() {
                 rehypePlugins={[[rehypeHighlight, { ignoreMissing: true }], rehypeRaw, rehypeSlug]}
                 remarkPlugins={[remarkGfm, remarkToc, remarkFrontmatter]}
             >
-                {about}
+                {content || defaultAbout}
             </ReactMarkdown>
         </Container>
     )

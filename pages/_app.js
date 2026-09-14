@@ -4,11 +4,44 @@ import Layout from '@/components/layout';
 import Head from 'next/head';
 import { Analytics } from '@vercel/analytics/react';
 import { SITE_NAME, DEFAULT_DESCRIPTION, DEFAULT_IMAGE, SITE_URL } from '@/components/seo';
+import config from '@/website.config.json';
 
 export default function App({ Component, pageProps }) {
+  const theme = config.theme || {};
+  const accentColor = theme.accentColor || '#0d6efd';
+  const gradientStart = theme.gradientStart || '#0d6efd';
+  const gradientEnd = theme.gradientEnd || '#00d2ff';
+
   return (
     <>
       <Head>
+        <style key="custom-theme-vars">{`
+          :root {
+            --brand-accent: ${accentColor};
+            --brand-gradient: linear-gradient(135deg, ${gradientStart} 0%, ${gradientEnd} 100%);
+            --bs-primary: ${accentColor};
+            --bs-link-color: ${accentColor};
+            --bs-link-hover-color: ${gradientEnd};
+          }
+          .btn-primary {
+            background-color: var(--brand-accent) !important;
+            border-color: var(--brand-accent) !important;
+          }
+          .btn-outline-primary {
+            color: var(--brand-accent) !important;
+            border-color: var(--brand-accent) !important;
+          }
+          .btn-outline-primary:hover {
+            background-color: var(--brand-accent) !important;
+            color: #fff !important;
+          }
+          a {
+            color: var(--brand-accent);
+          }
+          a:hover {
+            color: ${gradientEnd};
+          }
+        `}</style>
         {/* Defaults; individual pages override these via <Seo /> (same keys). */}
         <title key="title">{SITE_NAME}</title>
         <meta key="description" name="description" content={DEFAULT_DESCRIPTION} />

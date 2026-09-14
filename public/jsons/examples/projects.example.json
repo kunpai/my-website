@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Sample Distributed Key-Value Store",
+        "start": "September 2024",
+        "end": "Present",
+        "description": [
+            "Built a high-performance distributed key-value store in Rust implementing Raft consensus.",
+            "Achieved linearizable reads and 100k+ operations per second with asynchronous I/O."
+        ],
+        "tags": [
+            "Rust",
+            "Distributed Systems",
+            "Raft"
+        ],
+        "links": [
+            {
+                "label": "GitHub",
+                "url": "https://github.com/example/raft-kv"
+            },
+            {
+                "label": "Documentation",
+                "url": "https://example.com/docs"
+            }
+        ]
+    }
+]

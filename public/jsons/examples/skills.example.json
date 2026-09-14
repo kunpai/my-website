@@ -1,0 +1,16 @@
+{
+    "languages": [
+        "Rust",
+        "Python",
+        "C/C++",
+        "Go",
+        "TypeScript"
+    ],
+    "systems-and-tools": [
+        "Linux",
+        "Docker",
+        "Kubernetes",
+        "Git",
+        "PyTorch"
+    ]
+}
