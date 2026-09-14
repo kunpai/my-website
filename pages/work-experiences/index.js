@@ -1,5 +1,5 @@
 import Seo from '@/components/seo';
-import config, { featureGate } from '@/lib/content';
+import config, { featureGate, labels } from '@/lib/content';
 
 export const getStaticProps = featureGate('experience');
 import React from 'react';
@@ -15,7 +15,7 @@ export default function WorkExperiences() {
       <Row>
         <div className="content">
           <Row>
-            <Experience jsonExperiences={workExperience} title={"Research & Professional Experience"} isExperience />
+            <Experience jsonExperiences={workExperience} title={labels.experienceTitle} isExperience />
           </Row>
         </div>
       </Row>

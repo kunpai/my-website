@@ -135,6 +135,7 @@
     },
     {
         "title": "Automated Frameworks of Semantic Augmentation to Improve Mathematical Word Problem Solving",
+        "show_on_homepage": false,
         "start": "April 2024",
         "end": "June 2024",
         "description": "Improved PaLM 2 LLM prompting accuracy on math word problems (MWPs) by 10% and TinyLlama fine-tuning LM accuracy by 60% through a one-shot digit-level semantics framework.\nIntroduced a novel demonstration selection model to improve accuracy of LLMs. Model used BLEU scores and Levenshtein distance to identify the most similar equations for one-shot examples.",
@@ -163,6 +164,7 @@
     },
     {
         "title": "The Effects of Toxicity on Disengagement in Open Source Projects",
+        "show_on_homepage": false,
         "start": "January 2024",
         "end": "March 2024",
         "description": "Found a strong correlation ($R^2 = 0.76$) between high developer engagement in FAANG projects with larger codebases and lower levels of toxicity, offering actionable insights for community management.\nQuantified toxic behavior using sentiment analysis and mining corporate and non-profit repositories, revealing how toxicity disproportionately impacts new developers compared to experienced ones (up to 1.3x more).",
@@ -199,6 +201,7 @@
     },
     {
         "title": "What is the behavior of Spectre, a speculative prediction exploit, on the various branch predictors available in the computer architecture simulator gem5?",
+        "show_on_homepage": false,
         "start": "October 2023",
         "end": "December 2023",
         "description": "Demonstrated up to a 55% reduction in susceptibility to speculative execution attacks by validating design enhancements like longer training periods and minimizing biased branches for Spectre-resistant branch predictors.\nInvestigated the vulnerability of x86-based in-order and out-of-order processors to Spectre V1 attacks, revealing a strong correlation between branch predictor training periods and attack effectiveness.",

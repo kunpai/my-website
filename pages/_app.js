@@ -4,11 +4,16 @@ import Layout from '@/components/layout';
 import Head from 'next/head';
 import { Analytics } from '@vercel/analytics/react';
 import { SITE_NAME, DEFAULT_DESCRIPTION, DEFAULT_IMAGE, SITE_URL } from '@/components/seo';
-import { features } from '@/lib/content';
+import config, { features, theme, themeCss } from '@/lib/content';
+const headingFontUrl = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(theme.headingFont).replace(/%20/g, '+')}&display=swap`;
+const customThemeCss = themeCss();
+
 export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <style key="theme-font">{`:root{--font-heading:'${theme.headingFont}';}`}</style>
+        {customThemeCss && <style key="theme-colors">{customThemeCss}</style>}
         {/* Defaults; individual pages override these via <Seo /> (same keys). */}
         <title key="title">{SITE_NAME}</title>
         <meta key="description" name="description" content={DEFAULT_DESCRIPTION} />
@@ -24,11 +29,11 @@ export default function App({ Component, pageProps }) {
         <meta key="twitter:image" name="twitter:image" content={DEFAULT_IMAGE} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
-        <link rel="icon" href="/images/favicon.ico" />
+        <link rel="icon" href={config.favicon || "/images/favicon.ico"} />
         {features.blogs && <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} — Blog`} href="/rss.xml" />}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet" />
+        <link href={headingFontUrl} rel="stylesheet" />
       </Head>
       <Layout>
         <Component {...pageProps} />

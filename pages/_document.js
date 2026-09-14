@@ -13,8 +13,9 @@ export default function Document() {
     ? (config.image.startsWith('http') ? config.image : `${siteUrl}${config.image.startsWith('/') ? config.image : `/${config.image}`}`)
     : `${siteUrl}/images/placeholder.png`;
 
+  // Profiles only: a link labelled e.g. "Website Source" points at code, not at the person.
   const sameAsLinks = config.footerLinks
-    ? Object.values(config.footerLinks).filter(link => !link.includes('my-website'))
+    ? Object.entries(config.footerLinks).filter(([label]) => !/source/i.test(label)).map(([, link]) => link)
     : [];
 
   const personSchema = {

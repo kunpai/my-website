@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { BLOG_DIR, loadConfig } = require('./lib/content-paths');
+const { BLOG_DIR, loadConfig, resolveSiteUrl } = require('./lib/content-paths');
 const { resolveFeatures, disabledRoutes } = require('./lib/features');
 
 const siteConfig = loadConfig();
@@ -8,7 +8,7 @@ const features = resolveFeatures(siteConfig);
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: process.env.SITE_URL || siteConfig.siteUrl || 'https://www.kunpai.space',
+    siteUrl: process.env.SITE_URL || resolveSiteUrl(siteConfig) || 'http://localhost:3000',
     generateRobotsTxt: true,
     changefreq: 'weekly',
     priority: 0.7,

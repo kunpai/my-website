@@ -10,7 +10,7 @@ import news from "@/content/data/news.json";
 import awards from "@/content/data/awards.json";
 import service from "@/content/data/service.json";
 import teachingExperience from "@/content/data/teaching-experience.json";
-import config, { features } from "@/lib/content";
+import config, { features, chatbot } from "@/lib/content";
 
 export default function Chatbot() {
     const name = config.name || "";
@@ -129,8 +129,7 @@ Rules:
 
 Context:
 - Intro: ${config.intro}
-- Availability: Currently a student open to internships, research collaborations, and academic discussions.
-${contextSections}
+${chatbot.availability ? `- Availability: ${chatbot.availability}\n` : ''}${contextSections}
 `;
     };
 
@@ -279,7 +278,7 @@ ${contextSections}
                             <div>
                                 <h6 className="mb-0 fw-bold">{botName}</h6>
                                 <small className="text-muted d-block" style={{ fontSize: "10px" }}>
-                                    AI Assistant (NVIDIA NIM Llama-3.1)
+                                    {chatbot.title}
                                 </small>
                             </div>
                         </div>

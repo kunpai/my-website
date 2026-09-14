@@ -1,5 +1,5 @@
 import Seo from '@/components/seo';
-import config, { features } from '@/lib/content';
+import config, { features, labels } from '@/lib/content';
 import React from 'react';
 import { Row, Col, Badge } from "react-bootstrap";
 import Experience from "@/components/experience";
@@ -25,25 +25,10 @@ import service from "@/content/data/service.json";
 import talks from "@/content/data/talks.json";
 gsap.registerPlugin(ScrollTrigger);
 
-function isAfterJune2023(end) {
-  if (end === "Present") return true;
-  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  const [month, year] = end.split(" ");
-  const monthIndex = months.indexOf(month);
-  const date = new Date(parseInt(year), monthIndex);
-  const june2023 = new Date(2023, 5); // June is 5 (0-based)
-  return date >= june2023;
-}
-
-function isAfter2024(end) {
-  if (end === "Present") return true;
-  const [month, yearStr] = end.split(" ");
-  const year = parseInt(yearStr);
-  return year >= 2025;
-}
-
-const workExperienceFiltered = workExperience.filter(exp => isAfterJune2023(exp.end));
-const projectsFiltered = projects.filter(proj => isAfter2024(proj.end) || proj.title === "gem5 Vision");
+// Entries opt out of the homepage with "show_on_homepage": false; the full pages list everything.
+const onHomepage = (entry) => entry.show_on_homepage !== false;
+const workExperienceFiltered = workExperience.filter(onHomepage);
+const projectsFiltered = projects.filter(onHomepage);
 
 export default function Home() {
   const newsRef = useRef(null);
@@ -171,10 +156,10 @@ export default function Home() {
         </Row> */}
         {features.experience && (
           <Row>
-            <Experience jsonExperiences={workExperienceFiltered} title={"Research & Professional Experience"} isExperience />
+            <Experience jsonExperiences={workExperienceFiltered} title={labels.experienceTitle} isExperience />
             <div ref={workViewAllRef}>
               <Link href="/work-experiences" className="btn btn-outline-secondary btn-lg d-block mx-auto mt-3">
-                View All Research & Professional Experiences <i className="bi bi-arrow-right ms-2"></i>
+                View All {labels.experienceTitle} <i className="bi bi-arrow-right ms-2"></i>
               </Link>
             </div>
           </Row>
@@ -260,7 +245,7 @@ export default function Home() {
               </h1>
               {
                 Object.keys(skills).filter(key => key !== "resume_skills").map((skill, index) => {
-                  const displayName = skill === "systems-and-compilers" ? "Systems & Compilers" : skill.split("-").map(toTitleCase).join(" ");
+                  const displayName = labels.skillCategories[skill] || skill.split("-").map(toTitleCase).join(" ");
                   return (
                     <React.Fragment key={index}>
                       <h1>{displayName}</h1>

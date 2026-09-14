@@ -1,5 +1,5 @@
 import Seo from '@/components/seo';
-import config, { featureGate } from '@/lib/content';
+import config, { featureGate, labels } from '@/lib/content';
 
 export const getStaticProps = featureGate('contact');
 import React, { useState } from 'react';
@@ -33,9 +33,9 @@ export default function ContactForm() {
   return (
     <Container className='contact'>
       <Seo title="Contact" path="/contact" description={`Get in touch with ${config.name} about research collaborations, talks, or opportunities.`} />
-      <h1>Get in Touch</h1>
+      <h1>{labels.contactHeading}</h1>
       <h6 className='text-secondary mb-3'>
-        Hello there! I believe that every interaction holds the potential to spark creativity, forge new partnerships, and foster a genuine exchange of ideas. So, whether you&apos;re a fellow enthusiast in the same field, an aspiring artist, a tech wizard, or just someone looking to explore new horizons, don&apos;t hesitate to reach out!
+        {labels.contactIntro}
       </h6>
       {config.contactText ? (
         <p className='text-secondary mb-3'>

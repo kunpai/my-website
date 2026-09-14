@@ -81,7 +81,7 @@ def markdown_links_to_latex(text):
 
 def format_author_name(name):
     # Underline user based on config name
-    user_name = GLOBAL_CONFIG.get("name", "Kunal Pai")
+    user_name = GLOBAL_CONFIG.get("name", "")
     user_parts = [p.lower() for p in user_name.split()]
     name_lower = name.lower()
     is_user = len(user_parts) >= 2 and all(p in name_lower for p in [user_parts[0], user_parts[-1]])
@@ -114,13 +114,13 @@ def resolve_publication_link(pub):
                 return f"https://doi.org/{doi}"
             return doi
             
-    # 3. Check for publication link
+    # 3. Check for publication link, preferring the paper itself, else the first link
     links = pub.get("links", {})
     for key in ["View Publication", "View Pre-Print", "View Source", "View Artifact"]:
         if key in links and links[key]:
             return links[key]
-            
-    return None
+
+    return next((url for url in links.values() if url), None)
 
 def format_date_range(start, end):
     # Use double hyphens for ranges (en-dash in LaTeX)
@@ -148,7 +148,8 @@ def generate_education_section(items, is_short):
         if "resume_gpa" in item:
             gpa_str = f" (GPA: \\textbf{{{item['resume_gpa']}}})"
         elif gpa_val:
-            gpa_str = f" (GPA: \\textbf{{{gpa_val}/4.0}})"
+            gpa_scale = item.get("gpa_scale", "4.0")
+            gpa_str = f" (GPA: \\textbf{{{gpa_val}/{gpa_scale}}})"
         else:
             gpa_str = ""
             
@@ -178,22 +179,22 @@ def generate_skills_section(skills_data, is_short):
     
     resume_skills = skills_data.get("resume_skills", {})
     long_overrides = resume_skills.get("resume_skills_long_override", {})
-    
-    if is_short:
-        # Merge Systems & Compilers back into Tools for short resume
-        sys_comp = resume_skills.get("Systems & Compilers", [])
+    # {"From Category": "Into Category"}: categories folded into another on the short resume
+    short_merges = resume_skills.get("resume_skills_short_merge", {})
+    config_keys = ("resume_skills_long_override", "resume_skills_short_merge")
+
+    if is_short and short_merges:
         resume_skills_modified = {}
         for category, skills in resume_skills.items():
-            if category == "Systems & Compilers":
+            if category in short_merges:
                 continue
-            elif category == "Tools":
-                resume_skills_modified[category] = skills + sys_comp
-            else:
-                resume_skills_modified[category] = skills
+            merged = [s for source, target in short_merges.items() if target == category
+                      for s in resume_skills.get(source, [])]
+            resume_skills_modified[category] = skills + merged if merged else skills
         resume_skills = resume_skills_modified
-        
+
     for category, skills in resume_skills.items():
-        if category == "resume_skills_long_override":
+        if category in config_keys:
             continue
             
         # Check for override if long resume
@@ -279,8 +280,9 @@ def generate_publications_section(publications, is_short):
             title_str = rf"\textbf{{{tex_escape(pub_title)}}}"
 
         spotlight_str = ""
-        if pub.get("badge") or pub.get("spotlight"):
-            spotlight_str = r" \,\textbf{\textsc{[Spotlight]}}"
+        badge = pub.get("badge") or ("Spotlight" if pub.get("spotlight") else "")
+        if badge:
+            spotlight_str = rf" \,\textbf{{\textsc{{[{tex_escape(badge)}]}}}}"
             
         # Format authors
         authors = pub.get("authors", [])
@@ -478,12 +480,13 @@ def main():
     
     # Replace header contact details
     resume_contact = config.get("resume_contact", {})
-    header_name = config.get("name", "Kunal Pai")
+    header_name = config.get("name", "")
     header_phone = resume_contact.get("phone", "")
     header_email = resume_contact.get("email", "")
     header_linkedin = resume_contact.get("linkedin", "")
     header_github = resume_contact.get("github", "")
     header_website = resume_contact.get("website", "")
+    header_website_url = resume_contact.get("website_url") or (f"https://{header_website}" if header_website else "")
     
     contact_parts = []
     if header_phone:
@@ -495,7 +498,7 @@ def main():
     if header_github:
         contact_parts.append(rf"\href{{https://{header_github}}}{{{header_github}}}")
     if header_website:
-        contact_parts.append(rf"\href{{https://www.{header_website}}}{{{header_website}}}")
+        contact_parts.append(rf"\href{{{header_website_url}}}{{{header_website}}}")
     contact_line = " $|$ ".join(contact_parts)
 
     # Prepare base template replacements
@@ -509,8 +512,8 @@ def main():
     base_template = base_template.replace("<<WEBSITE>>", header_website)
     
     # Target PDF names (strip leading / from config resume paths)
-    long_pdf_name = config.get("resume", "2 copy.pdf").lstrip("/")
-    short_pdf_name = config.get("resume_short", "2.pdf").lstrip("/")
+    long_pdf_name = config.get("resume", "CV.pdf").lstrip("/")
+    short_pdf_name = config.get("resume_short", "Resume.pdf").lstrip("/")
     
     # Target TeX names
     long_tex_name = os.path.splitext(long_pdf_name)[0] + ".tex"

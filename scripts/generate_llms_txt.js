@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const { PUBLIC_DIR, loadConfig, loadData } = require('../lib/content-paths');
+const { PUBLIC_DIR, loadConfig, loadData, resolveSiteUrl } = require('../lib/content-paths');
 const { resolveFeatures } = require('../lib/features');
 
 const features = resolveFeatures(loadConfig());
@@ -70,7 +70,7 @@ function getUniqueContactLinks(config) {
     }
 
     if (config.resume) {
-        const resumeUrl = `${config.resume_contact?.website_url || 'https://www.kunpai.space'}${config.resume}`;
+        const resumeUrl = `${resolveSiteUrl(config)}${config.resume}`;
         addLink('CV / Resume', resumeUrl);
     }
 
@@ -216,7 +216,7 @@ function generateLlmsTxt() {
     // Detailed Files Notice
     lines.push('## Full Details');
     lines.push(`For complete research details, work history, full publication abstracts, talks, and teaching experience, see the full LLM document:`);
-    lines.push(`- [Full LLM Markdown Summary](https://www.kunpai.space/llms-full.txt)`);
+    lines.push(`- [Full LLM Markdown Summary](${resolveSiteUrl(config)}/llms-full.txt)`);
     lines.push('');
 
     return lines.join('\n');

@@ -1,4 +1,4 @@
-import siteConfig, { features } from '@/lib/content';
+import siteConfig, { features, chatbot } from '@/lib/content';
 
 export const config = {
   runtime: 'edge',
@@ -70,7 +70,7 @@ export default async function handler(req) {
           'Authorization': `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          model: 'meta/llama-3.1-8b-instruct',
+          model: chatbot.model,
           messages: classificationMessages,
           max_tokens: 40,
           temperature: 0.1,
@@ -123,7 +123,7 @@ export default async function handler(req) {
         'Authorization': `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: 'meta/llama-3.1-8b-instruct',
+        model: chatbot.model,
         messages: messages,
         stream: true,
         temperature: 0.5,

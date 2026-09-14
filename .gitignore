@@ -46,3 +46,6 @@ Claude outputs/
 
 # Claude Code local session data
 .claude/
+
+# Python bytecode
+__pycache__/

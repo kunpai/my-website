@@ -91,6 +91,7 @@
     },
     {
         "title": "Tech Team Lead",
+        "show_on_homepage": false,
         "organization": "humanID",
         "start": "January 2022",
         "end": "June 2022",
@@ -103,6 +104,7 @@
     },
     {
         "title": "Technical Product Marketing Intern",
+        "show_on_homepage": false,
         "organization": "SiTime Corp.",
         "start": "July 2021",
         "end": "September 2021",

@@ -1,7 +1,7 @@
 import { Row, Col, Button, Badge, Popover, OverlayTrigger } from "react-bootstrap";
 import publicationsRaw from "@/content/data/publications.json";
 const publications = publicationsRaw.filter(p => p.show_on_website !== false);
-import config, { features } from "@/lib/content";
+import config, { features, isSiteOwner } from "@/lib/content";
 import { generateMLACitation, generateChicagoCitation, generateIEEECitation, generateBibtexCitation } from "@/pages/api/citation";
 import CopyIcon from "./copyIcon";
 import { useRef, useEffect, useMemo, useState } from "react";
@@ -20,12 +20,22 @@ const CiteQuoteIcon = () => (
 import { getLinkMeta, ExternalArrowIcon } from "./linkMeta";
 
 
+// Category nodes cycle through .category-0 … .category-3 (colours in globals.css).
+const CATEGORY_COLOR_COUNT = 4;
+
+// Fallback when config.publicationCategories is unset: the n most frequent tags.
+const mostCommonTags = (pubs, n) => {
+    const counts = {};
+    pubs.forEach((pub) => (pub.tags || []).forEach((t) => { counts[t] = (counts[t] || 0) + 1; }));
+    return Object.keys(counts).sort((a, b) => counts[b] - counts[a]).slice(0, n);
+};
+
 // Coordinates for the Interactive SVG Research Graph
 // Function to dynamically discover topics and calculate SVG coordinates at runtime
 const generateGraphData = (pubs) => {
     const coreCategoryTags = (config.publicationCategories && config.publicationCategories.length > 0)
         ? config.publicationCategories
-        : ["Computer Architecture", "Large Language Models (LLMs)", "Software Engineering"];
+        : mostCommonTags(pubs, 3);
     
     // Extract unique tags across all publications
     const allTags = new Set();
@@ -45,12 +55,7 @@ const generateGraphData = (pubs) => {
     
     // Position categories in a central triangle layout
     const rCategory = 85;
-    const defaultDescriptions = {
-        "Computer Architecture": "Hardware simulation, cryogenic systems, and reproducibility.",
-        "Large Language Models (LLMs)": "Vulnerabilities in agentic systems, prompt injections, and multi-agents.",
-        "Software Engineering": "Code documentation, repository mining, and model calibration."
-    };
-    const categoryDescriptions = config.categoryDescriptions || defaultDescriptions;
+    const categoryDescriptions = config.categoryDescriptions || {};
     
     const categoryNodes = coreCategoryTags.map((tag, i) => {
         const angle = (2 * Math.PI * i) / coreCategoryTags.length - Math.PI / 2;
@@ -61,7 +66,7 @@ const generateGraphData = (pubs) => {
             y: yc + rCategory * Math.sin(angle),
             size: 24,
             type: "category",
-            className: tag === "Computer Architecture" ? "category-arch" : tag === "Large Language Models (LLMs)" ? "category-llm" : "category-se",
+            className: `category-${i % CATEGORY_COLOR_COUNT}`,
             description: categoryDescriptions[tag] || `Core research in ${tag}.`,
             matches: [tag]
         };
@@ -321,7 +326,6 @@ const getTypeHash = (type) => {
 
 // Main Publication Component
 export default function Publication({ searchQuery, hideGraph = !features.researchGraph, defaultType = "All" }) {
-    const name = config.name || "";
 
     const [selectedType, setSelectedType] = useState(defaultType);
     const [activeFilter, setActiveFilter] = useState(null); // { type: "tag"|"keyword", value: [...], name: "" }
@@ -613,7 +617,7 @@ export default function Publication({ searchQuery, hideGraph = !features.researc
                 </div>
             ) : (
                 filteredPublications.map((publication, index) => (
-                    <PublicationTile key={`${publication.title}-${index}`} publication={publication} name={name} />
+                    <PublicationTile key={`${publication.title}-${index}`} publication={publication} />
                 ))
             )}
 
@@ -625,7 +629,7 @@ export default function Publication({ searchQuery, hideGraph = !features.researc
     )
 }
 
-function PublicationTile({ publication, name }) {
+function PublicationTile({ publication }) {
     const ref = useRef(null);
 
     function popover(publication) {
@@ -696,7 +700,7 @@ function PublicationTile({ publication, name }) {
                         <span variant="secondary">
                             {
                                 publication.authors.map((author, index) => {
-                                    const isMe = author.includes(name.split(" ")[0]);
+                                    const isMe = isSiteOwner(author);
                                     return (
                                         <span key={index}>
                                             <span style={{ textDecoration: isMe ? "underline" : "none", fontWeight: isMe ? "bold" : "normal" }}>

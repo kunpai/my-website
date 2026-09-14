@@ -62,7 +62,7 @@
 .about h1,
 .topbar h1,
 .contact h1 {
-  font-family: 'Audiowide', cursive;
+  font-family: var(--font-heading, 'Audiowide'), cursive;
 }
 
 .search-form {
@@ -100,7 +100,7 @@
 .name {
   font-size: clamp(3.2rem, 5.5vw, 6rem);
   font-weight: 700;
-  font-family: 'Audiowide', cursive;
+  font-family: var(--font-heading, 'Audiowide'), cursive;
   padding: 0;
   margin: 0;
 }
@@ -585,19 +585,19 @@ html[data-bs-theme="dark"] .viz-card {
 }
 
 /* Color codes for main categories */
-.graph-node.category-arch circle {
+.graph-node.category-0 circle {
   fill: #ff9f1c;
   stroke: #ff9f1c;
 }
-.graph-node.category-llm circle {
+.graph-node.category-1 circle {
   fill: #4361ee;
   stroke: #4361ee;
 }
-.graph-node.category-se circle {
+.graph-node.category-2 circle {
   fill: #2ec4b6;
   stroke: #2ec4b6;
 }
-.graph-node.category-sys circle {
+.graph-node.category-3 circle {
   fill: #e63946;
   stroke: #e63946;
 }
@@ -625,10 +625,10 @@ html[data-bs-theme="dark"] .graph-node.tag-node circle {
   filter: drop-shadow(0 0 12px var(--bs-primary));
 }
 
-html[data-bs-theme="dark"] .graph-node.category-arch.active circle { filter: drop-shadow(0 0 12px #ff9f1c); stroke: #ffea7f; }
-html[data-bs-theme="dark"] .graph-node.category-llm.active circle { filter: drop-shadow(0 0 12px #4361ee); stroke: #8ca0ff; }
-html[data-bs-theme="dark"] .graph-node.category-se.active circle { filter: drop-shadow(0 0 12px #2ec4b6); stroke: #8efff7; }
-html[data-bs-theme="dark"] .graph-node.category-sys.active circle { filter: drop-shadow(0 0 12px #e63946); stroke: #ff9da6; }
+html[data-bs-theme="dark"] .graph-node.category-0.active circle { filter: drop-shadow(0 0 12px #ff9f1c); stroke: #ffea7f; }
+html[data-bs-theme="dark"] .graph-node.category-1.active circle { filter: drop-shadow(0 0 12px #4361ee); stroke: #8ca0ff; }
+html[data-bs-theme="dark"] .graph-node.category-2.active circle { filter: drop-shadow(0 0 12px #2ec4b6); stroke: #8efff7; }
+html[data-bs-theme="dark"] .graph-node.category-3.active circle { filter: drop-shadow(0 0 12px #e63946); stroke: #ff9da6; }
 
 /* Text labels */
 .graph-node text {
