@@ -1,0 +1,61 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Skills",
+    "description": "content/data/skills.json: an object. Every key except resume_skills is a homepage Skills category (key -> list of strings); keys are shown title-cased (\"programming-languages\" -> \"Programming Languages\") unless config.labels.skillCategories names them.",
+    "type": "object",
+    "properties": {
+        "resume_skills": {
+            "type": "object",
+            "description": "Categories for the resumes, llms.txt and the chatbot: display name -> list of skills. Two special keys configure the resumes.",
+            "properties": {
+                "resume_skills_long_override": {
+                    "type": "object",
+                    "description": "Full CV only: category -> list that replaces that category's skills.",
+                    "additionalProperties": {
+                        "type": "array",
+                        "description": "Skills in this category, shown comma-separated.",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "resume_skills_short_merge": {
+                    "type": "object",
+                    "description": "Short resume only: {\"From Category\": \"Into Category\"} folds one category into another.",
+                    "additionalProperties": {
+                        "type": "string",
+                        "description": "Name of the category to merge into."
+                    }
+                }
+            },
+            "additionalProperties": {
+                "type": "array",
+                "description": "Skills in this category, shown comma-separated.",
+                "items": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "additionalProperties": {
+        "type": "array",
+        "description": "Skills in this category, shown comma-separated.",
+        "items": {
+            "type": "string"
+        }
+    },
+    "examples": [
+        {
+            "programming-languages": [
+                "Python",
+                "C++"
+            ],
+            "resume_skills": {
+                "Languages": [
+                    "Python",
+                    "C++"
+                ]
+            }
+        }
+    ]
+}

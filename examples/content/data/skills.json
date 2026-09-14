@@ -1,0 +1,17 @@
+{
+    "programming-languages": ["Python", "C++", "JavaScript"],
+    "ml-and-data": ["PyTorch", "JAX", "scikit-learn", "pandas"],
+    "tools": ["Git", "Docker", "Slurm", "LaTeX"],
+    "resume_skills": {
+        "Languages": ["Python", "C++", "JavaScript"],
+        "Machine Learning": ["PyTorch", "JAX", "scikit-learn"],
+        "Systems": ["Slurm", "Ray", "Kubernetes"],
+        "Tools": ["Git", "Docker", "LaTeX"],
+        "resume_skills_long_override": {
+            "Machine Learning": ["PyTorch", "JAX", "scikit-learn", "pandas", "Hugging Face Transformers"]
+        },
+        "resume_skills_short_merge": {
+            "Systems": "Tools"
+        }
+    }
+}

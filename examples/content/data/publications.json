@@ -1,0 +1,94 @@
+[
+    {
+        "title": "Stress-Testing Image Classifiers Under Realistic Distribution Shift",
+        "authors": [
+            "Jane Doe",
+            "John Roe",
+            "Ada Advisor"
+        ],
+        "type": "conference",
+        "conference": "Example Conference on Learning Systems (ECLS 2025)",
+        "description": "A benchmark of 40 natural distribution shifts showing that robustness rankings on synthetic corruptions do not transfer to real deployments.",
+        "tags": [
+            "Machine Learning",
+            "Robustness",
+            "Benchmarking"
+        ],
+        "links": {
+            "View Publication": "https://example.org/papers/stress-testing",
+            "View Pre-Print": "https://example.org/preprints/stress-testing.pdf",
+            "View Source": "https://example.com/janedoe/shift-bench"
+        },
+        "bibtex": "@inproceedings{doe2025stress,\n  title={Stress-Testing Image Classifiers Under Realistic Distribution Shift},\n  author={Doe, Jane and Roe, John and Advisor, Ada},\n  booktitle={Example Conference on Learning Systems},\n  year={2025}\n}",
+        "badge": "Spotlight",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": true
+    },
+    {
+        "title": "Elastic Checkpointing for Preemptible Distributed Training",
+        "authors": [
+            "Sam Sample",
+            "Jane Doe",
+            "Ada Advisor"
+        ],
+        "type": "workshop",
+        "conference": "Workshop on Efficient Example Systems @ ECLS 2025",
+        "description": "Checkpoints that adapt their frequency to the preemption rate of spot instances, cutting lost GPU hours by 35% in our cluster traces.",
+        "tags": [
+            "Systems",
+            "Machine Learning",
+            "Distributed Training"
+        ],
+        "links": {
+            "View Publication": "https://example.org/papers/elastic-checkpointing",
+            "Slides": "https://example.org/slides/elastic-checkpointing.pdf"
+        },
+        "bibtex": "@inproceedings{sample2025elastic,\n  title={Elastic Checkpointing for Preemptible Distributed Training},\n  author={Sample, Sam and Doe, Jane and Advisor, Ada},\n  booktitle={Workshop on Efficient Example Systems},\n  year={2025}\n}",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": false
+    },
+    {
+        "title": "Repairing Shape Errors in Deep Learning Code with Static Analysis",
+        "authors": [
+            "J. Doe",
+            "John Roe"
+        ],
+        "type": "preprint",
+        "conference": "Preprint, 2025",
+        "description": "A static analyzer that finds tensor shape mismatches in training scripts and proposes one-line fixes, repairing 61% of bugs in a new dataset.",
+        "tags": [
+            "Software Engineering",
+            "Machine Learning",
+            "Program Repair"
+        ],
+        "links": {
+            "View Pre-Print": "https://example.org/preprints/shape-repair.pdf"
+        },
+        "bibtex": "@article{doe2025shape,\n  title={Repairing Shape Errors in Deep Learning Code with Static Analysis},\n  author={Doe, Jane and Roe, John},\n  journal={Preprint},\n  year={2025}\n}",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": true
+    },
+    {
+        "title": "Flaky Tests in Distributed ML Pipelines",
+        "authors": [
+            "Jane Doe"
+        ],
+        "type": "poster",
+        "conference": "Example University Research Symposium 2024",
+        "description": "An empirical look at why tests of distributed training code fail intermittently, and which fixes developers apply.",
+        "tags": [
+            "Software Engineering",
+            "Systems",
+            "Testing"
+        ],
+        "links": {
+            "View Poster": "https://example.org/posters/flaky-tests.pdf"
+        },
+        "show_on_website": true,
+        "show_in_resume": false,
+        "show_in_resume_short": false
+    }
+]

@@ -1,0 +1,31 @@
+[
+    {
+        "university": "Example University",
+        "degree": "Ph.D.",
+        "major": "Computer Science",
+        "start": "2023",
+        "end": "2028",
+        "resume_end": "Ongoing",
+        "gpa": "",
+        "description": "Advisor: Prof. Ada Advisor",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": true
+    },
+    {
+        "university": "Example College",
+        "degree": "Bachelor of Science",
+        "major": "Computer Science",
+        "start": "2019",
+        "end": "2023",
+        "resume_end": "May 2023",
+        "gpa": "3.9",
+        "gpa_scale": "4.0",
+        "resume_degree": "B.S., Computer Science",
+        "resume_details": ", \\textit{summa cum laude}",
+        "description": "Senior thesis: Gradient Compression for Data-Parallel Training",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": true
+    }
+]

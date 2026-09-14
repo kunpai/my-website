@@ -1,0 +1,64 @@
+[
+    {
+        "title": "Graduate Student Researcher",
+        "organization": "Reliable ML Lab, Example University",
+        "resume_organization": "Reliable ML Lab",
+        "start": "Sep 2023",
+        "end": "Present",
+        "location": "Example City, CA",
+        "image": "/images/placeholder.png",
+        "description": "Lead the ShiftBench robustness benchmark.\nStudy failure modes of distributed training on preemptible hardware.\nMentor two undergraduate researchers.",
+        "skills": [
+            "PyTorch",
+            "Distributed Training"
+        ],
+        "show_on_website": true,
+        "show_on_homepage": true,
+        "show_in_resume": true,
+        "show_in_resume_short": true,
+        "resume_type": "Advisor: Prof. Ada Advisor",
+        "resume_skills": "Python, PyTorch, Slurm",
+        "resume_description": [
+            "Lead the ShiftBench benchmark of 40 natural distribution shifts (ECLS 2025 Spotlight)",
+            "Designed elastic checkpointing that cuts lost GPU hours by 35\\% on preemptible clusters",
+            "Mentor two undergraduate researchers"
+        ],
+        "resume_short_description": [
+            "Lead the ShiftBench robustness benchmark (ECLS 2025 Spotlight)",
+            "Cut lost GPU hours by 35\\% with elastic checkpointing"
+        ]
+    },
+    {
+        "title": "Machine Learning Engineering Intern",
+        "organization": "Example Corp",
+        "start": "Jun 2024",
+        "end": "Sep 2024",
+        "location": "Remote",
+        "image": "/images/placeholder.png",
+        "description": "Added data-drift monitoring to a production recommendation pipeline.\nReduced false alerts by 40% with per-feature thresholds.",
+        "skills": [
+            "Python",
+            "Spark"
+        ],
+        "links": {
+            "Blog Post": "https://example.com/blog/drift-monitoring"
+        },
+        "show_on_website": true,
+        "show_on_homepage": true,
+        "show_in_resume": true,
+        "show_in_resume_short": true
+    },
+    {
+        "title": "Undergraduate Research Assistant",
+        "organization": "Systems Group, Example College",
+        "start": "Jan 2022",
+        "end": "May 2023",
+        "location": "Example Town, NY",
+        "image": "/images/placeholder.png",
+        "description": "Profiled communication overhead in data-parallel training.\nWrote a senior thesis on gradient compression.",
+        "show_on_website": true,
+        "show_on_homepage": false,
+        "show_in_resume": true,
+        "show_in_resume_short": false
+    }
+]

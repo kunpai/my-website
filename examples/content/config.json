@@ -1,0 +1,90 @@
+{
+    "name": "Jane Doe",
+    "initials": "JD",
+    "title": "PhD Student in Computer Science",
+    "homepageTitle": "Jane Doe — PhD Student, Reliable Machine Learning Systems",
+    "institution": "Example University",
+    "institutionUrl": "https://university.example.org",
+    "alumniOf": "Example College",
+    "alumniOfUrl": "https://college.example.org",
+    "siteUrl": "https://janedoe.example.com",
+    "email": "jane.doe@example.com",
+    "image": "/images/placeholder.png",
+    "favicon": "/images/favicon.ico",
+    "bio": "Jane Doe is a PhD student in Computer Science at Example University, researching reliable machine learning systems, distributed training, and automated testing.",
+    "intro": "I am a PhD student at **Example University**, advised by [Prof. Ada Advisor](https://example.org/ada-advisor).\n\nI build machine learning systems that keep working when data, hardware, or code changes underneath them. Before my PhD, I studied computer science at **Example College**.",
+    "knowsAbout": [
+        "Machine Learning",
+        "Distributed Systems",
+        "Software Testing"
+    ],
+    "authorAliases": [
+        "J. Doe"
+    ],
+    "resume": "/Jane_Doe_CV.pdf",
+    "resume_short": "/Jane_Doe_Resume.pdf",
+    "resume_contact": {
+        "website": "janedoe.example.com",
+        "website_url": "https://janedoe.example.com",
+        "email": "jane.doe@example.com",
+        "phone": "+1 555 0100",
+        "github": "github.example.com/janedoe",
+        "linkedin": "linkedin.example.com/in/janedoe"
+    },
+    "contactEmails": [
+        "jane.doe@example.com"
+    ],
+    "contactText": "You can reach me at **jane DOT doe AT example DOT com**, or fill out the form below to open a message in your email client.",
+    "footerText": "Built with the academic website template.",
+    "footerLinks": {
+        "Google Scholar": "https://scholar.example.org/janedoe",
+        "GitHub": "https://github.example.com/janedoe",
+        "LinkedIn": "https://linkedin.example.com/in/janedoe"
+    },
+    "publicationCategories": [
+        "Machine Learning",
+        "Systems",
+        "Software Engineering"
+    ],
+    "categoryDescriptions": {
+        "Machine Learning": "Robust models and honest benchmarks.",
+        "Systems": "Distributed training and efficient infrastructure.",
+        "Software Engineering": "Testing and repairing ML code."
+    },
+    "blogDescription": "Notes by Jane Doe on machine learning systems, research tooling, and PhD life.",
+    "features": {
+        "about": true,
+        "publications": true,
+        "researchGraph": true,
+        "projects": true,
+        "experience": true,
+        "education": true,
+        "blogs": true,
+        "news": true,
+        "talks": true,
+        "services": true,
+        "skills": true,
+        "awards": true,
+        "contact": true,
+        "games": false,
+        "chatbot": false,
+        "linktree": false
+    },
+    "botName": "JaneAI",
+    "chatbot": {
+        "title": "Ask about Jane's research",
+        "model": "meta/llama-3.1-8b-instruct",
+        "availability": "Open to research internships for summer 2026."
+    },
+    "labels": {
+        "skillCategories": {
+            "ml-and-data": "ML & Data"
+        }
+    },
+    "theme": {
+        "headingFont": "Space Grotesk",
+        "accentColor": "#2f6fed",
+        "gradientStart": "#2f6fed",
+        "gradientEnd": "#14b8a6"
+    }
+}

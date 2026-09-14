@@ -1,0 +1,95 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/content/config.json",
+                "/examples/content/config.json"
+            ],
+            "url": "./schemas/config.schema.json"
+        },
+        {
+            "fileMatch": [
+                "/content/data/awards.json",
+                "/examples/content/data/awards.json"
+            ],
+            "url": "./schemas/awards.schema.json"
+        },
+        {
+            "fileMatch": [
+                "/content/data/education.json",
+                "/examples/content/data/education.json"
+            ],
+            "url": "./schemas/education.schema.json"
+        },
+        {
+            "fileMatch": [
+                "/content/data/linktree.json",
+                "/examples/content/data/linktree.json"
+            ],
+            "url": "./schemas/linktree.schema.json"
+        },
+        {
+            "fileMatch": [
+                "/content/data/news.json",
+                "/examples/content/data/news.json"
+            ],
+            "url": "./schemas/news.schema.json"
+        },
+        {
+            "fileMatch": [
+                "/content/data/projects.json",
+                "/examples/content/data/projects.json"
+            ],
+            "url": "./schemas/projects.schema.json"
+        },
+        {
+            "fileMatch": [
+                "/content/data/publications.json",
+                "/examples/content/data/publications.json"
+            ],
+            "url": "./schemas/publications.schema.json"
+        },
+        {
+            "fileMatch": [
+                "/content/data/research-experience.json",
+                "/examples/content/data/research-experience.json"
+            ],
+            "url": "./schemas/research-experience.schema.json"
+        },
+        {
+            "fileMatch": [
+                "/content/data/service.json",
+                "/examples/content/data/service.json"
+            ],
+            "url": "./schemas/service.schema.json"
+        },
+        {
+            "fileMatch": [
+                "/content/data/skills.json",
+                "/examples/content/data/skills.json"
+            ],
+            "url": "./schemas/skills.schema.json"
+        },
+        {
+            "fileMatch": [
+                "/content/data/talks.json",
+                "/examples/content/data/talks.json"
+            ],
+            "url": "./schemas/talks.schema.json"
+        },
+        {
+            "fileMatch": [
+                "/content/data/teaching-experience.json",
+                "/examples/content/data/teaching-experience.json"
+            ],
+            "url": "./schemas/teaching-experience.schema.json"
+        },
+        {
+            "fileMatch": [
+                "/content/data/work-experience.json",
+                "/examples/content/data/work-experience.json"
+            ],
+            "url": "./schemas/work-experience.schema.json"
+        }
+    ]
+}

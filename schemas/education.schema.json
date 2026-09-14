@@ -1,0 +1,96 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Education",
+    "description": "content/data/education.json: degrees shown in the Education section and on the resumes. Array of entries, newest first.",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "required": [
+            "university",
+            "degree",
+            "major",
+            "start"
+        ],
+        "properties": {
+            "university": {
+                "type": "string",
+                "description": "Institution name."
+            },
+            "degree": {
+                "type": "string",
+                "description": "Degree, e.g. \"Ph.D.\" or \"Bachelor of Science\". Shown as a badge."
+            },
+            "major": {
+                "type": "string",
+                "description": "Field of study, e.g. \"Computer Science\"."
+            },
+            "start": {
+                "type": "string",
+                "description": "Start (or a label such as \"Enrolled: Sep 2026\"). Free text, shown as written (e.g. \"Sep 2024\", \"2023\", \"Present\").",
+                "examples": [
+                    "Sep 2024",
+                    "Present"
+                ]
+            },
+            "end": {
+                "type": "string",
+                "description": "End or expected end. Leave empty (\"\") to show only start. Free text, shown as written (e.g. \"Sep 2024\", \"2023\", \"Present\").",
+                "examples": [
+                    "Sep 2024",
+                    "Present"
+                ]
+            },
+            "gpa": {
+                "description": "GPA shown on the website (e.g. \"3.9\"). Also used on the resumes as gpa/gpa_scale unless resume_gpa is set; an empty string hides it on the resumes.",
+                "anyOf": [
+                    {
+                        "type": "string"
+                    },
+                    {
+                        "type": "number"
+                    }
+                ]
+            },
+            "description": {
+                "type": "string",
+                "description": "Extra line, e.g. \"Advisor: Prof. Ada Advisor\" or coursework."
+            },
+            "resume_degree": {
+                "type": "string",
+                "description": "Degree text for the resumes. Defaults to \"<degree>, <major>\". LaTeX: & % _ $ are escaped automatically unless already escaped; other LaTeX commands (e.g. \\\\textbf{...}) pass through."
+            },
+            "resume_gpa": {
+                "type": "string",
+                "description": "GPA text for the resumes, e.g. \"3.9/4.0\". Overrides gpa and gpa_scale."
+            },
+            "gpa_scale": {
+                "type": "string",
+                "description": "Scale appended to gpa on the resumes. Default \"4.0\".",
+                "default": "4.0"
+            },
+            "resume_end": {
+                "type": "string",
+                "description": "End date text for the resumes. Defaults to end. \"Ongoing\" prints \"Expected: <end>\"."
+            },
+            "resume_details": {
+                "type": "string",
+                "description": "Raw text appended after the university on the resumes, e.g. \", \\\\textit{with Honors}\"."
+            },
+            "show_on_website": {
+                "type": "boolean",
+                "description": "Set to false to hide the degree on the website.",
+                "default": true
+            },
+            "show_in_resume": {
+                "type": "boolean",
+                "description": "Include in the full CV.",
+                "default": true
+            },
+            "show_in_resume_short": {
+                "type": "boolean",
+                "description": "Include in the short resume.",
+                "default": true
+            }
+        }
+    }
+}

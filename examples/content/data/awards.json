@@ -1,0 +1,29 @@
+[
+    {
+        "title": "Spotlight Paper",
+        "awarder": "Example Conference on Learning Systems",
+        "date": "2025",
+        "link": "https://example.org/ecls-2025/awards",
+        "badge": "Top 3%",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": false
+    },
+    {
+        "title": "Graduate Fellowship",
+        "awarder": "Example University",
+        "date": "2023-2025",
+        "description": "Two-year fellowship for incoming PhD students.",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": false
+    },
+    {
+        "title": "Dean's List",
+        "awarder": "Example College",
+        "date": "2020",
+        "show_on_website": false,
+        "show_in_resume": true,
+        "show_in_resume_short": false
+    }
+]

@@ -1,0 +1,27 @@
+[
+    {
+        "path": "ecls2025",
+        "title": "Stress-Testing Image Classifiers Under Realistic Distribution Shift",
+        "authors": [
+            "Jane Doe",
+            "John Roe",
+            "Ada Advisor"
+        ],
+        "date": "October 2025",
+        "conference": "ECLS 2025: Example Conference on Learning Systems",
+        "links": [
+            {
+                "label": "Paper",
+                "url": "https://example.org/papers/stress-testing"
+            },
+            {
+                "label": "Code",
+                "url": "https://example.com/janedoe/shift-bench"
+            },
+            {
+                "label": "Email Jane",
+                "url": "mailto:jane.doe@example.com"
+            }
+        ]
+    }
+]

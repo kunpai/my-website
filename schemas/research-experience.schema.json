@@ -1,0 +1,113 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Research experience",
+    "description": "content/data/research-experience.json: research positions. Not rendered as a page section at the moment; used in llms-full.txt and the chatbot context (when features.experience is on). Array of entries.",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "required": [
+            "title",
+            "organization",
+            "start",
+            "end",
+            "description"
+        ],
+        "properties": {
+            "title": {
+                "type": "string",
+                "description": "Your role, e.g. \"Graduate Student Researcher\"."
+            },
+            "organization": {
+                "type": "string",
+                "description": "Company, lab or university. Shown under the logo (use this key, not \"company\")."
+            },
+            "start": {
+                "type": "string",
+                "description": "Start date. Free text, shown as written (e.g. \"Sep 2024\", \"2023\", \"Present\").",
+                "examples": [
+                    "Sep 2024",
+                    "Present"
+                ]
+            },
+            "end": {
+                "type": "string",
+                "description": "End date, or \"Present\". Free text, shown as written (e.g. \"Sep 2024\", \"2023\", \"Present\").",
+                "examples": [
+                    "Sep 2024",
+                    "Present"
+                ]
+            },
+            "location": {
+                "type": "string",
+                "description": "Location, e.g. \"Example City, CA\" or \"Remote\"."
+            },
+            "image": {
+                "type": "string",
+                "description": "Logo (shown as a circle). Path of an image under public/, starting with \"/\" (e.g. \"/images/lab-logo.png\"). Rendered with next/image, so remote URLs and paths without the leading slash break the page. Defaults to /images/placeholder.png.",
+                "pattern": "^/",
+                "examples": [
+                    "/images/placeholder.png"
+                ]
+            },
+            "description": {
+                "type": "string",
+                "description": "What you did. Each line (separated by \\n) becomes a bullet; an empty string shows \"In progress\". Required: llms-full.txt and the chatbot print it, and the Experience component crashes without it. Must be a string, not an array."
+            },
+            "skills": {
+                "type": "array",
+                "description": "Skills/technologies, shown as badges.",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "links": {
+                "type": "object",
+                "description": "Buttons shown under the entry: an object mapping the button label to its URL, e.g. {\"GitHub\": \"https://...\", \"Paper\": \"https://...\"}. Labels containing preprint/paper/code/github/demo/slides/video/poster/website get matching icons.",
+                "additionalProperties": {
+                    "type": "string",
+                    "description": "URL (absolute, or a path under public/ such as /assets/slides.pdf)."
+                },
+                "examples": [
+                    {
+                        "GitHub": "https://example.com/code",
+                        "Paper": "https://example.com/paper.pdf"
+                    }
+                ]
+            },
+            "collaborators": {
+                "type": "array",
+                "description": "People you worked with, shown as \"Collaborators: A, B\" with links.",
+                "items": {
+                    "type": "object",
+                    "required": [
+                        "name"
+                    ],
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "description": "Collaborator's name."
+                        },
+                        "link": {
+                            "type": "string",
+                            "description": "Link to their homepage or profile (optional)."
+                        }
+                    }
+                }
+            },
+            "show_on_website": {
+                "type": "boolean",
+                "description": "Not read for research-experience.json yet: these entries currently appear only in llms-full.txt and the chatbot context.",
+                "default": true
+            },
+            "show_in_resume": {
+                "type": "boolean",
+                "description": "Not read for research-experience.json (the resume generator does not include this file).",
+                "default": true
+            },
+            "show_in_resume_short": {
+                "type": "boolean",
+                "description": "Not read for research-experience.json (the resume generator does not include this file)."
+            }
+        }
+    }
+}

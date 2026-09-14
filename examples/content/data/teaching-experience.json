@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Teaching Assistant, Introduction to Machine Learning",
+        "organization": "Example University",
+        "start": "Jan 2025",
+        "end": "Mar 2025",
+        "location": "Example City, CA",
+        "image": "/images/placeholder.png",
+        "description": "Ran weekly discussion sections for 60 students.\nWrote two programming assignments on model evaluation."
+    },
+    {
+        "title": "Peer Tutor, Data Structures",
+        "organization": "Example College",
+        "start": "Sep 2021",
+        "end": "May 2022",
+        "location": "Example Town, NY",
+        "image": "/images/placeholder.png",
+        "description": "Held drop-in tutoring hours twice a week."
+    }
+]

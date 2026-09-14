@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Service",
+    "description": "content/data/service.json: \"Academic Services\" section and the full CV's Service section. Array of categories, each with items.",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "required": [
+            "category",
+            "items"
+        ],
+        "properties": {
+            "category": {
+                "type": "string",
+                "description": "Heading, e.g. \"Program Committee\", \"Reviewer\"."
+            },
+            "items": {
+                "type": "array",
+                "description": "Roles in this category.",
+                "items": {
+                    "type": "object",
+                    "required": [
+                        "name"
+                    ],
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "description": "Venue or role, e.g. \"ECLS 2025\". Markdown is supported."
+                        },
+                        "years": {
+                            "type": "array",
+                            "description": "Years served, shown as \"(2024, 2025)\".",
+                            "items": {
+                                "anyOf": [
+                                    {
+                                        "type": "integer"
+                                    },
+                                    {
+                                        "type": "string"
+                                    }
+                                ]
+                            }
+                        },
+                        "link": {
+                            "type": "string",
+                            "description": "Optional URL for the venue."
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

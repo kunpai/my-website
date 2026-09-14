@@ -1,0 +1,116 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Publications",
+    "description": "content/data/publications.json: papers shown on /publications (and the homepage, filtered to type \"conference\"), in the topic graph, the navbar search, llms.txt and the resumes. Array of entries.",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "required": [
+            "title",
+            "authors",
+            "type"
+        ],
+        "properties": {
+            "title": {
+                "type": "string",
+                "description": "Paper title."
+            },
+            "authors": {
+                "type": "array",
+                "description": "Author names in order, e.g. [\"Jane Doe\", \"Ada Advisor\"]. Names matching config.name (first and last word) or config.authorAliases are underlined in bold.",
+                "items": {
+                    "type": "string"
+                },
+                "minItems": 1
+            },
+            "type": {
+                "type": "string",
+                "description": "Publication kind; one filter tab per distinct value. Lowercase. Known values get friendly tab names: conference (\"Papers\"), workshop, preprint, poster. The homepage lists only \"conference\" entries. Other lowercase values (e.g. \"journal\") get their own tab.",
+                "pattern": "^[a-z0-9][a-z0-9 -]*$",
+                "examples": [
+                    "conference",
+                    "workshop",
+                    "preprint",
+                    "poster",
+                    "journal"
+                ]
+            },
+            "conference": {
+                "type": "string",
+                "description": "Venue, e.g. \"Example Conference on Learning Systems (ECLS 2025)\". Shown in bold and on the resumes."
+            },
+            "description": {
+                "type": "string",
+                "description": "One- or two-sentence summary shown under the venue; also searched."
+            },
+            "tags": {
+                "type": "array",
+                "description": "Topics. Tags equal to an entry of config.publicationCategories are the graph's category nodes; all other tags become subtopic nodes linked to the categories they co-occur with.",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "links": {
+                "type": "object",
+                "description": "Buttons shown on the paper: an object mapping the button label to its URL, e.g. {\"View Publication\": \"https://...\", \"View Pre-Print\": \"https://...\"}. The resume title links to (in order) a DOI in bibtex, then \"View Publication\", \"View Pre-Print\", \"View Source\", \"View Artifact\", then the first link.",
+                "additionalProperties": {
+                    "type": "string",
+                    "description": "URL (absolute, or a path under public/ such as /assets/slides.pdf)."
+                },
+                "examples": [
+                    {
+                        "View Publication": "https://example.com/paper",
+                        "View Pre-Print": "https://example.com/preprint.pdf",
+                        "View Source": "https://example.com/code"
+                    }
+                ]
+            },
+            "bibtex": {
+                "type": "string",
+                "description": "BibTeX shown by the Cite button (use \\n for line breaks). A doi = {...} field is used as the resume link. When absent, a basic @inproceedings entry is generated."
+            },
+            "badge": {
+                "type": "string",
+                "description": "Highlight badge next to the title and on the resumes, e.g. \"Spotlight\", \"Best Paper\"."
+            },
+            "spotlight": {
+                "description": "Legacy form of badge: true shows \"Spotlight\", a string shows that text. Prefer badge.",
+                "anyOf": [
+                    {
+                        "type": "boolean"
+                    },
+                    {
+                        "type": "string"
+                    }
+                ]
+            },
+            "date": {
+                "type": "string",
+                "description": "Year or date. Only used for the year of the generated BibTeX when bibtex is absent."
+            },
+            "link": {
+                "type": "string",
+                "description": "Legacy single URL, only used by the generated BibTeX. Prefer links."
+            },
+            "resume_link": {
+                "type": "string",
+                "description": "URL the resume title links to, overriding the DOI/links lookup."
+            },
+            "show_on_website": {
+                "type": "boolean",
+                "description": "Set to false to hide the paper on the website, in search, the topic graph and llms.txt (llms-full.txt still lists it).",
+                "default": true
+            },
+            "show_in_resume": {
+                "type": "boolean",
+                "description": "Include in the full CV.",
+                "default": true
+            },
+            "show_in_resume_short": {
+                "type": "boolean",
+                "description": "Include in the short resume.",
+                "default": false
+            }
+        }
+    }
+}

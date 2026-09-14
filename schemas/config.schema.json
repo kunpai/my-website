@@ -1,0 +1,389 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Site configuration",
+    "description": "content/config.json: identity, links, feature flags, labels and theme for the site. Only name is required; everything else has a default.",
+    "type": "object",
+    "required": [
+        "name"
+    ],
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "Optional path or URL of this schema, for editors other than VS Code."
+        },
+        "name": {
+            "type": "string",
+            "description": "Your full name. Shown in the hero, page titles and metadata; publication authors matching its first and last word are highlighted.",
+            "minLength": 1
+        },
+        "initials": {
+            "type": "string",
+            "description": "Monogram in the navbar. Defaults to the first letter of each word of name."
+        },
+        "title": {
+            "type": "string",
+            "description": "Job title, e.g. \"PhD Student in Computer Science\". Used in the default homepage title and as the JSON-LD jobTitle."
+        },
+        "homepageTitle": {
+            "type": "string",
+            "description": "Browser title of the homepage. Defaults to \"<name> — <title>\"."
+        },
+        "bio": {
+            "type": "string",
+            "description": "One-paragraph third-person bio used as the default meta description and JSON-LD description."
+        },
+        "intro": {
+            "type": "string",
+            "description": "Hero text under your name on the homepage. Markdown is supported."
+        },
+        "image": {
+            "type": "string",
+            "description": "Profile photo, a path under public/ starting with \"/\" (rendered with next/image). Defaults to /images/placeholder.png.",
+            "pattern": "^/",
+            "examples": [
+                "/images/placeholder.png"
+            ]
+        },
+        "favicon": {
+            "type": "string",
+            "description": "Favicon URL or path under public/. Defaults to /images/favicon.ico."
+        },
+        "institution": {
+            "type": "string",
+            "description": "Current institution (JSON-LD affiliation)."
+        },
+        "institutionUrl": {
+            "type": "string",
+            "description": "Institution website (JSON-LD).",
+            "pattern": "^https?://"
+        },
+        "alumniOf": {
+            "type": "string",
+            "description": "Previous institution (JSON-LD alumniOf)."
+        },
+        "alumniOfUrl": {
+            "type": "string",
+            "description": "Previous institution website (JSON-LD).",
+            "pattern": "^https?://"
+        },
+        "knowsAbout": {
+            "type": "array",
+            "description": "Research areas for the JSON-LD Person profile (search engines).",
+            "items": {
+                "type": "string"
+            }
+        },
+        "authorAliases": {
+            "type": "array",
+            "description": "Other spellings of your name in author lists (e.g. \"J. Doe\"). Must match an author string exactly (case-insensitive) to be highlighted.",
+            "items": {
+                "type": "string"
+            }
+        },
+        "siteUrl": {
+            "type": "string",
+            "description": "Absolute URL of the deployed site, without a trailing slash, e.g. \"https://janedoe.example.com\". Used for canonical URLs, the sitemap, RSS and llms.txt. Falls back to resume_contact.website_url.",
+            "pattern": "^https?://[^\\s/]+(/[^\\s]*[^\\s/])?$"
+        },
+        "email": {
+            "type": "string",
+            "description": "Contact email: the /contact form sends to it and the chatbot quotes it.",
+            "pattern": "^[^@\\s]+@[^@\\s]+$"
+        },
+        "contactText": {
+            "type": "string",
+            "description": "Paragraph on /contact. Only **bold** is supported (no links). Defaults to a sentence with email."
+        },
+        "contactEmails": {
+            "type": "array",
+            "description": "Not displayed by the site (written by npm run setup). Put addresses in contactText instead.",
+            "items": {
+                "type": "string"
+            }
+        },
+        "footerText": {
+            "type": "string",
+            "description": "Small print at the bottom of every page."
+        },
+        "footerLinks": {
+            "type": "object",
+            "description": "Footer links: label -> URL, e.g. {\"Google Scholar\": \"https://...\", \"GitHub\": \"https://...\"}. All are listed in llms.txt; those whose label does not contain \"source\" also become JSON-LD sameAs profiles.",
+            "additionalProperties": {
+                "type": "string",
+                "description": "URL (absolute, or a path under public/ such as /assets/slides.pdf)."
+            }
+        },
+        "resume": {
+            "type": "string",
+            "description": "Full CV PDF, as a path under public/ (e.g. \"/Jane_Doe_CV.pdf\"). Adds a download button in the hero; scripts/generate_resumes.py writes the PDF to this path."
+        },
+        "resume_short": {
+            "type": "string",
+            "description": "Short resume PDF path under public/ (e.g. \"/Jane_Doe_Resume.pdf\"). Adds a second hero button; generated like resume."
+        },
+        "resume_contact": {
+            "type": "object",
+            "description": "Contact line of the generated resumes. Also used for the llms.txt links.",
+            "properties": {
+                "website": {
+                    "type": "string",
+                    "description": "Website as displayed, without https:// (e.g. \"janedoe.example.com\").",
+                    "pattern": "^(?!https?://)"
+                },
+                "website_url": {
+                    "type": "string",
+                    "description": "Full website URL. Defaults to https://<website>; also the fallback for siteUrl.",
+                    "pattern": "^https?://"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "Email on the resumes.",
+                    "pattern": "^[^@\\s]+@[^@\\s]+$"
+                },
+                "phone": {
+                    "type": "string",
+                    "description": "Phone number on the resumes (optional)."
+                },
+                "github": {
+                    "type": "string",
+                    "description": "GitHub profile without https:// (e.g. \"github.com/janedoe\"); https:// is added automatically.",
+                    "pattern": "^(?!https?://)"
+                },
+                "linkedin": {
+                    "type": "string",
+                    "description": "LinkedIn profile without https:// (e.g. \"linkedin.com/in/janedoe\"); https:// is added automatically.",
+                    "pattern": "^(?!https?://)"
+                }
+            }
+        },
+        "publicationCategories": {
+            "type": "array",
+            "description": "Main research areas: the category nodes of the topic graph. Each should also appear in the tags of your publications. Defaults to the 3 most frequent tags.",
+            "items": {
+                "type": "string"
+            }
+        },
+        "categoryDescriptions": {
+            "type": "object",
+            "description": "Text shown when hovering a category node: category name (from publicationCategories) -> sentence.",
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "blogDescription": {
+            "type": "string",
+            "description": "Meta description of /blogs and the RSS feed. Defaults to \"Posts by <name>.\""
+        },
+        "features": {
+            "type": "object",
+            "description": "Turn site sections on or off. Omitted keys use their default.",
+            "properties": {
+                "about": {
+                    "type": "boolean",
+                    "description": "About page (/about) from content/about.md. Default: true. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
+                    "default": true
+                },
+                "publications": {
+                    "type": "boolean",
+                    "description": "Publications on the homepage and /publications, plus the navbar search. Default: true. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
+                    "default": true
+                },
+                "researchGraph": {
+                    "type": "boolean",
+                    "description": "Interactive topic graph on /publications (built from publication tags and publicationCategories). Default: true. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
+                    "default": true
+                },
+                "projects": {
+                    "type": "boolean",
+                    "description": "Projects section on the homepage and /projects. Default: true. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
+                    "default": true
+                },
+                "experience": {
+                    "type": "boolean",
+                    "description": "Experience section on the homepage and /work-experiences (work-experience.json); research and teaching experience in llms-full.txt and the chatbot. Default: true. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
+                    "default": true
+                },
+                "education": {
+                    "type": "boolean",
+                    "description": "Education section on the homepage. Default: true. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
+                    "default": true
+                },
+                "blogs": {
+                    "type": "boolean",
+                    "description": "Blog at /blogs from content/blogs/*.md, plus /rss.xml. Default: true. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
+                    "default": true
+                },
+                "news": {
+                    "type": "boolean",
+                    "description": "News list on the homepage. Default: true. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
+                    "default": true
+                },
+                "talks": {
+                    "type": "boolean",
+                    "description": "Talks & Presentations list on the homepage. Default: true. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
+                    "default": true
+                },
+                "services": {
+                    "type": "boolean",
+                    "description": "Academic Services section on the homepage. Default: true. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
+                    "default": true
+                },
+                "skills": {
+                    "type": "boolean",
+                    "description": "Skills section on the homepage. Default: true. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
+                    "default": true
+                },
+                "awards": {
+                    "type": "boolean",
+                    "description": "Awards section on the homepage. Default: true. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
+                    "default": true
+                },
+                "contact": {
+                    "type": "boolean",
+                    "description": "Contact page (/contact) with a mailto form. Default: true. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
+                    "default": true
+                },
+                "games": {
+                    "type": "boolean",
+                    "description": "Games menu and /games/* pages (cricket, hangman, tic-tac-toe). Default: false. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
+                    "default": false
+                },
+                "chatbot": {
+                    "type": "boolean",
+                    "description": "Floating AI chatbot and /api/chat. Needs the NVIDIA_API_KEY environment variable. Default: false. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
+                    "default": false
+                },
+                "linktree": {
+                    "type": "boolean",
+                    "description": "Link-in-bio pages at /linktree and /linktree/<path> (linktree.json). Default: false. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
+                    "default": false
+                },
+                "workExperience": {
+                    "type": "boolean",
+                    "description": "Deprecated: use experience. Still honoured when experience is not set."
+                }
+            }
+        },
+        "enableChatbot": {
+            "type": "boolean",
+            "description": "Deprecated: use features.chatbot. Still honoured when features.chatbot is not set."
+        },
+        "botName": {
+            "type": "string",
+            "description": "Chatbot name in its greeting. Defaults to \"<first name>AI\"."
+        },
+        "chatbot": {
+            "type": "object",
+            "description": "Chatbot settings (only used when features.chatbot is on).",
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "Chat window title.",
+                    "default": "AI Assistant"
+                },
+                "model": {
+                    "type": "string",
+                    "description": "NVIDIA NIM model id used by /api/chat.",
+                    "default": "meta/llama-3.1-8b-instruct"
+                },
+                "availability": {
+                    "type": "string",
+                    "description": "Your current availability (e.g. \"Open to summer 2026 internships\"), given to the bot as context.",
+                    "default": ""
+                }
+            }
+        },
+        "labels": {
+            "type": "object",
+            "description": "Override UI text. Omitted keys keep their default.",
+            "properties": {
+                "resumeButton": {
+                    "type": "string",
+                    "description": "Hero button for resume.",
+                    "default": "Download Full Resume"
+                },
+                "resumeShortButton": {
+                    "type": "string",
+                    "description": "Hero button for resume_short.",
+                    "default": "Download Short Resume"
+                },
+                "experienceTitle": {
+                    "type": "string",
+                    "description": "Heading of the experience section and page.",
+                    "default": "Research & Professional Experience"
+                },
+                "footerHeading": {
+                    "type": "string",
+                    "description": "Heading above footerLinks.",
+                    "default": "Connect with Me"
+                },
+                "contactHeading": {
+                    "type": "string",
+                    "description": "Heading of /contact.",
+                    "default": "Get in Touch"
+                },
+                "contactIntro": {
+                    "type": "string",
+                    "description": "Intro sentence on /contact.",
+                    "default": "Hello there! Whether it's about research, collaboration, or just an idea you'd like to share, don't hesitate to reach out!"
+                },
+                "skillCategories": {
+                    "type": "object",
+                    "description": "Display names for skills.json keys, e.g. {\"ml-and-data\": \"ML & Data\"}. Keys without an entry are title-cased.",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "theme": {
+            "type": "object",
+            "description": "Colours and heading font. With no colours set the site keeps Bootstrap's default palette.",
+            "properties": {
+                "headingFont": {
+                    "type": "string",
+                    "description": "Google Fonts family for headings, e.g. \"Space Grotesk\".",
+                    "default": "Audiowide"
+                },
+                "accentColor": {
+                    "type": "string",
+                    "description": "Hex colour for links and primary buttons, e.g. \"#2f6fed\".",
+                    "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
+                },
+                "gradientStart": {
+                    "type": "string",
+                    "description": "Hex colour: start of the gradient on your name in the hero (needs gradientEnd).",
+                    "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
+                },
+                "gradientEnd": {
+                    "type": "string",
+                    "description": "Hex colour: end of the name gradient; also the link hover colour when accentColor is set.",
+                    "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
+                }
+            }
+        }
+    },
+    "if": {
+        "type": "object",
+        "not": {
+            "type": "object",
+            "properties": {
+                "initials": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "initials"
+            ]
+        }
+    },
+    "then": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "pattern": "^\\S+( \\S+)*$"
+            }
+        }
+    }
+}

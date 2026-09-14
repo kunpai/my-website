@@ -1,0 +1,61 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Linktree",
+    "description": "content/data/linktree.json: link-in-bio pages at /linktree/<path> (e.g. for a poster QR code). Only served when features.linktree is on; /linktree shows the last entry. Array of pages.",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "required": [
+            "path",
+            "title",
+            "links"
+        ],
+        "properties": {
+            "path": {
+                "type": "string",
+                "description": "URL slug: the page is served at /linktree/<path>. Letters, digits, - and _; \"archived-conferences\" is reserved.",
+                "pattern": "^(?!archived-conferences$)[A-Za-z0-9][A-Za-z0-9_-]*$"
+            },
+            "title": {
+                "type": "string",
+                "description": "Page heading, e.g. the paper title."
+            },
+            "authors": {
+                "type": "array",
+                "description": "Shown under the title, comma-separated.",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "date": {
+                "type": "string",
+                "description": "Date as text (informational)."
+            },
+            "conference": {
+                "type": "string",
+                "description": "Event name, shown under the authors and on /linktree/archived-conferences."
+            },
+            "links": {
+                "type": "array",
+                "description": "Buttons, top to bottom.",
+                "items": {
+                    "type": "object",
+                    "required": [
+                        "label",
+                        "url"
+                    ],
+                    "properties": {
+                        "label": {
+                            "type": "string",
+                            "description": "Button text."
+                        },
+                        "url": {
+                            "type": "string",
+                            "description": "Target URL (absolute, a path under public/, or mailto:)."
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

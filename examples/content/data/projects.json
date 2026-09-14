@@ -1,0 +1,71 @@
+[
+    {
+        "title": "ShiftBench: Benchmarking Robustness to Real Distribution Shift",
+        "organization": "Reliable ML Lab, Example University",
+        "start": "Jan 2024",
+        "end": "Present",
+        "description": "Collected 40 natural distribution shifts from public image datasets.\nBuilt a leaderboard that re-evaluates models nightly.\nReleased the benchmark as an open-source Python package.",
+        "skills": [
+            "Python",
+            "PyTorch",
+            "Benchmarking"
+        ],
+        "links": {
+            "GitHub": "https://example.com/janedoe/shift-bench",
+            "Website": "https://example.org/shift-bench"
+        },
+        "image": "/images/placeholder.png",
+        "collaborators": [
+            {
+                "name": "John Roe",
+                "link": "https://example.org/john-roe"
+            }
+        ],
+        "show_on_website": true,
+        "show_on_homepage": true,
+        "show_in_resume": true,
+        "show_in_resume_short": true,
+        "resume_type": "Research Project",
+        "resume_skills": "Python, PyTorch, Benchmarking",
+        "resume_description": [
+            "Collected 40 natural distribution shifts and built a nightly-updated robustness leaderboard",
+            "Released the benchmark as an open-source Python package used by 3 research groups"
+        ]
+    },
+    {
+        "title": "ShapeCheck: Static Shape Checking for PyTorch",
+        "start": "Jun 2024",
+        "end": "Dec 2024",
+        "description": "Wrote an abstract interpreter that tracks tensor shapes through PyTorch programs.\nSuggests one-line fixes for common shape bugs.",
+        "skills": [
+            "Python",
+            "Static Analysis"
+        ],
+        "links": {
+            "GitHub": "https://example.com/janedoe/shapecheck",
+            "Paper": "https://example.org/preprints/shape-repair.pdf"
+        },
+        "image": "/images/placeholder.png",
+        "show_on_website": true,
+        "show_on_homepage": true,
+        "show_in_resume": true,
+        "show_in_resume_short": false
+    },
+    {
+        "title": "Course Scheduler",
+        "start": "Sep 2021",
+        "end": "Dec 2021",
+        "description": "Class project: a web app that builds conflict-free course schedules from a list of wanted classes.",
+        "skills": [
+            "JavaScript",
+            "React"
+        ],
+        "links": {
+            "Live Demo": "https://example.com/course-scheduler"
+        },
+        "show_on_website": true,
+        "show_on_homepage": false,
+        "show_in_resume": false,
+        "show_in_resume_short": false
+    }
+]

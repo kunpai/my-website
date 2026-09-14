@@ -1,0 +1,33 @@
+[
+    {
+        "category": "Reviewer",
+        "items": [
+            {
+                "name": "Example Conference on Learning Systems (ECLS)",
+                "years": [
+                    2024,
+                    2025
+                ],
+                "link": "https://example.org/ecls"
+            },
+            {
+                "name": "Workshop on Efficient Example Systems",
+                "years": [
+                    2025
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Artifact Evaluation Committee",
+        "items": [
+            {
+                "name": "Example Systems Symposium",
+                "years": [
+                    2025
+                ],
+                "link": "https://example.org/ess-2025/artifacts"
+            }
+        ]
+    }
+]

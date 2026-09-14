@@ -1,0 +1,20 @@
+[
+    {
+        "title": "PhD Researcher",
+        "organization": "Reliable ML Lab, Example University",
+        "start": "Sep 2023",
+        "end": "Present",
+        "location": "Example City, CA",
+        "image": "/images/placeholder.png",
+        "description": "Robustness benchmarks for image classifiers under natural distribution shift.\nFault-tolerant distributed training on preemptible hardware."
+    },
+    {
+        "title": "Undergraduate Researcher",
+        "organization": "Systems Group, Example College",
+        "start": "Jan 2022",
+        "end": "May 2023",
+        "location": "Example Town, NY",
+        "image": "/images/placeholder.png",
+        "description": "Measured communication overhead in data-parallel training.\nSenior thesis on gradient compression, advised by Prof. Ada Advisor."
+    }
+]
