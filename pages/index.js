@@ -222,7 +222,7 @@ export default function Home() {
           <Row>
             <div ref={serviceRef} className="mt-5">
               <h1 className="mb-3" id="service">
-                Academic Services
+                Service
               </h1>
               <div className="ps-2">
                 {
