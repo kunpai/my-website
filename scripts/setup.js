@@ -6,6 +6,9 @@
  * Usage:
  *   npm run setup                 interactive
  *   npm run setup -- --defaults   non-interactive: install the example site as-is (demo / CI)
+ *   node scripts/setup.js --ensure  silent unless content/ is missing, then same as --defaults
+ *                                   (runs before dev/build, so a fresh clone or a Vercel
+ *                                   deploy of the template shows the example site)
  */
 
 const crypto = require('crypto');
@@ -206,6 +209,14 @@ function applyAnswers(config, answers, isFreshInstall) {
 async function main() {
     const isDefaults = process.argv.includes('--defaults');
     const isFreshInstall = !fs.existsSync(CONFIG_PATH);
+
+    if (process.argv.includes('--ensure')) {
+        if (isFreshInstall) {
+            installExamples(true);
+            console.log('No content/ yet, so the example site was installed. Run `npm run setup` to make it yours.');
+        }
+        return;
+    }
 
     console.log('\nAcademic site setup\n');
     if (isDefaults) {

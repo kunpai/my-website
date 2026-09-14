@@ -52,13 +52,12 @@ jobs:
       - name: Export template
         run: node scripts/export-template.js --out "$RUNNER_TEMP/template"
 
-      # Build what a new user gets: a fresh copy, set up with the example content.
+      # Build exactly what Vercel builds from a fresh copy (prebuild falls back to examples/).
       - name: Smoke-test the template
         run: |
           cp -R "$RUNNER_TEMP/template" "$RUNNER_TEMP/template-test"
           cd "$RUNNER_TEMP/template-test"
           npm ci
-          npm run setup -- --defaults
           npm run build
 
       - name: Skip publishing (no token configured)

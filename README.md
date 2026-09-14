@@ -46,8 +46,8 @@ you can take updates to the site code without merge conflicts.
 3. Deploy: import the repository in [Vercel](https://vercel.com). The default Next.js settings
    work as they are.
 
-`npm run setup -- --defaults` installs the example site without asking any questions, which is
-handy for a quick look.
+Until `content/` exists, `npm run dev` and `npm run build` use the example site in `examples/`.
+So a fresh clone, or the Deploy button above, shows a working demo straight away.
 
 ## What lives where
 
