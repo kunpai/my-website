@@ -1,6 +1,26 @@
 # Plan: Turn my-website into a forkable academic-site template
 
-Status: DRAFT, waiting for confirmation (2026-09-13)
+Status: IMPLEMENTED on branch `feature/template-ify` (2026-09-13). Not merged yet.
+
+Decisions taken: D1 (a) separate generated template repo; D2 MIT for code, content all rights
+reserved; D3 games and chatbot kept but off by default, linktree kept behind a flag (on for
+kunpai.space because poster QR codes point at /linktree/*); D4 the earlier zip was ignored.
+
+How the implementation differs from the plan below:
+- The site-code-only README note is a `<!-- personal-only -->` block that the export strips.
+- Generated files are rebuilt by `npm run generate`, which now also runs before `npm run dev`.
+- llms.txt/llms-full.txt now omit disabled sections. For kunpai.space that drops Projects and
+  Work, Research and Teaching Experience, because `projects` and `experience` are off.
+- Also fixed along the way:
+  - hydration error #418 on /blogs
+  - the Education section's `id="publications"`
+  - the mailto: link not being URL-encoded
+  - an empty "GPA:" line
+  - the chatbot reading `tags` for projects instead of `skills`
+
+Still needed from the owner: create the empty repo `kunpai/academic-site-template` (and mark
+it as a template), then add the secret `TEMPLATE_REPO_TOKEN` (a fine-grained PAT with
+Contents: read and write on that repo only).
 
 ## Goal
 

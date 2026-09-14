@@ -7,13 +7,16 @@ import { SITE_NAME, DEFAULT_DESCRIPTION, DEFAULT_IMAGE, SITE_URL } from '@/compo
 import config, { features, theme, themeCss } from '@/lib/content';
 const headingFontUrl = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(theme.headingFont).replace(/%20/g, '+')}&display=swap`;
 const customThemeCss = themeCss();
+// JSON.stringify quotes the family name; '<' is escaped so the value can't close the <style> element.
+const themeFontCss = `:root{--font-heading:${JSON.stringify(theme.headingFont).replace(/</g, '\\3c ')};}`;
 
 export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <style key="theme-font">{`:root{--font-heading:'${theme.headingFont}';}`}</style>
-        {customThemeCss && <style key="theme-colors">{customThemeCss}</style>}
+        {/* dangerouslySetInnerHTML: React escapes quotes in <style> text children during SSR, which breaks the CSS. */}
+        <style key="theme-font" dangerouslySetInnerHTML={{ __html: themeFontCss }} />
+        {customThemeCss && <style key="theme-colors" dangerouslySetInnerHTML={{ __html: customThemeCss }} />}
         {/* Defaults; individual pages override these via <Seo /> (same keys). */}
         <title key="title">{SITE_NAME}</title>
         <meta key="description" name="description" content={DEFAULT_DESCRIPTION} />

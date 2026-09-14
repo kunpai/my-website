@@ -19,17 +19,20 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # The template repository (and a fresh copy before `npm run setup`) has no content/ yet.
+      - name: Check for content
+        id: content
+        run: |
+          if [ -f content/config.json ]; then echo "present=true" >> "$GITHUB_OUTPUT"; else echo "present=false" >> "$GITHUB_OUTPUT"; echo "No content/config.json; nothing to build."; fi
+
       - name: Set up Python
+        if: steps.content.outputs.present == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-
       - name: Install TeX Live
+        if: steps.content.outputs.present == 'true'
         run: |
           sudo apt-get update
           sudo apt-get install -y \
@@ -40,11 +43,13 @@ jobs:
             texlive-fonts-extra
 
       - name: Run Resume Generator and Compiler
+        if: steps.content.outputs.present == 'true'
         run: |
           chmod +x scripts/generate_resumes.py
           python3 scripts/generate_resumes.py
 
       - name: Commit and Push Compiled Resumes
+        if: steps.content.outputs.present == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"

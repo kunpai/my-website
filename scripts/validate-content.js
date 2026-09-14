@@ -242,7 +242,13 @@ function importedDataFiles() {
 
 function checkLocalFile(publicDir, filePath, ref) {
     if (typeof ref !== 'string' || !ref.startsWith('/') || ref.startsWith('//')) return;
-    const clean = decodeURI(ref.split(/[?#]/)[0]);
+    const bare = ref.split(/[?#]/)[0];
+    let clean = bare;
+    try {
+        clean = decodeURI(bare);
+    } catch {
+        // A literal '%' (e.g. "/images/100%.png") isn't valid percent-encoding; use the path as written.
+    }
     if (!fs.existsSync(path.join(publicDir, clean))) {
         warn(`${filePath}: "${ref}" not found in ${rel(publicDir)}/`);
     }

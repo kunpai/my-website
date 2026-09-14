@@ -57,3 +57,6 @@ __pycache__/
 /public/rss.xml
 /public/robots.txt
 /public/sitemap*.xml
+
+# Config backups written by npm run setup
+/content/*.bak*

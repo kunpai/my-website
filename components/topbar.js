@@ -114,7 +114,7 @@ export default function Topbar() {
                 <Container fluid>
                     <Navbar.Brand href="/" as={Link}>
                         <h1>
-                            {config.initials || name.split(" ").map((word) => word[0].toUpperCase()).join("")}
+                            {config.initials || name.split(/\s+/).filter(Boolean).map((word) => word[0].toUpperCase()).join("")}
                         </h1>
                     </Navbar.Brand>
                     <div className="d-none d-lg-flex flex-grow-1 justify-content-center">

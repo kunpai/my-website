@@ -3,32 +3,25 @@ name: Publish Template
 # Exports the site code + examples/ (never content/ or personal media) and pushes it to the
 # public template repository. Needs:
 #   - repository variable TEMPLATE_REPO (default: kunpai/academic-site-template)
-#   - secret TEMPLATE_REPO_TOKEN: fine-grained PAT with "Contents: read and write" on that repo only
+#   - secret TEMPLATE_REPO_TOKEN: fine-grained PAT for that repository only, with
+#     "Contents: Read and write" and "Workflows: Read and write" (the export includes a workflow)
 
 on:
   push:
     branches:
       - main
+    # Everything except personal content; scripts/export-template.js decides what is exported.
     paths:
-      - 'components/**'
-      - 'pages/**'
-      - 'lib/**'
-      - 'styles/**'
-      - 'scripts/**'
-      - 'examples/**'
-      - 'schemas/**'
-      - 'docs/**'
-      - 'package.json'
-      - 'package-lock.json'
-      - '*.config.js'
-      - 'middleware.js'
-      - 'jsconfig.json'
-      - 'README.md'
-      - 'LICENSE'
-      - '.vscode/**'
-      - '.github/workflows/build-resume.yml'
-      - '.github/workflows/publish-template.yml'
+      - '**'
+      - '!content/**'
+      - '!plan/**'
+      - '!public/**'
+      - 'public/images/favicon.ico'
+      - 'public/images/placeholder.png'
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 concurrency:
   group: publish-template
@@ -43,6 +36,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # npm install scripts run below; don't leave a token in .git/config for them.
+          persist-credentials: false
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
