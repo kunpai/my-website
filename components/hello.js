@@ -4,10 +4,10 @@ import { gsap } from 'gsap';
 import SplitType from 'split-type';
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-
-const name = process.env.CONFIG.name;
+import config from '@/website.config.json';
 
 export default function Hello() {
+  const name = config.name || '';
 
   useEffect(() => {
     const heading = new SplitType('.name', { types: 'words' });
@@ -26,7 +26,8 @@ export default function Hello() {
     <Row className='mt-5 mb-5 hello'>
       <Col xs={5}>
         <div className='animate'>
-          <Image src={process.env.CONFIG.image}
+          <Image src={config.image || '/images/placeholder.png'}
+            alt={name}
             fill
             style={{ objectFit: 'cover' }}
             priority
@@ -41,14 +42,14 @@ export default function Hello() {
         </Row>
         <Row>
           <div className='description'>
-            <ReactMarkdown>{process.env.CONFIG.intro}</ReactMarkdown>
+            <ReactMarkdown>{config.intro || ''}</ReactMarkdown>
           </div>
         </Row>
-        {(process.env.CONFIG?.resume || process.env.CONFIG?.resume_short) && (
+        {(config.resume || config.resume_short) && (
           <Row className='mt-3'>
             <Col className='d-flex justify-content-start gap-4 flex-wrap'>
-              {process.env.CONFIG?.resume && (
-                <Button className='btn-theme-primary' href={process.env.CONFIG.resume} target='_blank'>
+              {config.resume && (
+                <Button className='btn-theme-primary' href={config.resume} target='_blank'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-box-arrow-down me-1" viewBox="0 0 16 16">
                     <path fillRule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z" />
                     <path fillRule="evenodd" d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z" />
@@ -56,8 +57,8 @@ export default function Hello() {
                   {' Download Full Resume'}
                 </Button>
               )}
-              {process.env.CONFIG?.resume_short && (
-                <Button className='btn-theme-outline' href={process.env.CONFIG.resume_short} target='_blank'>
+              {config.resume_short && (
+                <Button className='btn-theme-outline' href={config.resume_short} target='_blank'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-box-arrow-down me-1" viewBox="0 0 16 16">
                     <path fillRule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z" />
                     <path fillRule="evenodd" d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z" />

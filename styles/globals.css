@@ -101,7 +101,9 @@
 }
 
 
-.name {
+.name,
+.name .word,
+.name .char {
   font-size: 6rem;
   font-weight: 700;
   font-family: 'Audiowide', cursive;
