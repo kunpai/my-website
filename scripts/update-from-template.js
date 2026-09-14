@@ -42,7 +42,9 @@ function findStartingCommit(target) {
         ? fs.readFileSync(path.join(ROOT_DIR, VERSION_FILE), 'utf8').trim()
         : null;
     if (!stamp) return null;
-    const commits = git(['rev-list', target]).split('\n');
+    // Oldest match first: if two releases share a stamp, re-merging a change the site already has
+    // is harmless, while starting from the newer one could skip a change.
+    const commits = git(['rev-list', '--reverse', target]).split('\n');
     return commits.find((c) => tryGit(['show', `${c}:${VERSION_FILE}`]) === stamp) || null;
 }
 
