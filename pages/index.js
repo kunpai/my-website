@@ -170,7 +170,7 @@ export default function Home() {
         {/* <Row>
           <Experience jsonExperiences={teachingExperience} title={"Teaching Experience"} isExperience />
         </Row> */}
-        {features.workExperience !== false && (
+        {features.workExperience !== false && features.experience !== false && (
           <Row>
             <Experience jsonExperiences={workExperienceFiltered} title={"Research & Professional Experience"} isExperience />
             <div ref={workViewAllRef}>

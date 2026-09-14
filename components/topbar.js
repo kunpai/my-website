@@ -178,7 +178,7 @@ export default function Topbar() {
                                         Publications
                                     </Nav.Link>
                                 )}
-                                {features.workExperience !== false && (
+                                {features.workExperience !== false && features.experience !== false && (
                                     <Nav.Link href="/work-experiences" as={Link} className="main-text-regular" onClick={() => setShow(false)}>
                                         Experience
                                     </Nav.Link>

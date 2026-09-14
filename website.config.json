@@ -30,11 +30,12 @@
     "enableChatbot": false,
     "features": {
         "about": true,
-        "projects": true,
+        "projects": false,
         "publications": true,
-        "workExperience": true,
+        "workExperience": false,
+        "experience": false,
         "blogs": true,
-        "games": true,
+        "games": false,
         "chatbot": false,
         "researchGraph": true
     },
