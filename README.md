@@ -10,7 +10,7 @@
 
 A personal website for researchers, PhD students and academics: publications with a topic graph,
 a blog, a CV/resume built from the same data, and a site that search engines and LLMs can read.
-Built with Next.js 13, React and Bootstrap. Everything you write goes in one folder, `content/`,
+Built with Next.js 16, React 19 and Bootstrap. Everything you write goes in one folder, `content/`,
 which `npm run setup` creates for you from [`examples/content/`](examples/content). The template
 itself never ships a `content/` folder, so updates to the site code can't conflict with yours.
 
@@ -50,25 +50,26 @@ See [Getting updates](#getting-updates) for how it works.
 - Light and dark mode, a configurable accent colour and heading font.
 - Optional link pages for posters and talks (`linktree`, off by default).
 
-## Compared to al-folio and academicpages
+## Compared to al-folio, academicpages and HugoBlox
 
-[al-folio](https://github.com/alshedivat/al-folio) and
-[academicpages](https://github.com/academicpages/academicpages.github.io) are the most popular
-academic site templates, and both are mature and free to host on GitHub Pages. This template
-makes different trade-offs:
+[al-folio](https://github.com/alshedivat/al-folio),
+[academicpages](https://github.com/academicpages/academicpages.github.io) and
+[HugoBlox](https://github.com/HugoBlox/hugo-theme-academic-cv) (formerly Wowchemy) are the most
+popular academic site templates. All three are mature and free to host. This template makes
+different trade-offs:
 
-| | This template | al-folio | academicpages |
-|---|---|---|---|
-| **Stack** | Next.js 13 (React), Node | Jekyll (Ruby) | Jekyll (Ruby), based on Minimal Mistakes |
-| **Your content** | One folder, `content/`, checked against JSON Schemas | Spread across `_pages/`, `_posts/`, `_bibliography/`, `_config.yml` | Spread across `_pages/`, `_publications/`, `_talks/`, `_config.yml` |
-| **Updating** | `npm run update` merges the new template; only site code changes, so your content never conflicts | Merge upstream; files you customised can conflict | Fork; no separate update path |
-| **Publications** | JSON with a BibTeX entry each, plus an interactive topic graph | A BibTeX file, rendered with jekyll-scholar | One Markdown file per paper (scripts can generate them from TSV/BibTeX) |
-| **CV** | CV and short resume compiled to PDF with LaTeX from the same data, locally or by a GitHub Action | CV page from JSON Resume or YAML; you supply the PDF | CV page in Markdown; you supply the PDF |
-| **Deploy target** | Vercel (or any Next.js host) | GitHub Pages | GitHub Pages |
+| | This template | al-folio | academicpages | HugoBlox |
+|---|---|---|---|---|
+| **Stack** | Next.js 16 (React 19), Node | Jekyll (Ruby) | Jekyll (Ruby), based on Minimal Mistakes | Hugo (Go), Tailwind CSS |
+| **Your content** | One folder, `content/`, checked against JSON Schemas | Spread across `_pages/`, `_posts/`, `_bibliography/`, `_config.yml` | Spread across `_pages/`, `_publications/`, `_talks/`, `_config.yml` | Markdown in `content/`, plus `config/_default/*.yaml` and `data/authors/` |
+| **Updating** | `npm run update` merges the new template; only site code changes, so your content never conflicts | Merge upstream; files you customised can conflict | Fork; no separate update path | `npx hugoblox@latest upgrade`, which applies migrations automatically |
+| **Publications** | JSON with a BibTeX entry each, plus an interactive topic graph | A BibTeX file, rendered with jekyll-scholar | One Markdown file per paper (scripts can generate them from TSV/BibTeX) | A folder per paper (`index.md` + `cite.bib`); a CLI imports BibTeX |
+| **CV** | CV and short resume compiled to PDF with LaTeX from the same data, locally or by a GitHub Action | CV page from JSON Resume or YAML; you supply the PDF | CV page in Markdown; you supply the PDF | CV page built from a YAML profile; you supply the PDF |
+| **Deploy target** | Vercel (or any Next.js host) | GitHub Pages | GitHub Pages | Netlify, GitHub Pages, Vercel, Cloudflare Pages |
 
-Choose al-folio or academicpages if you want GitHub Pages hosting, Jekyll, or their larger
-ecosystems of themes and features. Choose this one if you'd rather work in React, keep your
-content cleanly separated, and have your CV PDF built from the same data as the site.
+Choose al-folio or academicpages if you want Jekyll and GitHub Pages, and HugoBlox if you want
+Hugo and its large library of page blocks. Choose this one if you'd rather work in React, keep
+your content cleanly separated, and have your CV PDF built from the same data as the site.
 
 ## Quickstart
 
