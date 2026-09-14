@@ -10,8 +10,9 @@
 
 A personal website for researchers, PhD students and academics: publications with a topic graph,
 a blog, a CV/resume built from the same data, and a site that search engines and LLMs can read.
-Built with Next.js 13, React and Bootstrap. All your content lives in one folder, `content/`, so
-you can take updates to the site code without merge conflicts.
+Built with Next.js 13, React and Bootstrap. Everything you write goes in one folder, `content/`,
+which `npm run setup` creates for you from [`examples/content/`](examples/content). The template
+itself never ships a `content/` folder, so updates to the site code can't conflict with yours.
 
 [![Use this template](https://img.shields.io/badge/Use_this_template-2ea44f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kunpai/academic-site-template/generate)
 [![Deploy with Vercel](https://img.shields.io/badge/Deploy_with_Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkunpai%2Facademic-site-template)
@@ -24,8 +25,8 @@ built from this repository with the example content for the fictional Jane Doe.
 
 ## Updates without merge conflicts
 
-Your content lives in `content/` and the template only ships site code, so taking a new release
-is one command. This is a real run on a site made with **Use this template**:
+Your content lives in your own `content/` folder, and the template only ships site code, so taking
+a new release is one command. This is a real run on a site made with **Use this template**:
 
 ![npm run update merging 24 changed template files into a customised site with 0 conflicts](docs/images/update.gif)
 
@@ -34,7 +35,7 @@ See [Getting updates](#getting-updates) for how it works.
 ## Features
 
 - **Everything personal lives in `content/`**: config, data (JSON), about page, blog posts.
-  Photos and PDFs go in `public/`.
+  Setup creates it from the example; photos and PDFs go in `public/`.
 - **Sections you can switch off.** Turning off `projects`, `blogs` and so on removes the page (it
   returns 404), its nav link, its homepage block, and its entries in the sitemap, RSS and
   `llms.txt`.
@@ -86,6 +87,10 @@ Until `content/` exists, `npm run dev` and `npm run build` use the example site 
 So a fresh clone, or the Deploy button above, shows a working demo straight away.
 
 ## What lives where
+
+`content/` isn't in this repository: `npm run setup` creates it by copying
+[`examples/content/`](examples/content), the fictional Jane Doe site in the demo. Browse that folder
+to see what goes where.
 
 | Path | What it is |
 |---|---|

@@ -3,6 +3,10 @@
 Everything that makes the site *yours* is in `content/` and `public/`. You never need to edit the
 site code to change what it shows. This page lists every file and field the code reads.
 
+The template repository has no `content/` folder of its own. `npm run setup` creates yours by
+copying [`examples/content/`](../examples/content), a complete example site. (`npm run dev` and
+`npm run build` do the same if the folder is still missing.)
+
 The JSON Schemas in `schemas/` are the source of truth for this page. VS Code picks them up through
 `.vscode/settings.json`, so you get autocomplete and hover docs in the content files.
 
