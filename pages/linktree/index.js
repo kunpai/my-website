@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { Container, Row, ListGroup } from 'react-bootstrap';
 import { LinkTree } from '@/components/linktree';
 import { useRouter } from 'next/router';
-import linktree from '@/public/jsons/linktree.json';
+import linktree from '@/content/data/linktree.json';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 

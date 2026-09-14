@@ -1,5 +1,5 @@
 import Seo from '@/components/seo';
-import config from '@/website.config.json';
+import config from '@/lib/content';
 import defaultAbout from './about.md';
 import { Container } from "react-bootstrap";
 import ReactMarkdown from 'react-markdown'
@@ -10,14 +10,13 @@ import rehypeSlug from 'rehype-slug'
 import rehypeRaw from 'rehype-raw'
 import remarkFrontmatter from 'remark-frontmatter';
 import fs from 'fs';
-import path from 'path';
+import { ABOUT_PATH } from '@/lib/content-paths';
 
 export async function getStaticProps() {
     let content = defaultAbout;
     try {
-        const publicAboutPath = path.join(process.cwd(), 'public', 'about.md');
-        if (fs.existsSync(publicAboutPath)) {
-            content = fs.readFileSync(publicAboutPath, 'utf8');
+        if (fs.existsSync(ABOUT_PATH)) {
+            content = fs.readFileSync(ABOUT_PATH, 'utf8');
         }
     } catch (e) {
         // Fallback to defaultAbout

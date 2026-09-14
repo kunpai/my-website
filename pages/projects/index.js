@@ -1,10 +1,10 @@
 import Seo from '@/components/seo';
-import config from '@/website.config.json';
+import config from '@/lib/content';
 import React from 'react';
 import { Row, Col } from "react-bootstrap";
 import Experience from "@/components/experience";
 import Containter from "react-bootstrap/Container";
-import projects from "/public/jsons/projects.json";
+import projects from "@/content/data/projects.json";
 
 export default function Projects() {
   return (

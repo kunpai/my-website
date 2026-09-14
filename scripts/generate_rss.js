@@ -1,14 +1,13 @@
-// Generates public/rss.xml from public/blogs/*.md (run at prebuild).
+// Generates public/rss.xml from content/blogs/*.md (run at prebuild).
 const fs = require('fs');
 const path = require('path');
 const parseMD = require('parse-md').default || require('parse-md');
+const { ROOT_DIR: ROOT, BLOG_DIR, loadConfig } = require('../lib/content-paths');
 
-const ROOT = path.resolve(__dirname, '..');
-const config = require(path.join(ROOT, 'website.config.json'));
+const config = loadConfig();
 const SITE_URL = config.siteUrl || config.resume_contact?.website_url || '';
 const name = config.name || '';
 const blogDesc = config.blogDescription || (name ? `Posts by ${name}.` : 'Blog posts.');
-const BLOG_DIR = path.join(ROOT, 'public', 'blogs');
 const OUT = path.join(ROOT, 'public', 'rss.xml');
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');

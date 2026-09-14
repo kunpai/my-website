@@ -1,28 +1,28 @@
 import Seo from '@/components/seo';
-import config from '@/website.config.json';
+import config from '@/lib/content';
 import React from 'react';
 import { Row, Col, Badge } from "react-bootstrap";
 import Experience from "@/components/experience";
 import Containter from "react-bootstrap/Container";
 import Hello from '@/components/hello';
-import researchExperience from "/public/jsons/research-experience.json";
-import workExperience from "/public/jsons/work-experience.json";
-import teachingExperience from "/public/jsons/teaching-experience.json";
-import projects from "/public/jsons/projects.json";
-import awards from "/public/jsons/awards.json";
+import researchExperience from "@/content/data/research-experience.json";
+import workExperience from "@/content/data/work-experience.json";
+import teachingExperience from "@/content/data/teaching-experience.json";
+import projects from "@/content/data/projects.json";
+import awards from "@/content/data/awards.json";
 import Image from "next/image";
 import Publication from '@/components/publication';
 import Education from '@/components/education';
 import Link from 'next/link';
-import skills from "/public/jsons/skills.json"
+import skills from "@/content/data/skills.json"
 import { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import news from "/public/jsons/news.json";
+import news from "@/content/data/news.json";
 import ReactMarkdown from 'react-markdown';
-import linktree from "/public/jsons/linktree.json";
-import service from "/public/jsons/service.json";
-import talks from "/public/jsons/talks.json";
+import linktree from "@/content/data/linktree.json";
+import service from "@/content/data/service.json";
+import talks from "@/content/data/talks.json";
 gsap.registerPlugin(ScrollTrigger);
 
 function isAfterJune2023(end) {

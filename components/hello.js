@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import SplitType from 'split-type';
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import config from '@/website.config.json';
+import config from '@/lib/content';
 
 export default function Hello() {
   const name = config.name || '';

@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-const siteConfig = require('./website.config.json');
+const { BLOG_DIR, loadConfig } = require('./lib/content-paths');
 
-const BLOG_DIR = path.join(__dirname, 'public', 'blogs');
+const siteConfig = loadConfig();
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {

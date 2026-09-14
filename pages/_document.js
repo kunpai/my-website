@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import config from '@/website.config.json'
+import config from '@/lib/content'
 
 /**
  * @component

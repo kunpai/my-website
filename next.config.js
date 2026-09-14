@@ -1,5 +1,3 @@
-const config = require('./website.config.json');
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
@@ -7,7 +5,6 @@ const nextConfig = {
     },
     env: {
         LAST_UPDATED: process.env.LAST_UPDATED,
-        CONFIG: config,
     },
     webpack: (config) => {
         config.module.rules.push({

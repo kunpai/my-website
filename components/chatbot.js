@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Card, Button, Form, InputGroup } from "react-bootstrap";
-import education from "@/public/jsons/education.json";
-import skills from "@/public/jsons/skills.json";
-import projects from "@/public/jsons/projects.json";
-import publications from "@/public/jsons/publications.json";
-import workExperience from "@/public/jsons/work-experience.json";
-import researchExperience from "@/public/jsons/research-experience.json";
-import news from "@/public/jsons/news.json";
-import awards from "@/public/jsons/awards.json";
-import service from "@/public/jsons/service.json";
-import teachingExperience from "@/public/jsons/teaching-experience.json";
-import config from "@/website.config.json";
+import education from "@/content/data/education.json";
+import skills from "@/content/data/skills.json";
+import projects from "@/content/data/projects.json";
+import publications from "@/content/data/publications.json";
+import workExperience from "@/content/data/work-experience.json";
+import researchExperience from "@/content/data/research-experience.json";
+import news from "@/content/data/news.json";
+import awards from "@/content/data/awards.json";
+import service from "@/content/data/service.json";
+import teachingExperience from "@/content/data/teaching-experience.json";
+import config from "@/lib/content";
 
 export default function Chatbot() {
     const name = config.name || "";

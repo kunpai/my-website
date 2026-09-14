@@ -7,11 +7,12 @@ import shutil
 
 # Resolve absolute paths relative to project root (where this script's parent directory resides)
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-JSON_DIR = os.path.join(ROOT_DIR, "public", "jsons")
+CONTENT_DIR = os.path.join(ROOT_DIR, "content")
+JSON_DIR = os.path.join(CONTENT_DIR, "data")
 LATEX_SRC_DIR = os.path.join(ROOT_DIR, "public", "latex_src")
 PUBLIC_DIR = os.path.join(ROOT_DIR, "public")
 TEMPLATE_PATH = os.path.join(ROOT_DIR, "scripts", "resume_template.tex")
-CONFIG_PATH = os.path.join(ROOT_DIR, "website.config.json")
+CONFIG_PATH = os.path.join(CONTENT_DIR, "config.json")
 
 def load_config():
     if not os.path.exists(CONFIG_PATH):

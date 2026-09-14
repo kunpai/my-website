@@ -1,7 +1,7 @@
 import { Row, Col, Button, Badge, Popover, OverlayTrigger } from "react-bootstrap";
-import publicationsRaw from "/public/jsons/publications.json";
+import publicationsRaw from "@/content/data/publications.json";
 const publications = publicationsRaw.filter(p => p.show_on_website !== false);
-import config from "@/website.config.json";
+import config from "@/lib/content";
 import { generateMLACitation, generateChicagoCitation, generateIEEECitation, generateBibtexCitation } from "@/pages/api/citation";
 import CopyIcon from "./copyIcon";
 import { useRef, useEffect, useMemo, useState } from "react";
@@ -23,8 +23,8 @@ import { getLinkMeta, ExternalArrowIcon } from "./linkMeta";
 // Coordinates for the Interactive SVG Research Graph
 // Function to dynamically discover topics and calculate SVG coordinates at runtime
 const generateGraphData = (pubs) => {
-    const coreCategoryTags = (process.env.CONFIG?.publicationCategories && process.env.CONFIG.publicationCategories.length > 0)
-        ? process.env.CONFIG.publicationCategories
+    const coreCategoryTags = (config.publicationCategories && config.publicationCategories.length > 0)
+        ? config.publicationCategories
         : ["Computer Architecture", "Large Language Models (LLMs)", "Software Engineering"];
     
     // Extract unique tags across all publications
@@ -50,7 +50,7 @@ const generateGraphData = (pubs) => {
         "Large Language Models (LLMs)": "Vulnerabilities in agentic systems, prompt injections, and multi-agents.",
         "Software Engineering": "Code documentation, repository mining, and model calibration."
     };
-    const categoryDescriptions = process.env.CONFIG?.categoryDescriptions || defaultDescriptions;
+    const categoryDescriptions = config.categoryDescriptions || defaultDescriptions;
     
     const categoryNodes = coreCategoryTags.map((tag, i) => {
         const angle = (2 * Math.PI * i) / coreCategoryTags.length - Math.PI / 2;
@@ -321,7 +321,7 @@ const getTypeHash = (type) => {
 
 // Main Publication Component
 export default function Publication({ searchQuery, hideGraph = false, defaultType = "All" }) {
-    const name = config.name || process.env.CONFIG?.name || "";
+    const name = config.name || "";
 
     const [selectedType, setSelectedType] = useState(defaultType);
     const [activeFilter, setActiveFilter] = useState(null); // { type: "tag"|"keyword", value: [...], name: "" }

@@ -1,20 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const ROOT_DIR = path.resolve(__dirname, '..');
-const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
-const JSON_DIR = path.join(PUBLIC_DIR, 'jsons');
-const CONFIG_PATH = path.join(ROOT_DIR, 'website.config.json');
+const { PUBLIC_DIR, loadConfig, loadData } = require('../lib/content-paths');
 
 function loadJson(filename) {
-    const filePath = path.join(JSON_DIR, filename);
-    if (!fs.existsSync(filePath)) return null;
-    return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-}
-
-function loadConfig() {
-    if (!fs.existsSync(CONFIG_PATH)) return {};
-    return JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'));
+    return loadData(filename.replace(/\.json$/, ''));
 }
 
 // Clean markdown text of TeX escape characters if any

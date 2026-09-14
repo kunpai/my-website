@@ -1,5 +1,5 @@
 import Seo from '@/components/seo';
-import config from '@/website.config.json';
+import config from '@/lib/content';
 import Publication from "@/components/publication";
 import { Container, Row } from "react-bootstrap";
 import { useRouter } from 'next/router';

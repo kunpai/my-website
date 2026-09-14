@@ -3,15 +3,15 @@
 import { Container, Navbar, Nav, Offcanvas, ButtonGroup, ToggleButton, NavDropdown } from "react-bootstrap";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-// import linktree from '@/public/jsons/linktree.json';
+// import linktree from '@/content/data/linktree.json';
 import SearchBar from './search';
-import config from '@/website.config.json';
+import config from '@/lib/content';
 
 export default function Topbar() {
     const [show, setShow] = useState(false);
     const [visible, setVisible] = useState(false);
     const pageYOffsetTrigger = 150;
-    const name = config.name || process.env.CONFIG?.name || "";
+    const name = config.name || "";
     const features = config.features || {};
     const [isLightMode, setIsLightMode] = useState(false);
     const [theme, setTheme] = useState('auto');
@@ -133,7 +133,7 @@ export default function Topbar() {
                 <Container fluid>
                     <Navbar.Brand href="/" as={Link}>
                         <h1>
-                            {process.env.CONFIG?.initials || name.split(" ").map((word) => word[0].toUpperCase()).join("")}
+                            {config.initials || name.split(" ").map((word) => word[0].toUpperCase()).join("")}
                         </h1>
                     </Navbar.Brand>
                     <div className="d-none d-lg-flex flex-grow-1 justify-content-center">

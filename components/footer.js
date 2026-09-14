@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button, Col, Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import config from "@/website.config.json";
+import config from "@/lib/content";
 
 export default function Footer() {
 
@@ -20,9 +20,9 @@ export default function Footer() {
           <Col className="text-center primary d-flex flex-column h-100 pt-2 pb-2 gap-1 footer-col align-items-center">
             <span className="text-muted main-text-regular">Connect with Me</span>
             {
-                (config.footerLinks || process.env.CONFIG?.footerLinks) ? Object.keys(config.footerLinks || process.env.CONFIG.footerLinks).map((key, index) => {
+                config.footerLinks ? Object.keys(config.footerLinks).map((key, index) => {
                     return (
-                        <Link key={index} href={(config.footerLinks || process.env.CONFIG.footerLinks)[key]}>{key}</Link>
+                        <Link key={index} href={config.footerLinks[key]}>{key}</Link>
                     );
                 }
                 ) : null

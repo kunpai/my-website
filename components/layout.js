@@ -3,7 +3,7 @@ import { Fade } from 'react-bootstrap'
 import Footer from './footer'
 import ScrollToTop from './scrollToTop'
 import dynamic from 'next/dynamic'
-import config from '@/website.config.json'
+import config from '@/lib/content'
 
 const Chatbot = dynamic(() => import('./chatbot'), { ssr: false })
 

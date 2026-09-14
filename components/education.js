@@ -1,5 +1,5 @@
 import { Row, Col, Badge } from 'react-bootstrap';
-import educations from '/public/jsons/education.json'
+import educations from '@/content/data/education.json'
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';

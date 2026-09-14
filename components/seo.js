@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import config from '@/website.config.json';
+import config from '@/lib/content';
 
 export const SITE_URL = config.siteUrl || config.resume_contact?.website_url || '';
 export const SITE_NAME = config.name || '';

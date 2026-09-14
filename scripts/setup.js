@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Portfolio Template Setup Wizard
- * Guides users through personalizing website.config.json.
+ * Guides users through personalizing content/config.json.
  * 
  * Usage:
  *   npm run setup
@@ -13,8 +13,8 @@ const path = require('path');
 const readline = require('readline');
 
 const ROOT_DIR = path.resolve(__dirname, '..');
-const CONFIG_PATH = path.join(ROOT_DIR, 'website.config.json');
-const BACKUP_PATH = path.join(ROOT_DIR, 'website.config.json.bak');
+const CONFIG_PATH = path.join(ROOT_DIR, 'content', 'config.json');
+const BACKUP_PATH = path.join(ROOT_DIR, 'content', 'config.json.bak');
 
 const existingConfig = fs.existsSync(CONFIG_PATH)
   ? JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'))
@@ -46,7 +46,7 @@ async function runWizard() {
   console.log('\n======================================================');
   console.log('   🚀 Welcome to the Portfolio Template Setup Wizard!   ');
   console.log('======================================================\n');
-  console.log('This wizard will help you customize website.config.json.\n');
+  console.log('This wizard will help you customize content/config.json.\n');
 
   if (isDefault) {
     console.log('Running with defaults...');
@@ -143,21 +143,21 @@ async function runWizard() {
     // Backup current config if exists
     if (fs.existsSync(CONFIG_PATH)) {
       fs.copyFileSync(CONFIG_PATH, BACKUP_PATH);
-      console.log(`\n📦 Created backup of existing config at website.config.json.bak`);
+      console.log(`\n📦 Created backup of existing config at content/config.json.bak`);
     }
 
     fs.writeFileSync(CONFIG_PATH, JSON.stringify(newConfig, null, 4), 'utf8');
-    console.log(`✅ Successfully wrote updated configuration to website.config.json!`);
+    console.log(`✅ Successfully wrote updated configuration to content/config.json!`);
 
     console.log('\n======================================================');
     console.log('   🎉 Setup Complete! Next Steps:                     ');
     console.log('======================================================');
     console.log('1. Edit your research, experience, and projects in:');
-    console.log('     📁 public/jsons/ (education.json, projects.json, publications.json, etc.)');
+    console.log('     📁 content/data/ (education.json, projects.json, publications.json, etc.)');
     console.log('2. Edit your about page in:');
-    console.log('     📄 public/about.md');
+    console.log('     📄 content/about.md');
     console.log('3. Add blog posts in:');
-    console.log('     📁 public/blogs/*.md');
+    console.log('     📁 content/blogs/*.md');
     console.log('4. Run the local dev server:');
     console.log('     $ npm run dev\n');
 

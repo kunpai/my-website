@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import BlogTile from '@/components/blogTile';
 import Seo from '@/components/seo';
 import { filterBlogs } from '@/lib/blogFilter';
-import config from '@/website.config.json';
+import config from '@/lib/content';
 
 // Posts are read at build time so the list is in the HTML crawlers see
 // (previously fetched client-side, which rendered "No Blogs Found" to bots).

@@ -1,4 +1,4 @@
-import siteConfig from '@/website.config.json';
+import siteConfig from '@/lib/content';
 
 export const config = {
   runtime: 'edge',

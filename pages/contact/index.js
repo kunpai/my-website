@@ -1,5 +1,5 @@
 import Seo from '@/components/seo';
-import config from '@/website.config.json';
+import config from '@/lib/content';
 import React, { useState } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 
@@ -9,7 +9,7 @@ export default function ContactForm() {
     message: '',
   });
 
-  const recipientEmail = config.email || process.env.CONFIG?.email || '';
+  const recipientEmail = config.email || '';
 
   function handleChange(e) {
     const { name, value } = e.target;

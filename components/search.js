@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, InputGroup, Button, ListGroup } from 'react-bootstrap';
 import { useRouter } from 'next/router';
-import publications from '/public/jsons/publications.json';
+import publications from '@/content/data/publications.json';
 import Link from 'next/link';
 
 export default function SearchBar() {

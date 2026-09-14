@@ -8,6 +8,6 @@ I am passionate about software engineering, system architecture, and advancing r
 
 ## Open-Source Spirit
 
-This portfolio is built on an open-source Next.js architecture designed to be fully configurable. You can customize all content via `website.config.json` and JSON data files in the `public/jsons/` directory.
+This portfolio is built on an open-source Next.js architecture designed to be fully configurable. You can customize all content via `content/config.json` and the JSON data files in `content/data/`.
 
 Feel free to connect via the [Contact](/contact) page.
