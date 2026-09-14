@@ -174,7 +174,7 @@ export default function Home() {
           <Row>
             <Experience jsonExperiences={workExperienceFiltered} title={"Research & Professional Experience"} isExperience />
             <div ref={workViewAllRef}>
-              <Link href="/work-experiences" className="btn btn-outline-secondary btn-lg d-block mx-auto mt-3">
+              <Link href="/work-experiences" className="btn btn-theme-outline btn-lg d-block mx-auto mt-3">
                 View All Research & Professional Experiences <i className="bi bi-arrow-right ms-2"></i>
               </Link>
             </div>
@@ -212,7 +212,7 @@ export default function Home() {
           <Row>
             <Experience jsonExperiences={projectsFiltered} title={"Projects"} />
             <div ref={projectsViewAllRef}>
-              <Link href="/projects" className="btn btn-outline-secondary btn-lg d-block mx-auto mt-3">
+              <Link href="/projects" className="btn btn-theme-outline btn-lg d-block mx-auto mt-3">
                 View All Projects <i className="bi bi-arrow-right ms-2"></i>
               </Link>
             </div>

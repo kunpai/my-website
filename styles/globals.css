@@ -107,6 +107,62 @@
   font-family: 'Audiowide', cursive;
   padding: 0;
   margin: 0;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.topbar .navbar-brand h1 {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  display: inline-block;
+}
+
+.description a,
+.content a:not(.btn) {
+  color: var(--brand-accent) !important;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.description a:hover,
+.content a:not(.btn):hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+.btn-theme-primary {
+  background: var(--brand-gradient) !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.btn-theme-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  color: #ffffff !important;
+}
+
+.btn-theme-outline {
+  color: var(--brand-accent) !important;
+  border: 1.5px solid var(--brand-accent) !important;
+  background: transparent !important;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.btn-theme-outline:hover {
+  background: var(--brand-gradient) !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
 }
 
 .popover {
