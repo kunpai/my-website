@@ -39,11 +39,6 @@
         "chatbot": false,
         "researchGraph": true
     },
-    "theme": {
-        "accentColor": "#0d6efd",
-        "gradientStart": "#0d6efd",
-        "gradientEnd": "#00d2ff"
-    },
     "knowsAbout": [
         "Software Engineering",
         "Large Language Models",
