@@ -5,7 +5,7 @@
         "start": "Sep 2023",
         "end": "Present",
         "location": "Example City, CA",
-        "image": "/images/placeholder.png",
+        "image": "/images/reliable-ml-lab.jpg",
         "description": "Robustness benchmarks for image classifiers under natural distribution shift.\nFault-tolerant distributed training on preemptible hardware."
     },
     {
@@ -14,7 +14,7 @@
         "start": "Jan 2022",
         "end": "May 2023",
         "location": "Example Town, NY",
-        "image": "/images/placeholder.png",
+        "image": "/images/systems-group.jpg",
         "description": "Measured communication overhead in data-parallel training.\nSenior thesis on gradient compression, advised by Prof. Ada Advisor."
     }
 ]

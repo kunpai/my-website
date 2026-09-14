@@ -6,7 +6,7 @@ tags:
   - meta
 authors:
   - Jane Doe
-image: /images/placeholder.png
+image: /images/hello-world.jpg
 description: Why I set up this website and what I plan to write about.
 ---
 

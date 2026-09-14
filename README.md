@@ -13,10 +13,14 @@ a blog, a CV/resume built from the same data, and a site that search engines and
 Built with Next.js 13, React and Bootstrap. All your content lives in one folder, `content/`, so
 you can take updates to the site code without merge conflicts.
 
-**Live demo: [academic-site-template.vercel.app](https://academic-site-template.vercel.app)**,
-built from this repository with the example content for the fictional Jane Doe.
+[![Use this template](https://img.shields.io/badge/Use_this_template-2ea44f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kunpai/academic-site-template/generate)
+[![Deploy with Vercel](https://img.shields.io/badge/Deploy_with_Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkunpai%2Facademic-site-template)
+[![Live demo](https://img.shields.io/badge/Live_demo-2f6fed?style=for-the-badge&logo=googlechrome&logoColor=white)](https://academic-site-template.vercel.app)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkunpai%2Facademic-site-template)
+[![The template's homepage in light and dark mode, on desktop and mobile](docs/images/hero.png)](https://academic-site-template.vercel.app)
+
+The demo at [academic-site-template.vercel.app](https://academic-site-template.vercel.app) is
+built from this repository with the example content for the fictional Jane Doe.
 
 ## Features
 
@@ -36,6 +40,26 @@ built from this repository with the example content for the fictional Jane Doe.
 - Light and dark mode, a configurable accent colour and heading font.
 - Optional extras (off by default): an AI chatbot (NVIDIA NIM), small games, and link pages for
   posters (`linktree`).
+
+## Compared to al-folio and academicpages
+
+[al-folio](https://github.com/alshedivat/al-folio) and
+[academicpages](https://github.com/academicpages/academicpages.github.io) are the most popular
+academic site templates, and both are mature and free to host on GitHub Pages. This template
+makes different trade-offs:
+
+| | This template | al-folio | academicpages |
+|---|---|---|---|
+| **Stack** | Next.js 13 (React), Node | Jekyll (Ruby) | Jekyll (Ruby), based on Minimal Mistakes |
+| **Your content** | One folder, `content/`, checked against JSON Schemas | Spread across `_pages/`, `_posts/`, `_bibliography/`, `_config.yml` | Spread across `_pages/`, `_publications/`, `_talks/`, `_config.yml` |
+| **Updating** | `git merge template/main` only touches site code, so no conflicts with your content | Merge upstream; files you customised can conflict | Fork; no separate update path |
+| **Publications** | JSON with a BibTeX entry each, plus an interactive topic graph | A BibTeX file, rendered with jekyll-scholar | One Markdown file per paper (scripts can generate them from TSV/BibTeX) |
+| **CV** | CV and short resume compiled to PDF with LaTeX from the same data, locally or by a GitHub Action | CV page from JSON Resume or YAML; you supply the PDF | CV page in Markdown; you supply the PDF |
+| **Deploy target** | Vercel (or any Next.js host) | GitHub Pages | GitHub Pages |
+
+Choose al-folio or academicpages if you want GitHub Pages hosting, Jekyll, or their larger
+ecosystems of themes and features. Choose this one if you'd rather work in React, keep your
+content cleanly separated, and have your CV PDF built from the same data as the site.
 
 ## Quickstart
 
@@ -130,6 +154,13 @@ git merge template/main --allow-unrelated-histories   # the flag is only needed 
 ```
 
 You only get conflicts in files you changed yourself (for example if you edited a component).
+
+## Show your site
+
+Built something with this template? Share it in the
+[Show your site](https://github.com/kunpai/academic-site-template/discussions/1) discussion.
+Questions go in [Discussions](https://github.com/kunpai/academic-site-template/discussions), and bugs in
+[Issues](https://github.com/kunpai/academic-site-template/issues).
 
 ## License
 

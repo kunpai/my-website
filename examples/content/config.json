@@ -9,7 +9,7 @@
     "alumniOfUrl": "https://college.example.org",
     "siteUrl": "https://academic-site-template.vercel.app",
     "email": "jane.doe@example.com",
-    "image": "/images/placeholder.png",
+    "image": "/images/jane-doe.jpg",
     "favicon": "/images/favicon.ico",
     "bio": "Jane Doe is a PhD student in Computer Science at Example University, researching reliable machine learning systems, distributed training, and automated testing.",
     "intro": "I am a PhD student at **Example University**, advised by [Prof. Ada Advisor](https://example.org/ada-advisor).\n\nI build machine learning systems that keep working when data, hardware, or code changes underneath them. Before my PhD, I studied computer science at **Example College**.",

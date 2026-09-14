@@ -6,7 +6,7 @@
         "start": "Sep 2023",
         "end": "Present",
         "location": "Example City, CA",
-        "image": "/images/placeholder.png",
+        "image": "/images/reliable-ml-lab.jpg",
         "description": "Lead the ShiftBench robustness benchmark.\nStudy failure modes of distributed training on preemptible hardware.\nMentor two undergraduate researchers.",
         "skills": [
             "PyTorch",
@@ -34,7 +34,7 @@
         "start": "Jun 2024",
         "end": "Sep 2024",
         "location": "Remote",
-        "image": "/images/placeholder.png",
+        "image": "/images/example-corp.jpg",
         "description": "Added data-drift monitoring to a production recommendation pipeline.\nReduced false alerts by 40% with per-feature thresholds.",
         "skills": [
             "Python",
@@ -54,7 +54,7 @@
         "start": "Jan 2022",
         "end": "May 2023",
         "location": "Example Town, NY",
-        "image": "/images/placeholder.png",
+        "image": "/images/systems-group.jpg",
         "description": "Profiled communication overhead in data-parallel training.\nWrote a senior thesis on gradient compression.",
         "show_on_website": true,
         "show_on_homepage": false,
