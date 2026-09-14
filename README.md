@@ -167,7 +167,8 @@ npm run update
 ```
 
 This fetches the template and merges it. You only get conflicts in site files you edited yourself
-(say, a component you customised), never in your content.
+(say, a component you customised), never in your content. [CHANGELOG.md](CHANGELOG.md) lists what
+each release changes and anything you need to do.
 
 Why a script: **Use this template** gives your repository fresh history with no commit in common
 with the template, so a plain `git merge` would conflict on every file the template changed. Each

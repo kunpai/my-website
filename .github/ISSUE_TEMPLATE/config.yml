@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or help setting up your site
+    url: https://github.com/kunpai/academic-site-template/discussions/categories/q-a
+    about: Ask in Discussions, where answers help the next person too.
+  - name: Show your site
+    url: https://github.com/kunpai/academic-site-template/discussions/1
+    about: Built something with the template? Share it here.

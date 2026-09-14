@@ -1,0 +1,44 @@
+name: Bug report
+description: Something in the template doesn't work as documented.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Questions about setting up your site are welcome in
+        [Discussions](https://github.com/kunpai/academic-site-template/discussions/categories/q-a) instead.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. npm run setup
+        2. Set features.blogs to false
+        3. npm run build
+    validations:
+      required: true
+  - type: textarea
+    id: validate
+    attributes:
+      label: Output of `npm run validate`
+      description: Paste it here; it catches most content mistakes.
+      render: text
+  - type: input
+    id: version
+    attributes:
+      label: Template version
+      description: The contents of `.template-version` in your site, or the `version` in package.json.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "Node 22.9, macOS 15, Chrome 140, deployed on Vercel"

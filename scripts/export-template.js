@@ -20,9 +20,11 @@ const TEMPLATE_PACKAGE_NAME = 'academic-site-template';
 
 // Tracked paths that are exported (exact files, or directories ending in '/').
 const EXPORTED = [
+    '.github/ISSUE_TEMPLATE/',
     '.github/workflows/build-resume.yml',
     '.gitignore',
     '.vscode/',
+    'CHANGELOG.md',
     'LICENSE',
     'README.md',
     'components/',

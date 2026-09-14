@@ -1,0 +1,21 @@
+name: Feature request
+description: Suggest something the template should do.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: Describe the problem or the kind of site you're building, rather than a specific solution.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would help?
+      description: How you'd like it to work, including any config or data fields you imagine.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What have you tried?
+      description: Workarounds, or how other templates (al-folio, academicpages, HugoBlox) handle it.
