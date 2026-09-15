@@ -133,6 +133,7 @@ Enhanced accessibility for 500+ industry and academic users by integrating local
   Links: [Poster](https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf)
 
 ## Awards & Honors
+- **Finalist (Agentic Financial & High-Stakes AI Advice)** - Cambridge C:\>DIR Global ‘Agentic Regulator’ Hackathon (2026)
 - **2nd Place (Agent Safety)** - UC Berkeley RDI AgentBeats Competition (2026)
 - **Dean's List** - UC Davis College of Engineering (Fall 2019)
 - **Dean's List** - UC Davis College of Engineering (Fall 2020)

@@ -401,6 +401,7 @@ Enhanced accessibility for 500+ industry and academic users by integrating local
   Assisted 180 students in understanding course material and assignments, conducted weekly office hours, and gave and graded assignments for senior-level Probability & Statistical modeling class.
 
 ## Awards & Honors
+- **Finalist (Agentic Financial & High-Stakes AI Advice)** - Cambridge C:\>DIR Global ‘Agentic Regulator’ Hackathon (2026)
 - **2nd Place (Agent Safety)** - UC Berkeley RDI AgentBeats Competition (2026)
 - **Dean's List** - UC Davis College of Engineering (Fall 2019)
 - **Dean's List** - UC Davis College of Engineering (Fall 2020)
