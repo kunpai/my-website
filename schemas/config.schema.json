@@ -225,7 +225,7 @@
                 },
                 "services": {
                     "type": "boolean",
-                    "description": "Academic Services section on the homepage. Default: true. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
+                    "description": "Service section on the homepage. Default: true. Disabled sections disappear from the navigation, their pages return 404 and they leave the sitemap.",
                     "default": true
                 },
                 "skills": {

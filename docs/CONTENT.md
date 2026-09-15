@@ -130,7 +130,7 @@ llms.txt, RSS and the search box skip it too.
 | `blogs` | on | Blog and RSS feed | `/blogs`, `/blogs/*` |
 | `news` | on | News list | — |
 | `talks` | on | Talks & Presentations list | — |
-| `services` | on | Academic Services section | — |
+| `services` | on | Service section | — |
 | `skills` | on | Skills section | — |
 | `awards` | on | Awards section | — |
 | `contact` | on | Contact page with a mailto form | `/contact` |
@@ -374,7 +374,7 @@ plus two optional settings:
 
 ### service.json
 
-The Academic Services section and the full CV.
+The Service section and the full CV.
 
 | Field | Type | Req. | Meaning |
 |---|---|---|---|
