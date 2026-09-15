@@ -3,6 +3,17 @@
 All notable changes to the template. Your site records the release it came from in
 `.template-version`; `npm run update` brings in everything listed above that release.
 
+## 1.1.1 (2026-09-14)
+
+- **Resume fix.** A backslash that isn't a LaTeX command (for example `C:\>DIR`) and `<` or `>`
+  outside `$...$` math now print as written in the PDFs. Before, a stray backslash could break the
+  LaTeX build and `<`/`>` printed as "¡" and "¿". Intentional LaTeX such as `\textbf{...}`, `\&` and
+  `$\times$` is unchanged.
+- **"Service" heading.** The homepage section formerly titled "Academic Services" is now "Service",
+  matching the CV.
+
+Nothing to do after updating beyond `npm run update`.
+
 ## 1.1.0 (2026-09-14)
 
 - **Compact Skills section.** Each category is one row: a small label and the skills as pill
