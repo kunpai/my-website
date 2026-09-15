@@ -1,7 +1,7 @@
 import Seo from '@/components/seo';
 import config from '@/website.config.json';
 import React from 'react';
-import { Row, Col, Badge } from "react-bootstrap";
+import { Row, Badge } from "react-bootstrap";
 import Experience from "@/components/experience";
 import Containter from "react-bootstrap/Container";
 import Hello from '@/components/hello';
@@ -259,17 +259,7 @@ export default function Home() {
               <h1 className="mb-3" id="skills">
                 Skills
               </h1>
-              {
-                Object.keys(skills).filter(key => key !== "resume_skills").map((skill, index) => {
-                  const displayName = skill === "systems-and-compilers" ? "Systems & Compilers" : skill.split("-").map(toTitleCase).join(" ");
-                  return (
-                    <React.Fragment key={index}>
-                      <h1>{displayName}</h1>
-                      <Skill skill={skills[skill]} />
-                    </React.Fragment>
-                  )
-                })
-              }
+              <Skills skills={skills} />
             </div>
           </Row>
         )}
@@ -279,13 +269,7 @@ export default function Home() {
               <h1 className="mb-3" id="awards">
                 Awards
               </h1>
-              {
-                awards.filter(award => award.show_on_website !== false).map((award, index) => {
-                  return (
-                    <Award key={index} award={award} />
-                  )
-                })
-              }
+              <Awards awards={awards.filter(award => award.show_on_website !== false)} />
             </div>
           </Row>
         )}
@@ -306,7 +290,26 @@ export default function Home() {
   );
 }
 
-function Award({ award }) {
+// Same title + awarder (e.g. Dean's List every term) becomes one row with all its dates,
+// matching how generate_resumes.py groups awards on the resume.
+function groupAwards(awards) {
+  const groups = new Map();
+  for (const award of awards) {
+    const key = `${award.title} ${award.awarder}`;
+    const group = groups.get(key);
+    if (group) {
+      group.dates.push(award.date);
+      group.link = group.link || award.link;
+      group.badge = group.badge || award.badge;
+      group.spotlight = group.spotlight || award.spotlight;
+    } else {
+      groups.set(key, { ...award, dates: [award.date] });
+    }
+  }
+  return [...groups.values()];
+}
+
+function Awards({ awards }) {
   const ref = useRef(null);
   useEffect(() => {
     gsap.from(ref.current, {
@@ -322,31 +325,30 @@ function Award({ award }) {
   }, []);
 
   return (
-    <Row className="mb-3" ref={ref}>
-      <Col xs={1} className="d-flex align-items-center" style={{ width: 'auto' }}>
-      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" className={`bi bi-trophy-fill ${(award.badge || award.spotlight) ? 'spotlight-trophy' : ''}`} viewBox="0 0 16 16">
-        <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935z"/>
-      </svg>
-      </Col>
-      <Col>
-        <div>
-          <div className="d-flex align-items-center gap-2 flex-wrap mb-1">
-            <h3 className="mb-0">{award.title}</h3>
-            {(award.badge || award.spotlight) && (
-              <Badge className="spotlight-badge" style={{ fontSize: '0.7rem', padding: '0.25em 0.5em' }}>
-                {award.badge || (typeof award.spotlight === "string" ? award.spotlight : "Spotlight")}
-              </Badge>
-            )}
-          </div>
-          <h5>
-            {award.link ? <Link href={award.link}>{award.awarder}</Link> :
-              award.awarder
-            }
-          </h5>
-          <span>{award.date}</span>
-        </div>
-      </Col>
-    </Row>
+    <ul className="award-list" ref={ref}>
+      {groupAwards(awards).map((award) => {
+        const badge = award.badge || (award.spotlight && (typeof award.spotlight === "string" ? award.spotlight : "Spotlight"));
+        return (
+          <li key={`${award.title}-${award.awarder}`} className="award-row">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" aria-hidden="true" className={`bi bi-trophy-fill award-icon ${badge ? 'spotlight-trophy' : ''}`} viewBox="0 0 16 16">
+              <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935z"/>
+            </svg>
+            <div className="award-body">
+              <div className="award-main">
+                <span className="award-title">{award.title}</span>
+                {badge && <Badge className="spotlight-badge ms-2">{badge}</Badge>}
+                <span className="award-awarder">
+                  {award.link ? <Link href={award.link}>{award.awarder}</Link> : award.awarder}
+                </span>
+              </div>
+              <span className="award-date">
+                {award.dates.map((date) => date.replace(/(\d)-(\d)/g, "$1–$2")).join(", ")}
+              </span>
+            </div>
+          </li>
+        );
+      })}
+    </ul>
   )
 }
 
@@ -373,8 +375,12 @@ function NewsItem({ item, index }) {
   );
 }
 
+// "systems-and-compilers" -> "Systems & Compilers"
+const skillCategoryName = (key) =>
+  key.split("-").map((word) => (word === "and" ? "&" : toTitleCase(word))).join(" ");
+
 // function to display skills.json
-function Skill({skill}) {
+function Skills({ skills }) {
   const ref = useRef(null);
   useEffect(() => {
     gsap.from(ref.current, {
@@ -389,11 +395,18 @@ function Skill({skill}) {
     });
   }, []);
   return (
-    <Row className="mb-3" ref={ref}>
-      <Col xs={1} className="d-flex align-items-center" style={{ width: 'auto' }}>
-        {skill.join(', ')}
-      </Col>
-    </Row>
+    <dl className="skills-grid" ref={ref}>
+      {Object.keys(skills).filter(key => key !== "resume_skills").map((key) => (
+        <React.Fragment key={key}>
+          <dt>{skillCategoryName(key)}</dt>
+          <dd>
+            {skills[key].map((skill) => (
+              <Badge key={skill} bg="secondary">{skill}</Badge>
+            ))}
+          </dd>
+        </React.Fragment>
+      ))}
+    </dl>
   )
 }
 
