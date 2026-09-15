@@ -3,6 +3,14 @@
 All notable changes to the template. Your site records the release it came from in
 `.template-version`; `npm run update` brings in everything listed above that release.
 
+## 1.1.2 (2026-09-14)
+
+- **Skills section text.** Category names now use the same size and weight as the award titles
+  instead of small uppercase lettering, and the skill pills are the same size as the pills on
+  experience and project cards.
+
+Nothing to do after updating beyond `npm run update`.
+
 ## 1.1.1 (2026-09-14)
 
 - **Resume fix.** A backslash that isn't a LaTeX command (for example `C:\>DIR`) and `<` or `>`
