@@ -1,5 +1,14 @@
 [
     {
+        "title": "Finalist (Agentic Financial & High-Stakes AI Advice)",
+        "awarder": "Cambridge C:\\>DIR Global ‘Agentic Regulator’ Hackathon",
+        "date": "2026",
+        "link": "/images/naamse-cdir-hackathon-finalist.png",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": false
+    },
+    {
         "title": "2nd Place (Agent Safety)",
         "awarder": "UC Berkeley RDI AgentBeats Competition",
         "date": "2026",
