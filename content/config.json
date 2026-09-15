@@ -32,7 +32,7 @@
     },
     "features": {
         "about": true,
-        "projects": false,
+        "projects": true,
         "publications": true,
         "experience": false,
         "blogs": true,
