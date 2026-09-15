@@ -148,7 +148,7 @@ llms.txt, RSS and the search box skip it too.
 | `footerHeading` | `"Connect with Me"` |
 | `contactHeading` | `"Get in Touch"` |
 | `contactIntro` | A friendly invitation to reach out. |
-| `skillCategories` | `{}`: display names for `skills.json` keys, e.g. `{"ml-and-data": "ML & Data"}`. Unlisted keys are title-cased (`programming-languages` → "Programming Languages"). |
+| `skillCategories` | `{}`: display names for `skills.json` keys, e.g. `{"ml-and-data": "ML & Data"}`. Unlisted keys are title-cased, with `and` shown as "&" (`tools-and-technologies` → "Tools & Technologies"). |
 
 ### Theme
 
@@ -349,8 +349,9 @@ The Awards section and the full CV.
 
 ### skills.json
 
-An object. Every key except `resume_skills` is a homepage category with a list of skills. Keys are
-title-cased for display unless `labels.skillCategories` names them.
+An object. Every key except `resume_skills` is a homepage category with a list of skills, shown as
+pill badges. Keys are title-cased for display, with `and` shown as "&", unless
+`labels.skillCategories` names them.
 
 `resume_skills` holds the categories for the resumes and llms.txt (display name → list),
 plus two optional settings:

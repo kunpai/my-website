@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Skills",
-    "description": "content/data/skills.json: an object. Every key except resume_skills is a homepage Skills category (key -> list of strings); keys are shown title-cased (\"programming-languages\" -> \"Programming Languages\") unless config.labels.skillCategories names them.",
+    "description": "content/data/skills.json: an object. Every key except resume_skills is a homepage Skills category (key -> list of strings); keys are shown title-cased, with \"and\" as \"&\" (\"tools-and-technologies\" -> \"Tools & Technologies\") unless config.labels.skillCategories names them.",
     "type": "object",
     "properties": {
         "resume_skills": {
