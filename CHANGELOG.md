@@ -3,6 +3,18 @@
 All notable changes to the template. Your site records the release it came from in
 `.template-version`; `npm run update` brings in everything listed above that release.
 
+## 1.1.0 (2026-09-14)
+
+- **Compact Skills section.** Each category is one row: a small label and the skills as pill
+  badges, instead of a full-size heading per category. Keys containing `and` now display it as
+  "&" (`tools-and-technologies` → "Tools & Technologies"); `labels.skillCategories` still wins.
+- **Compact Awards section.** Each award is one row with a small trophy, the title, the awarder
+  and the date on the right. Awards with the same title and awarder (for example, a Dean's List
+  entry for every term) are grouped into one row listing all their dates, as the resumes already do.
+
+Nothing to do after updating beyond `npm run update`. If you customised the Skills or Awards markup
+in `pages/index.js` or `styles/globals.css`, expect a merge conflict there.
+
 ## 1.0.1 (2026-09-14)
 
 - **Credits.** The README now credits [Parth Shah](https://helloparthshah.vercel.app/) and
