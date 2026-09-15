@@ -30,7 +30,7 @@
     "enableChatbot": false,
     "features": {
         "about": true,
-        "projects": false,
+        "projects": true,
         "publications": true,
         "workExperience": false,
         "experience": false,
