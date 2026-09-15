@@ -783,12 +783,9 @@ html[data-bs-theme="dark"] .word-cloud-tag:hover {
   margin: 0;
 }
 
+/* Same text style as the award titles */
 .skills-grid dt {
-  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--bs-secondary-color);
 }
 
 .skills-grid dd {
@@ -798,9 +795,9 @@ html[data-bs-theme="dark"] .word-cloud-tag:hover {
   margin: 0;
 }
 
+/* Same size as the experience and project pills (0.75em badge inside an h5) */
 .skills-grid .badge {
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.9375rem;
 }
 
 /* Homepage awards: one compact row each */
