@@ -45,6 +45,10 @@ def tex_escape(text):
         # If it doesn't look like a math block, escape raw '$' signs
         if not (parts[i].startswith('$') and parts[i].endswith('$')):
             parts[i] = re.sub(r'(?<!\\)\$', r'\$', parts[i])
+            # Literal backslash (not a LaTeX command or escape), e.g. "C:\>DIR"
+            parts[i] = re.sub(r'\\(?![A-Za-z&%_$#{}\\])', r'\\textbackslash{}', parts[i])
+            # '<' and '>' render as inverted punctuation in OT1 text mode
+            parts[i] = parts[i].replace('<', r'\textless{}').replace('>', r'\textgreater{}')
     text = "".join(parts)
     
     # Note: We do NOT escape '{' and '}' because they are widely used in LaTeX markup in descriptions.
