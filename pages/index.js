@@ -32,7 +32,7 @@ function isAfterJune2023(end) {
   const monthIndex = months.indexOf(month);
   const date = new Date(parseInt(year), monthIndex);
   const june2023 = new Date(2023, 5); // June is 5 (0-based)
-  return date >= june2023;
+  return date > june2023;
 }
 
 function isAfter2024(end) {
