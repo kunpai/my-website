@@ -9,6 +9,11 @@ on:
       - 'scripts/**'
   workflow_dispatch:
 
+# Serialize runs so two quick pushes cannot race each other's bot commit.
+concurrency:
+  group: build-resumes-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   build-resumes:
     runs-on: ubuntu-latest
@@ -60,7 +65,12 @@ jobs:
           # Commit only if there are modifications
           if ! git diff --cached --exit-code; then
             git commit -m "chore: auto-regenerate resumes from content/ [skip ci]"
-            git push
+            # main may have moved since checkout; rebase the bot commit on top and retry.
+            for attempt in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              echo "Push attempt $attempt failed; retrying..."
+              sleep 5
+            done
           else
             echo "No changes to the compiled resumes."
           fi
