@@ -3,6 +3,24 @@
 All notable changes to the template. Your site records the release it came from in
 `.template-version`; `npm run update` brings in everything listed above that release.
 
+## 1.2.0 (2026-09-16)
+
+- **Links inside bullets.** Experience and project `description` lines are now rendered as
+  markdown, so `[text](url)` becomes an inline link that opens in a new tab. The resumes already
+  turned such links into `\href`, so a bullet now reads the same on the site and in the PDFs.
+- **Link button labels.** A `links` key containing the word "Resources" (for example
+  `"Docs: gem5 Resources"`) no longer shows as a GitHub "Code" button; only a whole word
+  `source` (as in `"View Source"`) does.
+- **Resume workflow race fix.** If you push twice within a couple of minutes, the resume build
+  triggered by the first push used to fail with "Updates were rejected" when it tried to commit
+  the regenerated PDFs. Runs now queue one after another and rebase the bot commit before
+  pushing.
+- **Plain-text `pages/index.js`.** The awards grouping key used a literal NUL byte, which made
+  `grep`, `file` and GitHub diffs treat the file as binary. It is now the `\u0000` escape.
+
+Nothing to do after updating beyond `npm run update`. If you customised
+`components/experience.js` or `.github/workflows/build-resume.yml`, expect a merge conflict there.
+
 ## 1.1.2 (2026-09-14)
 
 - **Skills section text.** Category names now use the same size and weight as the award titles
