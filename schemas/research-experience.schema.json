@@ -51,7 +51,7 @@
             },
             "description": {
                 "type": "string",
-                "description": "What you did. Each line (separated by \\n) becomes a bullet; an empty string shows \"In progress\". Required: llms-full.txt print it, and the Experience component crashes without it. Must be a string, not an array."
+                "description": "What you did. Each line (separated by \\n) becomes a bullet and may contain markdown links ([text](url)), which the resumes turn into links too; an empty string shows \"In progress\". Required: llms-full.txt print it, and the Experience component crashes without it. Must be a string, not an array."
             },
             "skills": {
                 "type": "array",

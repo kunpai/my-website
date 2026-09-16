@@ -238,7 +238,7 @@ Shown on the homepage and `/projects`, and in the resumes' Project Experience se
 |---|---|---|---|
 | `title` | string | yes | Project name. |
 | `start`, `end` | string | yes | Free text, e.g. `"Jan 2024"`, `"Present"`. |
-| `description` | string | yes | One bullet per line (`\n`). `""` shows "In progress". A string, not an array. |
+| `description` | string | yes | One bullet per line (`\n`); markdown links (`[text](url)`) are allowed and become links in the resumes too. `""` shows "In progress". A string, not an array. |
 | `organization` | string | | Lab or organization, shown under the image. |
 | `image` | path | | Banner image. Default: placeholder. |
 | `skills` | string[] | | Badges. |
@@ -274,7 +274,7 @@ The Experience section on the homepage and `/work-experiences` (heading: `labels
 | `title` | string | yes | Your role. |
 | `organization` | string | yes | Company, lab or university. **Not** `company`. |
 | `start`, `end` | string | yes | Free text. |
-| `description` | string | yes | One bullet per line (`\n`). |
+| `description` | string | yes | One bullet per line (`\n`); markdown links (`[text](url)`) are allowed and become links in the resumes too. |
 | `location` | string | | |
 | `image` | path | | Logo, shown as a circle. |
 | `skills`, `links`, `collaborators` | | | As in projects. |
@@ -291,7 +291,7 @@ The Experience section on the homepage and `/work-experiences` (heading: `labels
     "end": "Present",
     "location": "Example City, CA",
     "image": "/images/placeholder.png",
-    "description": "Lead the ShiftBench benchmark.\nMentor two undergraduates."
+    "description": "Lead the [ShiftBench](https://example.com/janedoe/shift-bench) benchmark.\nMentor two undergraduates."
 }
 ```
 

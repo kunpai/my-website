@@ -7,7 +7,7 @@
         "end": "Present",
         "location": "Example City, CA",
         "image": "/images/reliable-ml-lab.jpg",
-        "description": "Lead the ShiftBench robustness benchmark.\nStudy failure modes of distributed training on preemptible hardware.\nMentor two undergraduate researchers.",
+        "description": "Lead the [ShiftBench](https://example.com/janedoe/shift-bench) robustness benchmark.\nStudy failure modes of distributed training on preemptible hardware.\nMentor two undergraduate researchers.",
         "skills": [
             "PyTorch",
             "Distributed Training"
