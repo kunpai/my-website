@@ -229,7 +229,7 @@
         "title": "gem5 Vision",
         "start": "January 2023",
         "end": "June 2023",
-        "description": "Boosted resource discovery speed by 20x with optimized search functionality across 1,200+ resources.\nEnabled faster retrieval of resources across 20+ categories by introducing categorization and semantic versioning.\nEnhanced accessibility for 500+ industry and academic users by integrating local/remote JSON files and MongoDB with gem5.",
+        "description": "Boosted resource discovery speed by 20x with optimized search functionality across 1,200+ resources.\nEnabled faster retrieval of resources across 20+ categories by introducing categorization and semantic versioning.\nEnhanced accessibility for 500+ industry and academic users by integrating local/remote JSON files and MongoDB with gem5.\nUpstreamed into gem5 v23.0 and became the basis of the official gem5 Resources website, resources.gem5.org.",
         "skills": [
             "NextJS",
             "MongoDB",
@@ -237,6 +237,7 @@
             "JSON Schema"
         ],
         "links": {
+            "Website": "https://resources.gem5.org/",
             "Poster": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf"
         },
         "image": "/images/gem5vision.png",

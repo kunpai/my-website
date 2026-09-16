@@ -130,7 +130,8 @@ Investigated the vulnerability of x86-based in-order and out-of-order processors
   Boosted resource discovery speed by 20x with optimized search functionality across 1,200+ resources.
 Enabled faster retrieval of resources across 20+ categories by introducing categorization and semantic versioning.
 Enhanced accessibility for 500+ industry and academic users by integrating local/remote JSON files and MongoDB with gem5.
-  Links: [Poster](https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf)
+Upstreamed into gem5 v23.0 and became the basis of the official gem5 Resources website, resources.gem5.org.
+  Links: [Website](https://resources.gem5.org/) | [Poster](https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf)
 
 ## Awards & Honors
 - **Finalist (Agentic Financial & High-Stakes AI Advice)** - Cambridge C:\>DIR Global ‘Agentic Regulator’ Hackathon (2026)

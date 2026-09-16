@@ -51,6 +51,7 @@ Previously, at **UC Davis**, I was fortunate to work with [Prof. Jason Lowe-Powe
   - Co-developed SuperNOVA, a domain-specific superconducting graph accelerator that achieved an over 1800x reduction in power consumption and up to a 2157x improvement in energy efficiency over a CMOS baseline.
   - Implemented custom full-system models in gem5 to simulate 100 GHz superconducting architectures, discovering that general-purpose performance is fundamentally bottlenecked by room-temperature main memory.
   - Mentored 5 undergraduate students in the Davis Computer Architecture Lab to prepare them for graduate research.
+  - Upstream contributor to gem5 (core simulator, gem5-resources, gem5 website, and the 2024 gem5 Bootcamp); authored official gem5 documentation for gem5 Resources, Suites, Local Resources Support, and custom Standard Library boards, and the RISC-V Getting Started Benchmark Suite.
 
 ### Student Researcher - Davis Excellent/Eclectic/Extreme Computational Analytics Lab
 - **Period**: September 2022 – Present
@@ -330,8 +331,9 @@ Investigated the vulnerability of x86-based in-order and out-of-order processors
 - **Summary**: Boosted resource discovery speed by 20x with optimized search functionality across 1,200+ resources.
 Enabled faster retrieval of resources across 20+ categories by introducing categorization and semantic versioning.
 Enhanced accessibility for 500+ industry and academic users by integrating local/remote JSON files and MongoDB with gem5.
+Upstreamed into gem5 v23.0 and became the basis of the official gem5 Resources website, resources.gem5.org.
 - **Collaborators**: [Parth Shah](https://helloparthshah.vercel.app/), [Harshil Patel](https://harshilpatel.vercel.app/), [Arslan Ali](https://github.com/aarsli)
-- **Links**: [Poster](https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf)
+- **Links**: [Website](https://resources.gem5.org/) | [Poster](https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf)
 
 ## Work Experience
 ### Graduate Student Researcher - DavSec Lab @ University of California, Davis
@@ -352,6 +354,7 @@ Enhanced accessibility for 500+ industry and academic users by integrating local
   - Co-developed SuperNOVA, a domain-specific superconducting graph accelerator that achieved an over 1800x reduction in power consumption and up to a 2157x improvement in energy efficiency over a CMOS baseline.
   - Implemented custom full-system models in gem5 to simulate 100 GHz superconducting architectures, discovering that general-purpose performance is fundamentally bottlenecked by room-temperature main memory.
   - Mentored 5 undergraduate students in the Davis Computer Architecture Lab to prepare them for graduate research.
+  - Upstream contributor to gem5 (core simulator, gem5-resources, gem5 website, and the 2024 gem5 Bootcamp); authored official gem5 documentation for gem5 Resources, Suites, Local Resources Support, and custom Standard Library boards, and the RISC-V Getting Started Benchmark Suite.
 
 ### Graduate Student Researcher - DECAL Lab @ University of California, Davis
 - **Period**: September 2022 – December 2024
