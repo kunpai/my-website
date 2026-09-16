@@ -51,7 +51,7 @@ Previously, at **UC Davis**, I was fortunate to work with [Prof. Jason Lowe-Powe
   - Co-developed SuperNOVA, a domain-specific superconducting graph accelerator that achieved an over 1800x reduction in power consumption and up to a 2157x improvement in energy efficiency over a CMOS baseline.
   - Implemented custom full-system models in gem5 to simulate 100 GHz superconducting architectures, discovering that general-purpose performance is fundamentally bottlenecked by room-temperature main memory.
   - Mentored 5 undergraduate students in the Davis Computer Architecture Lab to prepare them for graduate research.
-  - Upstream contributor to gem5 (core simulator, gem5-resources, gem5 website, and the 2024 gem5 Bootcamp); authored official gem5 documentation for gem5 Resources, Suites, Local Resources Support, and custom Standard Library boards, and the RISC-V Getting Started Benchmark Suite.
+  - Upstream contributor to gem5 (core simulator, gem5-resources, gem5 website, and the 2024 gem5 Bootcamp); authored official gem5 documentation for [gem5 Resources](https://www.gem5.org/documentation/general_docs/gem5_resources/), [Suites](https://www.gem5.org/documentation/gem5-stdlib/suites), [Local Resources Support](https://www.gem5.org/documentation/gem5-stdlib/local-resources-support), and [custom Standard Library boards](https://www.gem5.org/documentation/gem5-stdlib/develop-stdlib-board), and the RISC-V Getting Started Benchmark Suite.
 
 ### Student Researcher - Davis Excellent/Eclectic/Extreme Computational Analytics Lab
 - **Period**: September 2022 – Present
@@ -354,7 +354,7 @@ Upstreamed into gem5 v23.0 and became the basis of the official gem5 Resources w
   - Co-developed SuperNOVA, a domain-specific superconducting graph accelerator that achieved an over 1800x reduction in power consumption and up to a 2157x improvement in energy efficiency over a CMOS baseline.
   - Implemented custom full-system models in gem5 to simulate 100 GHz superconducting architectures, discovering that general-purpose performance is fundamentally bottlenecked by room-temperature main memory.
   - Mentored 5 undergraduate students in the Davis Computer Architecture Lab to prepare them for graduate research.
-  - Upstream contributor to gem5 (core simulator, gem5-resources, gem5 website, and the 2024 gem5 Bootcamp); authored official gem5 documentation for gem5 Resources, Suites, Local Resources Support, and custom Standard Library boards, and the RISC-V Getting Started Benchmark Suite.
+  - Upstream contributor to gem5 (core simulator, gem5-resources, gem5 website, and the 2024 gem5 Bootcamp); authored official gem5 documentation for [gem5 Resources](https://www.gem5.org/documentation/general_docs/gem5_resources/), [Suites](https://www.gem5.org/documentation/gem5-stdlib/suites), [Local Resources Support](https://www.gem5.org/documentation/gem5-stdlib/local-resources-support), and [custom Standard Library boards](https://www.gem5.org/documentation/gem5-stdlib/develop-stdlib-board), and the RISC-V Getting Started Benchmark Suite.
 
 ### Graduate Student Researcher - DECAL Lab @ University of California, Davis
 - **Period**: September 2022 – December 2024

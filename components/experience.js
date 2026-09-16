@@ -4,7 +4,16 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { getLinkMeta, ExternalArrowIcon } from "./linkMeta";
+import ReactMarkdown from "react-markdown";
 gsap.registerPlugin(ScrollTrigger);
+
+// Description bullets are markdown: render inline (no <p> wrapper) and open links in a new tab.
+const descriptionMarkdownComponents = {
+    p: ({ children }) => <>{children}</>,
+    a: ({ href, children }) => (
+        <a href={href} target="_blank" rel="noopener noreferrer">{children}</a>
+    ),
+};
 
 export default function Experience({ jsonExperiences, title, isExperience }) {
     return (
@@ -120,7 +129,9 @@ function ExperienceTile({ isExperience, experience }) {
             <Col className="d-flex justify-content-center flex-column">
                 <ul>
                     {experience.description != "" ? experience.description.split('\n').map((line, index) => (
-                        <li key={index}>{line}</li>
+                        <li key={index}>
+                            <ReactMarkdown components={descriptionMarkdownComponents}>{line}</ReactMarkdown>
+                        </li>
                     )) : <li>In progress</li>}
                 </ul>
             </Col>
