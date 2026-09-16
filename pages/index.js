@@ -254,7 +254,7 @@ export default function Home() {
 function groupAwards(awards) {
   const groups = new Map();
   for (const award of awards) {
-    const key = `${award.title} ${award.awarder}`;
+    const key = `${award.title}\u0000${award.awarder}`;
     const group = groups.get(key);
     if (group) {
       group.dates.push(award.date);
