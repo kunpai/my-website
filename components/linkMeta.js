@@ -37,7 +37,7 @@ export const getLinkMeta = (key, url = '') => {
     }
 
     // 3. Source / Code / GitHub
-    if (lowerKey.includes('source') || lowerKey.includes('code') || lowerKey.includes('github') || lowerUrl.includes('github.com')) {
+    if (/\bsource\b/.test(lowerKey) || lowerKey.includes('code') || lowerKey.includes('github') || lowerUrl.includes('github.com')) {
         return {
             label: lowerKey.includes('github') ? 'GitHub' : 'Code',
             icon: (
