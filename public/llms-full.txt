@@ -1,6 +1,6 @@
 # Kunal Pai - Complete Portfolio & Academic Profile
 
-> I am an incoming PhD student at **UCLA**, advised by [Prof. Miryung Kim](http://www.cs.ucla.edu/~miryung/).
+> I am a PhD student at **UCLA**, advised by [Prof. Miryung Kim](http://www.cs.ucla.edu/~miryung/).
 
 Previously, at **UC Davis**, I was fortunate to work with [Prof. Jason Lowe-Power](https://arch.cs.ucdavis.edu/) on gem5 and simulation of superconducting architectures, with [Prof. Prem Devanbu](http://www.cs.ucdavis.edu/~devanbu) and [Dr. Toufique Ahmed](https://toufiqueparag.github.io/toufique.github.io/) on LLM-based approaches to code summarization, calibration, and code-documentation alignment, and with [Prof. Tapti Palit](https://taptipalit.github.io) on agentic performance optimization and benchmarking for C-to-Rust transpilation.
 
