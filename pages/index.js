@@ -375,9 +375,29 @@ function NewsItem({ item, index }) {
   );
 }
 
-// "systems-and-compilers" -> "Systems & Compilers"
+const ACRONYMS = {
+  ai: "AI",
+  ml: "ML",
+  llm: "LLM",
+  llms: "LLMs",
+  nlp: "NLP",
+  hpc: "HPC",
+  ci: "CI",
+  cd: "CD",
+  ui: "UI",
+};
+
+// "systems-and-compilers" -> "Systems & Compilers", "ai-and-machine-learning" -> "AI & Machine Learning"
 const skillCategoryName = (key) =>
-  key.split("-").map((word) => (word === "and" ? "&" : toTitleCase(word))).join(" ");
+  key
+    .split("-")
+    .map((word) => {
+      if (word === "and") return "&";
+      const lower = word.toLowerCase();
+      if (ACRONYMS[lower]) return ACRONYMS[lower];
+      return toTitleCase(word);
+    })
+    .join(" ");
 
 // function to display skills.json
 function Skills({ skills }) {

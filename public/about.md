@@ -14,8 +14,8 @@ My research focuses on the intersection of Software Engineering, Artificial Inte
 
 Previously, I completed my undergraduate studies at **UC Davis**, where I worked on:
 - Superconducting architecture simulation with [Prof. Jason Lowe-Power](https://arch.cs.ucdavis.edu/).
-- LLM confidence calibration with [Prof. Prem Devanbu](http://www.cs.ucdavis.edu/~devanbu) and [Dr. Toufique Ahmed](https://toufiqueparag.github.io/toufique.github.io/).
-- Automated C-to-Rust migration with [Prof. Tapti Palit](https://taptipalit.github.io).
+- LLM confidence calibration, code summarization, and code-documentation alignment with [Prof. Prem Devanbu](http://www.cs.ucdavis.edu/~devanbu) and [Dr. Toufique Ahmed](https://toufiqueparag.github.io/toufique.github.io/).
+- Automated C-to-Rust transpilation, performance optimization, and benchmarking with [Prof. Tapti Palit](https://taptipalit.github.io).
 
 ---
 *Feel free to reach out via the [Contact](/contact) page or connect on [GitHub](https://github.com/kunpai) and [LinkedIn](https://www.linkedin.com/in/kunpai/).*

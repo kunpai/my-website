@@ -403,11 +403,18 @@ function generateLlmsFullTxt() {
     // Skills
     lines.push('## Technical & Language Skills');
     if (skills.resume_skills) {
+        const longOverrides = skills.resume_skills.resume_skills_long_override || {};
         for (const [cat, items] of Object.entries(skills.resume_skills)) {
-            if (Array.isArray(items)) {
-                lines.push(`- **${cat}**: ${items.join(', ')}`);
+            if (cat === 'resume_skills_long_override') continue;
+            const displayItems = longOverrides[cat] || items;
+            if (Array.isArray(displayItems)) {
+                lines.push(`- **${cat}**: ${displayItems.join(', ')}`);
             }
         }
+    }
+    const spokenLangs = skills['spoken-languages'] || skills['languages'];
+    if (Array.isArray(spokenLangs)) {
+        lines.push(`- **Spoken Languages**: ${spokenLangs.join(', ')}`);
     }
     lines.push('');
 

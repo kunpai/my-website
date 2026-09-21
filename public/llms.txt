@@ -157,10 +157,10 @@ Upstreamed into gem5 v23.0 and became the basis of the official gem5 Resources w
 
 ## Technical Skills
 - **Languages**: Python, C++, C, Rust, JavaScript, Java
-- **ML/AI**: TensorFlow, PyTorch, scikit-learn, LLMs, Prompt Engineering, Ollama, Hugging Face, Multi-agent Systems
-- **Systems & Compilers**: LLVM, Clang, gem5
-- **Web/Data**: React, Next.js, Django, Flask, MongoDB, pandas, NumPy, Matplotlib
-- **Tools**: Git, Docker, Unix/Linux, Jupyter
+- **ML/AI**: LLMs, Multi-Agent Systems, AI Agent Security, PyTorch, TensorFlow, Hugging Face, scikit-learn, Ollama
+- **Systems & Compilers**: gem5, RISC-V, LLVM, Clang
+- **Web/Data**: React, Next.js, Django, Flask, MongoDB, pandas, NumPy
+- **Tools**: Git, Docker, Unix/Linux, Jupyter, LaTeX
 
 ## Full Details
 For complete research details, work history, full publication abstracts, talks, and teaching experience, see the full LLM document:
