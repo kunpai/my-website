@@ -197,7 +197,7 @@ function generateLlmsTxt() {
 
     // Detailed Files Notice
     lines.push('## Full Details');
-    lines.push(`For complete research details, work history, full publication abstracts, talks, and teaching experience, see the full LLM document:`);
+    lines.push(`For complete research details, full publication abstracts, talks, and teaching experience, see the full LLM document:`);
     lines.push(`- [Full LLM Markdown Summary](https://www.kunpai.space/llms-full.txt)`);
     lines.push('');
 
@@ -209,7 +209,6 @@ function generateLlmsFullTxt() {
     const education = loadJson('education.json') || [];
     const publications = loadJson('publications.json') || [];
     const researchExp = loadJson('research-experience.json') || [];
-    const workExp = loadJson('work-experience.json') || [];
     const projects = loadJson('projects.json') || [];
     const skills = loadJson('skills.json') || {};
     const awards = loadJson('awards.json') || [];
@@ -301,24 +300,6 @@ function generateLlmsFullTxt() {
         lines.push('');
     }
 
-    // Work Experience
-    if (workExp.length > 0) {
-        lines.push('## Work Experience');
-        for (const work of workExp) {
-            const period = [work.start, work.end].filter(Boolean).join(' – ');
-            lines.push(`### ${work.title} - ${work.organization}`);
-            lines.push(`- **Period**: ${period}`);
-            if (work.location) lines.push(`- **Location**: ${work.location}`);
-            if (work.description) {
-                lines.push(`- **Description**:`);
-                const bullets = cleanText(work.description).split('\n');
-                for (const bullet of bullets) {
-                    if (bullet.trim()) lines.push(`  - ${bullet.trim()}`);
-                }
-            }
-            lines.push('');
-        }
-    }
 
     // Talks
     if (talks.length > 0) {

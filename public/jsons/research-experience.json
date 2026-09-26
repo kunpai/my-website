@@ -18,11 +18,11 @@
         "image": "/images/darchr.png"
     },
     {
-        "title": "Student Researcher",
-        "organization": "Davis Excellent/Eclectic/Extreme Computational Analytics Lab",
+        "title": "Graduate Student Researcher",
+        "organization": "DECAL Lab @ UC Davis",
         "start": "September 2022",
-        "end": "Present",
-        "description": "Co-authored paper on appending semantic information for better code summarization.\nCo-authored paper on calibration of LLM models, particularly involved in the bug repair section and tested models on Defects4J.",
+        "end": "December 2024",
+        "description": "Developed a 4,500-sample dataset for pairwise code-documentation alignment from 200 open-source Python projects, enabling future research in software maintenance.\nEngineered a pipeline for measuring calibration and correctness of large language models for code repair, using Defects4J.\nCollaborated in validating efficacy of semantic augmentation of language model prompts for code summarization using precision and recall metrics like ROUGE and METEOR.",
         "location": "Davis, CA",
         "image": "/images/decallab.png"
     },
