@@ -132,7 +132,7 @@ const generateGraphData = (pubs) => {
         }
         
         const K = tagsInGroup.length;
-        const deltaTheta = 0.28; // Spacing in radians (about 16 degrees)
+        const deltaTheta = 0.4; // Spacing in radians (about 23 degrees) so sibling labels clear each other
         
         tagsInGroup.forEach((tag, j) => {
             // Symmetrical offset calculation: e.g. for K=3, offsets are -delta, 0, +delta
@@ -173,10 +173,14 @@ function ResearchGraph({ activeFilter, onSelectFilter }) {
 
     const handleNodeClick = (node) => {
         if (node.type === "category") {
-            const childTags = tagNodes.filter(t => t.parent === node.id).flatMap(t => t.matches);
+            // Include the category tag itself plus every subtopic that lists this category as a parent,
+            // so a category still filters correctly even when all its subtopics are shared with another category.
+            const childTags = tagNodes
+                .filter(t => (t.parents || []).includes(node.id))
+                .flatMap(t => t.matches);
             onSelectFilter({
                 type: "tag",
-                value: childTags,
+                value: [node.id, ...childTags],
                 name: node.label
             });
         } else {

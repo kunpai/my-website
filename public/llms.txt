@@ -61,7 +61,7 @@ Previously, at **UC Davis**, I was fortunate to work with [Prof. Jason Lowe-Powe
   Links: [View Source](https://github.com/kunpai/codocbench) | [View Publication](https://ieeexplore.ieee.org/document/11025763) | [View Pre-Print](https://arxiv.org/abs/2502.00519)
 
 - **Calibration and Correctness of Language Models for Code**
-  Authors: Claudio Spiess, David Gros, Kunal Suresh Pai, Michael Pradel, Md Rafiqul Islam Rabin, Amin Alipour, Sushmit Jha, Premkumar Devanbu, Toufique Ahmed
+  Authors: Claudio Spiess, David Gros, Kunal Suresh Pai, Michael Pradel, Md Rafiqul Islam Rabin, Amin Alipour, Susmit Jha, Premkumar Devanbu, Toufique Ahmed
   Venue: International Conference on Software Engineering (ICSE) 2025
   Summary: Machine learning models often produce incorrect outputs, making reliable confidence measures essential for determining the trustworthiness of these outputs. This paper introduces a framework to evaluate and improve the calibration of code-generating models, finding that these models are generally poorly calibrated initially but can be improved using methods like Platt scaling, thereby enhancing decision-making in software engineering.
   Links: [View Publication](https://ieeexplore.ieee.org/document/11029728) | [View Pre-Print](https://arxiv.org/pdf/2402.02047)
@@ -163,5 +163,5 @@ Upstreamed into gem5 v23.0 and became the basis of the official gem5 Resources w
 - **Tools**: Git, Docker, Unix/Linux, Jupyter, LaTeX
 
 ## Full Details
-For complete research details, work history, full publication abstracts, talks, and teaching experience, see the full LLM document:
+For complete research details, full publication abstracts, talks, and teaching experience, see the full LLM document:
 - [Full LLM Markdown Summary](https://www.kunpai.space/llms-full.txt)
