@@ -23,6 +23,12 @@ Previously, at **UC Davis**, I was fortunate to work with [Prof. Jason Lowe-Powe
   Provost Scholar, Graduated with Honors
 
 ## Key Publications & Pre-prints
+- **Kiwi: Slicing Models and Reconciling Adapters in Fault-Tolerant, Decentralized LLM Fine-Tuning**
+  Authors: Harshil Patel, Parth Shah, Swayam Shah, Kunal Pai
+  Venue: CODEC-FM 2026: Collaborative, Open, and Decentralized Foundation Models Workshop
+  Summary: Kiwi is a fault-tolerant system that shards a frozen base model across memory-constrained workers, trains per-slice LoRA adapters, and merges them peer-to-peer across pipeline replicas, delivering a 43% wall-clock speedup (39% over a simulated 75 ms WAN) and zero-copy recovery from mid-run worker failure via mirrored warm standbys.
+  Links: [View Publication](https://openreview.net/pdf?id=wOg6YrFgbA) | [View Project Page](https://openreview.net/forum?id=wOg6YrFgbA)
+
 - **VATS: Exploiting Implicit Authority in Error-Path Injection via Systematic Mutation** **[Spotlight]**
   Authors: Harshil Patel, Kunal Pai
   Venue: Second Workshop on Agents in the Wild: Safety, Security, and Beyond, ICML 2026
