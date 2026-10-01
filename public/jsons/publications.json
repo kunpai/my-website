@@ -1,5 +1,30 @@
 [
     {
+        "title": "Kiwi: Slicing Models and Reconciling Adapters in Fault-Tolerant, Decentralized LLM Fine-Tuning",
+        "authors": [
+            "Harshil Patel",
+            "Parth Shah",
+            "Swayam Shah",
+            "Kunal Pai"
+        ],
+        "type": "workshop",
+        "conference": "CODEC-FM 2026: Collaborative, Open, and Decentralized Foundation Models Workshop",
+        "description": "Kiwi is a fault-tolerant system that shards a frozen base model across memory-constrained workers, trains per-slice LoRA adapters, and merges them peer-to-peer across pipeline replicas, delivering a 43% wall-clock speedup (39% over a simulated 75 ms WAN) and zero-copy recovery from mid-run worker failure via mirrored warm standbys.",
+        "tags": [
+            "Large Language Models (LLMs)",
+            "Decentralized Training",
+            "LoRA"
+        ],
+        "links": {
+            "View Publication": "https://openreview.net/pdf?id=wOg6YrFgbA",
+            "View Project Page": "https://openreview.net/forum?id=wOg6YrFgbA"
+        },
+        "bibtex": "@inproceedings{patel2026kiwi,\n  title={Kiwi: Slicing Models and Reconciling Adapters in Fault-Tolerant, Decentralized {LLM} Fine-Tuning},\n  author={Harshil Patel and Parth Shah and Swayam Shah and Kunal Pai},\n  booktitle={CODEC-FM 2026},\n  year={2026},\n  url={https://openreview.net/forum?id=wOg6YrFgbA}\n}",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": false
+    },
+    {
         "title": "VATS: Exploiting Implicit Authority in Error-Path Injection via Systematic Mutation",
         "authors": [
             "Harshil Patel",
