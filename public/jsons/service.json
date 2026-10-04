@@ -23,23 +23,29 @@
       {
         "name": "ISSTA",
         "years": [
-          2026
-        ],
-        "link": "https://conf.researchr.org/track/issta-2026/issta-2026-artifact-evaluation"
+          {
+            "year": 2026,
+            "link": "https://conf.researchr.org/track/issta-2026/issta-2026-artifact-evaluation"
+          }
+        ]
       },
       {
         "name": "ASE",
         "years": [
-          2026
-        ],
-        "link": "https://conf.researchr.org/track/ase-2026/ase-2026-artifact-evaluation"
+          {
+            "year": 2026,
+            "link": "https://conf.researchr.org/track/ase-2026/ase-2026-artifact-evaluation"
+          }
+        ]
       },
       {
         "name": "ISPASS",
         "years": [
-          2026
-        ],
-        "link": "https://ispass.org/ispass2026/"
+          {
+            "year": 2026,
+            "link": "https://ispass.org/ispass2026/"
+          }
+        ]
       }
     ]
   },
@@ -49,30 +55,38 @@
       {
         "name": "NeurIPS, CODEC-FM Workshop",
         "years": [
-          2026
-        ],
-        "link": "https://collaborative-open-decentralized-fomo.github.io/"
+          {
+            "year": 2026,
+            "link": "https://collaborative-open-decentralized-fomo.github.io/"
+          }
+        ]
       },
       {
         "name": "NeurIPS, SocialAgent Workshop",
         "years": [
-          2026
-        ],
-        "link": "https://social-llm-workshop.github.io/"
+          {
+            "year": 2026,
+            "link": "https://social-llm-workshop.github.io/"
+          }
+        ]
       },
       {
         "name": "NeurIPS, Agents in the Wild Workshop",
         "years": [
-          2026
-        ],
-        "link": "https://agentwild-workshop.github.io/neurips2026/"
+          {
+            "year": 2026,
+            "link": "https://agentwild-workshop.github.io/neurips2026/"
+          }
+        ]
       },
       {
         "name": "ICML, Agents in the Wild Workshop",
         "years": [
-          2026
-        ],
-        "link": "https://agentwild-workshop.github.io/icml2026/"
+          {
+            "year": 2026,
+            "link": "https://agentwild-workshop.github.io/icml2026/"
+          }
+        ]
       }
     ]
   }
