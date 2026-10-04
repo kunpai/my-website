@@ -5,16 +5,15 @@
       {
         "name": "MSR, Data and Tool Showcase Track",
         "years": [
-          2027
-        ],
-        "link": "https://2027.msrconf.org/track/msr-2027-data-and-tool-showcase-track"
-      },
-      {
-        "name": "MSR, Data and Tool Showcase Track",
-        "years": [
-          2026
-        ],
-        "link": "https://2026.msrconf.org/track/msr-2026-data-and-tool-showcase-track"
+          {
+            "year": 2026,
+            "link": "https://2026.msrconf.org/track/msr-2026-data-and-tool-showcase-track"
+          },
+          {
+            "year": 2027,
+            "link": "https://2027.msrconf.org/track/msr-2027-data-and-tool-showcase-track"
+          }
+        ]
       }
     ]
   },

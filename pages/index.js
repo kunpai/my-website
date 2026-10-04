@@ -446,7 +446,7 @@ function ServiceItem({ name, years, link, index }) {
     });
   }, [index]);
 
-  const yearStr = years && years.length > 0 ? ` (${years.join(", ")})` : "";
+  const yearList = years || [];
 
   return (
     <li ref={ref} className="mb-2" style={{ listStyleType: 'disc', listStylePosition: 'outside', marginLeft: '1.5rem' }}>
@@ -457,7 +457,24 @@ function ServiceItem({ name, years, link, index }) {
       ) : (
         <ReactMarkdown components={{ p: 'span' }}>{name}</ReactMarkdown>
       )}
-      {yearStr}
+      {yearList.length > 0 && (
+        <>
+          {" ("}
+          {yearList.map((y, i) => {
+            const label = typeof y === "object" ? y.year : y;
+            const yearLink = typeof y === "object" ? y.link : null;
+            return (
+              <React.Fragment key={i}>
+                {i > 0 && ", "}
+                {yearLink ? (
+                  <a href={yearLink} target="_blank" rel="noopener noreferrer">{label}</a>
+                ) : label}
+              </React.Fragment>
+            );
+          })}
+          {")"}
+        </>
+      )}
     </li>
   );
 }

@@ -411,10 +411,15 @@ def generate_service_section(services):
             name = item.get("name", "")
             years = item.get("years", [])
             link = item.get("link", "")
-            year_str = f" ({', '.join(map(str, years))})" if years else ""
-            
             escaped_name = tex_escape(name)
-            escaped_year_str = tex_escape(year_str)
+            year_parts = []
+            for y in years:
+                if isinstance(y, dict):
+                    label = tex_escape(str(y.get("year", "")))
+                    year_parts.append(rf"\href{{{y['link']}}}{{{label}}}" if y.get("link") else label)
+                else:
+                    year_parts.append(tex_escape(str(y)))
+            escaped_year_str = f" ({', '.join(year_parts)})" if year_parts else ""
             if link:
                 formatted = rf"\href{{{link}}}{{{escaped_name}}}{escaped_year_str}"
             else:
