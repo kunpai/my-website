@@ -463,12 +463,14 @@ function ServiceItem({ name, years, link, index }) {
           {yearList.map((y, i) => {
             const label = typeof y === "object" ? y.year : y;
             const yearLink = typeof y === "object" ? y.link : null;
+            const yearBadge = typeof y === "object" ? y.badge : null;
             return (
               <React.Fragment key={i}>
                 {i > 0 && ", "}
                 {yearLink ? (
                   <a href={yearLink} target="_blank" rel="noopener noreferrer">{label}</a>
                 ) : label}
+                {yearBadge && <Badge className="spotlight-badge ms-1">{yearBadge}</Badge>}
               </React.Fragment>
             );
           })}

@@ -416,7 +416,10 @@ def generate_service_section(services):
             for y in years:
                 if isinstance(y, dict):
                     label = tex_escape(str(y.get("year", "")))
-                    year_parts.append(rf"\href{{{y['link']}}}{{{label}}}" if y.get("link") else label)
+                    part = rf"\href{{{y['link']}}}{{{label}}}" if y.get("link") else label
+                    if y.get("badge"):
+                        part += f" -- {tex_escape(y['badge'])}"
+                    year_parts.append(part)
                 else:
                     year_parts.append(tex_escape(str(y)))
             escaped_year_str = f" ({', '.join(year_parts)})" if year_parts else ""

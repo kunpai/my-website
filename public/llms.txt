@@ -140,6 +140,7 @@ Upstreamed into gem5 v23.0 and became the basis of the official gem5 Resources w
   Links: [Website](https://resources.gem5.org/) | [Poster](https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf)
 
 ## Awards & Honors
+- **Distinguished Artifact Reviewer Award** - ISSTA 2026 Artifact Evaluation (2026)
 - **Finalist (Agentic Financial & High-Stakes AI Advice)** - Cambridge C:\>DIR Global ‘Agentic Regulator’ Hackathon (2026)
 - **2nd Place (Agent Safety)** - UC Berkeley RDI AgentBeats Competition (2026)
 - **Dean's List** - UC Davis College of Engineering (Fall 2019)
@@ -152,7 +153,7 @@ Upstreamed into gem5 v23.0 and became the basis of the official gem5 Resources w
 - **Program Committee**:
   - MSR, Data and Tool Showcase Track ([2026](https://2026.msrconf.org/track/msr-2026-data-and-tool-showcase-track), [2027](https://2027.msrconf.org/track/msr-2027-data-and-tool-showcase-track))
 - **Artifact Evaluation Committee**:
-  - ISSTA ([2026](https://conf.researchr.org/track/issta-2026/issta-2026-artifact-evaluation))
+  - ISSTA ([2026](https://conf.researchr.org/track/issta-2026/issta-2026-artifact-evaluation) - Distinguished Reviewer)
   - ASE ([2026](https://conf.researchr.org/track/ase-2026/ase-2026-artifact-evaluation))
   - ISPASS ([2026](https://ispass.org/ispass2026/))
 - **Reviewer**:

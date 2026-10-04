@@ -162,7 +162,7 @@ function generateLlmsTxt() {
             } else if (s.category && Array.isArray(s.items)) {
                 lines.push(`- **${s.category}**:`);
                 for (const item of s.items) {
-                    const yearsStr = Array.isArray(item.years) ? item.years.map(y => (typeof y === 'object' ? `[${y.year}](${y.link})` : y)).join(', ') : item.years || '';
+                    const yearsStr = Array.isArray(item.years) ? item.years.map(y => (typeof y === 'object' ? `[${y.year}](${y.link})${y.badge ? ` - ${y.badge}` : ''}` : y)).join(', ') : item.years || '';
                     const linkStr = item.link ? ` [Link](${item.link})` : '';
                     lines.push(`  - ${item.name}${yearsStr ? ` (${yearsStr})` : ''}${linkStr}`);
                 }
@@ -366,7 +366,7 @@ function generateLlmsFullTxt() {
             } else if (s.category && Array.isArray(s.items)) {
                 lines.push(`- **${s.category}**:`);
                 for (const item of s.items) {
-                    const yearsStr = Array.isArray(item.years) ? item.years.map(y => (typeof y === 'object' ? `[${y.year}](${y.link})` : y)).join(', ') : item.years || '';
+                    const yearsStr = Array.isArray(item.years) ? item.years.map(y => (typeof y === 'object' ? `[${y.year}](${y.link})${y.badge ? ` - ${y.badge}` : ''}` : y)).join(', ') : item.years || '';
                     const linkStr = item.link ? ` [Link](${item.link})` : '';
                     lines.push(`  - ${item.name}${yearsStr ? ` (${yearsStr})` : ''}${linkStr}`);
                 }

@@ -90,7 +90,7 @@ export default function Chatbot() {
                 const catName = cat.category;
                 const itemsStr = cat.items.map(item => {
                     const yearStr = item.years && item.years.length > 0
-                        ? ` (${item.years.map(y => typeof y === "object" ? `[${y.year}](${y.link})` : y).join(", ")})`
+                        ? ` (${item.years.map(y => typeof y === "object" ? `[${y.year}](${y.link})${y.badge ? ` - ${y.badge}` : ""}` : y).join(", ")})`
                         : "";
                     const linkStr = item.link ? ` [Link](${item.link})` : "";
                     return `- ${item.name}${yearStr}${linkStr}`;
