@@ -160,14 +160,18 @@ def generate_education_section(items, is_short):
             end_date = f"Expected: {item.get('end')}"
             
         details = item.get("resume_details", "")
-        
+
+        # Advisor line (CV only)
+        advisor = item.get("resume_advisor", "")
+        advisor_str = rf" \\ \textit{{Advisor: {tex_escape(advisor)}}}" if advisor and not is_short else ""
+
         # Escape fields
         degree = tex_escape(degree)
         uni = tex_escape(uni)
         details = tex_escape(details)
         end_date = tex_escape(end_date)
-        
-        lines.append(rf"  \item \textbf{{{degree}}}, {uni}{gpa_str}{details} \hfill {end_date}")
+
+        lines.append(rf"  \item \textbf{{{degree}}}, {uni}{gpa_str}{details} \hfill {end_date}{advisor_str}")
         
     lines.append(r"\end{itemize}")
     lines.append(r"}")
