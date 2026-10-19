@@ -391,7 +391,7 @@ I am honored to receive the [Distinguished Artifact Reviewer Award](https://conf
 ## Technical & Language Skills
 - **Languages**: Python, C++, C, Rust, JavaScript, TypeScript, Java, Bash
 - **ML/AI**: LLMs, Multi-Agent Systems, AI Agent Security, Prompt Engineering, PyTorch, TensorFlow, Hugging Face, Ollama, scikit-learn, Model Calibration, Evolutionary Algorithms
-- **Systems & Compilers**: gem5, Computer Architecture Simulation, RISC-V, LLVM, Clang, C-to-Rust Transpilation, Hardware Profiling (perf)
+- **Systems & Compilers**: gem5, Computer Architecture Simulation, RISC-V, LLVM, Clang, Hardware Profiling (perf)
 - **Web/Data**: React, Next.js, Django, Flask, MongoDB, pandas, NumPy, Matplotlib, REST APIs
-- **Tools**: Git, Docker, Unix/Linux, Jupyter, LaTeX, Slurm / HPC, GitHub Actions
+- **Tools**: Git, Docker, Unix/Linux, Jupyter, LaTeX, GitHub Actions
 - **Spoken Languages**: English (Native), Gujarati (Native), Hindi (Fluent), Spanish (Elementary)
