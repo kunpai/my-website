@@ -11,7 +11,7 @@
         "show_on_website": true,
         "show_in_resume": true,
         "show_in_resume_short": true,
-        "resume_type": "Research Project",
+        "resume_type": "Specification-Based Language Translation with Differential Testing",
         "resume_skills": "C-to-Rust, LLMs, FuzzTest, Differential Fuzzing",
         "resume_description": [
             "Designing a boundary-directed differential fuzzer that runs C libraries and their Rust ports on identical inputs, biasing generation toward edge values mined from branch conditions in both codebases",
