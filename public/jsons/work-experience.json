@@ -1,6 +1,31 @@
 [
     {
         "title": "Graduate Student Researcher",
+        "organization": "SEAL Lab @ University of California, Los Angeles",
+        "resume_organization": "SEAL Lab @ UCLA",
+        "start": "September 2026",
+        "end": "Present",
+        "location": "Los Angeles, CA",
+        "image": "/images/seal.png",
+        "description": "Designing a boundary-directed differential fuzzing framework that executes C libraries and their Rust ports on identical inputs, steering a tunable fraction of inputs toward edge values mined from branch conditions in both codebases.\nBuilding an LLM-agent pipeline that writes fuzzing harnesses and mechanically verifies each step, reducing overly restrictive harness preconditions.\nUncovered 22 behavioral divergences across 10 functions in Google's Rust port of giflib to date, framing each as a specification question for maintainers and yielding 6 upstream PRs (2 merged).",
+        "show_on_website": true,
+        "show_in_resume": true,
+        "show_in_resume_short": true,
+        "resume_type": "Research Project",
+        "resume_skills": "C-Rust, LLMs, FuzzTest, Differential Fuzzing",
+        "resume_description": [
+            "Designing a boundary-directed differential fuzzing framework that executes C libraries and their Rust ports on identical inputs, steering a tunable fraction of inputs toward edge values mined from branch conditions in both codebases",
+            "Building an LLM-agent pipeline that writes fuzzing harnesses and mechanically verifies each step, reducing overly restrictive harness preconditions",
+            "Uncovered 22 behavioral divergences across 10 functions in Google's Rust port of giflib to date, framing each as a specification question for maintainers and yielding 6 upstream PRs (2 merged)"
+        ],
+        "resume_short_description": [
+            "Designing boundary-directed differential fuzzing that runs C libraries and their Rust ports on identical, edge-biased inputs",
+            "Building an LLM-agent pipeline that writes fuzzing harnesses and mechanically verifies each step",
+            "Uncovered 22 divergences across 10 functions in Google's Rust port of giflib, yielding 6 upstream PRs (2 merged)"
+        ]
+    },
+    {
+        "title": "Graduate Student Researcher",
         "organization": "DavSec Lab @ University of California, Davis",
         "resume_organization": "DavSec Lab @ UC Davis",
         "start": "April 2025",
@@ -48,7 +73,7 @@
         "description": "Developed a 4,500-sample dataset for pairwise code-documentation alignment from 200 open-source Python projects, enabling future research in software maintenance\nEngineered a pipeline for measuring calibration and correctness of large language models for code repair, using Defects4J\nCollaborated in validating efficacy of semantic augmentation of language model prompts for code summarization using precision and recall metrics like ROUGE and METEOR.",
         "show_on_website": true,
         "show_in_resume": true,
-        "show_in_resume_short": true,
+        "show_in_resume_short": false,
         "resume_type": "Research Project",
         "resume_skills": "Python, LLMs, Machine Learning, Code Analysis",
         "resume_description": [
