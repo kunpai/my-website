@@ -21,7 +21,7 @@
         },
         "bibtex": "@inproceedings{patel2026kiwi,\n  title={Kiwi: Slicing Models and Reconciling Adapters in Fault-Tolerant, Decentralized {LLM} Fine-Tuning},\n  author={Harshil Patel and Parth Shah and Swayam Shah and Kunal Pai},\n  booktitle={CODEC-FM 2026 Workshop at NeurIPS},\n  year={2026},\n  url={https://openreview.net/forum?id=wOg6YrFgbA}\n}",
         "show_on_website": true,
-        "show_in_resume": true,
+        "show_in_resume": false,
         "show_in_resume_short": false
     },
     {

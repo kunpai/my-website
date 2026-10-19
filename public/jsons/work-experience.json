@@ -7,21 +7,21 @@
         "end": "Present",
         "location": "Los Angeles, CA",
         "image": "/images/seal.png",
-        "description": "Designing a boundary-directed differential fuzzing framework that executes C libraries and their Rust ports on identical inputs, steering a tunable fraction of inputs toward edge values mined from branch conditions in both codebases.\nBuilding an LLM-agent pipeline that writes fuzzing harnesses and mechanically verifies each step, reducing overly restrictive harness preconditions.\nUncovered 22 behavioral divergences across 10 functions in Google's Rust port of giflib to date, framing each as a specification question for maintainers and yielding 6 upstream PRs (2 merged).",
+        "description": "Designing a boundary-directed differential fuzzer that runs C libraries and their Rust ports on identical inputs, biasing generation toward edge values mined from branch conditions in both codebases.\nBuilding an LLM-agent pipeline that writes fuzzing harnesses and uses AST analysis to verify that none impose restrictive input preconditions, keeping divergence-triggering inputs reachable.\nUncovered 22 behavioral divergences across 10 functions in Google's Rust port of giflib to date, framing each as a specification question for maintainers and yielding 6 upstream PRs (2 merged).",
         "show_on_website": true,
         "show_in_resume": true,
         "show_in_resume_short": true,
         "resume_type": "Research Project",
-        "resume_skills": "C-Rust, LLMs, FuzzTest, Differential Fuzzing",
+        "resume_skills": "C-to-Rust, LLMs, FuzzTest, Differential Fuzzing",
         "resume_description": [
-            "Designing a boundary-directed differential fuzzing framework that executes C libraries and their Rust ports on identical inputs, steering a tunable fraction of inputs toward edge values mined from branch conditions in both codebases",
-            "Building an LLM-agent pipeline that writes fuzzing harnesses and mechanically verifies each step, reducing overly restrictive harness preconditions",
+            "Designing a boundary-directed differential fuzzer that runs C libraries and their Rust ports on identical inputs, biasing generation toward edge values mined from branch conditions in both codebases",
+            "Building an LLM-agent pipeline that writes fuzzing harnesses and uses AST analysis to verify that none impose restrictive input preconditions, keeping divergence-triggering inputs reachable",
             "Uncovered 22 behavioral divergences across 10 functions in Google's Rust port of giflib to date, framing each as a specification question for maintainers and yielding 6 upstream PRs (2 merged)"
         ],
         "resume_short_description": [
+            "Uncovered 22 divergences across 10 functions in Google's Rust port of giflib, yielding 6 upstream PRs (2 merged)",
             "Designing boundary-directed differential fuzzing that runs C libraries and their Rust ports on identical, edge-biased inputs",
-            "Building an LLM-agent pipeline that writes fuzzing harnesses and mechanically verifies each step",
-            "Uncovered 22 divergences across 10 functions in Google's Rust port of giflib, yielding 6 upstream PRs (2 merged)"
+            "Building an LLM-agent pipeline that writes fuzzing harnesses, using AST checks to reject restrictive input preconditions"
         ]
     },
     {

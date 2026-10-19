@@ -84,19 +84,19 @@
 \begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt]
   \item \textbf{Languages}: Python, C++, C, Rust, JavaScript, TypeScript, Java, Bash
   \item \textbf{ML/AI}: LLMs, Multi-Agent Systems, AI Agent Security, Prompt Engineering, PyTorch, TensorFlow, Hugging Face, Ollama, scikit-learn, Model Calibration, Evolutionary Algorithms
-  \item \textbf{Systems \& Compilers}: gem5, Computer Architecture Simulation, RISC-V, LLVM, Clang, C-to-Rust Transpilation, Hardware Profiling (perf)
+  \item \textbf{Systems \& Compilers}: gem5, Computer Architecture Simulation, RISC-V, LLVM, Clang, Hardware Profiling (perf)
   \item \textbf{Web/Data}: React, Next.js, Django, Flask, MongoDB, pandas, NumPy, Matplotlib, REST APIs
-  \item \textbf{Tools}: Git, Docker, Unix/Linux, Jupyter, LaTeX, Slurm / HPC, GitHub Actions
+  \item \textbf{Tools}: Git, Docker, Unix/Linux, Jupyter, LaTeX, GitHub Actions
 \end{itemize}
 }
 
 \section{Research \& Professional Experience}
 {\normalsize
 \resumeSubHeadingList
-  \resumeSubheading{Graduate Student Researcher, \textit{SEAL Lab @ UCLA}}{September 2026 -- Present}{Research Project}{C-Rust, LLMs, FuzzTest, Differential Fuzzing}
+  \resumeSubheading{Graduate Student Researcher, \textit{SEAL Lab @ UCLA}}{September 2026 -- Present}{Research Project}{C-to-Rust, LLMs, FuzzTest, Differential Fuzzing}
   \resumeJustifiedList
-    \resumeItem{Designing a boundary-directed differential fuzzing framework that executes C libraries and their Rust ports on identical inputs, steering a tunable fraction of inputs toward edge values mined from branch conditions in both codebases}
-    \resumeItem{Building an LLM-agent pipeline that writes fuzzing harnesses and mechanically verifies each step, reducing overly restrictive harness preconditions}
+    \resumeItem{Designing a boundary-directed differential fuzzer that runs C libraries and their Rust ports on identical inputs, biasing generation toward edge values mined from branch conditions in both codebases}
+    \resumeItem{Building an LLM-agent pipeline that writes fuzzing harnesses and uses AST analysis to verify that none impose restrictive input preconditions, keeping divergence-triggering inputs reachable}
     \resumeItem{Uncovered 22 behavioral divergences across 10 functions in Google's Rust port of giflib to date, framing each as a specification question for maintainers and yielding 6 upstream PRs (2 merged)}
   \end{itemize}
   \resumeSubheading{Graduate Student Researcher, \textit{DavSec Lab @ UC Davis}}{April 2025 -- June 2026}{Research Project}{Python, LLMs, C++, Rust, Compiler Analysis}
@@ -121,7 +121,6 @@
 \section{Publications (Selected)}
 {\normalsize
 \begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt]
-  \resumeItem{\href{https://openreview.net/pdf?id=wOg6YrFgbA}{\textbf{Kiwi: Slicing Models and Reconciling Adapters in Fault-Tolerant, Decentralized LLM Fine-Tuning}}, Patel, H., Shah, P., Shah, S. \& \underline{Pai, K.}, \textit{CODEC-FM 2026: Collaborative, Open, and Decentralized Foundation Models Workshop, NeurIPS 2026}}
   \resumeItem{\href{https://arxiv.org/pdf/2606.07992}{\textbf{VATS: Exploiting Implicit Authority in Error-Path Injection via Systematic Mutation}} \,\textbf{\textsc{[Spotlight]}}, Patel, H. \& \underline{Pai, K.}, \textit{Second Workshop on Agents in the Wild: Safety, Security, and Beyond, ICML 2026}}
   \resumeItem{\href{https://doi.org/10.1109/ISPASS69572.2026.00027}{\textbf{Toward Reproducible and Standardized Computer Architecture Simulation with gem5}}, \underline{Pai, K.}, Patel, H., Le, E., et. al., \textit{IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS) 2026}}
   \resumeItem{\href{https://openreview.net/pdf?id=RhoRECtymK}{\textbf{NAAMSE: Framework for Evolutionary Security Evaluation of Agents}}, \underline{Pai, K.}, Shah, P. \& Patel, H., \textit{ICLR 2026 Agents in the Wild: Safety, Security, and Beyond Workshop}}

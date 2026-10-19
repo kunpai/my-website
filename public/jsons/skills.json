@@ -51,7 +51,6 @@
         "Unix/Linux",
         "LaTeX",
         "Jupyter",
-        "Slurm / HPC",
         "GitHub Actions"
     ],
     "spoken-languages": [
@@ -99,7 +98,6 @@
                 "RISC-V",
                 "LLVM",
                 "Clang",
-                "C-to-Rust Transpilation",
                 "Hardware Profiling (perf)"
             ],
             "Web/Data": [
@@ -119,7 +117,6 @@
                 "Unix/Linux",
                 "Jupyter",
                 "LaTeX",
-                "Slurm / HPC",
                 "GitHub Actions"
             ]
         },
