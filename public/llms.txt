@@ -16,7 +16,7 @@ Previously, at **UC Davis**, I was fortunate to work with [Prof. Jason Lowe-Powe
 
 ## Education
 - **Ph.D. in Computer Science**, University of California, Los Angeles (Enrolled: September 2026)
-  Advisor: Professor Miryung Kim
+  Advisor: Professor Miryung Kim · Semiconductor Hub Fellow
 - **Master of Science in Computer Science**, University of California, Davis (2023 – 2026)
   Relevant Coursework: Machine Learning, Computer Security, Information Visualization, Software Engineering, Theory of Computation, Bias and Fairness in AI, Vision and Language Research, Compilers and Program Analysis
 - **Bachelor of Science in Computer Science and Engineering**, University of California, Davis (2019 – 2023)
@@ -140,6 +140,7 @@ Upstreamed into gem5 v23.0 and became the basis of the official gem5 Resources w
   Links: [Website](https://resources.gem5.org/) | [Poster](https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf)
 
 ## Awards & Honors
+- **Semiconductor Hub Fellowship** - UCLA Samueli School of Engineering (2026)
 - **Distinguished Artifact Reviewer Award** - ISSTA 2026 Artifact Evaluation (2026)
 - **Finalist (Agentic Financial & High-Stakes AI Advice)** - Cambridge C:\>DIR Global ‘Agentic Regulator’ Hackathon (2026)
 - **2nd Place (Agent Safety)** - UC Berkeley RDI AgentBeats Competition (2026)
