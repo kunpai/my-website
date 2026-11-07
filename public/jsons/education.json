@@ -7,7 +7,10 @@
         "degree": "Ph.D.",
         "major": "Computer Science",
         "gpa": "",
-        "description": "Advisor: Professor Miryung Kim · Semiconductor Hub Fellow",
+        "description": [
+            "Advisor: Professor Miryung Kim",
+            "Semiconductor Hub Fellow"
+        ],
         "resume_advisor": "Prof. Miryung Kim",
         "resume_details": ", \\textit{Semiconductor Hub Fellow}",
         "show_on_website": true,

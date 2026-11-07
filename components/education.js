@@ -73,13 +73,13 @@ function EducationTile({ education }) {
                             <b><u>GPA</u></b>: {education.gpa}
                         </li>
                     </div>
-                    {education.description && (
-                        <div>
+                    {[].concat(education.description || []).map((line) => (
+                        <div key={line}>
                             <li variant="secondary">
-                                {education.description}
+                                {line}
                             </li>
                         </div>
-                    )}
+                    ))}
                 </Row>
             </Col >
         </Row >

@@ -28,6 +28,11 @@ function cleanText(text) {
                .trim();
 }
 
+// Education descriptions may be a string or a list of lines; keep them on one line
+function eduDetails(description) {
+    return [].concat(description).map(cleanText).join('; ');
+}
+
 function getUniqueContactLinks(config) {
     const links = [];
     const seenLabels = new Set();
@@ -99,7 +104,7 @@ function generateLlmsTxt() {
             const period = [edu.start, edu.end].filter(Boolean).join(' – ');
             lines.push(`- **${edu.degree} in ${edu.major}**, ${edu.university} (${period})`);
             if (edu.description) {
-                lines.push(`  ${cleanText(edu.description)}`);
+                lines.push(`  ${eduDetails(edu.description)}`);
             }
         }
     }
@@ -240,7 +245,7 @@ function generateLlmsFullTxt() {
         lines.push(`- **Institution**: ${edu.university}`);
         lines.push(`- **Timeline**: ${period}`);
         if (edu.gpa) lines.push(`- **GPA**: ${edu.gpa}`);
-        if (edu.description) lines.push(`- **Details**: ${cleanText(edu.description)}`);
+        if (edu.description) lines.push(`- **Details**: ${eduDetails(edu.description)}`);
         lines.push('');
     }
 

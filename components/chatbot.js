@@ -61,7 +61,7 @@ export default function Chatbot() {
 
         const eduList = education
             .filter(e => e.show_on_website !== false || e.show_in_resume !== false)
-            .map(e => `- ${e.degree} in ${e.major} from ${e.university} (${e.start} - ${e.end || e.resume_end}). GPA: ${e.gpa || "N/A"}. ${e.description ? e.description : ""}`)
+            .map(e => `- ${e.degree} in ${e.major} from ${e.university} (${e.start} - ${e.end || e.resume_end}). GPA: ${e.gpa || "N/A"}. ${e.description ? [].concat(e.description).join("; ") : ""}`)
             .join("\n");
 
         const skillList = Object.keys(skills.resume_skills || {})

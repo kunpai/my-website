@@ -16,7 +16,7 @@ Previously, at **UC Davis**, I was fortunate to work with [Prof. Jason Lowe-Powe
 
 ## Education
 - **Ph.D. in Computer Science**, University of California, Los Angeles (Enrolled: September 2026)
-  Advisor: Professor Miryung Kim · Semiconductor Hub Fellow
+  Advisor: Professor Miryung Kim; Semiconductor Hub Fellow
 - **Master of Science in Computer Science**, University of California, Davis (2023 – 2026)
   Relevant Coursework: Machine Learning, Computer Security, Information Visualization, Software Engineering, Theory of Computation, Bias and Fairness in AI, Vision and Language Research, Compilers and Program Analysis
 - **Bachelor of Science in Computer Science and Engineering**, University of California, Davis (2019 – 2023)
