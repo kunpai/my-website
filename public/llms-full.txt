@@ -389,6 +389,7 @@ I am honored to receive the [Distinguished Artifact Reviewer Award](https://conf
   - NeurIPS, SocialAgent Workshop ([2026](https://social-llm-workshop.github.io/))
   - NeurIPS, Agents in the Wild Workshop ([2026](https://agentwild-workshop.github.io/neurips2026/))
   - ICML, Agents in the Wild Workshop ([2026](https://agentwild-workshop.github.io/icml2026/))
+  - AAAI, LLM Agents Under Threat in Cyberspace Workshop ([2027](https://llm-agents-under-threat.github.io/))
 
 ## Technical & Language Skills
 - **Languages**: Python, C++, C, Rust, JavaScript, TypeScript, Java, Bash

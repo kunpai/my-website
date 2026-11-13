@@ -162,6 +162,7 @@ Upstreamed into gem5 v23.0 and became the basis of the official gem5 Resources w
   - NeurIPS, SocialAgent Workshop ([2026](https://social-llm-workshop.github.io/))
   - NeurIPS, Agents in the Wild Workshop ([2026](https://agentwild-workshop.github.io/neurips2026/))
   - ICML, Agents in the Wild Workshop ([2026](https://agentwild-workshop.github.io/icml2026/))
+  - AAAI, LLM Agents Under Threat in Cyberspace Workshop ([2027](https://llm-agents-under-threat.github.io/))
 
 ## Technical Skills
 - **Languages**: Python, C++, C, Rust, JavaScript, Java
