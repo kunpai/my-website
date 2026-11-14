@@ -199,6 +199,9 @@ export default function Topbar() {
                                         <NavDropdown.Item href="/games/tictactoe" as={Link} onClick={() => setShow(false)}>
                                             Tic Tac Toe
                                         </NavDropdown.Item>
+                                        <NavDropdown.Item href="/games/volt-arena" as={Link} onClick={() => setShow(false)}>
+                                            Volt Arena
+                                        </NavDropdown.Item>
                                     </NavDropdown>
                                 )}
                                 {features.contact !== false && (
