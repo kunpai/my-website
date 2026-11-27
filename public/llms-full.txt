@@ -71,6 +71,25 @@ Previously, at **UC Davis**, I was fortunate to work with [Prof. Jason Lowe-Powe
   - Co-authored poster on the comparison of gem5 and perf for HiFive Unmatched.
 
 ## Publications & Pre-prints
+### Cross-Layer Characterization and AI-Assisted Diagnosis of C-to-Rust Performance
+- **Authors**: Dalton Davis, Kunal Pai, Tapti Palit
+- **Venue**: arXiv preprint
+- **Abstract / Summary**: A cross-layer study of 12 C benchmarks and their Rust counterparts shows that runtime safety checks rarely dominate overhead. It motivates FerroScope, an AI-assisted performance debugger that combines source analysis, compiler optimization remarks, instruction traces, and hardware performance counters, and an LLVM pass that hoists redundant bounds checks, cutting Selection Sort's overhead from 2.95x to 1.00x relative to C.
+- **Tags**: Rust, Performance Analysis, Compilers
+- **Links**: [View Pre-Print](https://arxiv.org/abs/2611.33490)
+- **BibTeX**:
+```bibtex
+@misc{davis2026crosslayer,
+  title={Cross-Layer Characterization and {AI}-Assisted Diagnosis of {C}-to-{Rust} Performance},
+  author={Dalton Davis and Kunal Pai and Tapti Palit},
+  year={2026},
+  eprint={2611.33490},
+  archivePrefix={arXiv},
+  primaryClass={cs.PF},
+  url={https://arxiv.org/abs/2611.33490}
+}
+```
+
 ### Kiwi: Slicing Models and Reconciling Adapters in Fault-Tolerant, Decentralized LLM Fine-Tuning
 - **Authors**: Harshil Patel, Parth Shah, Swayam Shah, Kunal Pai
 - **Venue**: CODEC-FM 2026: Collaborative, Open, and Decentralized Foundation Models Workshop, NeurIPS 2026
@@ -351,7 +370,7 @@ Enabled faster retrieval of resources across 20+ categories by introducing categ
 Enhanced accessibility for 500+ industry and academic users by integrating local/remote JSON files and MongoDB with gem5.
 Upstreamed into gem5 v23.0 and became the basis of the official gem5 Resources website, resources.gem5.org.
 - **Collaborators**: [Parth Shah](https://helloparthshah.vercel.app/), [Harshil Patel](https://harshilpatel.vercel.app/), [Arslan Ali](https://github.com/aarsli)
-- **Links**: [Website](https://resources.gem5.org/) | [Poster](https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf)
+- **Links**: [Website](https://resources.gem5.org/) | [Poster](https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf) | [Upstream Commit](https://github.com/gem5/gem5/commit/9b9dc09f6eb2c60b17d34531f41450c0ba096bd4)
 
 ## Talks & Presentations
 - **[July 2026]** **Presenter**, [YCML Research Symposium](https://events.ycombinator.com/startup-school-2026) (Startup School 2026), JP Morgan Club at Chase Center, San Francisco, CA.

@@ -23,6 +23,12 @@ Previously, at **UC Davis**, I was fortunate to work with [Prof. Jason Lowe-Powe
   Provost Scholar, Graduated with Honors
 
 ## Key Publications & Pre-prints
+- **Cross-Layer Characterization and AI-Assisted Diagnosis of C-to-Rust Performance**
+  Authors: Dalton Davis, Kunal Pai, Tapti Palit
+  Venue: arXiv preprint
+  Summary: A cross-layer study of 12 C benchmarks and their Rust counterparts shows that runtime safety checks rarely dominate overhead. It motivates FerroScope, an AI-assisted performance debugger that combines source analysis, compiler optimization remarks, instruction traces, and hardware performance counters, and an LLVM pass that hoists redundant bounds checks, cutting Selection Sort's overhead from 2.95x to 1.00x relative to C.
+  Links: [View Pre-Print](https://arxiv.org/abs/2611.33490)
+
 - **Kiwi: Slicing Models and Reconciling Adapters in Fault-Tolerant, Decentralized LLM Fine-Tuning**
   Authors: Harshil Patel, Parth Shah, Swayam Shah, Kunal Pai
   Venue: CODEC-FM 2026: Collaborative, Open, and Decentralized Foundation Models Workshop, NeurIPS 2026
@@ -137,7 +143,7 @@ Investigated the vulnerability of x86-based in-order and out-of-order processors
 Enabled faster retrieval of resources across 20+ categories by introducing categorization and semantic versioning.
 Enhanced accessibility for 500+ industry and academic users by integrating local/remote JSON files and MongoDB with gem5.
 Upstreamed into gem5 v23.0 and became the basis of the official gem5 Resources website, resources.gem5.org.
-  Links: [Website](https://resources.gem5.org/) | [Poster](https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf)
+  Links: [Website](https://resources.gem5.org/) | [Poster](https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf) | [Upstream Commit](https://github.com/gem5/gem5/commit/9b9dc09f6eb2c60b17d34531f41450c0ba096bd4)
 
 ## Awards & Honors
 - **Semiconductor Hub Fellowship** - UCLA Samueli School of Engineering (2026)
