@@ -1,5 +1,28 @@
 [
     {
+        "title": "Cross-Layer Characterization and AI-Assisted Diagnosis of C-to-Rust Performance",
+        "authors": [
+            "Dalton Davis",
+            "Kunal Pai",
+            "Tapti Palit"
+        ],
+        "type": "preprint",
+        "conference": "arXiv preprint",
+        "description": "A cross-layer study of 12 C benchmarks and their Rust counterparts shows that runtime safety checks rarely dominate overhead. It motivates FerroScope, an AI-assisted performance debugger that combines source analysis, compiler optimization remarks, instruction traces, and hardware performance counters, and an LLVM pass that hoists redundant bounds checks, cutting Selection Sort's overhead from 2.95x to 1.00x relative to C.",
+        "tags": [
+            "Rust",
+            "Performance Analysis",
+            "Compilers"
+        ],
+        "links": {
+            "View Pre-Print": "https://arxiv.org/abs/2611.33490"
+        },
+        "bibtex": "@misc{davis2026crosslayer,\n  title={Cross-Layer Characterization and {AI}-Assisted Diagnosis of {C}-to-{Rust} Performance},\n  author={Dalton Davis and Kunal Pai and Tapti Palit},\n  year={2026},\n  eprint={2611.33490},\n  archivePrefix={arXiv},\n  primaryClass={cs.PF},\n  url={https://arxiv.org/abs/2611.33490}\n}",
+        "show_on_website": true,
+        "show_in_resume": false,
+        "show_in_resume_short": false
+    },
+    {
         "title": "Kiwi: Slicing Models and Reconciling Adapters in Fault-Tolerant, Decentralized LLM Fine-Tuning",
         "authors": [
             "Harshil Patel",

@@ -238,7 +238,8 @@
         ],
         "links": {
             "Website": "https://resources.gem5.org/",
-            "Poster": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf"
+            "Poster": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf",
+            "Upstream Commit": "https://github.com/gem5/gem5/commit/9b9dc09f6eb2c60b17d34531f41450c0ba096bd4"
         },
         "image": "/images/gem5vision.png",
         "collaborators": [
